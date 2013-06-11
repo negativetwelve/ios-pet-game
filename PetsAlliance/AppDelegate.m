@@ -11,6 +11,8 @@
 #import "MyPetViewController.h"
 #import "TrainingViewController.h"
 #import "BattleViewController.h"
+#import "TheMasterViewController.h"
+#import "NavigatorViewController.h"
 
 @implementation AppDelegate
 
@@ -22,10 +24,12 @@
     UIViewController *myPetViewController = [[MyPetViewController alloc] initWithNibName:@"MyPetViewController" bundle:nil];
     UIViewController *trainingViewController = [[TrainingViewController alloc] initWithNibName:@"TrainingViewController" bundle:nil];
     UIViewController *battleViewController = [[BattleViewController alloc] initWithNibName:@"BattleViewController" bundle:nil];
+    UIViewController *theMasterViewController = [[TheMasterViewController alloc] initWithNibName:@"TheMasterViewController" bundle:nil];
+    UIViewController *navigatorViewController = [[NavigatorViewController alloc] initWithNibName:@"NavigatorViewController" bundle:nil];
     
     self.tabBarController = [[UITabBarController alloc] init];
     
-    self.tabBarController.viewControllers = @[myPetViewController, trainingViewController, battleViewController];
+    self.tabBarController.viewControllers = @[myPetViewController, trainingViewController, battleViewController, theMasterViewController, navigatorViewController];
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
