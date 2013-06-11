@@ -27,9 +27,22 @@
     UIViewController *theMasterViewController = [[TheMasterViewController alloc] initWithNibName:@"TheMasterViewController" bundle:nil];
     UIViewController *navigatorViewController = [[NavigatorViewController alloc] initWithNibName:@"NavigatorViewController" bundle:nil];
     
+    UINavigationController *myPetNavigationController = [[UINavigationController alloc] initWithRootViewController:myPetViewController];
+    UINavigationController *trainingNavigationController = [[UINavigationController alloc] initWithRootViewController:trainingViewController];
+    UINavigationController *battleNavigationController = [[UINavigationController alloc] initWithRootViewController:battleViewController];
+    UINavigationController *theMasterNavigationController = [[UINavigationController alloc] initWithRootViewController:theMasterViewController];
+    UINavigationController *navigatorNavigationController = [[UINavigationController alloc] initWithRootViewController:navigatorViewController];
+    
+    myPetNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    trainingNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    battleNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    theMasterNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    navigatorNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
+    
     self.tabBarController = [[UITabBarController alloc] init];
     
-    self.tabBarController.viewControllers = @[myPetViewController, trainingViewController, battleViewController, theMasterViewController, navigatorViewController];
+    self.tabBarController.viewControllers = @[myPetNavigationController, trainingNavigationController, battleNavigationController, theMasterNavigationController, navigatorNavigationController];
     
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
