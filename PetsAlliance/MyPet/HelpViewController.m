@@ -1,24 +1,24 @@
 //
-//  MyPetViewController.m
+//  HelpViewController.m
 //  PetsAlliance
 //
-//  Created by Mark Miyashita on 6/10/13.
+//  Created by Mark Miyashita on 6/11/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
-#import "MyPetViewController.h"
+#import "HelpViewController.h"
 
-@interface MyPetViewController ()
+@interface HelpViewController ()
 
 @end
 
-@implementation MyPetViewController
+@implementation HelpViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"My Pet";
+        // Custom initialization
     }
     return self;
 }

@@ -14,6 +14,8 @@
 #import "TheMasterViewController.h"
 #import "NavigatorViewController.h"
 
+#import "MyPetNavigationController.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -27,18 +29,16 @@
     UIViewController *theMasterViewController = [[TheMasterViewController alloc] initWithNibName:@"TheMasterViewController" bundle:nil];
     UIViewController *navigatorViewController = [[NavigatorViewController alloc] initWithNibName:@"NavigatorViewController" bundle:nil];
     
-    UINavigationController *myPetNavigationController = [[UINavigationController alloc] initWithRootViewController:myPetViewController];
+    UINavigationController *myPetNavigationController = [[MyPetNavigationController alloc] initWithRootViewController:myPetViewController];
     UINavigationController *trainingNavigationController = [[UINavigationController alloc] initWithRootViewController:trainingViewController];
     UINavigationController *battleNavigationController = [[UINavigationController alloc] initWithRootViewController:battleViewController];
     UINavigationController *theMasterNavigationController = [[UINavigationController alloc] initWithRootViewController:theMasterViewController];
     UINavigationController *navigatorNavigationController = [[UINavigationController alloc] initWithRootViewController:navigatorViewController];
     
-    myPetNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     trainingNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     battleNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     theMasterNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    navigatorNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    
+    navigatorNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;    
     
     self.tabBarController = [[UITabBarController alloc] init];
     

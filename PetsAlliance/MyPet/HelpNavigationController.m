@@ -1,26 +1,33 @@
 //
-//  MyPetViewController.m
+//  HelpNavigationController.m
 //  PetsAlliance
 //
-//  Created by Mark Miyashita on 6/10/13.
+//  Created by Mark Miyashita on 6/11/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
-#import "MyPetViewController.h"
+#import "HelpNavigationController.h"
 
-@interface MyPetViewController ()
+@interface HelpNavigationController ()
 
 @end
 
-@implementation MyPetViewController
+@implementation HelpNavigationController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"My Pet";
+        self.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(closeHelp:)];
+        // Custom initialization
     }
     return self;
+}
+
+- (void)closeHelp {
+    NSLog(@"close help");
+    [self.navigationController ];
 }
 
 - (void)viewDidLoad
