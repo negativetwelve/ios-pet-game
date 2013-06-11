@@ -18,6 +18,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.title = @"Help";
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(closeHelp:)];
         // Custom initialization
     }
     return self;
@@ -33,6 +35,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)closeHelp: (id) selector {
+    NSLog(@"close help");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

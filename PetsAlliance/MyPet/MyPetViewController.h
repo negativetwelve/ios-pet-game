@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HelpNavigationController.h"
+#import "HelpViewController.h"
 
 @interface MyPetViewController : UIViewController
 

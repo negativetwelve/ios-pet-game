@@ -19,15 +19,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.navigationBar.barStyle = UIBarStyleBlackOpaque;
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(closeHelp:)];
         // Custom initialization
     }
     return self;
-}
-
-- (void)closeHelp {
-    NSLog(@"close help");
-    [self.navigationController ];
 }
 
 - (void)viewDidLoad
