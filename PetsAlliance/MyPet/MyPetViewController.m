@@ -39,6 +39,10 @@
 
 - (void)switchPets: (id) selector {
     NSLog(@"Opened the switchPets view");
+    SwitchPetsViewController *switchPetsView = [[SwitchPetsViewController alloc] initWithNibName:@"SwitchPetsViewController" bundle:nil];
+    SwitchPetsNavigationController *switchPetsNavigationController = [[SwitchPetsNavigationController alloc] initWithRootViewController:switchPetsView];
+    [self presentViewController:switchPetsNavigationController animated:YES completion:nil];
+    
 }
 
 - (void)viewHelp: (id) selector {
