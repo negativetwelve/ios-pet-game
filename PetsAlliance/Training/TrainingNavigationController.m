@@ -1,25 +1,24 @@
 //
-//  TrainingViewController.m
+//  TrainingNavigationController.m
 //  PetsAlliance
 //
 //  Created by Mark Miyashita on 6/12/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
-#import "TrainingViewController.h"
+#import "TrainingNavigationController.h"
 
-@interface TrainingViewController ()
+@interface TrainingNavigationController ()
 
 @end
 
-@implementation TrainingViewController
+@implementation TrainingNavigationController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Training";
-        // Custom initialization
+        self.navigationBar.barStyle = UIBarStyleBlackOpaque;
     }
     return self;
 }
@@ -27,11 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
-    [self.view addSubview:petStatusView];
-    
-    UITableView *trainingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, 320, 400)];
-    [self.view addSubview:trainingTableView];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

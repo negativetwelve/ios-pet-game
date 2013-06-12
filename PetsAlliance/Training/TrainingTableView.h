@@ -1,5 +1,5 @@
 //
-//  TrainingViewController.h
+//  TrainingTableView.h
 //  PetsAlliance
 //
 //  Created by Mark Miyashita on 6/12/13.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "PetStatusView.h"
-#import "TrainingTableView.h"
-
-@interface TrainingViewController : UIViewController
+@interface TrainingTableView : UITableView
 
 @end

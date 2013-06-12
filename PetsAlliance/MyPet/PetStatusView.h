@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "StatusLabel.h"
+
 @interface PetStatusView : UIView
 
 @end

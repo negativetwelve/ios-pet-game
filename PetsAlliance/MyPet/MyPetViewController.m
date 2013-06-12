@@ -28,7 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    [self.view addSubview:petStatusView];
+    
+    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height)];
     scrollView.scrollEnabled = YES;
     scrollView.pagingEnabled = NO;
     scrollView.showsVerticalScrollIndicator = YES;
@@ -37,14 +40,11 @@
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
     [self.view addSubview:scrollView];
     
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
-    [scrollView addSubview:petStatusView];
-    
-    UIView *mainPetView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 320, 400)];
+    UIView *mainPetView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
     mainPetView.backgroundColor = [UIColor whiteColor];
     [scrollView addSubview:mainPetView];
     
-    UIView *equipmentView = [[UIView alloc] initWithFrame:CGRectMake(20, 330, 280, 80)];
+    UIView *equipmentView = [[UIView alloc] initWithFrame:CGRectMake(20, 230, 280, 80)];
     equipmentView.backgroundColor = [UIColor grayColor];
     [scrollView addSubview:equipmentView];
     
@@ -67,8 +67,16 @@
     [mainPetView addSubview:itemStoreButton];
 }
 
+- (void)buttonAction: (id) selector {
+    NSLog(@"clicked on Pet button");
+}
+
 - (void)myItemsAction: (id) selector {
     NSLog(@"clicked on my items button");
+}
+
+- (void)itemStoreAction: (id) selector {
+    NSLog(@"clicked on item store button");
 }
 
 - (void)didReceiveMemoryWarning {
