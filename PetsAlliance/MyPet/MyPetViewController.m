@@ -41,19 +41,30 @@
     [scrollView addSubview:petStatusView];
     
     UIView *mainPetView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 320, 400)];
-    mainPetView.backgroundColor = [UIColor greenColor];
+    mainPetView.backgroundColor = [UIColor whiteColor];
     [scrollView addSubview:mainPetView];
     
-    UIView *equipmentView = [[UIView alloc] initWithFrame:CGRectMake(20, 320, 280, 80)];
+    UIView *equipmentView = [[UIView alloc] initWithFrame:CGRectMake(20, 330, 280, 80)];
     equipmentView.backgroundColor = [UIColor grayColor];
     [scrollView addSubview:equipmentView];
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setFrame:CGRectMake(20, 20, 110, 50)];
+    [button setTitle:@"Pet" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [mainPetView addSubview:button];
+    
     UIButton *myItemsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [myItemsButton setFrame:CGRectMake(20, 20, 110, 50)];
+    [myItemsButton setFrame:CGRectMake(20, 90, 110, 50)];
     [myItemsButton setTitle:@"My Items" forState:UIControlStateNormal];
     [myItemsButton addTarget:self action:@selector(myItemsAction:) forControlEvents:UIControlEventTouchUpInside];
     [mainPetView addSubview:myItemsButton];
 
+    UIButton *itemStoreButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [itemStoreButton setFrame:CGRectMake(20, 160, 110, 50)];
+    [itemStoreButton setTitle:@"Item Store" forState:UIControlStateNormal];
+    [itemStoreButton addTarget:self action:@selector(itemStoreAction:) forControlEvents:UIControlEventTouchUpInside];
+    [mainPetView addSubview:itemStoreButton];
 }
 
 - (void)myItemsAction: (id) selector {
