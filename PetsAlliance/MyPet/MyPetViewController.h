@@ -13,6 +13,9 @@
 #import "SwitchPetsNavigationController.h"
 #import "SwitchPetsViewController.h"
 
+#import "PetStatusView.h"
+
+
 @interface MyPetViewController : UIViewController
 
 @end

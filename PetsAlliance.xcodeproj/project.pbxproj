@@ -11,6 +11,7 @@
 		4D4F59E0176830E400E81980 /* SwitchPetsNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59DE176830E400E81980 /* SwitchPetsNavigationController.xib */; };
 		4D4F59E4176830F900E81980 /* SwitchPetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */; };
 		4D4F59E5176830F900E81980 /* SwitchPetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59E3176830F900E81980 /* SwitchPetsViewController.xib */; };
+		4D4F59E91768348F00E81980 /* PetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E81768348F00E81980 /* PetStatusView.m */; };
 		4D9402061766E51D00898DCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402051766E51D00898DCF /* UIKit.framework */; };
 		4D9402081766E51D00898DCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402071766E51D00898DCF /* Foundation.framework */; };
 		4D94020A1766E51D00898DCF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402091766E51D00898DCF /* CoreGraphics.framework */; };
@@ -66,6 +67,8 @@
 		4D4F59E1176830F900E81980 /* SwitchPetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsViewController.h; sourceTree = "<group>"; };
 		4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchPetsViewController.m; sourceTree = "<group>"; };
 		4D4F59E3176830F900E81980 /* SwitchPetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchPetsViewController.xib; sourceTree = "<group>"; };
+		4D4F59E71768348F00E81980 /* PetStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetStatusView.h; sourceTree = "<group>"; };
+		4D4F59E81768348F00E81980 /* PetStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetStatusView.m; sourceTree = "<group>"; };
 		4D9402021766E51D00898DCF /* PetsAlliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsAlliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9402051766E51D00898DCF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D9402071766E51D00898DCF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -297,6 +300,8 @@
 				4DFD49361767142300EEAFA7 /* MyPetNavigationController.h */,
 				4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */,
 				4DFD49381767142300EEAFA7 /* MyPetNavigationController.xib */,
+				4D4F59E71768348F00E81980 /* PetStatusView.h */,
+				4D4F59E81768348F00E81980 /* PetStatusView.m */,
 				4D4F59DB176830BE00E81980 /* Help */,
 				4D4F59E61768310100E81980 /* SwitchPets */,
 			);
@@ -479,6 +484,7 @@
 				4DFD49431767144F00EEAFA7 /* HelpViewController.m in Sources */,
 				4D4F59DF176830E400E81980 /* SwitchPetsNavigationController.m in Sources */,
 				4D4F59E4176830F900E81980 /* SwitchPetsViewController.m in Sources */,
+				4D4F59E91768348F00E81980 /* PetStatusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

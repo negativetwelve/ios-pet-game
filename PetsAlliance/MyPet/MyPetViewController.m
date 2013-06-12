@@ -25,14 +25,42 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    scrollView.scrollEnabled = YES;
+    scrollView.pagingEnabled = NO;
+    scrollView.showsVerticalScrollIndicator = YES;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.bounces = NO;
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+    [self.view addSubview:scrollView];
+    
+    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    [scrollView addSubview:petStatusView];
+    
+    UIView *mainPetView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, 320, 400)];
+    mainPetView.backgroundColor = [UIColor greenColor];
+    [scrollView addSubview:mainPetView];
+    
+    UIView *equipmentView = [[UIView alloc] initWithFrame:CGRectMake(20, 320, 280, 80)];
+    equipmentView.backgroundColor = [UIColor grayColor];
+    [scrollView addSubview:equipmentView];
+    
+    UIButton *myItemsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [myItemsButton setFrame:CGRectMake(20, 20, 110, 50)];
+    [myItemsButton setTitle:@"My Items" forState:UIControlStateNormal];
+    [myItemsButton addTarget:self action:@selector(myItemsAction:) forControlEvents:UIControlEventTouchUpInside];
+    [mainPetView addSubview:myItemsButton];
+
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)myItemsAction: (id) selector {
+    NSLog(@"clicked on my items button");
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
