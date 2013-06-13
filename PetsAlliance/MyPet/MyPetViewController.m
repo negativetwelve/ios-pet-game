@@ -44,10 +44,10 @@
     mainPetView.backgroundColor = [UIColor whiteColor];
     [scrollView addSubview:mainPetView];
     
-    UIView *equipmentView = [[UIView alloc] initWithFrame:CGRectMake(20, 230, 280, 80)];
-    equipmentView.backgroundColor = [UIColor grayColor];
-    [scrollView addSubview:equipmentView];
-    
+    UIView *petsView = [[UIView alloc] initWithFrame:CGRectMake(20, 230, 280, 80)];
+    petsView.backgroundColor = [UIColor grayColor];
+    [scrollView addSubview:petsView];
+        
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setFrame:CGRectMake(20, 20, 110, 50)];
     [button setTitle:@"Pet" forState:UIControlStateNormal];
@@ -73,6 +73,9 @@
 
 - (void)myItemsAction: (id) selector {
     NSLog(@"clicked on my items button");
+    ItemsViewController *itemsViewController = [[ItemsViewController alloc] initWithNibName:@"ItemsViewController" bundle:nil];
+    ItemsNavigationController *itemsNavigationController = [[ItemsNavigationController alloc] initWithRootViewController:itemsViewController];
+    [self presentViewController:itemsNavigationController animated:YES completion:nil];
 }
 
 - (void)itemStoreAction: (id) selector {
@@ -89,7 +92,6 @@
     SwitchPetsViewController *switchPetsView = [[SwitchPetsViewController alloc] initWithNibName:@"SwitchPetsViewController" bundle:nil];
     SwitchPetsNavigationController *switchPetsNavigationController = [[SwitchPetsNavigationController alloc] initWithRootViewController:switchPetsView];
     [self presentViewController:switchPetsNavigationController animated:YES completion:nil];
-    
 }
 
 - (void)viewHelp: (id) selector {

@@ -16,6 +16,7 @@
 
 #import "MyPetNavigationController.h"
 #import "TrainingNavigationController.h"
+#import "BattleNavigationController.h"
 
 @implementation AppDelegate
 
@@ -32,11 +33,10 @@
     
     UINavigationController *myPetNavigationController = [[MyPetNavigationController alloc] initWithRootViewController:myPetViewController];
     UINavigationController *trainingNavigationController = [[TrainingNavigationController alloc] initWithRootViewController:trainingViewController];
-    UINavigationController *battleNavigationController = [[UINavigationController alloc] initWithRootViewController:battleViewController];
+    UINavigationController *battleNavigationController = [[BattleNavigationController alloc] initWithRootViewController:battleViewController];
     UINavigationController *theMasterNavigationController = [[UINavigationController alloc] initWithRootViewController:theMasterViewController];
     UINavigationController *navigatorNavigationController = [[UINavigationController alloc] initWithRootViewController:navigatorViewController];
     
-    battleNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     theMasterNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     navigatorNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;    
     

@@ -19,18 +19,18 @@
     return self;
 }
 
-- (id)initWithTitle: (NSString*)title AndFont:(UIFont*)font
-                                      AndTextColor:(UIColor*)textColor
-                                      AndBackgroundColor:(UIColor*)backgroundColor
+- (id)initWithTitle: (NSString*)titleText AndFont:(UIFont*)textFont
+                                      AndTextColor:(UIColor*)textFontColor
+                                      AndBackgroundColor:(UIColor*)backColor
                                       AndXPos:(int)xPos
                                       AndYPos:(int)yPos
                                       AndWidth:(int)width
                                       AndHeight:(int)height {
     self = [super initWithFrame:CGRectMake(xPos, yPos, width, height)];
-    self.text = title;
-    self.font = font;
-    self.textColor = textColor;
-    self.backgroundColor = backgroundColor;
+    self.text = titleText;
+    self.font = textFont;
+    self.textColor = textFontColor;
+    self.backgroundColor = backColor;
     return self;
 }
 

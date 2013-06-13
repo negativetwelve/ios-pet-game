@@ -10,10 +10,6 @@
 
 @interface StatusLabel : UILabel {
     NSString *title;
-    int xPos;
-    int yPos;
-    int height;
-    int width;
     UIFont *font;
     UIColor *textColor;
     UIColor *backgroundColor;

@@ -1,13 +1,18 @@
 //
 //  BattleViewController.h
-//  PetsAlliance
+//  
 //
-//  Created by Mark Miyashita on 6/10/13.
-//  Copyright (c) 2013 Mark Miyashita. All rights reserved.
+//  Created by Mark Miyashita on 6/13/13.
+//
 //
 
 #import <UIKit/UIKit.h>
 
-@interface BattleViewController : UITableViewController
+#import "LeaderboardViewController.h"
+#import "LeaderboardNavigationController.h"
+#import "PetStatusView.h"
+#import "BattleTableView.h"
+
+@interface BattleViewController : UIViewController
 
 @end

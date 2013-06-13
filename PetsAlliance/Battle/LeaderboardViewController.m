@@ -1,34 +1,18 @@
 //
-//  SwitchPetsViewController.m
+//  LeaderboardViewController.m
 //  PetsAlliance
 //
-//  Created by Mark Miyashita on 6/11/13.
+//  Created by Mark Miyashita on 6/13/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
-#import "SwitchPetsViewController.h"
+#import "LeaderboardViewController.h"
 
-@interface SwitchPetsViewController ()
+@interface LeaderboardViewController ()
 
 @end
 
-@implementation SwitchPetsViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = @"Switch Pets";
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(closeSwitchPets:)];
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void) closeSwitchPets: (id) selector {
-    NSLog(@"close switch pets");
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+@implementation LeaderboardViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,6 +21,21 @@
         // Custom initialization
     }
     return self;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = @"Leaderboard";
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(closeLeaderboard:)];
+    }
+    return self;
+}
+
+- (void)closeLeaderboard: (id)selector {
+    NSLog(@"closing leaderboard");
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad
@@ -60,12 +59,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }

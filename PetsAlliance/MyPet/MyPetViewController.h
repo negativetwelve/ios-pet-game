@@ -12,6 +12,8 @@
 #import "HelpViewController.h"
 #import "SwitchPetsNavigationController.h"
 #import "SwitchPetsViewController.h"
+#import "ItemsNavigationController.h"
+#import "ItemsViewController.h"
 
 #import "PetStatusView.h"
 
