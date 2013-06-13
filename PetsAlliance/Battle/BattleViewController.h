@@ -12,7 +12,12 @@
 #import "LeaderboardNavigationController.h"
 #import "PetStatusView.h"
 #import "BattleTableView.h"
+#import "ItemsNavigationController.h"
+#import "ItemsViewController.h"
 
-@interface BattleViewController : UIViewController
+@interface BattleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    UITableView *battleTableView;
+    int numberOfCells;
+}
 
 @end

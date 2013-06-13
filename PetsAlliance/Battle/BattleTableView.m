@@ -10,11 +10,13 @@
 
 @implementation BattleTableView
 
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        self.rowHeight = 80.0;
+        
     }
     return self;
 }
