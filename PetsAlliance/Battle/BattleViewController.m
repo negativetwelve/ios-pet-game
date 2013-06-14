@@ -21,21 +21,20 @@
         self.title = @"Battle";
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"My Items" style:UIBarButtonItemStyleBordered target:self action:@selector(viewMyItems:)];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Leaderboard" style:UIBarButtonItemStyleDone target:self action:@selector(viewLeaderboard:)];
-        numberOfCells = 0;
     }
     return self;
 }
 
 - (void)viewMyItems: (id)selector {
     NSLog(@"clicked on view my items");
-    ItemsViewController *itemsViewController = [[ItemsViewController alloc] initWithNibName:@"ItemsViewController" bundle:nil];
+    ItemsViewController *itemsViewController = [[ItemsViewController alloc] init];
     ItemsNavigationController *itemsNavigationController = [[ItemsNavigationController alloc] initWithRootViewController:itemsViewController];
     [self presentViewController:itemsNavigationController animated:YES completion:nil];
 }
 
 - (void)viewLeaderboard: (id)selector {
     NSLog(@"clicked on view leaderboard");
-    LeaderboardViewController *leaderboardView = [[LeaderboardViewController alloc] initWithNibName:@"LeaderboardViewController" bundle:nil];
+    LeaderboardViewController *leaderboardView = [[LeaderboardViewController alloc] init];
     LeaderboardNavigationController *leaderboardNavigationController = [[LeaderboardNavigationController alloc] initWithRootViewController:leaderboardView];
     [self presentViewController:leaderboardNavigationController animated:YES completion:nil];
 }
@@ -44,10 +43,13 @@
 {
     [super viewDidLoad];
 
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    int petStatusViewHeight = 100;
+    int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
+    
+    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, petStatusViewHeight)];
     [self.view addSubview:petStatusView];
     
-    battleTableView = [[BattleTableView alloc] initWithFrame:CGRectMake(0, 100, 320, self.view.bounds.size.height)];
+    battleTableView = [[BattleTableView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100 - navHeight)];
     [self.view addSubview:battleTableView];
 
     battleTableView.dataSource = self;
@@ -62,18 +64,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = @"identifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [battleButton setFrame:CGRectMake(220, 20, 80, 40)];
+        [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
+        [cell addSubview:battleButton];
     }
-    
-    UIButton *battleButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 5, 40, 20)];
-    [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [battleButton setTag:numberOfCells++];
-    [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
-    [cell.contentView addSubview:battleButton];
 
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", battleButton.tag];
-    
+    [cell setTag:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"Opponent #%d", cell.tag];
     return cell;
 }
 
@@ -83,7 +87,9 @@
     CGPoint buttonPosition = [selector convertPoint:CGPointZero toView:battleTableView];
     NSIndexPath *indexPath = [battleTableView indexPathForRowAtPoint:buttonPosition];
     if (indexPath != nil) {
-        NSLog(@"%@", indexPath);
+        NSLog(@"%d", indexPath.row);
+        InBattleViewController *inBattleViewController = [[InBattleViewController alloc] init];
+        [self presentViewController:inBattleViewController animated:YES completion:nil];
     }
 }
 

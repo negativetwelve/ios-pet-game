@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D16F5CF176AFDE300C7C4F7 /* InBattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5CE176AFDE300C7C4F7 /* InBattleViewController.m */; };
+		4D16F5D3176AFE1D00C7C4F7 /* BattleAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5D2176AFE1D00C7C4F7 /* BattleAnimationView.m */; };
+		4D16F5D6176AFE3900C7C4F7 /* BattleOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5D5176AFE3900C7C4F7 /* BattleOptionsView.m */; };
+		4D16F5D9176AFE5800C7C4F7 /* PetSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5D8176AFE5800C7C4F7 /* PetSelectionView.m */; };
+		4D16F5DC176AFE6400C7C4F7 /* AttackSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5DB176AFE6400C7C4F7 /* AttackSelectionView.m */; };
+		4D16F5DF176AFE7100C7C4F7 /* RunSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5DE176AFE7100C7C4F7 /* RunSelectionView.m */; };
+		4D16F5E1176B00E100C7C4F7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D16F5E0176B00E100C7C4F7 /* QuartzCore.framework */; };
 		4D4F59DF176830E400E81980 /* SwitchPetsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */; };
 		4D4F59E4176830F900E81980 /* SwitchPetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */; };
 		4D4F59E91768348F00E81980 /* PetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E81768348F00E81980 /* PetStatusView.m */; };
@@ -64,6 +71,20 @@
 
 /* Begin PBXFileReference section */
 		2B13AD4A5B084F8897E72219 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		4D16F5CD176AFDE300C7C4F7 /* InBattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InBattleViewController.h; sourceTree = "<group>"; };
+		4D16F5CE176AFDE300C7C4F7 /* InBattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InBattleViewController.m; sourceTree = "<group>"; };
+		4D16F5D1176AFE1D00C7C4F7 /* BattleAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleAnimationView.h; sourceTree = "<group>"; };
+		4D16F5D2176AFE1D00C7C4F7 /* BattleAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleAnimationView.m; sourceTree = "<group>"; };
+		4D16F5D4176AFE3900C7C4F7 /* BattleOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleOptionsView.h; sourceTree = "<group>"; };
+		4D16F5D5176AFE3900C7C4F7 /* BattleOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleOptionsView.m; sourceTree = "<group>"; };
+		4D16F5D7176AFE5800C7C4F7 /* PetSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetSelectionView.h; sourceTree = "<group>"; };
+		4D16F5D8176AFE5800C7C4F7 /* PetSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetSelectionView.m; sourceTree = "<group>"; };
+		4D16F5DA176AFE6400C7C4F7 /* AttackSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttackSelectionView.h; sourceTree = "<group>"; };
+		4D16F5DB176AFE6400C7C4F7 /* AttackSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttackSelectionView.m; sourceTree = "<group>"; };
+		4D16F5DD176AFE7100C7C4F7 /* RunSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunSelectionView.h; sourceTree = "<group>"; };
+		4D16F5DE176AFE7100C7C4F7 /* RunSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunSelectionView.m; sourceTree = "<group>"; };
+		4D16F5E0176B00E100C7C4F7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4D16F5E2176B05F600C7C4F7 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4D4F59DC176830E400E81980 /* SwitchPetsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsNavigationController.h; sourceTree = "<group>"; };
 		4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchPetsNavigationController.m; sourceTree = "<group>"; };
 		4D4F59E1176830F900E81980 /* SwitchPetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsViewController.h; sourceTree = "<group>"; };
@@ -141,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D16F5E1176B00E100C7C4F7 /* QuartzCore.framework in Frameworks */,
 				4D9402061766E51D00898DCF /* UIKit.framework in Frameworks */,
 				4D9402081766E51D00898DCF /* Foundation.framework in Frameworks */,
 				4D94020A1766E51D00898DCF /* CoreGraphics.framework in Frameworks */,
@@ -161,6 +183,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D16F5D0176AFDEA00C7C4F7 /* InBattle */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F5CD176AFDE300C7C4F7 /* InBattleViewController.h */,
+				4D16F5CE176AFDE300C7C4F7 /* InBattleViewController.m */,
+				4D16F5D1176AFE1D00C7C4F7 /* BattleAnimationView.h */,
+				4D16F5D2176AFE1D00C7C4F7 /* BattleAnimationView.m */,
+				4D16F5D4176AFE3900C7C4F7 /* BattleOptionsView.h */,
+				4D16F5D5176AFE3900C7C4F7 /* BattleOptionsView.m */,
+				4D16F5D7176AFE5800C7C4F7 /* PetSelectionView.h */,
+				4D16F5D8176AFE5800C7C4F7 /* PetSelectionView.m */,
+				4D16F5DA176AFE6400C7C4F7 /* AttackSelectionView.h */,
+				4D16F5DB176AFE6400C7C4F7 /* AttackSelectionView.m */,
+				4D16F5DD176AFE7100C7C4F7 /* RunSelectionView.h */,
+				4D16F5DE176AFE7100C7C4F7 /* RunSelectionView.m */,
+			);
+			name = InBattle;
+			sourceTree = "<group>";
+		};
 		4D4F59DB176830BE00E81980 /* Help */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +275,7 @@
 		4D9402041766E51D00898DCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D16F5E0176B00E100C7C4F7 /* QuartzCore.framework */,
 				4D9402051766E51D00898DCF /* UIKit.framework */,
 				4D9402071766E51D00898DCF /* Foundation.framework */,
 				4D9402091766E51D00898DCF /* CoreGraphics.framework */,
@@ -254,6 +296,7 @@
 				4D94024E1766E5C100898DCF /* Navigator */,
 				4D9402141766E51D00898DCF /* AppDelegate.h */,
 				4D9402151766E51D00898DCF /* AppDelegate.m */,
+				4D16F5E2176B05F600C7C4F7 /* Constants.h */,
 				4D94020C1766E51D00898DCF /* Supporting Files */,
 			);
 			path = PetsAlliance;
@@ -313,6 +356,7 @@
 		4D9402501766E5C100898DCF /* Battle */ = {
 			isa = PBXGroup;
 			children = (
+				4D16F5D0176AFDEA00C7C4F7 /* InBattle */,
 				4D4F5A151769B0AE00E81980 /* BattleViewController.h */,
 				4D4F5A161769B0AE00E81980 /* BattleViewController.m */,
 				4D4F5A121769B06200E81980 /* BattleTableView.h */,
@@ -537,6 +581,12 @@
 				4D4F5A231769B41500E81980 /* ItemsViewController.m in Sources */,
 				4D4F5A271769B43200E81980 /* ItemsTableView.m in Sources */,
 				4D4F5A2A1769B44E00E81980 /* ItemsNavigationScrollView.m in Sources */,
+				4D16F5CF176AFDE300C7C4F7 /* InBattleViewController.m in Sources */,
+				4D16F5D3176AFE1D00C7C4F7 /* BattleAnimationView.m in Sources */,
+				4D16F5D6176AFE3900C7C4F7 /* BattleOptionsView.m in Sources */,
+				4D16F5D9176AFE5800C7C4F7 /* PetSelectionView.m in Sources */,
+				4D16F5DC176AFE6400C7C4F7 /* AttackSelectionView.m in Sources */,
+				4D16F5DF176AFE7100C7C4F7 /* RunSelectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

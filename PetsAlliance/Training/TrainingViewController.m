@@ -27,10 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    
+    int petStatusViewHeight = 100;
+    int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
+
+    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, petStatusViewHeight)];
     [self.view addSubview:petStatusView];
     
-    UITableView *trainingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, 320, 400)];
+    UITableView *trainingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - navHeight - 100)];
     [self.view addSubview:trainingTableView];
 }
 

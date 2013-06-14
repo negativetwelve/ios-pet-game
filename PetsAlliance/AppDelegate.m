@@ -23,13 +23,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
     // Override point for customization after application launch.
     
-    UIViewController *myPetViewController = [[MyPetViewController alloc] initWithNibName:@"MyPetViewController" bundle:nil];
-    UIViewController *trainingViewController = [[TrainingViewController alloc] initWithNibName:@"TrainingViewController" bundle:nil];
-    UIViewController *battleViewController = [[BattleViewController alloc] initWithNibName:@"BattleViewController" bundle:nil];
-    UIViewController *theMasterViewController = [[TheMasterViewController alloc] initWithNibName:@"TheMasterViewController" bundle:nil];
-    UIViewController *navigatorViewController = [[NavigatorViewController alloc] initWithNibName:@"NavigatorViewController" bundle:nil];
+    UIViewController *myPetViewController = [[MyPetViewController alloc] init];
+    UIViewController *trainingViewController = [[TrainingViewController alloc] init];
+    UIViewController *battleViewController = [[BattleViewController alloc] init];
+    UIViewController *theMasterViewController = [[TheMasterViewController alloc] init];
+    UIViewController *navigatorViewController = [[NavigatorViewController alloc] init];
     
     UINavigationController *myPetNavigationController = [[MyPetNavigationController alloc] initWithRootViewController:myPetViewController];
     UINavigationController *trainingNavigationController = [[TrainingNavigationController alloc] initWithRootViewController:trainingViewController];

@@ -15,6 +15,8 @@
 #import "ItemsNavigationController.h"
 #import "ItemsViewController.h"
 
+#import "InBattleViewController.h"
+
 @interface BattleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UITableView *battleTableView;
     int numberOfCells;

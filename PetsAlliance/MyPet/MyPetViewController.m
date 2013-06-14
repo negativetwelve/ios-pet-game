@@ -28,10 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    int petStatusViewHeight = 100;
+    int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
+    
+    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, petStatusViewHeight)];
     [self.view addSubview:petStatusView];
     
-    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height)];
+    UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100 - navHeight)];
     scrollView.scrollEnabled = YES;
     scrollView.pagingEnabled = NO;
     scrollView.showsVerticalScrollIndicator = YES;
@@ -73,7 +76,7 @@
 
 - (void)myItemsAction: (id) selector {
     NSLog(@"clicked on my items button");
-    ItemsViewController *itemsViewController = [[ItemsViewController alloc] initWithNibName:@"ItemsViewController" bundle:nil];
+    ItemsViewController *itemsViewController = [[ItemsViewController alloc] init];
     ItemsNavigationController *itemsNavigationController = [[ItemsNavigationController alloc] initWithRootViewController:itemsViewController];
     [self presentViewController:itemsNavigationController animated:YES completion:nil];
 }
@@ -89,14 +92,14 @@
 
 - (void)switchPets: (id) selector {
     NSLog(@"Opened the switchPets view");
-    SwitchPetsViewController *switchPetsView = [[SwitchPetsViewController alloc] initWithNibName:@"SwitchPetsViewController" bundle:nil];
+    SwitchPetsViewController *switchPetsView = [[SwitchPetsViewController alloc] init];
     SwitchPetsNavigationController *switchPetsNavigationController = [[SwitchPetsNavigationController alloc] initWithRootViewController:switchPetsView];
     [self presentViewController:switchPetsNavigationController animated:YES completion:nil];
 }
 
 - (void)viewHelp: (id) selector {
     NSLog(@"Opended the Help view");
-    HelpViewController *helpView = [[HelpViewController alloc] initWithNibName:@"HelpViewController" bundle:nil];
+    HelpViewController *helpView = [[HelpViewController alloc] init];
     HelpNavigationController *helpNavgationController = [[HelpNavigationController alloc] initWithRootViewController:helpView];
     [self presentViewController:helpNavgationController animated:YES completion:nil];
 }

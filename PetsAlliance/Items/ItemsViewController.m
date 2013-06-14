@@ -34,13 +34,17 @@
 {
     [super viewDidLoad];
     
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    int petStatusViewHeight = 100;
+    int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
+    
+    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, petStatusViewHeight)];
     [self.view addSubview:petStatusView];
     
-    ItemsNavigationScrollView *itemsNavigationScrollView = [[ItemsNavigationScrollView alloc] initWithFrame:CGRectMake(0, 100, 320, 30)];
+    int itemsNavigationHeight = 30;
+    ItemsNavigationScrollView *itemsNavigationScrollView = [[ItemsNavigationScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, itemsNavigationHeight)];
     [self.view addSubview:itemsNavigationScrollView];
     
-    ItemsTableView *itemsTableView = [[ItemsTableView alloc] initWithFrame:CGRectMake(0, 130, 320, self.view.bounds.size.height)];
+    ItemsTableView *itemsTableView = [[ItemsTableView alloc] initWithFrame:CGRectMake(0, 100 + itemsNavigationHeight, self.view.frame.size.width, self.view.frame.size.height - navHeight - 100 - itemsNavigationHeight)];
     [self.view addSubview:itemsTableView];
 }
 
