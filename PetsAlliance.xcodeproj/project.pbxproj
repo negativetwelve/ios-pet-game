@@ -8,31 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		4D4F59DF176830E400E81980 /* SwitchPetsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */; };
-		4D4F59E0176830E400E81980 /* SwitchPetsNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59DE176830E400E81980 /* SwitchPetsNavigationController.xib */; };
 		4D4F59E4176830F900E81980 /* SwitchPetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */; };
-		4D4F59E5176830F900E81980 /* SwitchPetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59E3176830F900E81980 /* SwitchPetsViewController.xib */; };
 		4D4F59E91768348F00E81980 /* PetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E81768348F00E81980 /* PetStatusView.m */; };
 		4D4F59ED1768547700E81980 /* TrainingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59EB1768547700E81980 /* TrainingNavigationController.m */; };
-		4D4F59EE1768547700E81980 /* TrainingNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59EC1768547700E81980 /* TrainingNavigationController.xib */; };
 		4D4F59F21768555E00E81980 /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59F01768555E00E81980 /* TrainingViewController.m */; };
-		4D4F59F31768555E00E81980 /* TrainingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59F11768555E00E81980 /* TrainingViewController.xib */; };
 		4D4F59F61768559C00E81980 /* TrainingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59F51768559C00E81980 /* TrainingTableView.m */; };
 		4D4F59F917685D5700E81980 /* StatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59F817685D5700E81980 /* StatusLabel.m */; };
 		4D4F5A00176973E000E81980 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59FE176973E000E81980 /* cat.png */; };
 		4D4F5A01176973E000E81980 /* dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59FF176973E000E81980 /* dragon.png */; };
 		4D4F5A051769AD8A00E81980 /* BattleNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A031769AD8A00E81980 /* BattleNavigationController.m */; };
-		4D4F5A061769AD8A00E81980 /* BattleNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F5A041769AD8A00E81980 /* BattleNavigationController.xib */; };
 		4D4F5A0A1769AEC000E81980 /* LeaderboardNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A081769AEC000E81980 /* LeaderboardNavigationController.m */; };
-		4D4F5A0B1769AEC000E81980 /* LeaderboardNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F5A091769AEC000E81980 /* LeaderboardNavigationController.xib */; };
 		4D4F5A101769AEFA00E81980 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A0E1769AEFA00E81980 /* LeaderboardViewController.m */; };
-		4D4F5A111769AEFA00E81980 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F5A0F1769AEFA00E81980 /* LeaderboardViewController.xib */; };
 		4D4F5A141769B06200E81980 /* BattleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A131769B06200E81980 /* BattleTableView.m */; };
 		4D4F5A181769B0AF00E81980 /* BattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A161769B0AE00E81980 /* BattleViewController.m */; };
-		4D4F5A191769B0AF00E81980 /* BattleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F5A171769B0AE00E81980 /* BattleViewController.xib */; };
 		4D4F5A1D1769B2EE00E81980 /* ItemsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A1B1769B2EE00E81980 /* ItemsNavigationController.m */; };
-		4D4F5A1E1769B2EE00E81980 /* ItemsNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F5A1C1769B2EE00E81980 /* ItemsNavigationController.xib */; };
 		4D4F5A231769B41500E81980 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A211769B41500E81980 /* ItemsViewController.m */; };
-		4D4F5A241769B41500E81980 /* ItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F5A221769B41500E81980 /* ItemsViewController.xib */; };
 		4D4F5A271769B43200E81980 /* ItemsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A261769B43200E81980 /* ItemsTableView.m */; };
 		4D4F5A2A1769B44E00E81980 /* ItemsNavigationScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */; };
 		4D9402061766E51D00898DCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402051766E51D00898DCF /* UIKit.framework */; };
@@ -54,17 +44,11 @@
 		4D9402421766E51D00898DCF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D9402401766E51D00898DCF /* InfoPlist.strings */; };
 		4D9402451766E51D00898DCF /* PetsAllianceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9402441766E51D00898DCF /* PetsAllianceTests.m */; };
 		4D94025B1766E63400898DCF /* MyPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9402591766E63400898DCF /* MyPetViewController.m */; };
-		4D94025C1766E63400898DCF /* MyPetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D94025A1766E63400898DCF /* MyPetViewController.xib */; };
 		4D9402661766E88B00898DCF /* TheMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9402641766E88B00898DCF /* TheMasterViewController.m */; };
-		4D9402671766E88B00898DCF /* TheMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9402651766E88B00898DCF /* TheMasterViewController.xib */; };
 		4D94026B1766E89800898DCF /* NavigatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9402691766E89800898DCF /* NavigatorViewController.m */; };
-		4D94026C1766E89800898DCF /* NavigatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D94026A1766E89800898DCF /* NavigatorViewController.xib */; };
 		4DFD49391767142300EEAFA7 /* MyPetNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */; };
-		4DFD493A1767142300EEAFA7 /* MyPetNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFD49381767142300EEAFA7 /* MyPetNavigationController.xib */; };
 		4DFD493E1767144000EEAFA7 /* HelpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */; };
-		4DFD493F1767144000EEAFA7 /* HelpNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFD493D1767144000EEAFA7 /* HelpNavigationController.xib */; };
 		4DFD49431767144F00EEAFA7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49411767144E00EEAFA7 /* HelpViewController.m */; };
-		4DFD49441767144F00EEAFA7 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DFD49421767144E00EEAFA7 /* HelpViewController.xib */; };
 		F713AD5B92C5487781B1D33C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48D5C73D21F4318BA08DD1F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -82,18 +66,14 @@
 		2B13AD4A5B084F8897E72219 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		4D4F59DC176830E400E81980 /* SwitchPetsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsNavigationController.h; sourceTree = "<group>"; };
 		4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchPetsNavigationController.m; sourceTree = "<group>"; };
-		4D4F59DE176830E400E81980 /* SwitchPetsNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchPetsNavigationController.xib; sourceTree = "<group>"; };
 		4D4F59E1176830F900E81980 /* SwitchPetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsViewController.h; sourceTree = "<group>"; };
 		4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchPetsViewController.m; sourceTree = "<group>"; };
-		4D4F59E3176830F900E81980 /* SwitchPetsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchPetsViewController.xib; sourceTree = "<group>"; };
 		4D4F59E71768348F00E81980 /* PetStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetStatusView.h; sourceTree = "<group>"; };
 		4D4F59E81768348F00E81980 /* PetStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetStatusView.m; sourceTree = "<group>"; };
 		4D4F59EA1768547700E81980 /* TrainingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingNavigationController.h; sourceTree = "<group>"; };
 		4D4F59EB1768547700E81980 /* TrainingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingNavigationController.m; sourceTree = "<group>"; };
-		4D4F59EC1768547700E81980 /* TrainingNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrainingNavigationController.xib; sourceTree = "<group>"; };
 		4D4F59EF1768555E00E81980 /* TrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingViewController.h; sourceTree = "<group>"; };
 		4D4F59F01768555E00E81980 /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingViewController.m; sourceTree = "<group>"; };
-		4D4F59F11768555E00E81980 /* TrainingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrainingViewController.xib; sourceTree = "<group>"; };
 		4D4F59F41768559C00E81980 /* TrainingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTableView.h; sourceTree = "<group>"; };
 		4D4F59F51768559C00E81980 /* TrainingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTableView.m; sourceTree = "<group>"; };
 		4D4F59F717685D5700E81980 /* StatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusLabel.h; sourceTree = "<group>"; };
@@ -102,24 +82,18 @@
 		4D4F59FF176973E000E81980 /* dragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragon.png; path = MyPet/Images/dragon.png; sourceTree = "<group>"; };
 		4D4F5A021769AD8A00E81980 /* BattleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleNavigationController.h; sourceTree = "<group>"; };
 		4D4F5A031769AD8A00E81980 /* BattleNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleNavigationController.m; sourceTree = "<group>"; };
-		4D4F5A041769AD8A00E81980 /* BattleNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleNavigationController.xib; sourceTree = "<group>"; };
 		4D4F5A071769AEC000E81980 /* LeaderboardNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardNavigationController.h; sourceTree = "<group>"; };
 		4D4F5A081769AEC000E81980 /* LeaderboardNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardNavigationController.m; sourceTree = "<group>"; };
-		4D4F5A091769AEC000E81980 /* LeaderboardNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderboardNavigationController.xib; sourceTree = "<group>"; };
 		4D4F5A0D1769AEFA00E81980 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
 		4D4F5A0E1769AEFA00E81980 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
-		4D4F5A0F1769AEFA00E81980 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
 		4D4F5A121769B06200E81980 /* BattleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleTableView.h; sourceTree = "<group>"; };
 		4D4F5A131769B06200E81980 /* BattleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleTableView.m; sourceTree = "<group>"; };
 		4D4F5A151769B0AE00E81980 /* BattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleViewController.h; sourceTree = "<group>"; };
 		4D4F5A161769B0AE00E81980 /* BattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
-		4D4F5A171769B0AE00E81980 /* BattleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BattleViewController.xib; sourceTree = "<group>"; };
 		4D4F5A1A1769B2EE00E81980 /* ItemsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsNavigationController.h; path = PetsAlliance/Items/ItemsNavigationController.h; sourceTree = SOURCE_ROOT; };
 		4D4F5A1B1769B2EE00E81980 /* ItemsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsNavigationController.m; path = PetsAlliance/Items/ItemsNavigationController.m; sourceTree = SOURCE_ROOT; };
-		4D4F5A1C1769B2EE00E81980 /* ItemsNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemsNavigationController.xib; path = PetsAlliance/Items/ItemsNavigationController.xib; sourceTree = SOURCE_ROOT; };
 		4D4F5A201769B41500E81980 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsViewController.h; path = PetsAlliance/Items/ItemsViewController.h; sourceTree = SOURCE_ROOT; };
 		4D4F5A211769B41500E81980 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsViewController.m; path = PetsAlliance/Items/ItemsViewController.m; sourceTree = SOURCE_ROOT; };
-		4D4F5A221769B41500E81980 /* ItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemsViewController.xib; path = PetsAlliance/Items/ItemsViewController.xib; sourceTree = SOURCE_ROOT; };
 		4D4F5A251769B43200E81980 /* ItemsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsTableView.h; path = PetsAlliance/Items/ItemsTableView.h; sourceTree = SOURCE_ROOT; };
 		4D4F5A261769B43200E81980 /* ItemsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsTableView.m; path = PetsAlliance/Items/ItemsTableView.m; sourceTree = SOURCE_ROOT; };
 		4D4F5A281769B44E00E81980 /* ItemsNavigationScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsNavigationScrollView.h; path = PetsAlliance/Items/ItemsNavigationScrollView.h; sourceTree = SOURCE_ROOT; };
@@ -149,22 +123,16 @@
 		4D9402441766E51D00898DCF /* PetsAllianceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetsAllianceTests.m; sourceTree = "<group>"; };
 		4D9402581766E63400898DCF /* MyPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPetViewController.h; sourceTree = "<group>"; };
 		4D9402591766E63400898DCF /* MyPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPetViewController.m; sourceTree = "<group>"; };
-		4D94025A1766E63400898DCF /* MyPetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPetViewController.xib; sourceTree = "<group>"; };
 		4D9402631766E88B00898DCF /* TheMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMasterViewController.h; sourceTree = "<group>"; };
 		4D9402641766E88B00898DCF /* TheMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMasterViewController.m; sourceTree = "<group>"; };
-		4D9402651766E88B00898DCF /* TheMasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TheMasterViewController.xib; sourceTree = "<group>"; };
 		4D9402681766E89800898DCF /* NavigatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigatorViewController.h; sourceTree = "<group>"; };
 		4D9402691766E89800898DCF /* NavigatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigatorViewController.m; sourceTree = "<group>"; };
-		4D94026A1766E89800898DCF /* NavigatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigatorViewController.xib; sourceTree = "<group>"; };
 		4DFD49361767142300EEAFA7 /* MyPetNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPetNavigationController.h; sourceTree = "<group>"; };
 		4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPetNavigationController.m; sourceTree = "<group>"; };
-		4DFD49381767142300EEAFA7 /* MyPetNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPetNavigationController.xib; sourceTree = "<group>"; };
 		4DFD493B1767144000EEAFA7 /* HelpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpNavigationController.h; sourceTree = "<group>"; };
 		4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpNavigationController.m; sourceTree = "<group>"; };
-		4DFD493D1767144000EEAFA7 /* HelpNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpNavigationController.xib; sourceTree = "<group>"; };
 		4DFD49401767144E00EEAFA7 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		4DFD49411767144E00EEAFA7 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
-		4DFD49421767144E00EEAFA7 /* HelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
 		E48D5C73D21F4318BA08DD1F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -198,10 +166,8 @@
 			children = (
 				4DFD493B1767144000EEAFA7 /* HelpNavigationController.h */,
 				4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */,
-				4DFD493D1767144000EEAFA7 /* HelpNavigationController.xib */,
 				4DFD49401767144E00EEAFA7 /* HelpViewController.h */,
 				4DFD49411767144E00EEAFA7 /* HelpViewController.m */,
-				4DFD49421767144E00EEAFA7 /* HelpViewController.xib */,
 			);
 			name = Help;
 			sourceTree = "<group>";
@@ -211,10 +177,8 @@
 			children = (
 				4D4F59DC176830E400E81980 /* SwitchPetsNavigationController.h */,
 				4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */,
-				4D4F59DE176830E400E81980 /* SwitchPetsNavigationController.xib */,
 				4D4F59E1176830F900E81980 /* SwitchPetsViewController.h */,
 				4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */,
-				4D4F59E3176830F900E81980 /* SwitchPetsViewController.xib */,
 			);
 			name = SwitchPets;
 			sourceTree = "<group>";
@@ -224,10 +188,8 @@
 			children = (
 				4D4F5A0D1769AEFA00E81980 /* LeaderboardViewController.h */,
 				4D4F5A0E1769AEFA00E81980 /* LeaderboardViewController.m */,
-				4D4F5A0F1769AEFA00E81980 /* LeaderboardViewController.xib */,
 				4D4F5A071769AEC000E81980 /* LeaderboardNavigationController.h */,
 				4D4F5A081769AEC000E81980 /* LeaderboardNavigationController.m */,
-				4D4F5A091769AEC000E81980 /* LeaderboardNavigationController.xib */,
 			);
 			name = Leaderboard;
 			sourceTree = "<group>";
@@ -237,14 +199,12 @@
 			children = (
 				4D4F5A201769B41500E81980 /* ItemsViewController.h */,
 				4D4F5A211769B41500E81980 /* ItemsViewController.m */,
-				4D4F5A221769B41500E81980 /* ItemsViewController.xib */,
 				4D4F5A251769B43200E81980 /* ItemsTableView.h */,
 				4D4F5A261769B43200E81980 /* ItemsTableView.m */,
 				4D4F5A281769B44E00E81980 /* ItemsNavigationScrollView.h */,
 				4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */,
 				4D4F5A1A1769B2EE00E81980 /* ItemsNavigationController.h */,
 				4D4F5A1B1769B2EE00E81980 /* ItemsNavigationController.m */,
-				4D4F5A1C1769B2EE00E81980 /* ItemsNavigationController.xib */,
 			);
 			name = Items;
 			path = MyPet;
@@ -337,7 +297,6 @@
 			children = (
 				4D9402681766E89800898DCF /* NavigatorViewController.h */,
 				4D9402691766E89800898DCF /* NavigatorViewController.m */,
-				4D94026A1766E89800898DCF /* NavigatorViewController.xib */,
 			);
 			path = Navigator;
 			sourceTree = "<group>";
@@ -347,7 +306,6 @@
 			children = (
 				4D9402631766E88B00898DCF /* TheMasterViewController.h */,
 				4D9402641766E88B00898DCF /* TheMasterViewController.m */,
-				4D9402651766E88B00898DCF /* TheMasterViewController.xib */,
 			);
 			path = TheMaster;
 			sourceTree = "<group>";
@@ -357,12 +315,10 @@
 			children = (
 				4D4F5A151769B0AE00E81980 /* BattleViewController.h */,
 				4D4F5A161769B0AE00E81980 /* BattleViewController.m */,
-				4D4F5A171769B0AE00E81980 /* BattleViewController.xib */,
 				4D4F5A121769B06200E81980 /* BattleTableView.h */,
 				4D4F5A131769B06200E81980 /* BattleTableView.m */,
 				4D4F5A021769AD8A00E81980 /* BattleNavigationController.h */,
 				4D4F5A031769AD8A00E81980 /* BattleNavigationController.m */,
-				4D4F5A041769AD8A00E81980 /* BattleNavigationController.xib */,
 				4D4F5A0C1769AECA00E81980 /* Leaderboard */,
 			);
 			path = Battle;
@@ -373,10 +329,8 @@
 			children = (
 				4D4F59EF1768555E00E81980 /* TrainingViewController.h */,
 				4D4F59F01768555E00E81980 /* TrainingViewController.m */,
-				4D4F59F11768555E00E81980 /* TrainingViewController.xib */,
 				4D4F59EA1768547700E81980 /* TrainingNavigationController.h */,
 				4D4F59EB1768547700E81980 /* TrainingNavigationController.m */,
-				4D4F59EC1768547700E81980 /* TrainingNavigationController.xib */,
 				4D4F59F41768559C00E81980 /* TrainingTableView.h */,
 				4D4F59F51768559C00E81980 /* TrainingTableView.m */,
 			);
@@ -388,10 +342,8 @@
 			children = (
 				4D9402581766E63400898DCF /* MyPetViewController.h */,
 				4D9402591766E63400898DCF /* MyPetViewController.m */,
-				4D94025A1766E63400898DCF /* MyPetViewController.xib */,
 				4DFD49361767142300EEAFA7 /* MyPetNavigationController.h */,
 				4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */,
-				4DFD49381767142300EEAFA7 /* MyPetNavigationController.xib */,
 				4D4F59E71768348F00E81980 /* PetStatusView.h */,
 				4D4F59E81768348F00E81980 /* PetStatusView.m */,
 				4D4F59F717685D5700E81980 /* StatusLabel.h */,
@@ -497,24 +449,8 @@
 				4D9402231766E51D00898DCF /* first@2x.png in Resources */,
 				4D9402281766E51D00898DCF /* second.png in Resources */,
 				4D94022A1766E51D00898DCF /* second@2x.png in Resources */,
-				4D94025C1766E63400898DCF /* MyPetViewController.xib in Resources */,
-				4D9402671766E88B00898DCF /* TheMasterViewController.xib in Resources */,
-				4D94026C1766E89800898DCF /* NavigatorViewController.xib in Resources */,
-				4DFD493A1767142300EEAFA7 /* MyPetNavigationController.xib in Resources */,
-				4DFD493F1767144000EEAFA7 /* HelpNavigationController.xib in Resources */,
-				4DFD49441767144F00EEAFA7 /* HelpViewController.xib in Resources */,
-				4D4F59E0176830E400E81980 /* SwitchPetsNavigationController.xib in Resources */,
-				4D4F59E5176830F900E81980 /* SwitchPetsViewController.xib in Resources */,
-				4D4F59EE1768547700E81980 /* TrainingNavigationController.xib in Resources */,
-				4D4F59F31768555E00E81980 /* TrainingViewController.xib in Resources */,
 				4D4F5A00176973E000E81980 /* cat.png in Resources */,
 				4D4F5A01176973E000E81980 /* dragon.png in Resources */,
-				4D4F5A061769AD8A00E81980 /* BattleNavigationController.xib in Resources */,
-				4D4F5A0B1769AEC000E81980 /* LeaderboardNavigationController.xib in Resources */,
-				4D4F5A111769AEFA00E81980 /* LeaderboardViewController.xib in Resources */,
-				4D4F5A191769B0AF00E81980 /* BattleViewController.xib in Resources */,
-				4D4F5A1E1769B2EE00E81980 /* ItemsNavigationController.xib in Resources */,
-				4D4F5A241769B41500E81980 /* ItemsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
