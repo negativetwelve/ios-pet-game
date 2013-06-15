@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InBattleViewController.h"
+
 
 @interface BattleOptionsView : UIView
 

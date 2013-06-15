@@ -20,7 +20,7 @@
         UIButton *switchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         UIButton *itemsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         UIButton *runButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-
+        
         if (IS_IPHONE5) {
             [attackButton setFrame:CGRectMake(30, 44, 120, 80)];
             [switchButton setFrame:CGRectMake(160, 44, 120, 80)];
@@ -50,6 +50,31 @@
         
     }
     return self;
+}
+
+- (void)attackButtonPressed: (id)selector {
+    NSLog(@"attack button pressed");
+    UIView *battleOptionsView = ((UIButton *)selector).superview;
+    AttackSelectionView *attackSelectionView = [[AttackSelectionView alloc] initWithFrame:battleOptionsView.frame];
+
+    UIView *containerView = battleOptionsView.superview;
+    [UIView transitionWithView:containerView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{ [battleOptionsView removeFromSuperview]; [containerView addSubview:attackSelectionView]; }
+                    completion:NULL];
+}
+
+- (void)switchButtonPressed: (id)selector {
+    NSLog(@"switch button pressed");
+}
+
+- (void)itemsButtonPressed: (id)selector {
+    NSLog(@"items button pressed");
+}
+
+- (void)runButtonPressed: (id)selector {
+    NSLog(@"run button pressed");
 }
 
 /*
