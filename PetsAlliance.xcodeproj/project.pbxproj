@@ -192,10 +192,10 @@
 				4D16F5D2176AFE1D00C7C4F7 /* BattleAnimationView.m */,
 				4D16F5D4176AFE3900C7C4F7 /* BattleOptionsView.h */,
 				4D16F5D5176AFE3900C7C4F7 /* BattleOptionsView.m */,
-				4D16F5D7176AFE5800C7C4F7 /* PetSelectionView.h */,
-				4D16F5D8176AFE5800C7C4F7 /* PetSelectionView.m */,
 				4D16F5DA176AFE6400C7C4F7 /* AttackSelectionView.h */,
 				4D16F5DB176AFE6400C7C4F7 /* AttackSelectionView.m */,
+				4D16F5D7176AFE5800C7C4F7 /* PetSelectionView.h */,
+				4D16F5D8176AFE5800C7C4F7 /* PetSelectionView.m */,
 				4D16F5DD176AFE7100C7C4F7 /* RunSelectionView.h */,
 				4D16F5DE176AFE7100C7C4F7 /* RunSelectionView.m */,
 			);

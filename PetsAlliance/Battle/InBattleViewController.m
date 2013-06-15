@@ -34,6 +34,7 @@
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, battleAnimationHeight, self.view.frame.size.width, self.view.frame.size.height - battleAnimationHeight)];
     containerView.backgroundColor = [UIColor whiteColor];
     BattleOptionsView *battleOptionsView = [[BattleOptionsView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [battleOptionsView setInBattleController:self];
     [containerView addSubview:battleOptionsView];
 
     [self.view addSubview:containerView];

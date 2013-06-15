@@ -9,6 +9,7 @@
 #import "BattleOptionsView.h"
 
 @implementation BattleOptionsView
+@synthesize inBattleController = _inBattleController;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -71,6 +72,10 @@
 
 - (void)itemsButtonPressed: (id)selector {
     NSLog(@"items button pressed");
+    
+    ItemsViewController *itemsViewController = [[ItemsViewController alloc] init];
+    ItemsNavigationController *itemsNavigationController = [[ItemsNavigationController alloc] initWithRootViewController:itemsViewController];
+    [self.inBattleController presentViewController:itemsNavigationController animated:YES completion:nil];
 }
 
 - (void)runButtonPressed: (id)selector {

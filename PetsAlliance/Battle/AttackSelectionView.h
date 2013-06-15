@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "BattleOptionsview.h"
+
 @interface AttackSelectionView : UIView
 
 @end

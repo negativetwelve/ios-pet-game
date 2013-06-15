@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "InBattleViewController.h"
 
+#import "ItemsNavigationController.h"
+#import "ItemsViewController.h"
 
-@interface BattleOptionsView : UIView
+
+@interface BattleOptionsView : UIView {
+    UIViewController *inBattleController;
+}
+
+@property (nonatomic, assign) UIViewController *inBattleController;
 
 @end
