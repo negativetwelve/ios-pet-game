@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BattleOptionsView.h"
 
-@interface RunSelectionView : UIView
+@interface RunSelectionView : UIView {
+    UIViewController *inBattleController;
+}
+
+@property (nonatomic, assign) UIViewController *inBattleController;
 
 @end

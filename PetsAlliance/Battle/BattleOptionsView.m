@@ -57,13 +57,10 @@
     NSLog(@"attack button pressed");
     UIView *battleOptionsView = ((UIButton *)selector).superview;
     AttackSelectionView *attackSelectionView = [[AttackSelectionView alloc] initWithFrame:battleOptionsView.frame];
+    [attackSelectionView setInBattleController:self.inBattleController];
 
     UIView *containerView = battleOptionsView.superview;
-    [UIView transitionWithView:containerView
-                      duration:0.5
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    animations:^{ [battleOptionsView removeFromSuperview]; [containerView addSubview:attackSelectionView]; }
-                    completion:NULL];
+    [self transitionFlipLeft:containerView:battleOptionsView:attackSelectionView];
 }
 
 - (void)switchButtonPressed: (id)selector {
@@ -80,6 +77,20 @@
 
 - (void)runButtonPressed: (id)selector {
     NSLog(@"run button pressed");
+    UIView *battleOptionsView = ((UIButton *)selector).superview;
+    RunSelectionView *runSelectionView = [[RunSelectionView alloc] initWithFrame:battleOptionsView.frame];
+    [runSelectionView setInBattleController:self.inBattleController];
+
+    UIView *containerView = battleOptionsView.superview;
+    [self transitionFlipLeft:containerView:battleOptionsView:runSelectionView];
+}
+
+- (void)transitionFlipLeft: (UIView *)containerView :(UIView *)fromView :(UIView *)toView {
+    [UIView transitionWithView:containerView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{ [fromView removeFromSuperview]; [containerView addSubview:toView]; }
+                    completion:NULL];
 }
 
 /*

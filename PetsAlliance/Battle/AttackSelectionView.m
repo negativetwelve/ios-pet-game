@@ -9,6 +9,7 @@
 #import "AttackSelectionView.h"
 
 @implementation AttackSelectionView
+@synthesize inBattleController = _inBattleController;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -61,7 +62,8 @@
 
     UIView *attackSelectionView = ((UIButton *)selector).superview;
     BattleOptionsView *battleOptionsView = [[BattleOptionsView alloc] initWithFrame:attackSelectionView.frame];
-    
+    [battleOptionsView setInBattleController:self.inBattleController];
+
     UIView *containerView = attackSelectionView.superview;
     [UIView transitionWithView:containerView
                       duration:0.5

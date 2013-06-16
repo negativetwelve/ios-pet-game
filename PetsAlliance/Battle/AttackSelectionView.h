@@ -10,6 +10,10 @@
 
 #import "BattleOptionsview.h"
 
-@interface AttackSelectionView : UIView
+@interface AttackSelectionView : UIView {
+    UIViewController *inBattleController;
+}
+
+@property (nonatomic, assign) UIViewController *inBattleController;
 
 @end
