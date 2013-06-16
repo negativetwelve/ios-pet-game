@@ -74,22 +74,22 @@
 
 - (void)attack1ButtonPressed: (id)selector {
     NSLog(@"attack 1 button pressed");
-    UIView *attackSelectionView = ((UIButton *)selector).superview;
+    //UIView *attackSelectionView = ((UIButton *)selector).superview;
 }
 
 - (void)attack2ButtonPressed: (id)selector {
     NSLog(@"attack 2 button pressed");
-    UIView *attackSelectionView = ((UIButton *)selector).superview;
+    //UIView *attackSelectionView = ((UIButton *)selector).superview;
 }
 
 - (void)attack3ButtonPressed: (id)selector {
     NSLog(@"attack 3 button pressed");
-    UIView *attackSelectionView = ((UIButton *)selector).superview;
+    //UIView *attackSelectionView = ((UIButton *)selector).superview;
 }
 
 - (void)attack4ButtonPressed: (id)selector {
     NSLog(@"attack 4 button pressed");
-    UIView *attackSelectionView = ((UIButton *)selector).superview;
+    //UIView *attackSelectionView = ((UIButton *)selector).superview;
 }
 
 @end
