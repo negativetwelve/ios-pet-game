@@ -13,6 +13,8 @@
 @end
 
 @implementation BattleViewController
+@synthesize rowHeights = _rowHeights;
+@synthesize battleTableView = _battleTableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +23,10 @@
         self.title = @"Battle";
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"My Items" style:UIBarButtonItemStyleBordered target:self action:@selector(viewMyItems:)];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Leaderboard" style:UIBarButtonItemStyleDone target:self action:@selector(viewLeaderboard:)];
+        self.rowHeights = [[NSMutableArray alloc] init];
+        for (NSUInteger i = 0; i < 10; i++) {
+            [self.rowHeights addObject:[NSNumber numberWithFloat:100]];
+        }
     }
     return self;
 }
@@ -50,6 +56,7 @@
     [self.view addSubview:petStatusView];
     
     battleTableView = [[BattleTableView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100 - navHeight)];
+    [self setBattleTableView:battleTableView];
     [self.view addSubview:battleTableView];
 
     battleTableView.dataSource = self;
@@ -70,17 +77,59 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [battleButton setFrame:CGRectMake(220, 20, 80, 40)];
+        [battleButton setFrame:CGRectMake(220, 21, 80, 37)];
         [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
+        [battleButton setNuiClass:@"SecondaryButton"];
+        
         [cell addSubview:battleButton];
+        
+        UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 40, 60)];
+        [character setImage:[UIImage imageNamed:@"male.png"]];
+        [cell addSubview:character];
+        
+        UIButton *firstPetButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [firstPetButton setNuiClass:@"ImageButon"];
+        [firstPetButton setFrame:CGRectMake(50, 10, 50, 50)];
+        [firstPetButton setBackgroundImage:[UIImage imageNamed:@"dragon.png"] forState:UIControlStateNormal];
+        [firstPetButton addTarget:self action:@selector(firstPetSelected:) forControlEvents:UIControlEventTouchUpInside];
+        [cell addSubview:firstPetButton];
+        
+        UIImageView *secondPet = [[UIImageView alloc] initWithFrame:CGRectMake(105, 10, 50, 50)];
+        [secondPet setImage:[UIImage imageNamed:@"cat.png"]];
+        [cell addSubview:secondPet];
+        
+        UIImageView *thirdPet = [[UIImageView alloc] initWithFrame:CGRectMake(160, 10, 50, 50)];
+        [thirdPet setImage:[UIImage imageNamed:@"cat.png"]];
+        [cell addSubview:thirdPet];
+        
+        UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(5, 65, 60, 15)];
+        [username setText:@"Username"];
+        [username setNuiClass:@"Label:BattleUsername"];
+        [cell addSubview:username];
     }
-
-    [cell setTag:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"Opponent #%d", cell.tag];
+    cell.tag = indexPath.row;
     return cell;
 }
 
+- (void)updateTable: (UITableView *)tableView {
+    [tableView beginUpdates];
+    [tableView endUpdates];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[self.rowHeights objectAtIndex:indexPath.row] floatValue];
+}
+
+- (void)firstPetSelected: (id)selector {
+    NSLog(@"first pet selected");
+    UITableViewCell *selected = ((UITableViewCell *)selector).superview;
+    NSLog(@"%d", selected.tag);
+    [self.rowHeights setObject:[NSNumber numberWithFloat:[[self.rowHeights objectAtIndex:selected.tag] floatValue] + 50] atIndexedSubscript:selected.tag];
+    NSLog(@"%@", self.rowHeights);
+    [self.battleTableView beginUpdates];
+    [self.battleTableView endUpdates];
+}
 
 - (void)battleButtonPressed: (id)selector {
     NSLog(@"battle button pressed");

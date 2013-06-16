@@ -13,6 +13,8 @@
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
+        [NUISettings init];
+        [NUISettings setAutoUpdatePath:@"/Users/mark/dropbox/projects/ios-pet-game/PetsAlliance/Resources/Stylesheets/custom.nss"];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

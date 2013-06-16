@@ -25,6 +25,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     // Override point for customization after application launch.
+    [NUISettings initWithStylesheet:@"custom"];
     
     UIViewController *myPetViewController = [[MyPetViewController alloc] init];
     UIViewController *trainingViewController = [[TrainingViewController alloc] init];

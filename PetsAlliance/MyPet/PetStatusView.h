@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "StatusLabel.h"
+#import "UIButton+NUI.h"
+#import "UILabel+NUI.h"
+#import "UITextField+NUI.h"
 
 @interface PetStatusView : UIView
 

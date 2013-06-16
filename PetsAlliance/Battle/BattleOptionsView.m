@@ -27,11 +27,21 @@
             [switchButton setFrame:CGRectMake(160, 44, 120, 80)];
             [itemsButton setFrame:CGRectMake(30, 148, 120, 80)];
             [runButton setFrame:CGRectMake(160, 148, 120, 80)];
+            
+            [attackButton setNuiClass:@"Button:BattleOptionsButton"];
+            [switchButton setNuiClass:@"Button:BattleOptionsButton"];
+            [itemsButton setNuiClass:@"Button:BattleOptionsButton"];
+            [runButton setNuiClass:@"Button:BattleOptionsButton"];
         } else {
             [attackButton setFrame:CGRectMake(30, 30, 120, 50)];
             [switchButton setFrame:CGRectMake(160, 30, 120, 50)];
             [itemsButton setFrame:CGRectMake(30, 100, 120, 50)];
             [runButton setFrame:CGRectMake(160, 100, 120, 50)];
+            
+            [attackButton setNuiClass:@"Button:BattleOptionsButton4"];
+            [switchButton setNuiClass:@"Button:BattleOptionsButton4"];
+            [itemsButton setNuiClass:@"Button:BattleOptionsButton4"];
+            [runButton setNuiClass:@"Button:BattleOptionsButton4"];
         }
         
         [attackButton addTarget:self action:@selector(attackButtonPressed:) forControlEvents:UIControlEventTouchUpInside];

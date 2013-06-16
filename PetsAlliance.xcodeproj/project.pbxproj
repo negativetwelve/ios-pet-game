@@ -14,15 +14,106 @@
 		4D16F5DC176AFE6400C7C4F7 /* AttackSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5DB176AFE6400C7C4F7 /* AttackSelectionView.m */; };
 		4D16F5DF176AFE7100C7C4F7 /* RunSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5DE176AFE7100C7C4F7 /* RunSelectionView.m */; };
 		4D16F5E1176B00E100C7C4F7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D16F5E0176B00E100C7C4F7 /* QuartzCore.framework */; };
+		4D16F5E8176D45B400C7C4F7 /* HelpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5E7176D45B400C7C4F7 /* HelpView.m */; };
+		4D16F5F5176D63DC00C7C4F7 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5EE176D63DC00C7C4F7 /* first.png */; };
+		4D16F5F6176D63DC00C7C4F7 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5EF176D63DC00C7C4F7 /* first@2x.png */; };
+		4D16F5F7176D63DC00C7C4F7 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5F1176D63DC00C7C4F7 /* cat.png */; };
+		4D16F5F8176D63DC00C7C4F7 /* dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5F2176D63DC00C7C4F7 /* dragon.png */; };
+		4D16F5F9176D63DC00C7C4F7 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5F3176D63DC00C7C4F7 /* second.png */; };
+		4D16F5FA176D63DC00C7C4F7 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5F4176D63DC00C7C4F7 /* second@2x.png */; };
+		4D16F618176D640D00C7C4F7 /* greyButton@2xpng in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5FB176D640D00C7C4F7 /* greyButton@2xpng */; };
+		4D16F619176D640D00C7C4F7 /* greyButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5FC176D640D00C7C4F7 /* greyButtonHighlight@2x.png */; };
+		4D16F61A176D640D00C7C4F7 /* whiteButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5FD176D640D00C7C4F7 /* whiteButton@2x.png */; };
+		4D16F61B176D640D00C7C4F7 /* whiteButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5FE176D640D00C7C4F7 /* whiteButtonHighlight@2x.png */; };
+		4D16F61C176D640D00C7C4F7 /* blueButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F5FF176D640D00C7C4F7 /* blueButton@2x.png */; };
+		4D16F61D176D640D00C7C4F7 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F600176D640D00C7C4F7 /* blueButton.png */; };
+		4D16F61E176D640D00C7C4F7 /* blueButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F601176D640D00C7C4F7 /* blueButtonHighlight@2x.png */; };
+		4D16F61F176D640D00C7C4F7 /* greenButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F602176D640D00C7C4F7 /* greenButton@2x.png */; };
+		4D16F620176D640D00C7C4F7 /* greenButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F603176D640D00C7C4F7 /* greenButtonHighlight@2x.png */; };
+		4D16F621176D640D00C7C4F7 /* blackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F604176D640D00C7C4F7 /* blackButton@2x.png */; };
+		4D16F622176D640D00C7C4F7 /* blackButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F605176D640D00C7C4F7 /* blackButtonHighlight@2x.png */; };
+		4D16F623176D640D00C7C4F7 /* tanButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F606176D640D00C7C4F7 /* tanButtonHighlight@2x.png */; };
+		4D16F624176D640D00C7C4F7 /* tanButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F607176D640D00C7C4F7 /* tanButton@2x.png */; };
+		4D16F625176D640D00C7C4F7 /* tanButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F608176D640D00C7C4F7 /* tanButton.png */; };
+		4D16F626176D640D00C7C4F7 /* tanButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F609176D640D00C7C4F7 /* tanButtonHighlight.png */; };
+		4D16F627176D640D00C7C4F7 /* blackButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F60A176D640D00C7C4F7 /* blackButtonHighlight.png */; };
+		4D16F628176D640D00C7C4F7 /* blackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F60B176D640D00C7C4F7 /* blackButton.png */; };
+		4D16F629176D640D00C7C4F7 /* greenButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F60C176D640D00C7C4F7 /* greenButtonHighlight.png */; };
+		4D16F62A176D640D00C7C4F7 /* greenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F60D176D640D00C7C4F7 /* greenButton.png */; };
+		4D16F62B176D640D00C7C4F7 /* blueButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F60E176D640D00C7C4F7 /* blueButtonHighlight.png */; };
+		4D16F62C176D640D00C7C4F7 /* whiteButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F60F176D640D00C7C4F7 /* whiteButtonHighlight.png */; };
+		4D16F62D176D640D00C7C4F7 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F610176D640D00C7C4F7 /* whiteButton.png */; };
+		4D16F62E176D640D00C7C4F7 /* orangeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F611176D640D00C7C4F7 /* orangeButton@2x.png */; };
+		4D16F62F176D640D00C7C4F7 /* orangeButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F612176D640D00C7C4F7 /* orangeButtonHighlight@2x.png */; };
+		4D16F630176D640D00C7C4F7 /* greyButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F613176D640D00C7C4F7 /* greyButton@2x.png */; };
+		4D16F631176D640D00C7C4F7 /* greyButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F614176D640D00C7C4F7 /* greyButtonHighlight.png */; };
+		4D16F632176D640D00C7C4F7 /* greyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F615176D640D00C7C4F7 /* greyButton.png */; };
+		4D16F633176D640D00C7C4F7 /* orangeButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F616176D640D00C7C4F7 /* orangeButtonHighlight.png */; };
+		4D16F634176D640D00C7C4F7 /* orangeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F617176D640D00C7C4F7 /* orangeButton.png */; };
+		4D16F6A4176D6AC000C7C4F7 /* NUIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F63E176D6AC000C7C4F7 /* NUIAppearance.m */; };
+		4D16F6A5176D6AC000C7C4F7 /* NUIConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F640176D6AC000C7C4F7 /* NUIConverter.m */; };
+		4D16F6A6176D6AC000C7C4F7 /* NUIFileMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F642176D6AC000C7C4F7 /* NUIFileMonitor.m */; };
+		4D16F6A7176D6AC000C7C4F7 /* NUIGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F644176D6AC000C7C4F7 /* NUIGraphics.m */; };
+		4D16F6A8176D6AC000C7C4F7 /* NUIRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F646176D6AC000C7C4F7 /* NUIRenderer.m */; };
+		4D16F6A9176D6AC000C7C4F7 /* NUISettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F648176D6AC000C7C4F7 /* NUISettings.m */; };
+		4D16F6AA176D6AC000C7C4F7 /* NUIStyleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F64A176D6AC000C7C4F7 /* NUIStyleParser.m */; };
+		4D16F6AB176D6AC000C7C4F7 /* NUISwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F64C176D6AC000C7C4F7 /* NUISwizzler.m */; };
+		4D16F6AC176D6AC000C7C4F7 /* NUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F64E176D6AC000C7C4F7 /* NUIUtilities.m */; };
+		4D16F6AD176D6AC000C7C4F7 /* NUIBarButtonItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F651176D6AC000C7C4F7 /* NUIBarButtonItemRenderer.m */; };
+		4D16F6AE176D6AC000C7C4F7 /* NUIButtonRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F653176D6AC000C7C4F7 /* NUIButtonRenderer.m */; };
+		4D16F6AF176D6AC000C7C4F7 /* NUIControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F655176D6AC000C7C4F7 /* NUIControlRenderer.m */; };
+		4D16F6B0176D6AC000C7C4F7 /* NUILabelRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F657176D6AC000C7C4F7 /* NUILabelRenderer.m */; };
+		4D16F6B1176D6AC000C7C4F7 /* NUINavigationBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F659176D6AC000C7C4F7 /* NUINavigationBarRenderer.m */; };
+		4D16F6B2176D6AC000C7C4F7 /* NUINavigationItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F65B176D6AC000C7C4F7 /* NUINavigationItemRenderer.m */; };
+		4D16F6B3176D6AC000C7C4F7 /* NUIProgressViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F65D176D6AC000C7C4F7 /* NUIProgressViewRenderer.m */; };
+		4D16F6B4176D6AC000C7C4F7 /* NUISearchBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F65F176D6AC000C7C4F7 /* NUISearchBarRenderer.m */; };
+		4D16F6B5176D6AC000C7C4F7 /* NUISegmentedControlRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F661176D6AC000C7C4F7 /* NUISegmentedControlRenderer.m */; };
+		4D16F6B6176D6AC000C7C4F7 /* NUISliderRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F663176D6AC000C7C4F7 /* NUISliderRenderer.m */; };
+		4D16F6B7176D6AC000C7C4F7 /* NUISwitchRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F665176D6AC000C7C4F7 /* NUISwitchRenderer.m */; };
+		4D16F6B8176D6AC000C7C4F7 /* NUITabBarItemRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F667176D6AC000C7C4F7 /* NUITabBarItemRenderer.m */; };
+		4D16F6B9176D6AC000C7C4F7 /* NUITabBarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F669176D6AC000C7C4F7 /* NUITabBarRenderer.m */; };
+		4D16F6BA176D6AC000C7C4F7 /* NUITableViewCellRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F66B176D6AC000C7C4F7 /* NUITableViewCellRenderer.m */; };
+		4D16F6BB176D6AC000C7C4F7 /* NUITextFieldRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F66D176D6AC000C7C4F7 /* NUITextFieldRenderer.m */; };
+		4D16F6BC176D6AC000C7C4F7 /* NUIToolbarRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F66F176D6AC000C7C4F7 /* NUIToolbarRenderer.m */; };
+		4D16F6BD176D6AC000C7C4F7 /* NUIViewRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F671176D6AC000C7C4F7 /* NUIViewRenderer.m */; };
+		4D16F6BE176D6AC000C7C4F7 /* NUIWindowRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F673176D6AC000C7C4F7 /* NUIWindowRenderer.m */; };
+		4D16F6BF176D6AC000C7C4F7 /* NUIStyle.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F674176D6AC000C7C4F7 /* NUIStyle.nss */; };
+		4D16F6C0176D6AC000C7C4F7 /* NUIViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F676176D6AC000C7C4F7 /* NUIViewBackground.png */; };
+		4D16F6C1176D6AC000C7C4F7 /* Blue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F678176D6AC000C7C4F7 /* Blue.NUI.nss */; };
+		4D16F6C2176D6AC000C7C4F7 /* Default.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F679176D6AC000C7C4F7 /* Default.NUI.nss */; };
+		4D16F6C3176D6AC000C7C4F7 /* Googolplex.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F67A176D6AC000C7C4F7 /* Googolplex.NUI.nss */; };
+		4D16F6C4176D6AC000C7C4F7 /* Round.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F67B176D6AC000C7C4F7 /* Round.NUI.nss */; };
+		4D16F6C5176D6AC000C7C4F7 /* Route.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F67C176D6AC000C7C4F7 /* Route.NUI.nss */; };
+		4D16F6C6176D6AC000C7C4F7 /* SkyBlue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F67D176D6AC000C7C4F7 /* SkyBlue.NUI.nss */; };
+		4D16F6C7176D6AC000C7C4F7 /* Switchboard.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F67E176D6AC000C7C4F7 /* Switchboard.NUI.nss */; };
+		4D16F6C8176D6AC000C7C4F7 /* UIBarButtonItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F681176D6AC000C7C4F7 /* UIBarButtonItem+NUI.m */; };
+		4D16F6C9176D6AC000C7C4F7 /* UIButton+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F683176D6AC000C7C4F7 /* UIButton+NUI.m */; };
+		4D16F6CA176D6AC000C7C4F7 /* UIControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F685176D6AC000C7C4F7 /* UIControl+NUI.m */; };
+		4D16F6CB176D6AC000C7C4F7 /* UILabel+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F687176D6AC000C7C4F7 /* UILabel+NUI.m */; };
+		4D16F6CC176D6AC000C7C4F7 /* UINavigationBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F689176D6AC000C7C4F7 /* UINavigationBar+NUI.m */; };
+		4D16F6CD176D6AC000C7C4F7 /* UINavigationItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F68B176D6AC000C7C4F7 /* UINavigationItem+NUI.m */; };
+		4D16F6CE176D6AC000C7C4F7 /* UIProgressView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F68D176D6AC000C7C4F7 /* UIProgressView+NUI.m */; };
+		4D16F6CF176D6AC000C7C4F7 /* UISearchBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F68F176D6AC000C7C4F7 /* UISearchBar+NUI.m */; };
+		4D16F6D0176D6AC000C7C4F7 /* UISegmentedControl+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F691176D6AC000C7C4F7 /* UISegmentedControl+NUI.m */; };
+		4D16F6D1176D6AC000C7C4F7 /* UISlider+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F693176D6AC000C7C4F7 /* UISlider+NUI.m */; };
+		4D16F6D2176D6AC000C7C4F7 /* UISwitch+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F695176D6AC000C7C4F7 /* UISwitch+NUI.m */; };
+		4D16F6D3176D6AC000C7C4F7 /* UITabBar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F697176D6AC000C7C4F7 /* UITabBar+NUI.m */; };
+		4D16F6D4176D6AC000C7C4F7 /* UITabBarItem+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F699176D6AC000C7C4F7 /* UITabBarItem+NUI.m */; };
+		4D16F6D5176D6AC000C7C4F7 /* UITableViewCell+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F69B176D6AC000C7C4F7 /* UITableViewCell+NUI.m */; };
+		4D16F6D6176D6AC000C7C4F7 /* UITextField+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F69D176D6AC000C7C4F7 /* UITextField+NUI.m */; };
+		4D16F6D7176D6AC000C7C4F7 /* UIToolbar+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F69F176D6AC000C7C4F7 /* UIToolbar+NUI.m */; };
+		4D16F6D8176D6AC000C7C4F7 /* UIView+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F6A1176D6AC000C7C4F7 /* UIView+NUI.m */; };
+		4D16F6D9176D6AC000C7C4F7 /* UIWindow+NUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F6A3176D6AC000C7C4F7 /* UIWindow+NUI.m */; };
+		4D16F6DC176D6B0A00C7C4F7 /* custom.nss in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F6DA176D6B0A00C7C4F7 /* custom.nss */; };
+		4D16F6DF176D6B5F00C7C4F7 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D16F6DD176D6B3000C7C4F7 /* CoreImage.framework */; };
+		4D16F6E2176D8A5400C7C4F7 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F6E0176D8A5400C7C4F7 /* male.png */; };
+		4D16F6E3176D8A5400C7C4F7 /* male@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F6E1176D8A5400C7C4F7 /* male@2x.png */; };
 		4D4F59DF176830E400E81980 /* SwitchPetsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */; };
 		4D4F59E4176830F900E81980 /* SwitchPetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */; };
 		4D4F59E91768348F00E81980 /* PetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E81768348F00E81980 /* PetStatusView.m */; };
 		4D4F59ED1768547700E81980 /* TrainingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59EB1768547700E81980 /* TrainingNavigationController.m */; };
 		4D4F59F21768555E00E81980 /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59F01768555E00E81980 /* TrainingViewController.m */; };
 		4D4F59F61768559C00E81980 /* TrainingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59F51768559C00E81980 /* TrainingTableView.m */; };
-		4D4F59F917685D5700E81980 /* StatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59F817685D5700E81980 /* StatusLabel.m */; };
-		4D4F5A00176973E000E81980 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59FE176973E000E81980 /* cat.png */; };
-		4D4F5A01176973E000E81980 /* dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D4F59FF176973E000E81980 /* dragon.png */; };
 		4D4F5A051769AD8A00E81980 /* BattleNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A031769AD8A00E81980 /* BattleNavigationController.m */; };
 		4D4F5A0A1769AEC000E81980 /* LeaderboardNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A081769AEC000E81980 /* LeaderboardNavigationController.m */; };
 		4D4F5A101769AEFA00E81980 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A0E1769AEFA00E81980 /* LeaderboardViewController.m */; };
@@ -41,10 +132,6 @@
 		4D9402181766E51D00898DCF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9402171766E51D00898DCF /* Default.png */; };
 		4D94021A1766E51D00898DCF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9402191766E51D00898DCF /* Default@2x.png */; };
 		4D94021C1766E51D00898DCF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D94021B1766E51D00898DCF /* Default-568h@2x.png */; };
-		4D9402211766E51D00898DCF /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9402201766E51D00898DCF /* first.png */; };
-		4D9402231766E51D00898DCF /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9402221766E51D00898DCF /* first@2x.png */; };
-		4D9402281766E51D00898DCF /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9402271766E51D00898DCF /* second.png */; };
-		4D94022A1766E51D00898DCF /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9402291766E51D00898DCF /* second@2x.png */; };
 		4D9402381766E51D00898DCF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402371766E51D00898DCF /* SenTestingKit.framework */; };
 		4D9402391766E51D00898DCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402051766E51D00898DCF /* UIKit.framework */; };
 		4D94023A1766E51D00898DCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402071766E51D00898DCF /* Foundation.framework */; };
@@ -85,6 +172,146 @@
 		4D16F5DE176AFE7100C7C4F7 /* RunSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunSelectionView.m; sourceTree = "<group>"; };
 		4D16F5E0176B00E100C7C4F7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4D16F5E2176B05F600C7C4F7 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4D16F5E6176D45B300C7C4F7 /* HelpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpView.h; sourceTree = "<group>"; };
+		4D16F5E7176D45B400C7C4F7 /* HelpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpView.m; sourceTree = "<group>"; };
+		4D16F5EE176D63DC00C7C4F7 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		4D16F5EF176D63DC00C7C4F7 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		4D16F5F1176D63DC00C7C4F7 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
+		4D16F5F2176D63DC00C7C4F7 /* dragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dragon.png; sourceTree = "<group>"; };
+		4D16F5F3176D63DC00C7C4F7 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		4D16F5F4176D63DC00C7C4F7 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		4D16F5FB176D640D00C7C4F7 /* greyButton@2xpng */ = {isa = PBXFileReference; lastKnownFileType = file; path = "greyButton@2xpng"; sourceTree = "<group>"; };
+		4D16F5FC176D640D00C7C4F7 /* greyButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		4D16F5FD176D640D00C7C4F7 /* whiteButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteButton@2x.png"; sourceTree = "<group>"; };
+		4D16F5FE176D640D00C7C4F7 /* whiteButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		4D16F5FF176D640D00C7C4F7 /* blueButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButton@2x.png"; sourceTree = "<group>"; };
+		4D16F600176D640D00C7C4F7 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
+		4D16F601176D640D00C7C4F7 /* blueButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		4D16F602176D640D00C7C4F7 /* greenButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButton@2x.png"; sourceTree = "<group>"; };
+		4D16F603176D640D00C7C4F7 /* greenButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greenButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		4D16F604176D640D00C7C4F7 /* blackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButton@2x.png"; sourceTree = "<group>"; };
+		4D16F605176D640D00C7C4F7 /* blackButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		4D16F606176D640D00C7C4F7 /* tanButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tanButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		4D16F607176D640D00C7C4F7 /* tanButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tanButton@2x.png"; sourceTree = "<group>"; };
+		4D16F608176D640D00C7C4F7 /* tanButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanButton.png; sourceTree = "<group>"; };
+		4D16F609176D640D00C7C4F7 /* tanButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tanButtonHighlight.png; sourceTree = "<group>"; };
+		4D16F60A176D640D00C7C4F7 /* blackButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButtonHighlight.png; sourceTree = "<group>"; };
+		4D16F60B176D640D00C7C4F7 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButton.png; sourceTree = "<group>"; };
+		4D16F60C176D640D00C7C4F7 /* greenButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButtonHighlight.png; sourceTree = "<group>"; };
+		4D16F60D176D640D00C7C4F7 /* greenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenButton.png; sourceTree = "<group>"; };
+		4D16F60E176D640D00C7C4F7 /* blueButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButtonHighlight.png; sourceTree = "<group>"; };
+		4D16F60F176D640D00C7C4F7 /* whiteButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButtonHighlight.png; sourceTree = "<group>"; };
+		4D16F610176D640D00C7C4F7 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
+		4D16F611176D640D00C7C4F7 /* orangeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButton@2x.png"; sourceTree = "<group>"; };
+		4D16F612176D640D00C7C4F7 /* orangeButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		4D16F613176D640D00C7C4F7 /* greyButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButton@2x.png"; sourceTree = "<group>"; };
+		4D16F614176D640D00C7C4F7 /* greyButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButtonHighlight.png; sourceTree = "<group>"; };
+		4D16F615176D640D00C7C4F7 /* greyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButton.png; sourceTree = "<group>"; };
+		4D16F616176D640D00C7C4F7 /* orangeButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButtonHighlight.png; sourceTree = "<group>"; };
+		4D16F617176D640D00C7C4F7 /* orangeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButton.png; sourceTree = "<group>"; };
+		4D16F63D176D6AC000C7C4F7 /* NUIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIAppearance.h; sourceTree = "<group>"; };
+		4D16F63E176D6AC000C7C4F7 /* NUIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIAppearance.m; sourceTree = "<group>"; };
+		4D16F63F176D6AC000C7C4F7 /* NUIConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIConverter.h; sourceTree = "<group>"; };
+		4D16F640176D6AC000C7C4F7 /* NUIConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIConverter.m; sourceTree = "<group>"; };
+		4D16F641176D6AC000C7C4F7 /* NUIFileMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIFileMonitor.h; sourceTree = "<group>"; };
+		4D16F642176D6AC000C7C4F7 /* NUIFileMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIFileMonitor.m; sourceTree = "<group>"; };
+		4D16F643176D6AC000C7C4F7 /* NUIGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIGraphics.h; sourceTree = "<group>"; };
+		4D16F644176D6AC000C7C4F7 /* NUIGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIGraphics.m; sourceTree = "<group>"; };
+		4D16F645176D6AC000C7C4F7 /* NUIRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIRenderer.h; sourceTree = "<group>"; };
+		4D16F646176D6AC000C7C4F7 /* NUIRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIRenderer.m; sourceTree = "<group>"; };
+		4D16F647176D6AC000C7C4F7 /* NUISettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISettings.h; sourceTree = "<group>"; };
+		4D16F648176D6AC000C7C4F7 /* NUISettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISettings.m; sourceTree = "<group>"; };
+		4D16F649176D6AC000C7C4F7 /* NUIStyleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIStyleParser.h; sourceTree = "<group>"; };
+		4D16F64A176D6AC000C7C4F7 /* NUIStyleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIStyleParser.m; sourceTree = "<group>"; };
+		4D16F64B176D6AC000C7C4F7 /* NUISwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwizzler.h; sourceTree = "<group>"; };
+		4D16F64C176D6AC000C7C4F7 /* NUISwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwizzler.m; sourceTree = "<group>"; };
+		4D16F64D176D6AC000C7C4F7 /* NUIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIUtilities.h; sourceTree = "<group>"; };
+		4D16F64E176D6AC000C7C4F7 /* NUIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIUtilities.m; sourceTree = "<group>"; };
+		4D16F650176D6AC000C7C4F7 /* NUIBarButtonItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIBarButtonItemRenderer.h; sourceTree = "<group>"; };
+		4D16F651176D6AC000C7C4F7 /* NUIBarButtonItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIBarButtonItemRenderer.m; sourceTree = "<group>"; };
+		4D16F652176D6AC000C7C4F7 /* NUIButtonRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIButtonRenderer.h; sourceTree = "<group>"; };
+		4D16F653176D6AC000C7C4F7 /* NUIButtonRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIButtonRenderer.m; sourceTree = "<group>"; };
+		4D16F654176D6AC000C7C4F7 /* NUIControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIControlRenderer.h; sourceTree = "<group>"; };
+		4D16F655176D6AC000C7C4F7 /* NUIControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIControlRenderer.m; sourceTree = "<group>"; };
+		4D16F656176D6AC000C7C4F7 /* NUILabelRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUILabelRenderer.h; sourceTree = "<group>"; };
+		4D16F657176D6AC000C7C4F7 /* NUILabelRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUILabelRenderer.m; sourceTree = "<group>"; };
+		4D16F658176D6AC000C7C4F7 /* NUINavigationBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUINavigationBarRenderer.h; sourceTree = "<group>"; };
+		4D16F659176D6AC000C7C4F7 /* NUINavigationBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUINavigationBarRenderer.m; sourceTree = "<group>"; };
+		4D16F65A176D6AC000C7C4F7 /* NUINavigationItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUINavigationItemRenderer.h; sourceTree = "<group>"; };
+		4D16F65B176D6AC000C7C4F7 /* NUINavigationItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUINavigationItemRenderer.m; sourceTree = "<group>"; };
+		4D16F65C176D6AC000C7C4F7 /* NUIProgressViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIProgressViewRenderer.h; sourceTree = "<group>"; };
+		4D16F65D176D6AC000C7C4F7 /* NUIProgressViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIProgressViewRenderer.m; sourceTree = "<group>"; };
+		4D16F65E176D6AC000C7C4F7 /* NUISearchBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISearchBarRenderer.h; sourceTree = "<group>"; };
+		4D16F65F176D6AC000C7C4F7 /* NUISearchBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISearchBarRenderer.m; sourceTree = "<group>"; };
+		4D16F660176D6AC000C7C4F7 /* NUISegmentedControlRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISegmentedControlRenderer.h; sourceTree = "<group>"; };
+		4D16F661176D6AC000C7C4F7 /* NUISegmentedControlRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISegmentedControlRenderer.m; sourceTree = "<group>"; };
+		4D16F662176D6AC000C7C4F7 /* NUISliderRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISliderRenderer.h; sourceTree = "<group>"; };
+		4D16F663176D6AC000C7C4F7 /* NUISliderRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISliderRenderer.m; sourceTree = "<group>"; };
+		4D16F664176D6AC000C7C4F7 /* NUISwitchRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUISwitchRenderer.h; sourceTree = "<group>"; };
+		4D16F665176D6AC000C7C4F7 /* NUISwitchRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUISwitchRenderer.m; sourceTree = "<group>"; };
+		4D16F666176D6AC000C7C4F7 /* NUITabBarItemRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITabBarItemRenderer.h; sourceTree = "<group>"; };
+		4D16F667176D6AC000C7C4F7 /* NUITabBarItemRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarItemRenderer.m; sourceTree = "<group>"; };
+		4D16F668176D6AC000C7C4F7 /* NUITabBarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITabBarRenderer.h; sourceTree = "<group>"; };
+		4D16F669176D6AC000C7C4F7 /* NUITabBarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITabBarRenderer.m; sourceTree = "<group>"; };
+		4D16F66A176D6AC000C7C4F7 /* NUITableViewCellRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITableViewCellRenderer.h; sourceTree = "<group>"; };
+		4D16F66B176D6AC000C7C4F7 /* NUITableViewCellRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITableViewCellRenderer.m; sourceTree = "<group>"; };
+		4D16F66C176D6AC000C7C4F7 /* NUITextFieldRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUITextFieldRenderer.h; sourceTree = "<group>"; };
+		4D16F66D176D6AC000C7C4F7 /* NUITextFieldRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUITextFieldRenderer.m; sourceTree = "<group>"; };
+		4D16F66E176D6AC000C7C4F7 /* NUIToolbarRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIToolbarRenderer.h; sourceTree = "<group>"; };
+		4D16F66F176D6AC000C7C4F7 /* NUIToolbarRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIToolbarRenderer.m; sourceTree = "<group>"; };
+		4D16F670176D6AC000C7C4F7 /* NUIViewRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIViewRenderer.h; sourceTree = "<group>"; };
+		4D16F671176D6AC000C7C4F7 /* NUIViewRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIViewRenderer.m; sourceTree = "<group>"; };
+		4D16F672176D6AC000C7C4F7 /* NUIWindowRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NUIWindowRenderer.h; sourceTree = "<group>"; };
+		4D16F673176D6AC000C7C4F7 /* NUIWindowRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NUIWindowRenderer.m; sourceTree = "<group>"; };
+		4D16F674176D6AC000C7C4F7 /* NUIStyle.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NUIStyle.nss; sourceTree = "<group>"; };
+		4D16F676176D6AC000C7C4F7 /* NUIViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NUIViewBackground.png; sourceTree = "<group>"; };
+		4D16F678176D6AC000C7C4F7 /* Blue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blue.NUI.nss; sourceTree = "<group>"; };
+		4D16F679176D6AC000C7C4F7 /* Default.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Default.NUI.nss; sourceTree = "<group>"; };
+		4D16F67A176D6AC000C7C4F7 /* Googolplex.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Googolplex.NUI.nss; sourceTree = "<group>"; };
+		4D16F67B176D6AC000C7C4F7 /* Round.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Round.NUI.nss; sourceTree = "<group>"; };
+		4D16F67C176D6AC000C7C4F7 /* Route.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Route.NUI.nss; sourceTree = "<group>"; };
+		4D16F67D176D6AC000C7C4F7 /* SkyBlue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBlue.NUI.nss; sourceTree = "<group>"; };
+		4D16F67E176D6AC000C7C4F7 /* Switchboard.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Switchboard.NUI.nss; sourceTree = "<group>"; };
+		4D16F680176D6AC000C7C4F7 /* UIBarButtonItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+NUI.h"; sourceTree = "<group>"; };
+		4D16F681176D6AC000C7C4F7 /* UIBarButtonItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+NUI.m"; sourceTree = "<group>"; };
+		4D16F682176D6AC000C7C4F7 /* UIButton+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+NUI.h"; sourceTree = "<group>"; };
+		4D16F683176D6AC000C7C4F7 /* UIButton+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+NUI.m"; sourceTree = "<group>"; };
+		4D16F684176D6AC000C7C4F7 /* UIControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+NUI.h"; sourceTree = "<group>"; };
+		4D16F685176D6AC000C7C4F7 /* UIControl+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+NUI.m"; sourceTree = "<group>"; };
+		4D16F686176D6AC000C7C4F7 /* UILabel+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+NUI.h"; sourceTree = "<group>"; };
+		4D16F687176D6AC000C7C4F7 /* UILabel+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+NUI.m"; sourceTree = "<group>"; };
+		4D16F688176D6AC000C7C4F7 /* UINavigationBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NUI.h"; sourceTree = "<group>"; };
+		4D16F689176D6AC000C7C4F7 /* UINavigationBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NUI.m"; sourceTree = "<group>"; };
+		4D16F68A176D6AC000C7C4F7 /* UINavigationItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NUI.h"; sourceTree = "<group>"; };
+		4D16F68B176D6AC000C7C4F7 /* UINavigationItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NUI.m"; sourceTree = "<group>"; };
+		4D16F68C176D6AC000C7C4F7 /* UIProgressView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+NUI.h"; sourceTree = "<group>"; };
+		4D16F68D176D6AC000C7C4F7 /* UIProgressView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+NUI.m"; sourceTree = "<group>"; };
+		4D16F68E176D6AC000C7C4F7 /* UISearchBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+NUI.h"; sourceTree = "<group>"; };
+		4D16F68F176D6AC000C7C4F7 /* UISearchBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+NUI.m"; sourceTree = "<group>"; };
+		4D16F690176D6AC000C7C4F7 /* UISegmentedControl+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISegmentedControl+NUI.h"; sourceTree = "<group>"; };
+		4D16F691176D6AC000C7C4F7 /* UISegmentedControl+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISegmentedControl+NUI.m"; sourceTree = "<group>"; };
+		4D16F692176D6AC000C7C4F7 /* UISlider+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+NUI.h"; sourceTree = "<group>"; };
+		4D16F693176D6AC000C7C4F7 /* UISlider+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+NUI.m"; sourceTree = "<group>"; };
+		4D16F694176D6AC000C7C4F7 /* UISwitch+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+NUI.h"; sourceTree = "<group>"; };
+		4D16F695176D6AC000C7C4F7 /* UISwitch+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+NUI.m"; sourceTree = "<group>"; };
+		4D16F696176D6AC000C7C4F7 /* UITabBar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+NUI.h"; sourceTree = "<group>"; };
+		4D16F697176D6AC000C7C4F7 /* UITabBar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+NUI.m"; sourceTree = "<group>"; };
+		4D16F698176D6AC000C7C4F7 /* UITabBarItem+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+NUI.h"; sourceTree = "<group>"; };
+		4D16F699176D6AC000C7C4F7 /* UITabBarItem+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+NUI.m"; sourceTree = "<group>"; };
+		4D16F69A176D6AC000C7C4F7 /* UITableViewCell+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+NUI.h"; sourceTree = "<group>"; };
+		4D16F69B176D6AC000C7C4F7 /* UITableViewCell+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+NUI.m"; sourceTree = "<group>"; };
+		4D16F69C176D6AC000C7C4F7 /* UITextField+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+NUI.h"; sourceTree = "<group>"; };
+		4D16F69D176D6AC000C7C4F7 /* UITextField+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NUI.m"; sourceTree = "<group>"; };
+		4D16F69E176D6AC000C7C4F7 /* UIToolbar+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+NUI.h"; sourceTree = "<group>"; };
+		4D16F69F176D6AC000C7C4F7 /* UIToolbar+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+NUI.m"; sourceTree = "<group>"; };
+		4D16F6A0176D6AC000C7C4F7 /* UIView+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NUI.h"; sourceTree = "<group>"; };
+		4D16F6A1176D6AC000C7C4F7 /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
+		4D16F6A2176D6AC000C7C4F7 /* UIWindow+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+NUI.h"; sourceTree = "<group>"; };
+		4D16F6A3176D6AC000C7C4F7 /* UIWindow+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+NUI.m"; sourceTree = "<group>"; };
+		4D16F6DA176D6B0A00C7C4F7 /* custom.nss */ = {isa = PBXFileReference; lastKnownFileType = file; path = custom.nss; sourceTree = "<group>"; };
+		4D16F6DD176D6B3000C7C4F7 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		4D16F6E0176D8A5400C7C4F7 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
+		4D16F6E1176D8A5400C7C4F7 /* male@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "male@2x.png"; sourceTree = "<group>"; };
 		4D4F59DC176830E400E81980 /* SwitchPetsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsNavigationController.h; sourceTree = "<group>"; };
 		4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchPetsNavigationController.m; sourceTree = "<group>"; };
 		4D4F59E1176830F900E81980 /* SwitchPetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsViewController.h; sourceTree = "<group>"; };
@@ -97,10 +324,6 @@
 		4D4F59F01768555E00E81980 /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingViewController.m; sourceTree = "<group>"; };
 		4D4F59F41768559C00E81980 /* TrainingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTableView.h; sourceTree = "<group>"; };
 		4D4F59F51768559C00E81980 /* TrainingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTableView.m; sourceTree = "<group>"; };
-		4D4F59F717685D5700E81980 /* StatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusLabel.h; sourceTree = "<group>"; };
-		4D4F59F817685D5700E81980 /* StatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusLabel.m; sourceTree = "<group>"; };
-		4D4F59FE176973E000E81980 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cat.png; path = PetsAlliance/MyPet/Images/cat.png; sourceTree = SOURCE_ROOT; };
-		4D4F59FF176973E000E81980 /* dragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dragon.png; path = MyPet/Images/dragon.png; sourceTree = "<group>"; };
 		4D4F5A021769AD8A00E81980 /* BattleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleNavigationController.h; sourceTree = "<group>"; };
 		4D4F5A031769AD8A00E81980 /* BattleNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleNavigationController.m; sourceTree = "<group>"; };
 		4D4F5A071769AEC000E81980 /* LeaderboardNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardNavigationController.h; sourceTree = "<group>"; };
@@ -132,10 +355,6 @@
 		4D9402171766E51D00898DCF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4D9402191766E51D00898DCF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4D94021B1766E51D00898DCF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4D9402201766E51D00898DCF /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		4D9402221766E51D00898DCF /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		4D9402271766E51D00898DCF /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		4D9402291766E51D00898DCF /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		4D9402361766E51D00898DCF /* PetsAllianceTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetsAllianceTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9402371766E51D00898DCF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4D94023F1766E51D00898DCF /* PetsAllianceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PetsAllianceTests-Info.plist"; sourceTree = "<group>"; };
@@ -166,6 +385,7 @@
 				4D9402061766E51D00898DCF /* UIKit.framework in Frameworks */,
 				4D9402081766E51D00898DCF /* Foundation.framework in Frameworks */,
 				4D94020A1766E51D00898DCF /* CoreGraphics.framework in Frameworks */,
+				4D16F6DF176D6B5F00C7C4F7 /* CoreImage.framework in Frameworks */,
 				F713AD5B92C5487781B1D33C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +422,246 @@
 			name = InBattle;
 			sourceTree = "<group>";
 		};
+		4D16F5EA176D63DC00C7C4F7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F5EB176D63DC00C7C4F7 /* Backgrounds */,
+				4D16F5EC176D63DC00C7C4F7 /* Buttons */,
+				4D16F5ED176D63DC00C7C4F7 /* Characters */,
+				4D16F5F0176D63DC00C7C4F7 /* Pets */,
+				4D16F5EE176D63DC00C7C4F7 /* first.png */,
+				4D16F5EF176D63DC00C7C4F7 /* first@2x.png */,
+				4D16F5F3176D63DC00C7C4F7 /* second.png */,
+				4D16F5F4176D63DC00C7C4F7 /* second@2x.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		4D16F5EB176D63DC00C7C4F7 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Backgrounds;
+			sourceTree = "<group>";
+		};
+		4D16F5EC176D63DC00C7C4F7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F5FB176D640D00C7C4F7 /* greyButton@2xpng */,
+				4D16F5FC176D640D00C7C4F7 /* greyButtonHighlight@2x.png */,
+				4D16F5FD176D640D00C7C4F7 /* whiteButton@2x.png */,
+				4D16F5FE176D640D00C7C4F7 /* whiteButtonHighlight@2x.png */,
+				4D16F5FF176D640D00C7C4F7 /* blueButton@2x.png */,
+				4D16F600176D640D00C7C4F7 /* blueButton.png */,
+				4D16F601176D640D00C7C4F7 /* blueButtonHighlight@2x.png */,
+				4D16F602176D640D00C7C4F7 /* greenButton@2x.png */,
+				4D16F603176D640D00C7C4F7 /* greenButtonHighlight@2x.png */,
+				4D16F604176D640D00C7C4F7 /* blackButton@2x.png */,
+				4D16F605176D640D00C7C4F7 /* blackButtonHighlight@2x.png */,
+				4D16F606176D640D00C7C4F7 /* tanButtonHighlight@2x.png */,
+				4D16F607176D640D00C7C4F7 /* tanButton@2x.png */,
+				4D16F608176D640D00C7C4F7 /* tanButton.png */,
+				4D16F609176D640D00C7C4F7 /* tanButtonHighlight.png */,
+				4D16F60A176D640D00C7C4F7 /* blackButtonHighlight.png */,
+				4D16F60B176D640D00C7C4F7 /* blackButton.png */,
+				4D16F60C176D640D00C7C4F7 /* greenButtonHighlight.png */,
+				4D16F60D176D640D00C7C4F7 /* greenButton.png */,
+				4D16F60E176D640D00C7C4F7 /* blueButtonHighlight.png */,
+				4D16F60F176D640D00C7C4F7 /* whiteButtonHighlight.png */,
+				4D16F610176D640D00C7C4F7 /* whiteButton.png */,
+				4D16F611176D640D00C7C4F7 /* orangeButton@2x.png */,
+				4D16F612176D640D00C7C4F7 /* orangeButtonHighlight@2x.png */,
+				4D16F613176D640D00C7C4F7 /* greyButton@2x.png */,
+				4D16F614176D640D00C7C4F7 /* greyButtonHighlight.png */,
+				4D16F615176D640D00C7C4F7 /* greyButton.png */,
+				4D16F616176D640D00C7C4F7 /* orangeButtonHighlight.png */,
+				4D16F617176D640D00C7C4F7 /* orangeButton.png */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4D16F5ED176D63DC00C7C4F7 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F6E0176D8A5400C7C4F7 /* male.png */,
+				4D16F6E1176D8A5400C7C4F7 /* male@2x.png */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		4D16F5F0176D63DC00C7C4F7 /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F5F1176D63DC00C7C4F7 /* cat.png */,
+				4D16F5F2176D63DC00C7C4F7 /* dragon.png */,
+			);
+			path = Pets;
+			sourceTree = "<group>";
+		};
+		4D16F63A176D6AC000C7C4F7 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F63B176D6AC000C7C4F7 /* NUI */,
+			);
+			path = Libraries;
+			sourceTree = SOURCE_ROOT;
+		};
+		4D16F63B176D6AC000C7C4F7 /* NUI */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F63C176D6AC000C7C4F7 /* Core */,
+				4D16F674176D6AC000C7C4F7 /* NUIStyle.nss */,
+				4D16F675176D6AC000C7C4F7 /* Resources */,
+				4D16F677176D6AC000C7C4F7 /* Themes */,
+				4D16F67F176D6AC000C7C4F7 /* UI */,
+			);
+			path = NUI;
+			sourceTree = "<group>";
+		};
+		4D16F63C176D6AC000C7C4F7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F63D176D6AC000C7C4F7 /* NUIAppearance.h */,
+				4D16F63E176D6AC000C7C4F7 /* NUIAppearance.m */,
+				4D16F63F176D6AC000C7C4F7 /* NUIConverter.h */,
+				4D16F640176D6AC000C7C4F7 /* NUIConverter.m */,
+				4D16F641176D6AC000C7C4F7 /* NUIFileMonitor.h */,
+				4D16F642176D6AC000C7C4F7 /* NUIFileMonitor.m */,
+				4D16F643176D6AC000C7C4F7 /* NUIGraphics.h */,
+				4D16F644176D6AC000C7C4F7 /* NUIGraphics.m */,
+				4D16F645176D6AC000C7C4F7 /* NUIRenderer.h */,
+				4D16F646176D6AC000C7C4F7 /* NUIRenderer.m */,
+				4D16F647176D6AC000C7C4F7 /* NUISettings.h */,
+				4D16F648176D6AC000C7C4F7 /* NUISettings.m */,
+				4D16F649176D6AC000C7C4F7 /* NUIStyleParser.h */,
+				4D16F64A176D6AC000C7C4F7 /* NUIStyleParser.m */,
+				4D16F64B176D6AC000C7C4F7 /* NUISwizzler.h */,
+				4D16F64C176D6AC000C7C4F7 /* NUISwizzler.m */,
+				4D16F64D176D6AC000C7C4F7 /* NUIUtilities.h */,
+				4D16F64E176D6AC000C7C4F7 /* NUIUtilities.m */,
+				4D16F64F176D6AC000C7C4F7 /* Renderers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4D16F64F176D6AC000C7C4F7 /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F650176D6AC000C7C4F7 /* NUIBarButtonItemRenderer.h */,
+				4D16F651176D6AC000C7C4F7 /* NUIBarButtonItemRenderer.m */,
+				4D16F652176D6AC000C7C4F7 /* NUIButtonRenderer.h */,
+				4D16F653176D6AC000C7C4F7 /* NUIButtonRenderer.m */,
+				4D16F654176D6AC000C7C4F7 /* NUIControlRenderer.h */,
+				4D16F655176D6AC000C7C4F7 /* NUIControlRenderer.m */,
+				4D16F656176D6AC000C7C4F7 /* NUILabelRenderer.h */,
+				4D16F657176D6AC000C7C4F7 /* NUILabelRenderer.m */,
+				4D16F658176D6AC000C7C4F7 /* NUINavigationBarRenderer.h */,
+				4D16F659176D6AC000C7C4F7 /* NUINavigationBarRenderer.m */,
+				4D16F65A176D6AC000C7C4F7 /* NUINavigationItemRenderer.h */,
+				4D16F65B176D6AC000C7C4F7 /* NUINavigationItemRenderer.m */,
+				4D16F65C176D6AC000C7C4F7 /* NUIProgressViewRenderer.h */,
+				4D16F65D176D6AC000C7C4F7 /* NUIProgressViewRenderer.m */,
+				4D16F65E176D6AC000C7C4F7 /* NUISearchBarRenderer.h */,
+				4D16F65F176D6AC000C7C4F7 /* NUISearchBarRenderer.m */,
+				4D16F660176D6AC000C7C4F7 /* NUISegmentedControlRenderer.h */,
+				4D16F661176D6AC000C7C4F7 /* NUISegmentedControlRenderer.m */,
+				4D16F662176D6AC000C7C4F7 /* NUISliderRenderer.h */,
+				4D16F663176D6AC000C7C4F7 /* NUISliderRenderer.m */,
+				4D16F664176D6AC000C7C4F7 /* NUISwitchRenderer.h */,
+				4D16F665176D6AC000C7C4F7 /* NUISwitchRenderer.m */,
+				4D16F666176D6AC000C7C4F7 /* NUITabBarItemRenderer.h */,
+				4D16F667176D6AC000C7C4F7 /* NUITabBarItemRenderer.m */,
+				4D16F668176D6AC000C7C4F7 /* NUITabBarRenderer.h */,
+				4D16F669176D6AC000C7C4F7 /* NUITabBarRenderer.m */,
+				4D16F66A176D6AC000C7C4F7 /* NUITableViewCellRenderer.h */,
+				4D16F66B176D6AC000C7C4F7 /* NUITableViewCellRenderer.m */,
+				4D16F66C176D6AC000C7C4F7 /* NUITextFieldRenderer.h */,
+				4D16F66D176D6AC000C7C4F7 /* NUITextFieldRenderer.m */,
+				4D16F66E176D6AC000C7C4F7 /* NUIToolbarRenderer.h */,
+				4D16F66F176D6AC000C7C4F7 /* NUIToolbarRenderer.m */,
+				4D16F670176D6AC000C7C4F7 /* NUIViewRenderer.h */,
+				4D16F671176D6AC000C7C4F7 /* NUIViewRenderer.m */,
+				4D16F672176D6AC000C7C4F7 /* NUIWindowRenderer.h */,
+				4D16F673176D6AC000C7C4F7 /* NUIWindowRenderer.m */,
+			);
+			path = Renderers;
+			sourceTree = "<group>";
+		};
+		4D16F675176D6AC000C7C4F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F676176D6AC000C7C4F7 /* NUIViewBackground.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4D16F677176D6AC000C7C4F7 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F678176D6AC000C7C4F7 /* Blue.NUI.nss */,
+				4D16F679176D6AC000C7C4F7 /* Default.NUI.nss */,
+				4D16F67A176D6AC000C7C4F7 /* Googolplex.NUI.nss */,
+				4D16F67B176D6AC000C7C4F7 /* Round.NUI.nss */,
+				4D16F67C176D6AC000C7C4F7 /* Route.NUI.nss */,
+				4D16F67D176D6AC000C7C4F7 /* SkyBlue.NUI.nss */,
+				4D16F67E176D6AC000C7C4F7 /* Switchboard.NUI.nss */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		4D16F67F176D6AC000C7C4F7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F680176D6AC000C7C4F7 /* UIBarButtonItem+NUI.h */,
+				4D16F681176D6AC000C7C4F7 /* UIBarButtonItem+NUI.m */,
+				4D16F682176D6AC000C7C4F7 /* UIButton+NUI.h */,
+				4D16F683176D6AC000C7C4F7 /* UIButton+NUI.m */,
+				4D16F684176D6AC000C7C4F7 /* UIControl+NUI.h */,
+				4D16F685176D6AC000C7C4F7 /* UIControl+NUI.m */,
+				4D16F686176D6AC000C7C4F7 /* UILabel+NUI.h */,
+				4D16F687176D6AC000C7C4F7 /* UILabel+NUI.m */,
+				4D16F688176D6AC000C7C4F7 /* UINavigationBar+NUI.h */,
+				4D16F689176D6AC000C7C4F7 /* UINavigationBar+NUI.m */,
+				4D16F68A176D6AC000C7C4F7 /* UINavigationItem+NUI.h */,
+				4D16F68B176D6AC000C7C4F7 /* UINavigationItem+NUI.m */,
+				4D16F68C176D6AC000C7C4F7 /* UIProgressView+NUI.h */,
+				4D16F68D176D6AC000C7C4F7 /* UIProgressView+NUI.m */,
+				4D16F68E176D6AC000C7C4F7 /* UISearchBar+NUI.h */,
+				4D16F68F176D6AC000C7C4F7 /* UISearchBar+NUI.m */,
+				4D16F690176D6AC000C7C4F7 /* UISegmentedControl+NUI.h */,
+				4D16F691176D6AC000C7C4F7 /* UISegmentedControl+NUI.m */,
+				4D16F692176D6AC000C7C4F7 /* UISlider+NUI.h */,
+				4D16F693176D6AC000C7C4F7 /* UISlider+NUI.m */,
+				4D16F694176D6AC000C7C4F7 /* UISwitch+NUI.h */,
+				4D16F695176D6AC000C7C4F7 /* UISwitch+NUI.m */,
+				4D16F696176D6AC000C7C4F7 /* UITabBar+NUI.h */,
+				4D16F697176D6AC000C7C4F7 /* UITabBar+NUI.m */,
+				4D16F698176D6AC000C7C4F7 /* UITabBarItem+NUI.h */,
+				4D16F699176D6AC000C7C4F7 /* UITabBarItem+NUI.m */,
+				4D16F69A176D6AC000C7C4F7 /* UITableViewCell+NUI.h */,
+				4D16F69B176D6AC000C7C4F7 /* UITableViewCell+NUI.m */,
+				4D16F69C176D6AC000C7C4F7 /* UITextField+NUI.h */,
+				4D16F69D176D6AC000C7C4F7 /* UITextField+NUI.m */,
+				4D16F69E176D6AC000C7C4F7 /* UIToolbar+NUI.h */,
+				4D16F69F176D6AC000C7C4F7 /* UIToolbar+NUI.m */,
+				4D16F6A0176D6AC000C7C4F7 /* UIView+NUI.h */,
+				4D16F6A1176D6AC000C7C4F7 /* UIView+NUI.m */,
+				4D16F6A2176D6AC000C7C4F7 /* UIWindow+NUI.h */,
+				4D16F6A3176D6AC000C7C4F7 /* UIWindow+NUI.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4D16F6DB176D6B0A00C7C4F7 /* Stylesheets */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F6DA176D6B0A00C7C4F7 /* custom.nss */,
+			);
+			name = Stylesheets;
+			path = Resources/Stylesheets;
+			sourceTree = "<group>";
+		};
 		4D4F59DB176830BE00E81980 /* Help */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +669,8 @@
 				4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */,
 				4DFD49401767144E00EEAFA7 /* HelpViewController.h */,
 				4DFD49411767144E00EEAFA7 /* HelpViewController.m */,
+				4D16F5E6176D45B300C7C4F7 /* HelpView.h */,
+				4D16F5E7176D45B400C7C4F7 /* HelpView.m */,
 			);
 			name = Help;
 			sourceTree = "<group>";
@@ -255,6 +717,7 @@
 			isa = PBXGroup;
 			children = (
 				4D94020B1766E51D00898DCF /* PetsAlliance */,
+				4D16F63A176D6AC000C7C4F7 /* Libraries */,
 				4D94025D1766E6CD00898DCF /* Resources */,
 				4D94023D1766E51D00898DCF /* PetsAllianceTests */,
 				4D9402041766E51D00898DCF /* Frameworks */,
@@ -275,6 +738,7 @@
 		4D9402041766E51D00898DCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D16F6DD176D6B3000C7C4F7 /* CoreImage.framework */,
 				4D16F5E0176B00E100C7C4F7 /* QuartzCore.framework */,
 				4D9402051766E51D00898DCF /* UIKit.framework */,
 				4D9402071766E51D00898DCF /* Foundation.framework */,
@@ -390,8 +854,6 @@
 				4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */,
 				4D4F59E71768348F00E81980 /* PetStatusView.h */,
 				4D4F59E81768348F00E81980 /* PetStatusView.m */,
-				4D4F59F717685D5700E81980 /* StatusLabel.h */,
-				4D4F59F817685D5700E81980 /* StatusLabel.m */,
 				4D4F59DB176830BE00E81980 /* Help */,
 				4D4F59E61768310100E81980 /* SwitchPets */,
 			);
@@ -401,12 +863,8 @@
 		4D94025D1766E6CD00898DCF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4D4F59FE176973E000E81980 /* cat.png */,
-				4D4F59FF176973E000E81980 /* dragon.png */,
-				4D9402201766E51D00898DCF /* first.png */,
-				4D9402221766E51D00898DCF /* first@2x.png */,
-				4D9402271766E51D00898DCF /* second.png */,
-				4D9402291766E51D00898DCF /* second@2x.png */,
+				4D16F6DB176D6B0A00C7C4F7 /* Stylesheets */,
+				4D16F5EA176D63DC00C7C4F7 /* Images */,
 			);
 			name = Resources;
 			path = PetsAlliance;
@@ -489,12 +947,53 @@
 				4D9402181766E51D00898DCF /* Default.png in Resources */,
 				4D94021A1766E51D00898DCF /* Default@2x.png in Resources */,
 				4D94021C1766E51D00898DCF /* Default-568h@2x.png in Resources */,
-				4D9402211766E51D00898DCF /* first.png in Resources */,
-				4D9402231766E51D00898DCF /* first@2x.png in Resources */,
-				4D9402281766E51D00898DCF /* second.png in Resources */,
-				4D94022A1766E51D00898DCF /* second@2x.png in Resources */,
-				4D4F5A00176973E000E81980 /* cat.png in Resources */,
-				4D4F5A01176973E000E81980 /* dragon.png in Resources */,
+				4D16F5F5176D63DC00C7C4F7 /* first.png in Resources */,
+				4D16F5F6176D63DC00C7C4F7 /* first@2x.png in Resources */,
+				4D16F5F7176D63DC00C7C4F7 /* cat.png in Resources */,
+				4D16F5F8176D63DC00C7C4F7 /* dragon.png in Resources */,
+				4D16F5F9176D63DC00C7C4F7 /* second.png in Resources */,
+				4D16F5FA176D63DC00C7C4F7 /* second@2x.png in Resources */,
+				4D16F618176D640D00C7C4F7 /* greyButton@2xpng in Resources */,
+				4D16F619176D640D00C7C4F7 /* greyButtonHighlight@2x.png in Resources */,
+				4D16F61A176D640D00C7C4F7 /* whiteButton@2x.png in Resources */,
+				4D16F61B176D640D00C7C4F7 /* whiteButtonHighlight@2x.png in Resources */,
+				4D16F61C176D640D00C7C4F7 /* blueButton@2x.png in Resources */,
+				4D16F61D176D640D00C7C4F7 /* blueButton.png in Resources */,
+				4D16F61E176D640D00C7C4F7 /* blueButtonHighlight@2x.png in Resources */,
+				4D16F61F176D640D00C7C4F7 /* greenButton@2x.png in Resources */,
+				4D16F620176D640D00C7C4F7 /* greenButtonHighlight@2x.png in Resources */,
+				4D16F621176D640D00C7C4F7 /* blackButton@2x.png in Resources */,
+				4D16F622176D640D00C7C4F7 /* blackButtonHighlight@2x.png in Resources */,
+				4D16F623176D640D00C7C4F7 /* tanButtonHighlight@2x.png in Resources */,
+				4D16F624176D640D00C7C4F7 /* tanButton@2x.png in Resources */,
+				4D16F625176D640D00C7C4F7 /* tanButton.png in Resources */,
+				4D16F626176D640D00C7C4F7 /* tanButtonHighlight.png in Resources */,
+				4D16F627176D640D00C7C4F7 /* blackButtonHighlight.png in Resources */,
+				4D16F628176D640D00C7C4F7 /* blackButton.png in Resources */,
+				4D16F629176D640D00C7C4F7 /* greenButtonHighlight.png in Resources */,
+				4D16F62A176D640D00C7C4F7 /* greenButton.png in Resources */,
+				4D16F62B176D640D00C7C4F7 /* blueButtonHighlight.png in Resources */,
+				4D16F62C176D640D00C7C4F7 /* whiteButtonHighlight.png in Resources */,
+				4D16F62D176D640D00C7C4F7 /* whiteButton.png in Resources */,
+				4D16F62E176D640D00C7C4F7 /* orangeButton@2x.png in Resources */,
+				4D16F62F176D640D00C7C4F7 /* orangeButtonHighlight@2x.png in Resources */,
+				4D16F630176D640D00C7C4F7 /* greyButton@2x.png in Resources */,
+				4D16F631176D640D00C7C4F7 /* greyButtonHighlight.png in Resources */,
+				4D16F632176D640D00C7C4F7 /* greyButton.png in Resources */,
+				4D16F633176D640D00C7C4F7 /* orangeButtonHighlight.png in Resources */,
+				4D16F634176D640D00C7C4F7 /* orangeButton.png in Resources */,
+				4D16F6BF176D6AC000C7C4F7 /* NUIStyle.nss in Resources */,
+				4D16F6C0176D6AC000C7C4F7 /* NUIViewBackground.png in Resources */,
+				4D16F6C1176D6AC000C7C4F7 /* Blue.NUI.nss in Resources */,
+				4D16F6C2176D6AC000C7C4F7 /* Default.NUI.nss in Resources */,
+				4D16F6C3176D6AC000C7C4F7 /* Googolplex.NUI.nss in Resources */,
+				4D16F6C4176D6AC000C7C4F7 /* Round.NUI.nss in Resources */,
+				4D16F6C5176D6AC000C7C4F7 /* Route.NUI.nss in Resources */,
+				4D16F6C6176D6AC000C7C4F7 /* SkyBlue.NUI.nss in Resources */,
+				4D16F6C7176D6AC000C7C4F7 /* Switchboard.NUI.nss in Resources */,
+				4D16F6DC176D6B0A00C7C4F7 /* custom.nss in Resources */,
+				4D16F6E2176D8A5400C7C4F7 /* male.png in Resources */,
+				4D16F6E3176D8A5400C7C4F7 /* male@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +1070,6 @@
 				4D4F59ED1768547700E81980 /* TrainingNavigationController.m in Sources */,
 				4D4F59F21768555E00E81980 /* TrainingViewController.m in Sources */,
 				4D4F59F61768559C00E81980 /* TrainingTableView.m in Sources */,
-				4D4F59F917685D5700E81980 /* StatusLabel.m in Sources */,
 				4D4F5A051769AD8A00E81980 /* BattleNavigationController.m in Sources */,
 				4D4F5A0A1769AEC000E81980 /* LeaderboardNavigationController.m in Sources */,
 				4D4F5A101769AEFA00E81980 /* LeaderboardViewController.m in Sources */,
@@ -587,6 +1085,52 @@
 				4D16F5D9176AFE5800C7C4F7 /* PetSelectionView.m in Sources */,
 				4D16F5DC176AFE6400C7C4F7 /* AttackSelectionView.m in Sources */,
 				4D16F5DF176AFE7100C7C4F7 /* RunSelectionView.m in Sources */,
+				4D16F5E8176D45B400C7C4F7 /* HelpView.m in Sources */,
+				4D16F6A4176D6AC000C7C4F7 /* NUIAppearance.m in Sources */,
+				4D16F6A5176D6AC000C7C4F7 /* NUIConverter.m in Sources */,
+				4D16F6A6176D6AC000C7C4F7 /* NUIFileMonitor.m in Sources */,
+				4D16F6A7176D6AC000C7C4F7 /* NUIGraphics.m in Sources */,
+				4D16F6A8176D6AC000C7C4F7 /* NUIRenderer.m in Sources */,
+				4D16F6A9176D6AC000C7C4F7 /* NUISettings.m in Sources */,
+				4D16F6AA176D6AC000C7C4F7 /* NUIStyleParser.m in Sources */,
+				4D16F6AB176D6AC000C7C4F7 /* NUISwizzler.m in Sources */,
+				4D16F6AC176D6AC000C7C4F7 /* NUIUtilities.m in Sources */,
+				4D16F6AD176D6AC000C7C4F7 /* NUIBarButtonItemRenderer.m in Sources */,
+				4D16F6AE176D6AC000C7C4F7 /* NUIButtonRenderer.m in Sources */,
+				4D16F6AF176D6AC000C7C4F7 /* NUIControlRenderer.m in Sources */,
+				4D16F6B0176D6AC000C7C4F7 /* NUILabelRenderer.m in Sources */,
+				4D16F6B1176D6AC000C7C4F7 /* NUINavigationBarRenderer.m in Sources */,
+				4D16F6B2176D6AC000C7C4F7 /* NUINavigationItemRenderer.m in Sources */,
+				4D16F6B3176D6AC000C7C4F7 /* NUIProgressViewRenderer.m in Sources */,
+				4D16F6B4176D6AC000C7C4F7 /* NUISearchBarRenderer.m in Sources */,
+				4D16F6B5176D6AC000C7C4F7 /* NUISegmentedControlRenderer.m in Sources */,
+				4D16F6B6176D6AC000C7C4F7 /* NUISliderRenderer.m in Sources */,
+				4D16F6B7176D6AC000C7C4F7 /* NUISwitchRenderer.m in Sources */,
+				4D16F6B8176D6AC000C7C4F7 /* NUITabBarItemRenderer.m in Sources */,
+				4D16F6B9176D6AC000C7C4F7 /* NUITabBarRenderer.m in Sources */,
+				4D16F6BA176D6AC000C7C4F7 /* NUITableViewCellRenderer.m in Sources */,
+				4D16F6BB176D6AC000C7C4F7 /* NUITextFieldRenderer.m in Sources */,
+				4D16F6BC176D6AC000C7C4F7 /* NUIToolbarRenderer.m in Sources */,
+				4D16F6BD176D6AC000C7C4F7 /* NUIViewRenderer.m in Sources */,
+				4D16F6BE176D6AC000C7C4F7 /* NUIWindowRenderer.m in Sources */,
+				4D16F6C8176D6AC000C7C4F7 /* UIBarButtonItem+NUI.m in Sources */,
+				4D16F6C9176D6AC000C7C4F7 /* UIButton+NUI.m in Sources */,
+				4D16F6CA176D6AC000C7C4F7 /* UIControl+NUI.m in Sources */,
+				4D16F6CB176D6AC000C7C4F7 /* UILabel+NUI.m in Sources */,
+				4D16F6CC176D6AC000C7C4F7 /* UINavigationBar+NUI.m in Sources */,
+				4D16F6CD176D6AC000C7C4F7 /* UINavigationItem+NUI.m in Sources */,
+				4D16F6CE176D6AC000C7C4F7 /* UIProgressView+NUI.m in Sources */,
+				4D16F6CF176D6AC000C7C4F7 /* UISearchBar+NUI.m in Sources */,
+				4D16F6D0176D6AC000C7C4F7 /* UISegmentedControl+NUI.m in Sources */,
+				4D16F6D1176D6AC000C7C4F7 /* UISlider+NUI.m in Sources */,
+				4D16F6D2176D6AC000C7C4F7 /* UISwitch+NUI.m in Sources */,
+				4D16F6D3176D6AC000C7C4F7 /* UITabBar+NUI.m in Sources */,
+				4D16F6D4176D6AC000C7C4F7 /* UITabBarItem+NUI.m in Sources */,
+				4D16F6D5176D6AC000C7C4F7 /* UITableViewCell+NUI.m in Sources */,
+				4D16F6D6176D6AC000C7C4F7 /* UITextField+NUI.m in Sources */,
+				4D16F6D7176D6AC000C7C4F7 /* UIToolbar+NUI.m in Sources */,
+				4D16F6D8176D6AC000C7C4F7 /* UIView+NUI.m in Sources */,
+				4D16F6D9176D6AC000C7C4F7 /* UIWindow+NUI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

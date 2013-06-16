@@ -20,6 +20,10 @@
 @interface BattleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UITableView *battleTableView;
     int numberOfCells;
+    NSMutableArray *rowHeights;
 }
+
+@property (nonatomic, strong) NSMutableArray *rowHeights;
+@property (nonatomic, retain) UITableView *battleTableView;
 
 @end

@@ -52,20 +52,23 @@
     [scrollView addSubview:petsView];
         
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setFrame:CGRectMake(20, 20, 110, 50)];
     [button setTitle:@"Pet" forState:UIControlStateNormal];
+    [button setNuiClass:@"Button:LargeButton"];
+    [button setFrame:CGRectMake(20, 20, 110, 50)];
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [mainPetView addSubview:button];
     
     UIButton *myItemsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [myItemsButton setFrame:CGRectMake(20, 90, 110, 50)];
     [myItemsButton setTitle:@"My Items" forState:UIControlStateNormal];
+    [myItemsButton setNuiClass:@"Button:LargeButton"];
     [myItemsButton addTarget:self action:@selector(myItemsAction:) forControlEvents:UIControlEventTouchUpInside];
     [mainPetView addSubview:myItemsButton];
 
     UIButton *itemStoreButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [itemStoreButton setFrame:CGRectMake(20, 160, 110, 50)];
     [itemStoreButton setTitle:@"Item Store" forState:UIControlStateNormal];
+    [itemStoreButton setNuiClass:@"Button:LargeButton"];
     [itemStoreButton addTarget:self action:@selector(itemStoreAction:) forControlEvents:UIControlEventTouchUpInside];
     [mainPetView addSubview:itemStoreButton];
 }
@@ -98,7 +101,7 @@
 }
 
 - (void)viewHelp: (id) selector {
-    NSLog(@"Opended the Help view");
+    NSLog(@"Opened the Help view");
     HelpViewController *helpView = [[HelpViewController alloc] init];
     HelpNavigationController *helpNavgationController = [[HelpNavigationController alloc] initWithRootViewController:helpView];
     [self presentViewController:helpNavgationController animated:YES completion:nil];

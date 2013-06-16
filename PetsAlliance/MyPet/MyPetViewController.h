@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UIButton+NUI.h"
+#import "UILabel+NUI.h"
+#import "UITextField+NUI.h"
+
 #import "HelpNavigationController.h"
 #import "HelpViewController.h"
 #import "SwitchPetsNavigationController.h"

@@ -15,18 +15,31 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        UIButton *noButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [noButton setFrame:CGRectMake(40, 100, 100, 60)];
-        [noButton addTarget:self action:@selector(noButton:) forControlEvents:UIControlEventTouchUpInside];
-        [noButton setTitle:@"No" forState:UIControlStateNormal];
-        [self addSubview:noButton];
-        
         UIButton *yesButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [yesButton setFrame:CGRectMake(180, 100, 100, 60)];
+        UIButton *noButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+
+        if (IS_IPHONE5) {
+            [yesButton setFrame:CGRectMake(40, 100, 100, 60)];
+            [noButton setFrame:CGRectMake(180, 100, 100, 60)];
+            
+            [yesButton setNuiClass:@"Button:ConfirmButton:RunOptionsButton"];
+            [noButton setNuiClass:@"Button:DenyButton:RunOptionsButton"];
+        } else {
+            [yesButton setFrame:CGRectMake(40, 70, 100, 40)];
+            [noButton setFrame:CGRectMake(180, 70, 100, 40)];
+            
+            [yesButton setNuiClass:@"Button:ConfirmButton:RunOptionsButton4"];
+            [noButton setNuiClass:@"Button:DenyButton:RunOptionsButton4"];
+        }
+        
         [yesButton addTarget:self action:@selector(yesButton:) forControlEvents:UIControlEventTouchUpInside];
+        [noButton addTarget:self action:@selector(noButton:) forControlEvents:UIControlEventTouchUpInside];
+        
         [yesButton setTitle:@"Yes" forState:UIControlStateNormal];
+        [noButton setTitle:@"No" forState:UIControlStateNormal];
+
         [self addSubview:yesButton];
+        [self addSubview:noButton];
     }
     return self;
 }

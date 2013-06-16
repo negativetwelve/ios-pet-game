@@ -15,8 +15,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.rowHeight = 80.0;
-        
+
     }
     return self;
 }
