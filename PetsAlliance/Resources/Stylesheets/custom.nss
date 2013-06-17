@@ -1,5 +1,6 @@
 @primaryFontName: Helvetica;
 @primaryFontNameBold: HelveticaNeue;
+@boldFont: Helvetica-Bold;
 @primaryFontColor: #3E3D43;
 @secondaryFontColor: #838385;
 @primaryBackgroundColor: #F5F5F5;
@@ -116,8 +117,18 @@ StatusLevelLabel {
     font-size: 14;
     font-color: #FFFFFF;
 }
-BattleUsername {
+BattleBoldText {
     text-align: left;
+    font-size: 11;
+    font-name: @boldFont;
+}
+BattleStat {
+    text-align: left;
+    font-size: 11;
+}
+BattleValue {
+    font-name: @boldFont;
+    text-align: right;
     font-size: 11;
 }
 NavigationBar {

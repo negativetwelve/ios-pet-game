@@ -70,43 +70,67 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = @"identifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    BattleCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[BattleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [battleButton setFrame:CGRectMake(220, 21, 80, 37)];
+        [battleButton setFrame:CGRectMake(230, 35, 80, 37)];
         [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
         [battleButton setNuiClass:@"SecondaryButton"];
         
         [cell addSubview:battleButton];
         
-        UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 40, 60)];
+        UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(5, 35, 40, 60)];
         [character setImage:[UIImage imageNamed:@"male.png"]];
         [cell addSubview:character];
-        
-        UIButton *firstPetButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [firstPetButton setNuiClass:@"ImageButon"];
-        [firstPetButton setFrame:CGRectMake(50, 10, 50, 50)];
-        [firstPetButton setBackgroundImage:[UIImage imageNamed:@"dragon.png"] forState:UIControlStateNormal];
-        [firstPetButton addTarget:self action:@selector(firstPetSelected:) forControlEvents:UIControlEventTouchUpInside];
+
+        PetSelectButton *firstPetButton = [[PetSelectButton alloc] initWithFrame:CGRectMake(55, 45, 50, 50) andNuiClass:@"ImageButton" andImageName:@"dragon.png" andSelector:@selector(petSelected:) andCell:cell andIndex:1];
         [cell addSubview:firstPetButton];
         
-        UIImageView *secondPet = [[UIImageView alloc] initWithFrame:CGRectMake(105, 10, 50, 50)];
-        [secondPet setImage:[UIImage imageNamed:@"cat.png"]];
-        [cell addSubview:secondPet];
+        PetSelectButton *secondPetButton = [[PetSelectButton alloc] initWithFrame:CGRectMake(110, 45, 50, 50) andNuiClass:@"ImageButton" andImageName:@"cat.png" andSelector:@selector(petSelected:) andCell:cell andIndex:2];
+        [cell addSubview:secondPetButton];
         
-        UIImageView *thirdPet = [[UIImageView alloc] initWithFrame:CGRectMake(160, 10, 50, 50)];
-        [thirdPet setImage:[UIImage imageNamed:@"cat.png"]];
-        [cell addSubview:thirdPet];
+        PetSelectButton *thirdPetButton = [[PetSelectButton alloc] initWithFrame:CGRectMake(165, 45, 50, 50) andNuiClass:@"ImageButton" andImageName:@"cat.png" andSelector:@selector(petSelected:) andCell:cell andIndex:3];
+        [cell addSubview:thirdPetButton];
         
-        UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(5, 65, 60, 15)];
-        [username setText:@"Username"];
-        [username setNuiClass:@"Label:BattleUsername"];
+        UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(5, 2, 120, 15)];
+        [username setText:@"really really long username"];
+        [username setNuiClass:@"Label:BattleBoldText"];
         [cell addSubview:username];
+        
+        UILabel *skillLevel = [[UILabel alloc] initWithFrame:CGRectMake(5, 18, 40, 15)];
+        [skillLevel setText:@"Skill Lvl"];
+        [skillLevel setNuiClass:@"Label:BattleStat"];
+        [cell addSubview:skillLevel];
+        
+        UILabel *skillLevelValue = [[UILabel alloc] initWithFrame:CGRectMake(45, 18, 35, 15)];
+        [skillLevelValue setText:@"10053"];
+        [skillLevelValue setNuiClass:@"Label:BattleValue"];
+        [cell addSubview:skillLevelValue];
+        
+        UILabel *wins = [[UILabel alloc] initWithFrame:CGRectMake(140, 2, 35, 15)];
+        [wins setText:@"Wins"];
+        [wins setNuiClass:@"Label:BattleStat"];
+        [cell addSubview:wins];
+        
+        UILabel *winsValue = [[UILabel alloc] initWithFrame:CGRectMake(180, 2, 45, 15)];
+        [winsValue setText:@"1234567"];
+        [winsValue setNuiClass:@"Label:BattleValue"];
+        [cell addSubview:winsValue];
+        
+        UILabel *losses = [[UILabel alloc] initWithFrame:CGRectMake(140, 18, 35, 15)];
+        [losses setText:@"Losses"];
+        [losses setNuiClass:@"Label:BattleStat"];
+        [cell addSubview:losses];
+        
+        UILabel *lossesValue = [[UILabel alloc] initWithFrame:CGRectMake(180, 18, 45, 15)];
+        [lossesValue setText:@"154000"];
+        [lossesValue setNuiClass:@"Label:BattleValue"];
+        [cell addSubview:lossesValue];
     }
     cell.tag = indexPath.row;
     return cell;
@@ -121,12 +145,26 @@
     return [[self.rowHeights objectAtIndex:indexPath.row] floatValue];
 }
 
-- (void)firstPetSelected: (id)selector {
-    NSLog(@"first pet selected");
-    UITableViewCell *selected = ((UITableViewCell *)selector).superview;
-    NSLog(@"%d", selected.tag);
-    [self.rowHeights setObject:[NSNumber numberWithFloat:[[self.rowHeights objectAtIndex:selected.tag] floatValue] + 50] atIndexedSubscript:selected.tag];
-    NSLog(@"%@", self.rowHeights);
+- (void)petSelected: (id)selector {
+    PetSelectButton *selectedButton = (PetSelectButton *)selector;
+    BattleCell *selected = selectedButton.cell;
+    NSLog(@"pet selected at index: %d", selectedButton.index);
+
+    int currentHeight = selected.bounds.size.height;
+    if (currentHeight == 100) {
+        for (NSUInteger i = 0; i < [self.rowHeights count]; i++) {
+            [self.rowHeights setObject:[NSNumber numberWithFloat:100] atIndexedSubscript:i];
+        }
+        [self.rowHeights setObject:[NSNumber numberWithFloat:160] atIndexedSubscript:selected.tag];
+        [selected setPetIndex:selectedButton.index];
+        // show current pet
+    } else if (selected.petIndex == selectedButton.index){
+        [self.rowHeights setObject:[NSNumber numberWithFloat:100] atIndexedSubscript:selected.tag];
+        [selected setPetIndex:0];
+    } else {
+        // show new current pet
+    }
+    
     [self.battleTableView beginUpdates];
     [self.battleTableView endUpdates];
 }

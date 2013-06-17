@@ -108,6 +108,8 @@
 		4D16F6DF176D6B5F00C7C4F7 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D16F6DD176D6B3000C7C4F7 /* CoreImage.framework */; };
 		4D16F6E2176D8A5400C7C4F7 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F6E0176D8A5400C7C4F7 /* male.png */; };
 		4D16F6E3176D8A5400C7C4F7 /* male@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16F6E1176D8A5400C7C4F7 /* male@2x.png */; };
+		4D16F6E6176E308800C7C4F7 /* PetSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F6E5176E308700C7C4F7 /* PetSelectButton.m */; };
+		4D16F6E9176E37D700C7C4F7 /* BattleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F6E8176E37D600C7C4F7 /* BattleCell.m */; };
 		4D4F59DF176830E400E81980 /* SwitchPetsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */; };
 		4D4F59E4176830F900E81980 /* SwitchPetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */; };
 		4D4F59E91768348F00E81980 /* PetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E81768348F00E81980 /* PetStatusView.m */; };
@@ -123,6 +125,10 @@
 		4D4F5A231769B41500E81980 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A211769B41500E81980 /* ItemsViewController.m */; };
 		4D4F5A271769B43200E81980 /* ItemsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A261769B43200E81980 /* ItemsTableView.m */; };
 		4D4F5A2A1769B44E00E81980 /* ItemsNavigationScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */; };
+		4D914B47176EB646006B7BCD /* sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1D176EB646006B7BCD /* sword.png */; };
+		4D914B48176EB646006B7BCD /* sword@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1E176EB646006B7BCD /* sword@2x.png */; };
+		4D914B4A176EB646006B7BCD /* cat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B21176EB646006B7BCD /* cat@2x.png */; };
+		4D914B4C176EB646006B7BCD /* dragon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B23176EB646006B7BCD /* dragon@2x.png */; };
 		4D9402061766E51D00898DCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402051766E51D00898DCF /* UIKit.framework */; };
 		4D9402081766E51D00898DCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402071766E51D00898DCF /* Foundation.framework */; };
 		4D94020A1766E51D00898DCF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402091766E51D00898DCF /* CoreGraphics.framework */; };
@@ -308,10 +314,14 @@
 		4D16F6A1176D6AC000C7C4F7 /* UIView+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NUI.m"; sourceTree = "<group>"; };
 		4D16F6A2176D6AC000C7C4F7 /* UIWindow+NUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+NUI.h"; sourceTree = "<group>"; };
 		4D16F6A3176D6AC000C7C4F7 /* UIWindow+NUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+NUI.m"; sourceTree = "<group>"; };
-		4D16F6DA176D6B0A00C7C4F7 /* custom.nss */ = {isa = PBXFileReference; lastKnownFileType = file; path = custom.nss; sourceTree = "<group>"; };
+		4D16F6DA176D6B0A00C7C4F7 /* custom.nss */ = {isa = PBXFileReference; lastKnownFileType = text; path = custom.nss; sourceTree = "<group>"; };
 		4D16F6DD176D6B3000C7C4F7 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		4D16F6E0176D8A5400C7C4F7 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
 		4D16F6E1176D8A5400C7C4F7 /* male@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "male@2x.png"; sourceTree = "<group>"; };
+		4D16F6E4176E308700C7C4F7 /* PetSelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetSelectButton.h; sourceTree = "<group>"; };
+		4D16F6E5176E308700C7C4F7 /* PetSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetSelectButton.m; sourceTree = "<group>"; };
+		4D16F6E7176E37D600C7C4F7 /* BattleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCell.h; sourceTree = "<group>"; };
+		4D16F6E8176E37D600C7C4F7 /* BattleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleCell.m; sourceTree = "<group>"; };
 		4D4F59DC176830E400E81980 /* SwitchPetsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsNavigationController.h; sourceTree = "<group>"; };
 		4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchPetsNavigationController.m; sourceTree = "<group>"; };
 		4D4F59E1176830F900E81980 /* SwitchPetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsViewController.h; sourceTree = "<group>"; };
@@ -342,6 +352,10 @@
 		4D4F5A261769B43200E81980 /* ItemsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsTableView.m; path = PetsAlliance/Items/ItemsTableView.m; sourceTree = SOURCE_ROOT; };
 		4D4F5A281769B44E00E81980 /* ItemsNavigationScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsNavigationScrollView.h; path = PetsAlliance/Items/ItemsNavigationScrollView.h; sourceTree = SOURCE_ROOT; };
 		4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsNavigationScrollView.m; path = PetsAlliance/Items/ItemsNavigationScrollView.m; sourceTree = SOURCE_ROOT; };
+		4D914B1D176EB646006B7BCD /* sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sword.png; sourceTree = "<group>"; };
+		4D914B1E176EB646006B7BCD /* sword@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sword@2x.png"; sourceTree = "<group>"; };
+		4D914B21176EB646006B7BCD /* cat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat@2x.png"; sourceTree = "<group>"; };
+		4D914B23176EB646006B7BCD /* dragon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dragon@2x.png"; sourceTree = "<group>"; };
 		4D9402021766E51D00898DCF /* PetsAlliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsAlliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9402051766E51D00898DCF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D9402071766E51D00898DCF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -425,6 +439,7 @@
 		4D16F5EA176D63DC00C7C4F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4D914B1C176EB646006B7BCD /* Items */,
 				4D16F5EB176D63DC00C7C4F7 /* Backgrounds */,
 				4D16F5EC176D63DC00C7C4F7 /* Buttons */,
 				4D16F5ED176D63DC00C7C4F7 /* Characters */,
@@ -494,7 +509,9 @@
 			isa = PBXGroup;
 			children = (
 				4D16F5F1176D63DC00C7C4F7 /* cat.png */,
+				4D914B21176EB646006B7BCD /* cat@2x.png */,
 				4D16F5F2176D63DC00C7C4F7 /* dragon.png */,
+				4D914B23176EB646006B7BCD /* dragon@2x.png */,
 			);
 			path = Pets;
 			sourceTree = "<group>";
@@ -713,6 +730,15 @@
 			path = MyPet;
 			sourceTree = "<group>";
 		};
+		4D914B1C176EB646006B7BCD /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				4D914B1D176EB646006B7BCD /* sword.png */,
+				4D914B1E176EB646006B7BCD /* sword@2x.png */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		4D9401F91766E51D00898DCF = {
 			isa = PBXGroup;
 			children = (
@@ -827,6 +853,10 @@
 				4D4F5A131769B06200E81980 /* BattleTableView.m */,
 				4D4F5A021769AD8A00E81980 /* BattleNavigationController.h */,
 				4D4F5A031769AD8A00E81980 /* BattleNavigationController.m */,
+				4D16F6E7176E37D600C7C4F7 /* BattleCell.h */,
+				4D16F6E8176E37D600C7C4F7 /* BattleCell.m */,
+				4D16F6E4176E308700C7C4F7 /* PetSelectButton.h */,
+				4D16F6E5176E308700C7C4F7 /* PetSelectButton.m */,
 				4D4F5A0C1769AECA00E81980 /* Leaderboard */,
 			);
 			path = Battle;
@@ -994,6 +1024,10 @@
 				4D16F6DC176D6B0A00C7C4F7 /* custom.nss in Resources */,
 				4D16F6E2176D8A5400C7C4F7 /* male.png in Resources */,
 				4D16F6E3176D8A5400C7C4F7 /* male@2x.png in Resources */,
+				4D914B47176EB646006B7BCD /* sword.png in Resources */,
+				4D914B48176EB646006B7BCD /* sword@2x.png in Resources */,
+				4D914B4A176EB646006B7BCD /* cat@2x.png in Resources */,
+				4D914B4C176EB646006B7BCD /* dragon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1131,6 +1165,8 @@
 				4D16F6D7176D6AC000C7C4F7 /* UIToolbar+NUI.m in Sources */,
 				4D16F6D8176D6AC000C7C4F7 /* UIView+NUI.m in Sources */,
 				4D16F6D9176D6AC000C7C4F7 /* UIWindow+NUI.m in Sources */,
+				4D16F6E6176E308800C7C4F7 /* PetSelectButton.m in Sources */,
+				4D16F6E9176E37D700C7C4F7 /* BattleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

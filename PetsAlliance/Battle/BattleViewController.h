@@ -17,6 +17,9 @@
 
 #import "InBattleViewController.h"
 
+#import "PetSelectButton.h"
+#import "BattleCell.h"
+
 @interface BattleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     UITableView *battleTableView;
     int numberOfCells;
