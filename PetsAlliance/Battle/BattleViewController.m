@@ -57,13 +57,15 @@
     
     battleTableView = [[BattleTableView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100 - navHeight)];
     [self setBattleTableView:battleTableView];
+    [battleTableView setDataSource:self];
+    [battleTableView setDelegate:self];
     [self.view addSubview:battleTableView];
 
     battleTableView.dataSource = self;
     battleTableView.delegate = self;
 }
 
-// Customize the number of rows in the table view.
+#pragma mark UITableViewDataSource methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
 }
@@ -162,6 +164,7 @@
         [self.rowHeights setObject:[NSNumber numberWithFloat:100] atIndexedSubscript:selected.tag];
         [selected setPetIndex:0];
     } else {
+        [selected setPetIndex:selectedButton.index];
         // show new current pet
     }
     
@@ -174,7 +177,7 @@
     CGPoint buttonPosition = [selector convertPoint:CGPointZero toView:battleTableView];
     NSIndexPath *indexPath = [battleTableView indexPathForRowAtPoint:buttonPosition];
     if (indexPath != nil) {
-        NSLog(@"%d", indexPath.row);
+        NSLog(@"battling against pet number %d", indexPath.row);
         InBattleViewController *inBattleViewController = [[InBattleViewController alloc] init];
         [self presentViewController:inBattleViewController animated:YES completion:nil];
     }

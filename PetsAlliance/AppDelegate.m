@@ -8,16 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "MyPetViewController.h"
-#import "TrainingViewController.h"
-#import "BattleViewController.h"
-#import "TheMasterViewController.h"
-#import "NavigatorViewController.h"
-
-#import "MyPetNavigationController.h"
-#import "TrainingNavigationController.h"
-#import "BattleNavigationController.h"
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -25,6 +15,47 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     // Override point for customization after application launch.
+    
+    RKLogConfigureByName("RestKit/Network*", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+    
+    //let AFNetworking manage the activity indicator
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    
+    // Initialize HTTPClient
+    NSURL *localURL = [NSURL URLWithString:LOCALURL];
+    AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
+    
+    //we want to work with JSON-Data
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+    
+    // Initialize RestKit
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    
+    // Setup our object mappings
+    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[User class]];
+    [userMapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"userID",
+     @"screen_name" : @"screenName",
+     @"name" : @"name"
+     }];
+    
+    RKObjectMapping *petMapping = [RKObjectMapping mappingForClass:[Pet class]];
+    [petMapping addAttributeMappingsFromDictionary:@{
+     @"id" : @"statusID",
+     @"created_at" : @"createdAt",
+     @"text" : @"text",
+     @"url" : @"urlString",
+     @"in_reply_to_screen_name" : @"inReplyToScreenName",
+     @"favorited" : @"isFavorited",
+     }];
+    
+    RKRelationshipMapping *relationshipMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"user"
+                                                                                             toKeyPath:@"user"
+                                                                                           withMapping:userMapping];
+    [petMapping addPropertyMapping:relationshipMapping];
+    
+    // NUI for buttons and labels
     [NUISettings initWithStylesheet:@"custom"];
     
     UIViewController *myPetViewController = [[MyPetViewController alloc] init];
@@ -43,7 +74,6 @@
     navigatorNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;    
     
     self.tabBarController = [[UITabBarController alloc] init];
-    
     self.tabBarController.viewControllers = @[myPetNavigationController, trainingNavigationController, battleNavigationController, theMasterNavigationController, navigatorNavigationController];
     
     self.window.rootViewController = self.tabBarController;

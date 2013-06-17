@@ -129,6 +129,12 @@
 		4D914B48176EB646006B7BCD /* sword@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1E176EB646006B7BCD /* sword@2x.png */; };
 		4D914B4A176EB646006B7BCD /* cat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B21176EB646006B7BCD /* cat@2x.png */; };
 		4D914B4C176EB646006B7BCD /* dragon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B23176EB646006B7BCD /* dragon@2x.png */; };
+		4D914B51176EC48D006B7BCD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D914B50176EC48D006B7BCD /* LoginViewController.m */; };
+		4D914B55176EF3B3006B7BCD /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D914B54176EF3B3006B7BCD /* User.m */; };
+		4D914B59176EF3CA006B7BCD /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D914B58176EF3CA006B7BCD /* Pet.m */; };
+		4D914B5C176EF3DA006B7BCD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D914B5B176EF3DA006B7BCD /* Item.m */; };
+		4D914B61176EF579006B7BCD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D914B5F176EF559006B7BCD /* SystemConfiguration.framework */; };
+		4D914B62176EF579006B7BCD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D914B5D176EF54C006B7BCD /* MobileCoreServices.framework */; };
 		4D9402061766E51D00898DCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402051766E51D00898DCF /* UIKit.framework */; };
 		4D9402081766E51D00898DCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402071766E51D00898DCF /* Foundation.framework */; };
 		4D94020A1766E51D00898DCF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9402091766E51D00898DCF /* CoreGraphics.framework */; };
@@ -356,6 +362,16 @@
 		4D914B1E176EB646006B7BCD /* sword@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sword@2x.png"; sourceTree = "<group>"; };
 		4D914B21176EB646006B7BCD /* cat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat@2x.png"; sourceTree = "<group>"; };
 		4D914B23176EB646006B7BCD /* dragon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dragon@2x.png"; sourceTree = "<group>"; };
+		4D914B4F176EC48D006B7BCD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = PetsAlliance/LoginViewController.h; sourceTree = SOURCE_ROOT; };
+		4D914B50176EC48D006B7BCD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = PetsAlliance/LoginViewController.m; sourceTree = SOURCE_ROOT; };
+		4D914B53176EF3B3006B7BCD /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Classes/User.h; sourceTree = "<group>"; };
+		4D914B54176EF3B3006B7BCD /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Classes/User.m; sourceTree = "<group>"; };
+		4D914B57176EF3CA006B7BCD /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pet.h; path = Classes/Pet.h; sourceTree = "<group>"; };
+		4D914B58176EF3CA006B7BCD /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pet.m; path = Classes/Pet.m; sourceTree = "<group>"; };
+		4D914B5A176EF3DA006B7BCD /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = Classes/Item.h; sourceTree = "<group>"; };
+		4D914B5B176EF3DA006B7BCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Classes/Item.m; sourceTree = "<group>"; };
+		4D914B5D176EF54C006B7BCD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4D914B5F176EF559006B7BCD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4D9402021766E51D00898DCF /* PetsAlliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsAlliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9402051766E51D00898DCF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D9402071766E51D00898DCF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -400,6 +416,8 @@
 				4D9402081766E51D00898DCF /* Foundation.framework in Frameworks */,
 				4D94020A1766E51D00898DCF /* CoreGraphics.framework in Frameworks */,
 				4D16F6DF176D6B5F00C7C4F7 /* CoreImage.framework in Frameworks */,
+				4D914B61176EF579006B7BCD /* SystemConfiguration.framework in Frameworks */,
+				4D914B62176EF579006B7BCD /* MobileCoreServices.framework in Frameworks */,
 				F713AD5B92C5487781B1D33C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -739,6 +757,19 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		4D914B56176EF3B7006B7BCD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4D914B53176EF3B3006B7BCD /* User.h */,
+				4D914B54176EF3B3006B7BCD /* User.m */,
+				4D914B57176EF3CA006B7BCD /* Pet.h */,
+				4D914B58176EF3CA006B7BCD /* Pet.m */,
+				4D914B5A176EF3DA006B7BCD /* Item.h */,
+				4D914B5B176EF3DA006B7BCD /* Item.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		4D9401F91766E51D00898DCF = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +795,8 @@
 		4D9402041766E51D00898DCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D914B5F176EF559006B7BCD /* SystemConfiguration.framework */,
+				4D914B5D176EF54C006B7BCD /* MobileCoreServices.framework */,
 				4D16F6DD176D6B3000C7C4F7 /* CoreImage.framework */,
 				4D16F5E0176B00E100C7C4F7 /* QuartzCore.framework */,
 				4D9402051766E51D00898DCF /* UIKit.framework */,
@@ -778,6 +811,9 @@
 		4D94020B1766E51D00898DCF /* PetsAlliance */ = {
 			isa = PBXGroup;
 			children = (
+				4D914B4F176EC48D006B7BCD /* LoginViewController.h */,
+				4D914B50176EC48D006B7BCD /* LoginViewController.m */,
+				4D914B56176EF3B7006B7BCD /* Classes */,
 				4D9402521766E5C100898DCF /* MyPet */,
 				4D4F5A1F1769B2F400E81980 /* Items */,
 				4D9402511766E5C100898DCF /* Training */,
@@ -1167,6 +1203,10 @@
 				4D16F6D9176D6AC000C7C4F7 /* UIWindow+NUI.m in Sources */,
 				4D16F6E6176E308800C7C4F7 /* PetSelectButton.m in Sources */,
 				4D16F6E9176E37D700C7C4F7 /* BattleCell.m in Sources */,
+				4D914B51176EC48D006B7BCD /* LoginViewController.m in Sources */,
+				4D914B55176EF3B3006B7BCD /* User.m in Sources */,
+				4D914B59176EF3CA006B7BCD /* Pet.m in Sources */,
+				4D914B5C176EF3DA006B7BCD /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,7 +1260,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos6.1]" = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1235,7 +1276,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				PROVISIONING_PROFILE = "CCB6820E-9CFD-48C0-BFDC-E8812A871E59";
+				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "4C6D67CB-3C61-46D0-B6C5-DFB439CCE57C";
+				SDKROOT = iphoneos6.1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -1251,16 +1295,20 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos6.1]" = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
+				PROVISIONING_PROFILE = "CCB6820E-9CFD-48C0-BFDC-E8812A871E59";
+				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "4C6D67CB-3C61-46D0-B6C5-DFB439CCE57C";
+				SDKROOT = iphoneos6.1;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};

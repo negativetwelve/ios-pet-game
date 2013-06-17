@@ -9,6 +9,20 @@
 #import <UIKit/UIKit.h>
 
 #import "NUIAppearance.h"
+#import <RestKit/RestKit.h>
+
+#import "MyPetViewController.h"
+#import "TrainingViewController.h"
+#import "BattleViewController.h"
+#import "TheMasterViewController.h"
+#import "NavigatorViewController.h"
+
+#import "MyPetNavigationController.h"
+#import "TrainingNavigationController.h"
+#import "BattleNavigationController.h"
+
+#import "User.h"
+#import "Pet.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
