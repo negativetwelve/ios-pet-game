@@ -372,22 +372,22 @@
 		4D914B5B176EF3DA006B7BCD /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = Classes/Item.m; sourceTree = "<group>"; };
 		4D914B5D176EF54C006B7BCD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4D914B5F176EF559006B7BCD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		4D9402021766E51D00898DCF /* PetsAlliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsAlliance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D9402021766E51D00898DCF /* Pets Alliance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pets Alliance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9402051766E51D00898DCF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D9402071766E51D00898DCF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4D9402091766E51D00898DCF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4D94020D1766E51D00898DCF /* PetsAlliance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PetsAlliance-Info.plist"; sourceTree = "<group>"; };
+		4D94020D1766E51D00898DCF /* Pets Alliance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pets Alliance-Info.plist"; sourceTree = "<group>"; };
 		4D94020F1766E51D00898DCF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4D9402111766E51D00898DCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4D9402131766E51D00898DCF /* PetsAlliance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PetsAlliance-Prefix.pch"; sourceTree = "<group>"; };
+		4D9402131766E51D00898DCF /* Pets Alliance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pets Alliance-Prefix.pch"; sourceTree = "<group>"; };
 		4D9402141766E51D00898DCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D9402151766E51D00898DCF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4D9402171766E51D00898DCF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4D9402191766E51D00898DCF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4D94021B1766E51D00898DCF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4D9402361766E51D00898DCF /* PetsAllianceTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetsAllianceTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D9402361766E51D00898DCF /* Pets AllianceTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pets AllianceTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9402371766E51D00898DCF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		4D94023F1766E51D00898DCF /* PetsAllianceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PetsAllianceTests-Info.plist"; sourceTree = "<group>"; };
+		4D94023F1766E51D00898DCF /* Pets AllianceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pets AllianceTests-Info.plist"; sourceTree = "<group>"; };
 		4D9402411766E51D00898DCF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4D9402431766E51D00898DCF /* PetsAllianceTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetsAllianceTests.h; sourceTree = "<group>"; };
 		4D9402441766E51D00898DCF /* PetsAllianceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetsAllianceTests.m; sourceTree = "<group>"; };
@@ -786,8 +786,8 @@
 		4D9402031766E51D00898DCF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4D9402021766E51D00898DCF /* PetsAlliance.app */,
-				4D9402361766E51D00898DCF /* PetsAllianceTests.octest */,
+				4D9402021766E51D00898DCF /* Pets Alliance.app */,
+				4D9402361766E51D00898DCF /* Pets AllianceTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -831,10 +831,10 @@
 		4D94020C1766E51D00898DCF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4D94020D1766E51D00898DCF /* PetsAlliance-Info.plist */,
+				4D94020D1766E51D00898DCF /* Pets Alliance-Info.plist */,
 				4D94020E1766E51D00898DCF /* InfoPlist.strings */,
 				4D9402111766E51D00898DCF /* main.m */,
-				4D9402131766E51D00898DCF /* PetsAlliance-Prefix.pch */,
+				4D9402131766E51D00898DCF /* Pets Alliance-Prefix.pch */,
 				4D9402171766E51D00898DCF /* Default.png */,
 				4D9402191766E51D00898DCF /* Default@2x.png */,
 				4D94021B1766E51D00898DCF /* Default-568h@2x.png */,
@@ -855,7 +855,7 @@
 		4D94023E1766E51D00898DCF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4D94023F1766E51D00898DCF /* PetsAllianceTests-Info.plist */,
+				4D94023F1766E51D00898DCF /* Pets AllianceTests-Info.plist */,
 				4D9402401766E51D00898DCF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -939,9 +939,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4D9402011766E51D00898DCF /* PetsAlliance */ = {
+		4D9402011766E51D00898DCF /* Pets Alliance */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4D9402481766E51D00898DCF /* Build configuration list for PBXNativeTarget "PetsAlliance" */;
+			buildConfigurationList = 4D9402481766E51D00898DCF /* Build configuration list for PBXNativeTarget "Pets Alliance" */;
 			buildPhases = (
 				527B056E2CEF4BC19AC445A8 /* Check Pods Manifest.lock */,
 				4D9401FE1766E51D00898DCF /* Sources */,
@@ -953,14 +953,14 @@
 			);
 			dependencies = (
 			);
-			name = PetsAlliance;
+			name = "Pets Alliance";
 			productName = PetsAlliance;
-			productReference = 4D9402021766E51D00898DCF /* PetsAlliance.app */;
+			productReference = 4D9402021766E51D00898DCF /* Pets Alliance.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4D9402351766E51D00898DCF /* PetsAllianceTests */ = {
+		4D9402351766E51D00898DCF /* Pets AllianceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4D94024B1766E51D00898DCF /* Build configuration list for PBXNativeTarget "PetsAllianceTests" */;
+			buildConfigurationList = 4D94024B1766E51D00898DCF /* Build configuration list for PBXNativeTarget "Pets AllianceTests" */;
 			buildPhases = (
 				4D9402311766E51D00898DCF /* Sources */,
 				4D9402321766E51D00898DCF /* Frameworks */,
@@ -972,9 +972,9 @@
 			dependencies = (
 				4D94023C1766E51D00898DCF /* PBXTargetDependency */,
 			);
-			name = PetsAllianceTests;
+			name = "Pets AllianceTests";
 			productName = PetsAllianceTests;
-			productReference = 4D9402361766E51D00898DCF /* PetsAllianceTests.octest */;
+			productReference = 4D9402361766E51D00898DCF /* Pets AllianceTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -986,7 +986,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Mark Miyashita";
 			};
-			buildConfigurationList = 4D9401FD1766E51D00898DCF /* Build configuration list for PBXProject "PetsAlliance" */;
+			buildConfigurationList = 4D9401FD1766E51D00898DCF /* Build configuration list for PBXProject "Pets Alliance" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -998,8 +998,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4D9402011766E51D00898DCF /* PetsAlliance */,
-				4D9402351766E51D00898DCF /* PetsAllianceTests */,
+				4D9402011766E51D00898DCF /* Pets Alliance */,
+				4D9402351766E51D00898DCF /* Pets AllianceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1223,7 +1223,7 @@
 /* Begin PBXTargetDependency section */
 		4D94023C1766E51D00898DCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4D9402011766E51D00898DCF /* PetsAlliance */;
+			target = 4D9402011766E51D00898DCF /* Pets Alliance */;
 			targetProxy = 4D94023B1766E51D00898DCF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1317,9 +1317,9 @@
 			baseConfigurationReference = 2B13AD4A5B084F8897E72219 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PetsAlliance/PetsAlliance-Prefix.pch";
-				INFOPLIST_FILE = "PetsAlliance/PetsAlliance-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
+				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
+				PRODUCT_NAME = "Pets Alliance";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1329,9 +1329,9 @@
 			baseConfigurationReference = 2B13AD4A5B084F8897E72219 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PetsAlliance/PetsAlliance-Prefix.pch";
-				INFOPLIST_FILE = "PetsAlliance/PetsAlliance-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
+				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
+				PRODUCT_NAME = "Pets Alliance";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1346,8 +1346,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetsAlliance/PetsAlliance-Prefix.pch";
-				INFOPLIST_FILE = "PetsAllianceTests/PetsAllianceTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "PetsAllianceTests/Pets AllianceTests-Info.plist";
+				PRODUCT_NAME = "Pets AllianceTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1363,8 +1363,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetsAlliance/PetsAlliance-Prefix.pch";
-				INFOPLIST_FILE = "PetsAllianceTests/PetsAllianceTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "PetsAllianceTests/Pets AllianceTests-Info.plist";
+				PRODUCT_NAME = "Pets AllianceTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1373,7 +1373,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4D9401FD1766E51D00898DCF /* Build configuration list for PBXProject "PetsAlliance" */ = {
+		4D9401FD1766E51D00898DCF /* Build configuration list for PBXProject "Pets Alliance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4D9402461766E51D00898DCF /* Debug */,
@@ -1382,7 +1382,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4D9402481766E51D00898DCF /* Build configuration list for PBXNativeTarget "PetsAlliance" */ = {
+		4D9402481766E51D00898DCF /* Build configuration list for PBXNativeTarget "Pets Alliance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4D9402491766E51D00898DCF /* Debug */,
@@ -1391,7 +1391,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4D94024B1766E51D00898DCF /* Build configuration list for PBXNativeTarget "PetsAllianceTests" */ = {
+		4D94024B1766E51D00898DCF /* Build configuration list for PBXNativeTarget "Pets AllianceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4D94024C1766E51D00898DCF /* Debug */,

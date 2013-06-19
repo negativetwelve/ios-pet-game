@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4D9402011766E51D00898DCF"
-               BuildableName = "PetsAlliance.app"
-               BlueprintName = "PetsAlliance"
-               ReferencedContainer = "container:PetsAlliance.xcodeproj">
+               BuildableName = "Pets Alliance.app"
+               BlueprintName = "Pets Alliance"
+               ReferencedContainer = "container:Pets Alliance.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4D9402351766E51D00898DCF"
-               BuildableName = "PetsAllianceTests.octest"
-               BlueprintName = "PetsAllianceTests"
-               ReferencedContainer = "container:PetsAlliance.xcodeproj">
+               BuildableName = "Pets AllianceTests.octest"
+               BlueprintName = "Pets AllianceTests"
+               ReferencedContainer = "container:Pets Alliance.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4D9402011766E51D00898DCF"
-            BuildableName = "PetsAlliance.app"
-            BlueprintName = "PetsAlliance"
-            ReferencedContainer = "container:PetsAlliance.xcodeproj">
+            BuildableName = "Pets Alliance.app"
+            BlueprintName = "Pets Alliance"
+            ReferencedContainer = "container:Pets Alliance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4D9402011766E51D00898DCF"
-            BuildableName = "PetsAlliance.app"
-            BlueprintName = "PetsAlliance"
-            ReferencedContainer = "container:PetsAlliance.xcodeproj">
+            BuildableName = "Pets Alliance.app"
+            BlueprintName = "Pets Alliance"
+            ReferencedContainer = "container:Pets Alliance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4D9402011766E51D00898DCF"
-            BuildableName = "PetsAlliance.app"
-            BlueprintName = "PetsAlliance"
-            ReferencedContainer = "container:PetsAlliance.xcodeproj">
+            BuildableName = "Pets Alliance.app"
+            BlueprintName = "Pets Alliance"
+            ReferencedContainer = "container:Pets Alliance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

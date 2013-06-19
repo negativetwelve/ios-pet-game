@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:PetsAlliance.xcodeproj">
+      location = "self:Pets Alliance.xcodeproj">
    </FileRef>
 </Workspace>
