@@ -7,15 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
+#import <Security/Security.h>
 
 #import "NUIAppearance.h"
-#import <RestKit/RestKit.h>
+#import "KeychainItemWrapper.h"
 
 #import "MyPetViewController.h"
 #import "TrainingViewController.h"
 #import "BattleViewController.h"
 #import "TheMasterViewController.h"
 #import "NavigatorViewController.h"
+#import "LoginNavigationController.h"
+
+#import "LoginViewController.h"
 
 #import "MyPetNavigationController.h"
 #import "TrainingNavigationController.h"
@@ -23,6 +28,9 @@
 
 #import "User.h"
 #import "Pet.h"
+
+
+static BOOL isGameCenterAPIAvailable();
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 

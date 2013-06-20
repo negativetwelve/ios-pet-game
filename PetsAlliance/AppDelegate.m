@@ -14,7 +14,41 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    // Override point for customization after application launch.
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"arbitraryId" accessGroup:nil];
+
+    // NUI for buttons and labels
+    [NUISettings initWithStylesheet:@"custom"];
+    [NUIAppearance init];
+    
+    MyPetViewController *myPetViewController = [[MyPetViewController alloc] init];
+    UIViewController *trainingViewController = [[TrainingViewController alloc] init];
+    UIViewController *battleViewController = [[BattleViewController alloc] init];
+    UIViewController *theMasterViewController = [[TheMasterViewController alloc] init];
+    UIViewController *navigatorViewController = [[NavigatorViewController alloc] init];
+    
+    UINavigationController *myPetNavigationController = [[MyPetNavigationController alloc] initWithRootViewController:myPetViewController];
+    UINavigationController *trainingNavigationController = [[TrainingNavigationController alloc] initWithRootViewController:trainingViewController];
+    UINavigationController *battleNavigationController = [[BattleNavigationController alloc] initWithRootViewController:battleViewController];
+    UINavigationController *theMasterNavigationController = [[UINavigationController alloc] initWithRootViewController:theMasterViewController];
+    UINavigationController *navigatorNavigationController = [[UINavigationController alloc] initWithRootViewController:navigatorViewController];
+    
+    theMasterNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    navigatorNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[myPetNavigationController, trainingNavigationController, battleNavigationController, theMasterNavigationController, navigatorNavigationController];
+
+    self.window.rootViewController = self.tabBarController;
+    [self.window makeKeyAndVisible];
+
+    LoginViewController *loginController = [[LoginViewController alloc] init];
+    LoginNavigationController *loginNavigationController = [[LoginNavigationController alloc] initWithRootViewController:loginController];
+
+    NSUUID *vendorIdObject = [[UIDevice currentDevice] identifierForVendor];
+    NSString *uuid = [vendorIdObject UUIDString];
+    NSString *email = [keychain objectForKey:(__bridge id)kSecAttrAccount];
+    NSDictionary *auth = @{ @"app_id":uuid, @"email":email};
+    
     
     RKLogConfigureByName("RestKit/Network*", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
@@ -36,8 +70,12 @@
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[User class]];
     [userMapping addAttributeMappingsFromDictionary:@{
      @"id" : @"userID",
-     @"screen_name" : @"screenName",
-     @"name" : @"name"
+     @"username" : @"username",
+     @"email" : @"email",
+     @"money" : @"money",
+     @"bank" : @"bank",
+     @"money_rate" : @"moneyRate",
+     @"skill_level" : @"skillLevel",
      }];
     
     RKObjectMapping *petMapping = [RKObjectMapping mappingForClass:[Pet class]];
@@ -54,30 +92,27 @@
                                                                                              toKeyPath:@"user"
                                                                                            withMapping:userMapping];
     [petMapping addPropertyMapping:relationshipMapping];
+        
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping pathPattern:nil keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodGET path:@"iphone" parameters:auth];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        RKLogInfo(@"Load collection of Authentication: %@", mappingResult.array);
+
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//        RKLogError(@"Operation failed with error: %@", error);
+        double delayInSeconds = 0.1;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self.window.rootViewController presentViewController:loginNavigationController animated:YES completion:nil];
+        });
+    }];
     
-    // NUI for buttons and labels
-    [NUISettings initWithStylesheet:@"custom"];
-    
-    UIViewController *myPetViewController = [[MyPetViewController alloc] init];
-    UIViewController *trainingViewController = [[TrainingViewController alloc] init];
-    UIViewController *battleViewController = [[BattleViewController alloc] init];
-    UIViewController *theMasterViewController = [[TheMasterViewController alloc] init];
-    UIViewController *navigatorViewController = [[NavigatorViewController alloc] init];
-    
-    UINavigationController *myPetNavigationController = [[MyPetNavigationController alloc] initWithRootViewController:myPetViewController];
-    UINavigationController *trainingNavigationController = [[TrainingNavigationController alloc] initWithRootViewController:trainingViewController];
-    UINavigationController *battleNavigationController = [[BattleNavigationController alloc] initWithRootViewController:battleViewController];
-    UINavigationController *theMasterNavigationController = [[UINavigationController alloc] initWithRootViewController:theMasterViewController];
-    UINavigationController *navigatorNavigationController = [[UINavigationController alloc] initWithRootViewController:navigatorViewController];
-    
-    theMasterNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    navigatorNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;    
-    
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[myPetNavigationController, trainingNavigationController, battleNavigationController, theMasterNavigationController, navigatorNavigationController];
-    
-    self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
+    [objectRequestOperation start];
+//    NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodGET path:@"iphone" parameters:parameters];
+//    [objectManager getObject:nil path:@"iphone" parameters:parameters success:nil failure:nil];
+    NSLog(@"done making a call");
+
     return YES;
 }
 

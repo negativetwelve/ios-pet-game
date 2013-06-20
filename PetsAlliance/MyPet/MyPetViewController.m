@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"My Pet";
+        self.view.nuiClass = @"DefaultView";
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Switch Pets" style:UIBarButtonItemStyleBordered target:self action:@selector(switchPets:)];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Help" style:UIBarButtonItemStyleBordered target:self action:@selector(viewHelp:)];
     }
@@ -44,12 +45,7 @@
     [self.view addSubview:scrollView];
     
     UIView *mainPetView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
-    mainPetView.backgroundColor = [UIColor whiteColor];
     [scrollView addSubview:mainPetView];
-    
-    UIView *petsView = [[UIView alloc] initWithFrame:CGRectMake(20, 230, 280, 80)];
-    petsView.backgroundColor = [UIColor grayColor];
-    [scrollView addSubview:petsView];
         
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:@"Pet" forState:UIControlStateNormal];

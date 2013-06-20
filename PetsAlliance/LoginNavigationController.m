@@ -1,18 +1,18 @@
 //
-//  MyPetNavigationController.m
-//  PetsAlliance
+//  LoginNavigationController.m
+//  Pets Alliance
 //
-//  Created by Mark Miyashita on 6/11/13.
+//  Created by Mark Miyashita on 6/19/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
-#import "MyPetNavigationController.h"
+#import "LoginNavigationController.h"
 
-@interface MyPetNavigationController ()
+@interface LoginNavigationController ()
 
 @end
 
-@implementation MyPetNavigationController
+@implementation LoginNavigationController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

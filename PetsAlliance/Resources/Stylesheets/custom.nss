@@ -31,6 +31,17 @@ BarButton {
     font-size: 13;
     text-shadow-color: clear;
 }
+BarButtonBack {
+    background-color-top: @barBackgroundColorTop;
+    background-color-bottom: @barBackgroundColorBottom;
+    border-color: #0099D5;
+    border-width: 1;
+    corner-radius: 7;
+    font-name: @primaryFontNameBold;
+    font-color: #FFFFFF;
+    font-size: 13;
+    text-shadow-color: clear;
+}
 Button {
     background-color: @primaryButtonColor;
     font-color: #FFFFFF;
@@ -190,7 +201,7 @@ TextField {
     border-color: @primaryBorderColor;
     border-width: 1;
     corner-radius: 7;
-    padding: 12;
+    padding: 7;
     vertical-align: center;
 }
 LargeTextField {
@@ -199,7 +210,7 @@ LargeTextField {
     corner-radius: 9;
     padding: 13;
 }
-View {
+DefaultView {
     background-color: @primaryBackgroundColor;
 }
 StatusView {

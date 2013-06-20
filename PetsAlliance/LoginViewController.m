@@ -18,7 +18,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.title = @"Welcome!";
+        self.view.nuiClass = @"DefaultView";
     }
     return self;
 }
@@ -26,7 +27,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    UIButton *boyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [boyButton setTitle:@"Boy" forState:UIControlStateNormal];
+    [boyButton setNuiClass:@"Button:LargeButton"];
+    [boyButton setFrame:CGRectMake(25, 100, 110, 50)];
+    [boyButton addTarget:self action:@selector(selectBoyAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:boyButton];
+    
+    UIButton *girlButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [girlButton setTitle:@"Girl" forState:UIControlStateNormal];
+    [girlButton setNuiClass:@"Button:LargeButton"];
+    [girlButton setFrame:CGRectMake(185, 100, 110, 50)];
+    [girlButton addTarget:self action:@selector(selectGirlAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:girlButton];
+}
+
+- (void)selectBoyAction: (id)selector {
+    NSLog(@"clicked on boy button");
+    FirstPetViewController *firstPetViewController = [[FirstPetViewController alloc] init];
+    [firstPetViewController setGender:@"boy"];
+    [self.navigationController pushViewController:firstPetViewController animated:YES];
+}
+
+- (void)selectGirlAction: (id)selector {
+    NSLog(@"clicked on girl button");
 }
 
 - (void)didReceiveMemoryWarning

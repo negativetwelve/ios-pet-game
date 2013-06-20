@@ -11,7 +11,7 @@
 
 #define PROD NO
 
-#define LOCALURL @"http://localhost:3000"
+#define LOCALURL @"http://pro.local:3000/api/v1/"
 #define PRODURL @""
 
 #define IS_IPHONE5 ([[UIScreen mainScreen] applicationFrame].size.height == 548)

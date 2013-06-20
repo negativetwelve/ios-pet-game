@@ -125,6 +125,12 @@
 		4D4F5A231769B41500E81980 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A211769B41500E81980 /* ItemsViewController.m */; };
 		4D4F5A271769B43200E81980 /* ItemsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A261769B43200E81980 /* ItemsTableView.m */; };
 		4D4F5A2A1769B44E00E81980 /* ItemsNavigationScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */; };
+		4D782A83177185A5004B1C46 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D782A811771859B004B1C46 /* GameKit.framework */; };
+		4D782A8A1772ADC3004B1C46 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A891772ADC3004B1C46 /* KeychainItemWrapper.m */; };
+		4D782A8D1772B3BA004B1C46 /* LoginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A8C1772B3BA004B1C46 /* LoginNavigationController.m */; };
+		4D782A9C1772BA0E004B1C46 /* SelectPetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A9B1772BA0E004B1C46 /* SelectPetView.m */; };
+		4D782A9F1772BE77004B1C46 /* FirstPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A9D1772BE77004B1C46 /* FirstPetViewController.m */; };
+		4D782AA21772CCC7004B1C46 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782AA11772CCC7004B1C46 /* SignUpViewController.m */; };
 		4D914B47176EB646006B7BCD /* sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1D176EB646006B7BCD /* sword.png */; };
 		4D914B48176EB646006B7BCD /* sword@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1E176EB646006B7BCD /* sword@2x.png */; };
 		4D914B4A176EB646006B7BCD /* cat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B21176EB646006B7BCD /* cat@2x.png */; };
@@ -358,6 +364,17 @@
 		4D4F5A261769B43200E81980 /* ItemsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsTableView.m; path = PetsAlliance/Items/ItemsTableView.m; sourceTree = SOURCE_ROOT; };
 		4D4F5A281769B44E00E81980 /* ItemsNavigationScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsNavigationScrollView.h; path = PetsAlliance/Items/ItemsNavigationScrollView.h; sourceTree = SOURCE_ROOT; };
 		4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsNavigationScrollView.m; path = PetsAlliance/Items/ItemsNavigationScrollView.m; sourceTree = SOURCE_ROOT; };
+		4D782A811771859B004B1C46 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		4D782A881772ADC3004B1C46 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		4D782A891772ADC3004B1C46 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		4D782A8B1772B3BA004B1C46 /* LoginNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNavigationController.h; sourceTree = "<group>"; };
+		4D782A8C1772B3BA004B1C46 /* LoginNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNavigationController.m; sourceTree = "<group>"; };
+		4D782A9A1772BA0E004B1C46 /* SelectPetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPetView.h; path = Login/SelectPetView.h; sourceTree = "<group>"; };
+		4D782A9B1772BA0E004B1C46 /* SelectPetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectPetView.m; path = Login/SelectPetView.m; sourceTree = "<group>"; };
+		4D782A9D1772BE77004B1C46 /* FirstPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstPetViewController.m; path = Login/FirstPetViewController.m; sourceTree = "<group>"; };
+		4D782A9E1772BE77004B1C46 /* FirstPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstPetViewController.h; path = Login/FirstPetViewController.h; sourceTree = "<group>"; };
+		4D782AA01772CCC7004B1C46 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = Login/SignUpViewController.h; sourceTree = "<group>"; };
+		4D782AA11772CCC7004B1C46 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = Login/SignUpViewController.m; sourceTree = "<group>"; };
 		4D914B1D176EB646006B7BCD /* sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sword.png; sourceTree = "<group>"; };
 		4D914B1E176EB646006B7BCD /* sword@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sword@2x.png"; sourceTree = "<group>"; };
 		4D914B21176EB646006B7BCD /* cat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat@2x.png"; sourceTree = "<group>"; };
@@ -416,6 +433,7 @@
 				4D9402081766E51D00898DCF /* Foundation.framework in Frameworks */,
 				4D94020A1766E51D00898DCF /* CoreGraphics.framework in Frameworks */,
 				4D16F6DF176D6B5F00C7C4F7 /* CoreImage.framework in Frameworks */,
+				4D782A83177185A5004B1C46 /* GameKit.framework in Frameworks */,
 				4D914B61176EF579006B7BCD /* SystemConfiguration.framework in Frameworks */,
 				4D914B62176EF579006B7BCD /* MobileCoreServices.framework in Frameworks */,
 				F713AD5B92C5487781B1D33C /* libPods.a in Frameworks */,
@@ -748,6 +766,33 @@
 			path = MyPet;
 			sourceTree = "<group>";
 		};
+		4D782A871772ADC3004B1C46 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				4D782A881772ADC3004B1C46 /* KeychainItemWrapper.h */,
+				4D782A891772ADC3004B1C46 /* KeychainItemWrapper.m */,
+			);
+			name = Keychain;
+			path = Classes/Keychain;
+			sourceTree = "<group>";
+		};
+		4D782A8E1772B3BE004B1C46 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4D782AA01772CCC7004B1C46 /* SignUpViewController.h */,
+				4D782AA11772CCC7004B1C46 /* SignUpViewController.m */,
+				4D782A9A1772BA0E004B1C46 /* SelectPetView.h */,
+				4D782A9B1772BA0E004B1C46 /* SelectPetView.m */,
+				4D782A9E1772BE77004B1C46 /* FirstPetViewController.h */,
+				4D782A9D1772BE77004B1C46 /* FirstPetViewController.m */,
+				4D914B4F176EC48D006B7BCD /* LoginViewController.h */,
+				4D914B50176EC48D006B7BCD /* LoginViewController.m */,
+				4D782A8B1772B3BA004B1C46 /* LoginNavigationController.h */,
+				4D782A8C1772B3BA004B1C46 /* LoginNavigationController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		4D914B1C176EB646006B7BCD /* Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +805,7 @@
 		4D914B56176EF3B7006B7BCD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4D782A871772ADC3004B1C46 /* Keychain */,
 				4D914B53176EF3B3006B7BCD /* User.h */,
 				4D914B54176EF3B3006B7BCD /* User.m */,
 				4D914B57176EF3CA006B7BCD /* Pet.h */,
@@ -795,6 +841,7 @@
 		4D9402041766E51D00898DCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D782A811771859B004B1C46 /* GameKit.framework */,
 				4D914B5F176EF559006B7BCD /* SystemConfiguration.framework */,
 				4D914B5D176EF54C006B7BCD /* MobileCoreServices.framework */,
 				4D16F6DD176D6B3000C7C4F7 /* CoreImage.framework */,
@@ -811,9 +858,8 @@
 		4D94020B1766E51D00898DCF /* PetsAlliance */ = {
 			isa = PBXGroup;
 			children = (
-				4D914B4F176EC48D006B7BCD /* LoginViewController.h */,
-				4D914B50176EC48D006B7BCD /* LoginViewController.m */,
 				4D914B56176EF3B7006B7BCD /* Classes */,
+				4D782A8E1772B3BE004B1C46 /* Login */,
 				4D9402521766E5C100898DCF /* MyPet */,
 				4D4F5A1F1769B2F400E81980 /* Items */,
 				4D9402511766E5C100898DCF /* Training */,
@@ -1207,6 +1253,11 @@
 				4D914B55176EF3B3006B7BCD /* User.m in Sources */,
 				4D914B59176EF3CA006B7BCD /* Pet.m in Sources */,
 				4D914B5C176EF3DA006B7BCD /* Item.m in Sources */,
+				4D782A8A1772ADC3004B1C46 /* KeychainItemWrapper.m in Sources */,
+				4D782A8D1772B3BA004B1C46 /* LoginNavigationController.m in Sources */,
+				4D782A9C1772BA0E004B1C46 /* SelectPetView.m in Sources */,
+				4D782A9F1772BE77004B1C46 /* FirstPetViewController.m in Sources */,
+				4D782AA21772CCC7004B1C46 /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

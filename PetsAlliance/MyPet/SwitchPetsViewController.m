@@ -20,12 +20,19 @@
     if (self) {
         self.title = @"Switch Pets";
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(closeSwitchPets:)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStyleDone target:self action:@selector(signOut:)];
         // Custom initialization
     }
     return self;
 }
 
-- (void) closeSwitchPets: (id) selector {
+- (void)signOut: (id)selector {
+    NSLog(@"sign out");
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"arbitraryId" accessGroup:nil];
+    [keychain setObject:@"" forKey:(__bridge id)(kSecAttrAccount)];
+}
+
+- (void)closeSwitchPets: (id)selector {
     NSLog(@"close switch pets");
     [self dismissViewControllerAnimated:YES completion:nil];
 }

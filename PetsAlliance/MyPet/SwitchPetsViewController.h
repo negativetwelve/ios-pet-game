@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "KeychainItemWrapper.h"
+
 @interface SwitchPetsViewController : UITableViewController
 
 @end
