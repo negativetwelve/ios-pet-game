@@ -19,7 +19,7 @@
         self.nuiClass = @"DefaultView";
 
         UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(120, 120, 80, 120)];
-        [character setImage:[UIImage imageNamed:@"male.png"]];
+        [character setImage:[UIImage imageNamed:@"dragon.png"]];
         [self addSubview:character];
         
         UIButton *selectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];

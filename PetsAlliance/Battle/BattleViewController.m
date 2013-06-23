@@ -25,7 +25,7 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Leaderboard" style:UIBarButtonItemStyleDone target:self action:@selector(viewLeaderboard:)];
         self.rowHeights = [[NSMutableArray alloc] init];
         for (NSUInteger i = 0; i < 10; i++) {
-            [self.rowHeights addObject:[NSNumber numberWithFloat:100]];
+            [self.rowHeights addObject:[NSNumber numberWithFloat:120]];
         }
     }
     return self;
@@ -86,8 +86,8 @@
         
         [cell addSubview:battleButton];
         
-        UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(5, 35, 40, 60)];
-        [character setImage:[UIImage imageNamed:@"male.png"]];
+        UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(5, 35, 40, 80)];
+        [character setImage:[UIImage imageNamed:@"male1.png"]];
         [cell addSubview:character];
 
         PetSelectButton *firstPetButton = [[PetSelectButton alloc] initWithFrame:CGRectMake(55, 45, 50, 50) andNuiClass:@"ImageButton" andImageName:@"dragon.png" andSelector:@selector(petSelected:) andCell:cell andIndex:1];
@@ -153,15 +153,15 @@
     NSLog(@"pet selected at index: %d", selectedButton.index);
 
     int currentHeight = selected.bounds.size.height;
-    if (currentHeight == 100) {
+    if (currentHeight == 120) {
         for (NSUInteger i = 0; i < [self.rowHeights count]; i++) {
-            [self.rowHeights setObject:[NSNumber numberWithFloat:100] atIndexedSubscript:i];
+            [self.rowHeights setObject:[NSNumber numberWithFloat:120] atIndexedSubscript:i];
         }
-        [self.rowHeights setObject:[NSNumber numberWithFloat:160] atIndexedSubscript:selected.tag];
+        [self.rowHeights setObject:[NSNumber numberWithFloat:180] atIndexedSubscript:selected.tag];
         [selected setPetIndex:selectedButton.index];
         // show current pet
     } else if (selected.petIndex == selectedButton.index){
-        [self.rowHeights setObject:[NSNumber numberWithFloat:100] atIndexedSubscript:selected.tag];
+        [self.rowHeights setObject:[NSNumber numberWithFloat:120] atIndexedSubscript:selected.tag];
         [selected setPetIndex:0];
     } else {
         [selected setPetIndex:selectedButton.index];

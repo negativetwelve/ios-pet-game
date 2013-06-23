@@ -13,7 +13,40 @@
 #import "UITextField+NUI.h"
 
 #import "FirstPetViewController.h"
+#import "HaveAcccountViewController.h"
+#import "SelectCharacterView.h"
 
-@interface LoginViewController : UIViewController
+#import "LoginNavigationController.h"
+
+@class SelectCharacterView;
+@interface LoginViewController : UIViewController <UITextFieldDelegate> {
+    UIScrollView *mainScrollView;
+    UIImageView *male;
+    UIImageView *female;
+    UIImageView *nextButton;
+    UIButton *maleButton;
+    UIButton *femaleButton;
+    UIButton *accountButton;
+    UIButton *resetButton;
+    
+    CGPoint originalCenter;
+    int numCharacters;
+    NSMutableArray *characterViews;
+}
+
+@property (nonatomic, assign) UIScrollView *mainScrollView;
+@property (nonatomic, assign) UIImageView *male;
+@property (nonatomic, assign) UIImageView *female;
+@property (nonatomic, assign) UIImageView *nextButton;
+@property (nonatomic, assign) UIButton *maleButton;
+@property (nonatomic, assign) UIButton *femaleButton;
+@property (nonatomic, assign) UIButton *accountButton;
+@property (nonatomic, assign) UIButton *resetButton;
+
+@property (nonatomic, assign) CGPoint originalCenter;
+@property (nonatomic, assign) int numCharacters;
+@property (nonatomic, retain) NSMutableArray *characterViews;
+
+- (UIButton *)makeGoBackButton: (NSString *)gender;
 
 @end

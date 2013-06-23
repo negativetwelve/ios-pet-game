@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginNavigationController : UINavigationController
+@interface LoginNavigationController : UINavigationController {
+    NSMutableDictionary *params;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *params;
 
 @end

@@ -13,12 +13,14 @@
 @end
 
 @implementation LoginNavigationController
+@synthesize params = _params;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        self.params = [[NSMutableDictionary alloc] init];
     }
     return self;
 }

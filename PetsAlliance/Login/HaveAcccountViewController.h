@@ -1,8 +1,8 @@
 //
-//  SignUpViewController.h
+//  HaveAcccountViewController.h
 //  Pets Alliance
 //
-//  Created by Mark Miyashita on 6/19/13.
+//  Created by Mark Miyashita on 6/22/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
@@ -10,19 +10,16 @@
 #import <RestKit/RestKit.h>
 
 #import "KeychainItemWrapper.h"
-#import "AESCrypt.h"
 
 #import "UIButton+NUI.h"
 #import "UILabel+NUI.h"
 #import "UITextField+NUI.h"
 
+#import "AESCrypt.h"
 #import "User.h"
 
 #import "PAURLRequest.h"
 
-#import "LoginNavigationController.h"
-
-
-@interface SignUpViewController : UIViewController <UITextFieldDelegate>
+@interface HaveAcccountViewController : UIViewController <UITextFieldDelegate>
 
 @end

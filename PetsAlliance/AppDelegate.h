@@ -31,6 +31,8 @@
 
 #import "AESCrypt.h"
 
+#import "PAURLRequest.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 

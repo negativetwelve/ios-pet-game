@@ -71,8 +71,8 @@ LargeButton {
 SmallButton {
     height: 24;
     font-size: 12;
-    corner-radius: 12;
-    padding: 8;
+    corner-radius: 7;
+    padding: 3;
 }
 ConfirmButton {
     background-color: @confirmButtonColor;

@@ -13,6 +13,7 @@
 @end
 
 @implementation SwitchPetsViewController
+@synthesize home = _home;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,11 +26,21 @@
     return self;
 }
 
+- (void)loadSignIn {
+    NSLog(@"did disappear");
+    LoginViewController *loginController = [[LoginViewController alloc] init];
+    LoginNavigationController *loginNavigationController = [[LoginNavigationController alloc] initWithRootViewController:loginController];
+    [self.home presentViewController:loginNavigationController animated:YES completion:nil];
+}
+
 - (void)signOut: (id)selector {
     NSLog(@"sign out");
     KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
     [keychain setObject:@"" forKey:(__bridge id)(kSecAttrAccount)];
     [keychain setObject:@"" forKey:(__bridge id)(kSecValueData)];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self loadSignIn];
+    }];
 }
 
 - (void)closeSwitchPets: (id)selector {

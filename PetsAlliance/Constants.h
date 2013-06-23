@@ -11,8 +11,11 @@
 
 #define PROD NO
 
+#if TARGET_IPHONE_SIMULATOR
 #define LOCALURL @"http://pro.local:3000/api/v1/"
-#define PRODURL @""
+#else
+#define LOCALURL @"http://petsalliance.herokuapp.com/api/v1/"
+#endif
 
 #define IS_IPHONE5 ([[UIScreen mainScreen] applicationFrame].size.height == 548)
 #define IS_IPHONE4 ([[UIScreen mainScreen] applicationFrame].size.height == 460)

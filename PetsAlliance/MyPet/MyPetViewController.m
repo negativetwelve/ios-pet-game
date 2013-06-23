@@ -92,6 +92,7 @@
 - (void)switchPets: (id) selector {
     NSLog(@"Opened the switchPets view");
     SwitchPetsViewController *switchPetsView = [[SwitchPetsViewController alloc] init];
+    [switchPetsView setHome:self];
     SwitchPetsNavigationController *switchPetsNavigationController = [[SwitchPetsNavigationController alloc] initWithRootViewController:switchPetsView];
     [self presentViewController:switchPetsNavigationController animated:YES completion:nil];
 }

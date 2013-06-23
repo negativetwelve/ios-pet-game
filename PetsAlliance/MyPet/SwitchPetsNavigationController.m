@@ -19,7 +19,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.navigationBar.barStyle = UIBarStyleBlackOpaque;
-        // Custom initialization
     }
     return self;
 }

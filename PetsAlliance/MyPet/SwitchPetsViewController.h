@@ -10,6 +10,15 @@
 
 #import "KeychainItemWrapper.h"
 
-@interface SwitchPetsViewController : UITableViewController
+#import "MyPetViewController.h"
+#import "LoginNavigationController.h"
+#import "LoginViewController.h"
+
+@class MyPetViewController;
+@interface SwitchPetsViewController : UITableViewController {
+    MyPetViewController *home;
+}
+
+@property (nonatomic, retain) MyPetViewController *home;
 
 @end

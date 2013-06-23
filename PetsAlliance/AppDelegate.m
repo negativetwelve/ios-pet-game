@@ -15,6 +15,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
+    [keychain setObject:@"Pets Alliance" forKey: (__bridge id)kSecAttrService];
 
     // NUI for buttons and labels
     [NUISettings initWithStylesheet:@"custom"];
@@ -49,7 +50,6 @@
     NSString *uuid = [vendorIdObject UUIDString];
     NSString *email = [keychain objectForKey:(__bridge id)kSecAttrAccount];
     NSString *password = [keychain objectForKey:(__bridge id)kSecValueData];
-    NSLog(@"EMAIL: %@, PASSWORD: %@", email, password);
     NSDictionary *auth = @{ @"app_id":uuid, @"email":email, @"password":password};
     
     RKLogConfigureByName("RestKit/Network*", RKLogLevelTrace);
@@ -60,13 +60,14 @@
     
     // Initialize HTTPClient
     NSURL *localURL = [NSURL URLWithString:LOCALURL];
-    AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
     
     //we want to work with JSON-Data
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
     
     // Initialize RestKit
     RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    [RKObjectManager setSharedManager:objectManager];
     
     // Setup our object mappings
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[User class]];
@@ -94,21 +95,16 @@
                                                                                              toKeyPath:@"user"
                                                                                            withMapping:userMapping];
     [petMapping addPropertyMapping:relationshipMapping];
-        
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping pathPattern:nil keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodGET path:@"iphone" parameters:auth];
-    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
-    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        NSLog(@"successfully logged in");
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    
+    [PAURLRequest requestWithURL:@"iphone" method:RKRequestMethodGET parameters:auth objectMapping:userMapping keyPath:@"user" delegate:self successBlock:^{
+        NSLog(@"successfully logged in!");
+    } failureBlock:^{
         double delayInSeconds = 0.1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [self.window.rootViewController presentViewController:loginNavigationController animated:YES completion:nil];
         });
     }];
-
-    [objectRequestOperation start];
 
     return YES;
 }
