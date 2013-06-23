@@ -131,6 +131,12 @@
 		4D782A9C1772BA0E004B1C46 /* SelectPetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A9B1772BA0E004B1C46 /* SelectPetView.m */; };
 		4D782A9F1772BE77004B1C46 /* FirstPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A9D1772BE77004B1C46 /* FirstPetViewController.m */; };
 		4D782AA21772CCC7004B1C46 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782AA11772CCC7004B1C46 /* SignUpViewController.m */; };
+		4D782AB0177674F1004B1C46 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782AA6177674F1004B1C46 /* AESCrypt.m */; };
+		4D782AB1177674F1004B1C46 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4D782AA7177674F1004B1C46 /* LICENSE */; };
+		4D782AB2177674F1004B1C46 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782AA9177674F1004B1C46 /* NSData+Base64.m */; };
+		4D782AB3177674F1004B1C46 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782AAB177674F1004B1C46 /* NSData+CommonCrypto.m */; };
+		4D782AB4177674F1004B1C46 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782AAD177674F1004B1C46 /* NSString+Base64.m */; };
+		4D782AB5177674F1004B1C46 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4D782AAE177674F1004B1C46 /* README.md */; };
 		4D914B47176EB646006B7BCD /* sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1D176EB646006B7BCD /* sword.png */; };
 		4D914B48176EB646006B7BCD /* sword@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1E176EB646006B7BCD /* sword@2x.png */; };
 		4D914B4A176EB646006B7BCD /* cat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B21176EB646006B7BCD /* cat@2x.png */; };
@@ -375,6 +381,16 @@
 		4D782A9E1772BE77004B1C46 /* FirstPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstPetViewController.h; path = Login/FirstPetViewController.h; sourceTree = "<group>"; };
 		4D782AA01772CCC7004B1C46 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = Login/SignUpViewController.h; sourceTree = "<group>"; };
 		4D782AA11772CCC7004B1C46 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = Login/SignUpViewController.m; sourceTree = "<group>"; };
+		4D782AA5177674F1004B1C46 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		4D782AA6177674F1004B1C46 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		4D782AA7177674F1004B1C46 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4D782AA8177674F1004B1C46 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		4D782AA9177674F1004B1C46 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		4D782AAA177674F1004B1C46 /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		4D782AAB177674F1004B1C46 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		4D782AAC177674F1004B1C46 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		4D782AAD177674F1004B1C46 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		4D782AAE177674F1004B1C46 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		4D914B1D176EB646006B7BCD /* sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sword.png; sourceTree = "<group>"; };
 		4D914B1E176EB646006B7BCD /* sword@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sword@2x.png"; sourceTree = "<group>"; };
 		4D914B21176EB646006B7BCD /* cat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat@2x.png"; sourceTree = "<group>"; };
@@ -555,6 +571,7 @@
 		4D16F63A176D6AC000C7C4F7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4D782AA3177674F1004B1C46 /* AESCrypt */,
 				4D16F63B176D6AC000C7C4F7 /* NUI */,
 			);
 			path = Libraries;
@@ -791,6 +808,23 @@
 				4D782A8C1772B3BA004B1C46 /* LoginNavigationController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		4D782AA3177674F1004B1C46 /* AESCrypt */ = {
+			isa = PBXGroup;
+			children = (
+				4D782AA5177674F1004B1C46 /* AESCrypt.h */,
+				4D782AA6177674F1004B1C46 /* AESCrypt.m */,
+				4D782AA7177674F1004B1C46 /* LICENSE */,
+				4D782AA8177674F1004B1C46 /* NSData+Base64.h */,
+				4D782AA9177674F1004B1C46 /* NSData+Base64.m */,
+				4D782AAA177674F1004B1C46 /* NSData+CommonCrypto.h */,
+				4D782AAB177674F1004B1C46 /* NSData+CommonCrypto.m */,
+				4D782AAC177674F1004B1C46 /* NSString+Base64.h */,
+				4D782AAD177674F1004B1C46 /* NSString+Base64.m */,
+				4D782AAE177674F1004B1C46 /* README.md */,
+			);
+			path = AESCrypt;
 			sourceTree = "<group>";
 		};
 		4D914B1C176EB646006B7BCD /* Items */ = {
@@ -1110,6 +1144,8 @@
 				4D914B48176EB646006B7BCD /* sword@2x.png in Resources */,
 				4D914B4A176EB646006B7BCD /* cat@2x.png in Resources */,
 				4D914B4C176EB646006B7BCD /* dragon@2x.png in Resources */,
+				4D782AB1177674F1004B1C46 /* LICENSE in Resources */,
+				4D782AB5177674F1004B1C46 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1258,6 +1294,10 @@
 				4D782A9C1772BA0E004B1C46 /* SelectPetView.m in Sources */,
 				4D782A9F1772BE77004B1C46 /* FirstPetViewController.m in Sources */,
 				4D782AA21772CCC7004B1C46 /* SignUpViewController.m in Sources */,
+				4D782AB0177674F1004B1C46 /* AESCrypt.m in Sources */,
+				4D782AB2177674F1004B1C46 /* NSData+Base64.m in Sources */,
+				4D782AB3177674F1004B1C46 /* NSData+CommonCrypto.m in Sources */,
+				4D782AB4177674F1004B1C46 /* NSString+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

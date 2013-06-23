@@ -68,19 +68,23 @@
 
 - (void)submitAction: (id)selector {
     NSLog(@"submitting");
+
     // send to server
+    NSString *encryptionKey = @"IQPRZUDGWWCGVGHTKHRPEQAYPPAQXASH";
     UIView *signUpView = ((UIView *)selector).superview;
     NSString *email = ((UITextField *)[signUpView.subviews objectAtIndex:0]).text;
+    email = [AESCrypt encrypt:email password:encryptionKey];
     NSString *password = ((UITextField *)[signUpView.subviews objectAtIndex:1]).text;
+    password = [AESCrypt encrypt:password password:encryptionKey];
     NSString *passwordConfirmation = ((UITextField *)[signUpView.subviews objectAtIndex:2]).text;
-    NSLog(@"%@", signUpView);
+    passwordConfirmation = [AESCrypt encrypt:passwordConfirmation password:encryptionKey];
     
-    
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"arbitraryId" accessGroup:nil];
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
 
     NSUUID *vendorIdObject = [[UIDevice currentDevice] identifierForVendor];
     NSString *uuid = [vendorIdObject UUIDString];
-    NSDictionary *auth = @{@"app_id":uuid, @"email":email, @"password":password, @"password_confirmation":passwordConfirmation};
+    NSDictionary *user = @{@"app_id":uuid, @"email":email, @"password":password, @"password_confirmation":passwordConfirmation};
+    NSDictionary *auth = @{@"user":user};
     
     NSURL *localURL = [NSURL URLWithString:LOCALURL];
     AFHTTPClient* client = [[AFHTTPClient alloc] initWithBaseURL:localURL];
@@ -104,28 +108,12 @@
      }];
 
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:userMapping pathPattern:nil keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
-    NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodGET path:@"iphone" parameters:auth];
+    NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"account/create" parameters:auth];
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         RKLogInfo(@"Load collection of Authentication: %@", mappingResult.array);
-        NSString *error;
-        //The following NSData object may be stored in the Keychain
-        NSLog(@"GOT HERE");
-        NSData *dictionaryRep = [NSPropertyListSerialization dataFromPropertyList:auth format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
-        NSLog(@"GOT HERE2 %@", dictionaryRep);
         [keychain setObject:email forKey:(__bridge id)(kSecAttrAccount)];
-        NSLog(@"GOT HERE3");
-        
-        //When the NSData object object is retrieved from the Keychain, you convert it back to NSDictionary type
-        dictionaryRep = [keychain objectForKey:(__bridge id)(kSecAttrAccount)];
-//        NSDictionary *dictionary = [NSPropertyListSerialization propertyListFromData:dictionaryRep mutabilityOption:NSPropertyListImmutable format:nil errorDescription:&error];
-        
-        if (error) {
-            NSLog(@"%@", error);
-        }
-        
-        NSLog(@"%@", dictionaryRep);
-        
+        [keychain setObject:password forKey:(__bridge id)(kSecValueData)];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         RKLogError(@"Operation failed with error: %@", error);
     }];

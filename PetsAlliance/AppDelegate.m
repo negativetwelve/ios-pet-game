@@ -14,7 +14,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"arbitraryId" accessGroup:nil];
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
 
     // NUI for buttons and labels
     [NUISettings initWithStylesheet:@"custom"];
@@ -41,14 +41,16 @@
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 
+    // Login logic.
     LoginViewController *loginController = [[LoginViewController alloc] init];
     LoginNavigationController *loginNavigationController = [[LoginNavigationController alloc] initWithRootViewController:loginController];
 
     NSUUID *vendorIdObject = [[UIDevice currentDevice] identifierForVendor];
     NSString *uuid = [vendorIdObject UUIDString];
     NSString *email = [keychain objectForKey:(__bridge id)kSecAttrAccount];
-    NSDictionary *auth = @{ @"app_id":uuid, @"email":email};
-    
+    NSString *password = [keychain objectForKey:(__bridge id)kSecValueData];
+    NSLog(@"EMAIL: %@, PASSWORD: %@", email, password);
+    NSDictionary *auth = @{ @"app_id":uuid, @"email":email, @"password":password};
     
     RKLogConfigureByName("RestKit/Network*", RKLogLevelTrace);
     RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
@@ -97,21 +99,16 @@
     NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodGET path:@"iphone" parameters:auth];
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        RKLogInfo(@"Load collection of Authentication: %@", mappingResult.array);
-
+        NSLog(@"successfully logged in");
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-//        RKLogError(@"Operation failed with error: %@", error);
         double delayInSeconds = 0.1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [self.window.rootViewController presentViewController:loginNavigationController animated:YES completion:nil];
         });
     }];
-    
+
     [objectRequestOperation start];
-//    NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodGET path:@"iphone" parameters:parameters];
-//    [objectManager getObject:nil path:@"iphone" parameters:parameters success:nil failure:nil];
-    NSLog(@"done making a call");
 
     return YES;
 }

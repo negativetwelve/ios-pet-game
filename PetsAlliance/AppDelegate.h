@@ -29,8 +29,8 @@
 #import "User.h"
 #import "Pet.h"
 
+#import "AESCrypt.h"
 
-static BOOL isGameCenterAPIAvailable();
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 

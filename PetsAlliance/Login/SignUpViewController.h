@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 
 #import "KeychainItemWrapper.h"
+#import "AESCrypt.h"
 
 #import "UIButton+NUI.h"
 #import "UILabel+NUI.h"
