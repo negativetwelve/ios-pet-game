@@ -27,7 +27,7 @@ NSString *const kEncryptionKey = @"IQPRZUDGWWCGVGHTKHRPEQAYPPAQXASH";
     return nil;
 }
 
-+ (void)requestWithURL:(NSString *)path method:(RKRequestMethod)method parameters:(NSDictionary *)params objectMapping:(RKMapping *)mapping keyPath:(NSString *)keyPath delegate:(id)delegate successBlock:(void (^)())successBlock failureBlock:(void (^)())failureBlock {
++ (void)requestWithURL:(NSString *)path method:(RKRequestMethod)method parameters:(NSDictionary *)params objectMapping:(RKMapping *)mapping keyPath:(NSString *)keyPath delegate:(id)delegate successBlock:(void (^)(RKObjectRequestOperation *operation, RKMappingResult *mappingResult))successBlock failureBlock:(void (^)(RKObjectRequestOperation *operation, NSError *error))failureBlock {
     [PAURLRequest _requestWithURL:path method:method object:nil parameters:params objectMapping:mapping keyPath:keyPath delegate:delegate successBlock:successBlock failureBlock:failureBlock];
 }
 
@@ -36,13 +36,14 @@ NSString *const kEncryptionKey = @"IQPRZUDGWWCGVGHTKHRPEQAYPPAQXASH";
     RKObjectManager *manager = [RKObjectManager sharedManager];
     
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping pathPattern:nil keyPath:keyPath statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
     NSMutableURLRequest *request = [manager requestWithObject:obj method:method path:path parameters:params];
     
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ responseDescriptor ]];
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        successBlock();
+        successBlock(operation, mappingResult);
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        failureBlock();
+        failureBlock(operation, error);
     }];
     
     [manager enqueueObjectRequestOperation:objectRequestOperation];

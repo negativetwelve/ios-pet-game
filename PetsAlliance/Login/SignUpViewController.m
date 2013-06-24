@@ -13,6 +13,8 @@
 @end
 
 @implementation SignUpViewController
+@synthesize originalCenter = _originalCenter;
+@synthesize verifiedText = _verifiedText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +30,8 @@
 {
     [super viewDidLoad];
     
+    self.originalCenter = CGPointMake(self.view.center.x, self.view.center.y - 44); // HACK, need to fix.
+
     UITextField *emailTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 140, 280, 31)];
     [emailTextField setPlaceholder:@"Email"];
     [emailTextField setReturnKeyType:UIReturnKeyNext];
@@ -57,10 +61,17 @@
     [passwordConfirmationTextField addTarget:self action:@selector(submitAction:) forControlEvents:UIControlEventEditingDidEndOnExit];
     [self.view addSubview:passwordConfirmationTextField];
     
+    UILabel *verified = [[UILabel alloc] initWithFrame:CGRectMake(20, 260, 280, 20)];
+    [verified setText:@""];
+    [verified setNuiClass:@"DenyText"];
+    [verified setHidden:YES];
+    [self setVerifiedText:verified];
+    [self.view addSubview:verified];
+
     UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [submitButton setTitle:@"Submit!" forState:UIControlStateNormal];
     [submitButton setNuiClass:@"Button:LargeButton"];
-    [submitButton setFrame:CGRectMake(70, 280, 180, 50)];
+    [submitButton setFrame:CGRectMake(70, 300, 180, 50)];
     [submitButton addTarget:self action:@selector(submitAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:submitButton];
 }
@@ -101,14 +112,53 @@
      @"skill_level" : @"skillLevel",
      }];
     
-    [PAURLRequest requestWithURL:@"account/create" method:RKRequestMethodPOST parameters:auth objectMapping:userMapping keyPath:@"user" delegate:self successBlock:^{
+    
+    RKObjectManager *manager = [RKObjectManager sharedManager];
+    AFHTTPClient *client = [manager HTTPClient];
+    
+    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:@"account/create" parameters:auth];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Loading";
+    
+    AFJSONRequestOperation *createAccountOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        [hud hide:YES];
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
         [keychain setObject:email forKey:(__bridge id)(kSecAttrAccount)];
         [keychain setObject:password forKey:(__bridge id)(kSecValueData)];
         [self dismissViewControllerAnimated:YES completion:nil];
-    } failureBlock:^{
-        NSLog(@"error!");
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [hud hide:YES];
+        NSDictionary *jsonResponse = (NSDictionary *)JSON;
+        [self authNotVerified:jsonResponse];
     }];
+    
+    [client enqueueHTTPRequestOperation:createAccountOperation];
+}
+
+- (void)authNotVerified: (NSDictionary *)jsonResponse {
+    NSLog(@"not verified");
+    NSString *reason = [[jsonResponse objectForKey:@"error"] objectForKey:@"reason"];
+    [NUILabelRenderer render:self.verifiedText withClass:@"DenyText"];
+    [self.verifiedText setText:reason];
+    [self.verifiedText setHidden:NO];
+    [self.verifiedText setAlpha:1];
+    NSLog(@"%@", reason);
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y - 100);
+    [UIView commitAnimations];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    self.view.center = self.originalCenter;
+    [UIView commitAnimations];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField*)textField {

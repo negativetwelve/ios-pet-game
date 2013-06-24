@@ -60,15 +60,6 @@
             [newCharacter setImage:[UIImage imageNamed:inputImage]];
             [self addSubview:newCharacter];
             [self setCharacter:newCharacter];
-            
-            UIButton *characterSelectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            [characterSelectButton setTitle:@"Select" forState:UIControlStateNormal];
-            [characterSelectButton setNuiClass:@"Button:LargeButton"];
-            [characterSelectButton setFrame:CGRectMake(185, 360, 110, 50)];
-            [characterSelectButton addTarget:self.viewController action:@selector(selectCharacterAction:) forControlEvents:UIControlEventTouchUpInside];
-            [self setSelectButton:characterSelectButton];
-            [self.selectButton setTag:2];
-            [self addSubview:characterSelectButton];
         }
         
         self.index = inputIndex;
@@ -79,8 +70,6 @@
 - (void)setMaleAndFemale {
     [self.viewController setMale:self.male];
     [self.viewController setFemale:self.female];
-    [self.viewController setMaleButton:self.maleButton];
-    [self.viewController setFemaleButton:self.femaleButton];
     [self.viewController setNextButton:self.nextButton];
 }
 

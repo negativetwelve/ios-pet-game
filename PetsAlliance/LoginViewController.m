@@ -51,7 +51,7 @@
     [scrollView setScrollEnabled:NO];
     [scrollView setPagingEnabled:YES];
     [self setMainScrollView:scrollView];
-    [self.view addSubview:scrollView];
+    [self.view insertSubview:scrollView atIndex:0];
     
     SelectCharacterView *firstChar = [[SelectCharacterView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) andIndex:0 andImage:@"male1.png"];
     [firstChar setViewController:self];
@@ -73,8 +73,8 @@
     [boyButton setFrame:CGRectMake(25, 260, 110, 31)];
     [boyButton addTarget:self action:@selector(selectBoyAction:) forControlEvents:UIControlEventTouchUpInside];
     [boyButton setTag:1];
-    [firstChar addSubview:boyButton];
-    [firstChar setMaleButton:boyButton];
+    [self.view addSubview:boyButton];
+    [self setMaleButton:boyButton];
     
     UIButton *girlButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [girlButton setTitle:@"Girl" forState:UIControlStateNormal];
@@ -82,8 +82,8 @@
     [girlButton setFrame:CGRectMake(185, 260, 110, 31)];
     [girlButton addTarget:self action:@selector(selectGirlAction:) forControlEvents:UIControlEventTouchUpInside];
     [girlButton setTag:1];
-    [firstChar addSubview:girlButton];
-    [firstChar setFemaleButton:girlButton];
+    [self.view addSubview:girlButton];
+    [self setFemaleButton:girlButton];
     
     UIButton *haveAccountButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [haveAccountButton setTitle:@"Already have an account?" forState:UIControlStateNormal];
@@ -203,6 +203,7 @@
 
 - (void)resetView: (id)selector {
     NSLog(@"reset view");
+    [self.usernameField resignFirstResponder];
     [self resetCharacterInfo:@"male"];
     [UIView animateWithDuration:0.5
                           delay:0
@@ -325,6 +326,7 @@
 
 - (void)selectCharacterAction: (id)selector {
     NSLog(@"called from select button");
+    [self.usernameField resignFirstResponder];
     UIButton *button = (UIButton *)selector;
     NSString *gender;
     if (button.tag == 2) {
@@ -332,15 +334,15 @@
     } else {
         gender = @"male";
     }
-    SelectCharacterView *charView = (SelectCharacterView *)button.superview;
-    NSLog(@"%@%d", gender, charView.index);
+    int page = self.mainScrollView.contentOffset.x / self.mainScrollView.frame.size.width;
+    NSLog(@"%@%d", gender, page);
     
     [self verifyUsernameWithSuccessBlock:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSDictionary *jsonResponse = (NSDictionary *)JSON;
         NSLog(@"returned json: %@", jsonResponse);
         [self usernameVerified:jsonResponse];
         NSString *username = [[jsonResponse objectForKey:@"success"] objectForKey:@"username"];
-        [self selectCharacter:[NSString stringWithFormat:@"%@%d", gender, charView.index] withName:username];
+        [self selectCharacter:[NSString stringWithFormat:@"%@%d", gender, page] withName:username];
     } andFailBlock:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSDictionary *jsonResponse = (NSDictionary *)JSON;
         NSLog(@"error: %@", error);
@@ -366,6 +368,8 @@
 
 - (void)usernameNotVerified: (NSDictionary *)jsonResponse {
     [NUILabelRenderer render:self.verifiedText withClass:@"DenyText"];
+    NSString *failText = [[jsonResponse objectForKey:@"error"] objectForKey:@"reason"];
+    [self.verifiedText setText:failText];
     [self.verifiedText setHidden:NO];
     [self.verifiedText setAlpha:1];
 }
@@ -388,7 +392,7 @@
     NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:@"account/check" parameters:params];
 
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
     
     AFJSONRequestOperation *checkUsername = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {

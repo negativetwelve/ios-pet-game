@@ -96,12 +96,12 @@
      @"skill_level" : @"skillLevel",
      }];
     
-    [PAURLRequest requestWithURL:@"account/login" method:RKRequestMethodPOST parameters:auth objectMapping:userMapping keyPath:@"user" delegate:self successBlock:^{
+    [PAURLRequest requestWithURL:@"account/login" method:RKRequestMethodPOST parameters:auth objectMapping:userMapping keyPath:@"user" delegate:self successBlock:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
         [keychain setObject:email forKey:(__bridge id)(kSecAttrAccount)];
         [keychain setObject:password forKey:(__bridge id)(kSecValueData)];
         [self dismissViewControllerAnimated:YES completion:nil];
-    } failureBlock:^{
+    } failureBlock:^(RKObjectRequestOperation *operation, NSError *error){
         NSLog(@"error!");
     }];
 }

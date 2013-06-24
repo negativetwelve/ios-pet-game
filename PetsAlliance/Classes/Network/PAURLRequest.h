@@ -18,6 +18,6 @@
 
 + (id)requestWithURL:(NSString *)path method:(RKRequestMethod)method parameters:(NSDictionary *)params objectMapping:(RKMapping *)mapping keyPath:(NSString *)keyPath delegate:(id)delegate successSelector:(SEL)successSelector failureSelector:(SEL)failureSelector;
 
-+ (void)requestWithURL:(NSString *)path method:(RKRequestMethod)method parameters:(NSDictionary *)params objectMapping:(RKMapping *)mapping keyPath:(NSString *)keyPath delegate:(id)delegate successBlock:(void (^)())successBlock failureBlock:(void (^)())failureBlock;
++ (void)requestWithURL:(NSString *)path method:(RKRequestMethod)method parameters:(NSDictionary *)params objectMapping:(RKMapping *)mapping keyPath:(NSString *)keyPath delegate:(id)delegate successBlock:(void (^)(RKObjectRequestOperation *operation, RKMappingResult *mappingResult))successBlock failureBlock:(void (^)(RKObjectRequestOperation *operation, NSError *error))failureBlock;
 
 @end
