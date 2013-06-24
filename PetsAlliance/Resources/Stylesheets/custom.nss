@@ -74,6 +74,12 @@ SmallButton {
     corner-radius: 7;
     padding: 3;
 }
+TextFieldButton {
+    height: 37;
+    font-size: 17;
+    corner-radius: 7;
+    padding: 7;
+}
 ConfirmButton {
     background-color: @confirmButtonColor;
 }
@@ -127,6 +133,18 @@ StatusLevelLabel {
     text-align: center;
     font-size: 14;
     font-color: #FFFFFF;
+}
+ConfirmText {
+    font-size: 14;
+    font-name: @boldFont;
+    text-align: left;
+    font-color: @confirmButtonColor;
+}
+DenyText {
+    font-size: 14;
+    font-name: @boldFont;
+    text-align: left;
+    font-color: @denyButtonColor;
 }
 BattleBoldText {
     text-align: left;

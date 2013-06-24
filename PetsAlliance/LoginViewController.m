@@ -21,6 +21,8 @@
 @synthesize femaleButton = _femaleButton;
 @synthesize accountButton = _accountButton;
 @synthesize resetButton = _resetButton;
+@synthesize usernameField = _usernameField;
+@synthesize verifiedText = _verifiedText;
 
 @synthesize originalCenter = _originalCenter;
 @synthesize numCharacters = _numCharacters;
@@ -67,8 +69,8 @@
     
     UIButton *boyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [boyButton setTitle:@"Boy" forState:UIControlStateNormal];
-    [boyButton setNuiClass:@"Button:LargeButton"];
-    [boyButton setFrame:CGRectMake(25, 260, 110, 50)];
+    [boyButton setNuiClass:@"Button:TextFieldButton"];
+    [boyButton setFrame:CGRectMake(25, 260, 110, 31)];
     [boyButton addTarget:self action:@selector(selectBoyAction:) forControlEvents:UIControlEventTouchUpInside];
     [boyButton setTag:1];
     [firstChar addSubview:boyButton];
@@ -76,8 +78,8 @@
     
     UIButton *girlButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [girlButton setTitle:@"Girl" forState:UIControlStateNormal];
-    [girlButton setNuiClass:@"Button:LargeButton"];
-    [girlButton setFrame:CGRectMake(185, 260, 110, 50)];
+    [girlButton setNuiClass:@"Button:TextFieldButton"];
+    [girlButton setFrame:CGRectMake(185, 260, 110, 31)];
     [girlButton addTarget:self action:@selector(selectGirlAction:) forControlEvents:UIControlEventTouchUpInside];
     [girlButton setTag:1];
     [firstChar addSubview:girlButton];
@@ -94,12 +96,21 @@
     UITextField *usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 360, 140, 31)];
     [usernameTextField setPlaceholder:@"Username"];
     [usernameTextField setReturnKeyType:UIReturnKeyDone];
-    [usernameTextField setTag:1];
+    [usernameTextField setTag:999];
     [usernameTextField setDelegate:self];
     [usernameTextField setNuiClass:@"TextField"];
     [usernameTextField setKeyboardType:UIKeyboardTypeEmailAddress];
     [usernameTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [usernameTextField setHidden:YES];
+    [self setUsernameField:usernameTextField];
     [self.view addSubview:usernameTextField];
+    
+    UILabel *verified = [[UILabel alloc] initWithFrame:CGRectMake(20, 400, 280, 20)];
+    [verified setText:@"Sorry, that username is taken."];
+    [verified setNuiClass:@"DenyText"];
+    [verified setHidden:YES];
+    [self setVerifiedText:verified];
+    [self.view addSubview:verified];
     
     [firstChar setMaleAndFemale];
 }
@@ -120,13 +131,22 @@
 
 
 - (BOOL)textFieldShouldReturn:(UITextField*)textField {
+    NSLog(@"text field should return");
     NSInteger nextTag = textField.tag + 1;
     UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
     if (nextResponder) {
         [nextResponder becomeFirstResponder];
     } else {
         [textField resignFirstResponder];
-        // do something
+        [self verifyUsernameWithSuccessBlock:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            NSDictionary *jsonResponse = (NSDictionary *)JSON;
+            NSLog(@"returned json: %@", jsonResponse);
+            [self usernameVerified:jsonResponse];
+        } andFailBlock:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+            NSDictionary *jsonResponse = (NSDictionary *)JSON;
+            NSLog(@"error: %@", error);
+            [self usernameNotVerified:jsonResponse];
+        }];
     }
     return NO;
 }
@@ -143,8 +163,11 @@
 - (void)selectBoyAction: (id)selector {
     NSLog(@"clicked on boy button");
     UIButton *button = (UIButton *)selector;
+    NSLog(@"%d", button.tag);
     if (button.tag == 1) {
         [self loadCharacters:@"male"];
+        
+        [button removeTarget:self action:@selector(selectBoyAction:) forControlEvents:UIControlEventTouchUpInside];
         [button addTarget:self action:@selector(selectCharacterAction:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
@@ -154,13 +177,27 @@
     UIButton *button = (UIButton *)selector;
     if (button.tag == 1) {
         [self loadCharacters:@"female"];
+        
+        [button removeTarget:self action:@selector(selectGirlAction:) forControlEvents:UIControlEventTouchUpInside];
         [button addTarget:self action:@selector(selectCharacterAction:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
 - (void)resetCharacterInfo: (NSString *)gender {
+    NSLog(@"%@", self.maleButton);
+    [self.maleButton removeTarget:self action:@selector(selectCharacterAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.femaleButton removeTarget:self action:@selector(selectCharacterAction:) forControlEvents:UIControlEventTouchUpInside];
+
+    [self.maleButton addTarget:self action:@selector(selectBoyAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.femaleButton addTarget:self action:@selector(selectGirlAction:) forControlEvents:UIControlEventTouchUpInside];
     for(int i = 0; i < [self.characterViews count]; i++) {
-        [((SelectCharacterView *)[self.characterViews objectAtIndex:i]).character setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@%d.png", gender, i + 2]]];
+        SelectCharacterView *characterView = (SelectCharacterView *)[self.characterViews objectAtIndex:i];
+        [characterView.character setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@%d.png", gender, i + 2]]];
+        if ([gender isEqualToString:@"female"]) {
+            [characterView.selectButton setTag:2];
+        } else {
+            [characterView.selectButton setTag:3];
+        }
     }
 }
 
@@ -194,6 +231,12 @@
                          [self.nextButton setAlpha:0];
                          [self.nextButton setHidden:YES];
                          
+                         [self.usernameField setAlpha:0];
+                         [self.usernameField setHidden:YES];
+                         
+                         [self.verifiedText setAlpha:0];
+                         [self.verifiedText setHidden:YES];
+                         
                          [self.mainScrollView setScrollEnabled:NO];
                          
                          [self.resetButton removeFromSuperview];
@@ -218,7 +261,7 @@
                              
                              [self.female setTransform:CGAffineTransformMakeTranslation(-80, 0)];
                              
-                             [self.femaleButton setTransform:CGAffineTransformMakeTranslation(-80, 100)];
+                             [self.femaleButton setTransform:CGAffineTransformMakeTranslation(0, 100)];
                              [self.femaleButton setTitle:@"Select" forState:UIControlStateNormal];
                              [self.femaleButton setTag:2];
                              
@@ -226,6 +269,9 @@
                              
                              [self.nextButton setHidden:NO];
                              [self.nextButton setAlpha:1];
+                             
+                             [self.usernameField setHidden:NO];
+                             [self.usernameField setAlpha:1];
                              
                              [self.mainScrollView setScrollEnabled:YES];
                              
@@ -247,14 +293,17 @@
                              
                              [self.male setTransform:CGAffineTransformMakeTranslation(80, 0)];
                              
-                             [self.maleButton setTransform:CGAffineTransformMakeTranslation(80, 100)];
+                             [self.maleButton setTransform:CGAffineTransformMakeTranslation(160, 100)];
                              [self.maleButton setTitle:@"Select" forState:UIControlStateNormal];
-                             [self.maleButton setTag:2];
+                             [self.maleButton setTag:3];
                              
                              [self.accountButton setAlpha:0];
                              
                              [self.nextButton setHidden:NO];
                              [self.nextButton setAlpha:1];
+                             
+                             [self.usernameField setHidden:NO];
+                             [self.usernameField setAlpha:1];
                              
                              [self.mainScrollView setScrollEnabled:YES];
                              
@@ -269,6 +318,7 @@
     NSMutableDictionary *params = ((LoginNavigationController *)self.navigationController).params;
     [params setObject:character forKey:@"character"];
     [params setObject:username forKey:@"username"];
+    
     FirstPetViewController *firstPetViewController = [[FirstPetViewController alloc] init];
     [self.navigationController pushViewController:firstPetViewController animated:YES];
 }
@@ -276,8 +326,80 @@
 - (void)selectCharacterAction: (id)selector {
     NSLog(@"called from select button");
     UIButton *button = (UIButton *)selector;
+    NSString *gender;
+    if (button.tag == 2) {
+        gender = @"female";
+    } else {
+        gender = @"male";
+    }
     SelectCharacterView *charView = (SelectCharacterView *)button.superview;
-    NSLog(@"%d", charView.index);
+    NSLog(@"%@%d", gender, charView.index);
+    
+    [self verifyUsernameWithSuccessBlock:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSDictionary *jsonResponse = (NSDictionary *)JSON;
+        NSLog(@"returned json: %@", jsonResponse);
+        [self usernameVerified:jsonResponse];
+        NSString *username = [[jsonResponse objectForKey:@"success"] objectForKey:@"username"];
+        [self selectCharacter:[NSString stringWithFormat:@"%@%d", gender, charView.index] withName:username];
+    } andFailBlock:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSDictionary *jsonResponse = (NSDictionary *)JSON;
+        NSLog(@"error: %@", error);
+        [self usernameNotVerified:jsonResponse];
+        
+    }];
+}
+
+- (void)usernameVerified: (NSDictionary *)jsonResponse {
+    if ([jsonResponse objectForKey:@"success"]) {
+        [NUILabelRenderer render:self.verifiedText withClass:@"ConfirmText"];
+        [self.verifiedText setText:@"Success! That username is available."];
+        [self.verifiedText setHidden:NO];
+        [self.verifiedText setAlpha:1];
+    } else {
+        [NUILabelRenderer render:self.verifiedText withClass:@"DenyText"];
+        NSString *failText = [[jsonResponse objectForKey:@"error"] objectForKey:@"reason"];
+        [self.verifiedText setText:failText];
+        [self.verifiedText setHidden:NO];
+        [self.verifiedText setAlpha:1];
+    }
+}
+
+- (void)usernameNotVerified: (NSDictionary *)jsonResponse {
+    [NUILabelRenderer render:self.verifiedText withClass:@"DenyText"];
+    [self.verifiedText setHidden:NO];
+    [self.verifiedText setAlpha:1];
+}
+
+
+- (void)verifyUsernameWithSuccessBlock:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, id JSON))successBlock andFailBlock:(void (^)(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON))failBlock {
+    NSLog(@"checking username");
+    NSString *inputUsername = self.usernameField.text;
+    NSLog(@"%@", inputUsername);
+    NSDictionary *params = @{};
+    if (inputUsername != nil) {
+        params = @{@"username":inputUsername};
+    } else {
+        params = @{@"username":@""};
+    }
+    
+    RKObjectManager *manager = [RKObjectManager sharedManager];
+    AFHTTPClient *client = [manager HTTPClient];
+    
+    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:@"account/check" parameters:params];
+
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Loading";
+    
+    AFJSONRequestOperation *checkUsername = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        [hud hide:YES];
+        successBlock(request, response, JSON);
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        [hud hide:YES];
+        failBlock(request, response, error, JSON);
+    }];
+    
+    [client enqueueHTTPRequestOperation:checkUsername];
 }
 
 - (void)haveAccount: (id)selector {

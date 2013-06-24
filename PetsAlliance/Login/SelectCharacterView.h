@@ -22,6 +22,7 @@
     UIImageView *nextButton;
     UIImageView *prevButton;
     UIImageView *character;
+    UIButton *selectButton;
     int index;
 }
 
@@ -30,12 +31,12 @@
 @property (nonatomic, assign) UIImageView *female;
 @property (nonatomic, assign) UIButton *maleButton;
 @property (nonatomic, assign) UIButton *femaleButton;
+@property (nonatomic, assign) UIButton *selectButton;
 @property (nonatomic, assign) UIImageView *nextButton;
 @property (nonatomic, assign) UIImageView *prevButton;
 @property (nonatomic, assign) UIImageView *character;
 @property (nonatomic, assign) int index;
 
-- (id)initWithFrame:(CGRect)frame andIndex:(int)index;
 - (id)initWithFrame:(CGRect)frame andIndex:(int)inputIndex andImage:(NSString *)inputImage;
 
 - (void)setMaleAndFemale;

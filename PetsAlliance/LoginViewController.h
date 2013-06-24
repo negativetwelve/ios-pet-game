@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MBProgressHUD.h"
+
 #import "UIButton+NUI.h"
 #import "UILabel+NUI.h"
 #import "UITextField+NUI.h"
@@ -15,6 +17,8 @@
 #import "FirstPetViewController.h"
 #import "HaveAcccountViewController.h"
 #import "SelectCharacterView.h"
+
+#import "PAURLRequest.h"
 
 #import "LoginNavigationController.h"
 
@@ -28,7 +32,9 @@
     UIButton *femaleButton;
     UIButton *accountButton;
     UIButton *resetButton;
-    
+    UILabel *verifiedText;
+    UITextField *usernameField;
+
     CGPoint originalCenter;
     int numCharacters;
     NSMutableArray *characterViews;
@@ -42,6 +48,8 @@
 @property (nonatomic, assign) UIButton *femaleButton;
 @property (nonatomic, assign) UIButton *accountButton;
 @property (nonatomic, assign) UIButton *resetButton;
+@property (nonatomic, assign) UILabel *verifiedText;
+@property (nonatomic, assign) UITextField *usernameField;
 
 @property (nonatomic, assign) CGPoint originalCenter;
 @property (nonatomic, assign) int numCharacters;

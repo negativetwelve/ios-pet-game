@@ -18,26 +18,8 @@
 @synthesize nextButton = _nextButton;
 @synthesize prevButton = _prevButton;
 @synthesize character = _character;
+@synthesize selectButton = _selectButton;
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.nuiClass = @"DefaultView";
-        
-        UIImageView *newCharacter = [[UIImageView alloc] initWithFrame:CGRectMake(120, 120, 80, 120)];
-        [newCharacter setImage:[UIImage imageNamed:@"dragon.png"]];
-        [self addSubview:newCharacter];
-        
-        UIButton *selectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [selectButton setTitle:@"Select!" forState:UIControlStateNormal];
-        [selectButton setNuiClass:@"Button:LargeButton"];
-        [selectButton setFrame:CGRectMake(70, 400, 180, 50)];
-        [selectButton addTarget:self.viewController action:@selector(selectCharacterAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:selectButton];
-    }
-    return self;
-}
 
 - (id)initWithFrame:(CGRect)frame andIndex:(int)inputIndex {
     self = [self initWithFrame:frame];
@@ -79,12 +61,14 @@
             [self addSubview:newCharacter];
             [self setCharacter:newCharacter];
             
-            UIButton *selectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            [selectButton setTitle:@"Select" forState:UIControlStateNormal];
-            [selectButton setNuiClass:@"Button:LargeButton"];
-            [selectButton setFrame:CGRectMake(105, 360, 110, 50)];
-            [selectButton addTarget:self.viewController action:@selector(selectCharacterAction:) forControlEvents:UIControlEventTouchUpInside];
-            [self addSubview:selectButton];
+            UIButton *characterSelectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            [characterSelectButton setTitle:@"Select" forState:UIControlStateNormal];
+            [characterSelectButton setNuiClass:@"Button:LargeButton"];
+            [characterSelectButton setFrame:CGRectMake(185, 360, 110, 50)];
+            [characterSelectButton addTarget:self.viewController action:@selector(selectCharacterAction:) forControlEvents:UIControlEventTouchUpInside];
+            [self setSelectButton:characterSelectButton];
+            [self.selectButton setTag:2];
+            [self addSubview:characterSelectButton];
         }
         
         self.index = inputIndex;

@@ -78,14 +78,15 @@
     NSString *passwordConfirmation = ((UITextField *)[signUpView.subviews objectAtIndex:2]).text;
     passwordConfirmation = [AESCrypt encrypt:passwordConfirmation password:encryptionKey];
     NSMutableDictionary *params = ((LoginNavigationController *)self.navigationController).params;
+    NSLog(@"PARAMS: %@", params);
     NSString *username = [params valueForKey:@"username"];
     NSString *character = [params valueForKey:@"character"];
-    NSString *petKind = [params valueForKey:@"pet"];
+    NSString *petKind = [params valueForKey:@"petKind"];
     
     NSUUID *vendorIdObject = [[UIDevice currentDevice] identifierForVendor];
     NSString *uuid = [vendorIdObject UUIDString];
     NSDictionary *user = @{@"app_id":uuid, @"email":email, @"password":password, @"password_confirmation":passwordConfirmation, @"username":username, @"character":character};
-    NSDictionary *pet = @{@"kind":petKind};
+    NSDictionary *pet = @{@"pet_kind":petKind};
     NSDictionary *auth = @{@"user":user, @"pet":pet};
     
     // Setup our object mappings

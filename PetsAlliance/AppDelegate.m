@@ -96,9 +96,15 @@
                                                                                            withMapping:userMapping];
     [petMapping addPropertyMapping:relationshipMapping];
     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Loading";
+    
     [PAURLRequest requestWithURL:@"iphone" method:RKRequestMethodGET parameters:auth objectMapping:userMapping keyPath:@"user" delegate:self successBlock:^{
         NSLog(@"successfully logged in!");
+        [hud hide:YES];
     } failureBlock:^{
+        [hud hide:YES];
         double delayInSeconds = 0.1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){

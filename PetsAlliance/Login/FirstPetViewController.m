@@ -52,6 +52,11 @@
 - (void)selectPetAction: (id)selector {
     SelectPetView *selected = (SelectPetView *)((UIButton *)selector).superview;
     NSLog(@"selected pet %d!", selected.index);
+    NSString *petKind = [NSString stringWithFormat:@"pet%d", selected.index];
+    
+    NSMutableDictionary *params = ((LoginNavigationController *)self.navigationController).params;
+    [params setObject:petKind forKey:@"petKind"];
+    
     SignUpViewController *signUpViewController = [[SignUpViewController alloc] init];
     [self.navigationController pushViewController:signUpViewController animated:YES];
     

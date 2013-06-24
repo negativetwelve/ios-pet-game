@@ -30,6 +30,7 @@
 #import "Pet.h"
 
 #import "AESCrypt.h"
+#import "MBProgressHUD.h"
 
 #import "PAURLRequest.h"
 
