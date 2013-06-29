@@ -25,7 +25,7 @@
         UIButton *selectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [selectButton setTitle:@"Select!" forState:UIControlStateNormal];
         [selectButton setNuiClass:@"Button:LargeButton"];
-        [selectButton setFrame:CGRectMake(70, 400, 180, 50)];
+        [selectButton setFrame:CGRectMake(70, 340, 180, 50)];
         [selectButton addTarget:self.viewController action:@selector(selectPetAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:selectButton];
     }

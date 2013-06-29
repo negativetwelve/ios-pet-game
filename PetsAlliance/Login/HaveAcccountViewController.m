@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    UITextField *emailTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 140, 280, 31)];
+    UITextField *emailTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 50, 280, 31)];
     [emailTextField setPlaceholder:@"Email"];
     [emailTextField setReturnKeyType:UIReturnKeyNext];
     [emailTextField setTag:1];
@@ -38,7 +38,7 @@
     [emailTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
     [self.view addSubview:emailTextField];
     
-    UITextField *passwordTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 180, 280, 31)];
+    UITextField *passwordTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 90, 280, 31)];
     [passwordTextField setPlaceholder:@"Password"];
     [passwordTextField setReturnKeyType:UIReturnKeyNext];
     [passwordTextField setTag:2];
@@ -49,8 +49,8 @@
     
     UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [submitButton setTitle:@"Go!" forState:UIControlStateNormal];
-    [submitButton setNuiClass:@"Button:LargeButton"];
-    [submitButton setFrame:CGRectMake(220, 220, 80, 50)];
+    [submitButton setNuiClass:@"Button:TextFieldButton"];
+    [submitButton setFrame:CGRectMake(220, 130, 80, 31)];
     [submitButton addTarget:self action:@selector(submitAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:submitButton];
 }

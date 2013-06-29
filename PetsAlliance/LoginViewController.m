@@ -88,12 +88,12 @@
     UIButton *haveAccountButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [haveAccountButton setTitle:@"Already have an account?" forState:UIControlStateNormal];
     [haveAccountButton setNuiClass:@"Button:LargeButton"];
-    [haveAccountButton setFrame:CGRectMake(25, 350, 270, 50)];
+    [haveAccountButton setFrame:CGRectMake(25, 320, 270, 50)];
     [haveAccountButton addTarget:self action:@selector(haveAccount:) forControlEvents:UIControlEventTouchUpInside];
     [firstChar addSubview:haveAccountButton];
     [self setAccountButton:haveAccountButton];
     
-    UITextField *usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 360, 140, 31)];
+    UITextField *usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 310, 140, 31)];
     [usernameTextField setPlaceholder:@"Username"];
     [usernameTextField setReturnKeyType:UIReturnKeyDone];
     [usernameTextField setTag:999];
@@ -105,7 +105,7 @@
     [self setUsernameField:usernameTextField];
     [self.view addSubview:usernameTextField];
     
-    UILabel *verified = [[UILabel alloc] initWithFrame:CGRectMake(20, 400, 280, 20)];
+    UILabel *verified = [[UILabel alloc] initWithFrame:CGRectMake(20, 350, 280, 20)];
     [verified setText:@"Sorry, that username is taken."];
     [verified setNuiClass:@"DenyText"];
     [verified setHidden:YES];
@@ -155,7 +155,7 @@
     UIButton *goBack = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [goBack setTitle:[NSString stringWithFormat:@"I'm actually a %@!", gender] forState:UIControlStateNormal];
     [goBack setNuiClass:@"Button:SmallButton"];
-    [goBack setFrame:CGRectMake(25, 440, 270, 50)];
+    [goBack setFrame:CGRectMake(25, 380, 270, 50)];
     [goBack addTarget:self action:@selector(resetView:) forControlEvents:UIControlEventTouchUpInside];
     return goBack;
 }
@@ -262,7 +262,7 @@
                              
                              [self.female setTransform:CGAffineTransformMakeTranslation(-80, 0)];
                              
-                             [self.femaleButton setTransform:CGAffineTransformMakeTranslation(0, 100)];
+                             [self.femaleButton setTransform:CGAffineTransformMakeTranslation(0, 50)];
                              [self.femaleButton setTitle:@"Select" forState:UIControlStateNormal];
                              [self.femaleButton setTag:2];
                              
@@ -294,7 +294,7 @@
                              
                              [self.male setTransform:CGAffineTransformMakeTranslation(80, 0)];
                              
-                             [self.maleButton setTransform:CGAffineTransformMakeTranslation(160, 100)];
+                             [self.maleButton setTransform:CGAffineTransformMakeTranslation(160, 50)];
                              [self.maleButton setTitle:@"Select" forState:UIControlStateNormal];
                              [self.maleButton setTag:3];
                              
