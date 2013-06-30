@@ -17,9 +17,20 @@
 
 #import "AESCrypt.h"
 #import "User.h"
+#import "Pet.h"
 
 #import "PAURLRequest.h"
+#import "MBProgressHUD.h"
 
-@interface HaveAcccountViewController : UIViewController <UITextFieldDelegate>
+#import "MyPetViewController.h"
+
+@class MyPetViewController;
+@interface HaveAcccountViewController : UIViewController <UITextFieldDelegate> {
+    MyPetViewController *myPetViewController;
+}
+
+@property (nonatomic, retain) MyPetViewController *myPetViewController;
+
+- (id)init:(MyPetViewController *)petView;
 
 @end

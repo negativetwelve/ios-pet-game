@@ -13,6 +13,9 @@
 @end
 
 @implementation MyPetViewController
+@synthesize uiScrollView;
+@synthesize petStatusView;
+@synthesize character;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,8 +35,10 @@
     int petStatusViewHeight = 100;
     int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
     
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, petStatusViewHeight)];
-    [self.view addSubview:petStatusView];
+    PetStatusView *petStatus = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, petStatusViewHeight)];
+    [self.view addSubview:petStatus];
+    
+    [self setPetStatusView:petStatus];
     
     UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100 - navHeight)];
     scrollView.scrollEnabled = YES;
@@ -44,29 +49,50 @@
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
     [self.view addSubview:scrollView];
     
+    [self setUiScrollView:scrollView];
+    
+    UIImageView *userChar = [[UIImageView alloc] initWithFrame:CGRectMake(180, 10, 120, 240)];
+    [userChar setImage:[UIImage imageNamed:@""]];
+    [scrollView addSubview:userChar];
+    [self setCharacter:userChar];
+    
+    [self setupUserLabels:@{
+     @"Username" : @"",
+     @"Skill Level" : @"",
+    } inView:scrollView startingAtX:10 andY:10];
+    
     UIView *mainPetView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
     [scrollView addSubview:mainPetView];
-        
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button setTitle:@"Pet" forState:UIControlStateNormal];
-    [button setNuiClass:@"Button:LargeButton"];
-    [button setFrame:CGRectMake(20, 20, 110, 50)];
-    [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [mainPetView addSubview:button];
     
     UIButton *myItemsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [myItemsButton setFrame:CGRectMake(20, 90, 110, 50)];
+    [myItemsButton setFrame:CGRectMake(20, 180, 110, 31)];
     [myItemsButton setTitle:@"My Items" forState:UIControlStateNormal];
-    [myItemsButton setNuiClass:@"Button:LargeButton"];
+    [myItemsButton setNuiClass:@"Button:TextFieldButton"];
     [myItemsButton addTarget:self action:@selector(myItemsAction:) forControlEvents:UIControlEventTouchUpInside];
     [mainPetView addSubview:myItemsButton];
 
     UIButton *itemStoreButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [itemStoreButton setFrame:CGRectMake(20, 160, 110, 50)];
+    [itemStoreButton setFrame:CGRectMake(20, 220, 110, 31)];
     [itemStoreButton setTitle:@"Item Store" forState:UIControlStateNormal];
-    [itemStoreButton setNuiClass:@"Button:LargeButton"];
+    [itemStoreButton setNuiClass:@"Button:TextFieldButton"];
     [itemStoreButton addTarget:self action:@selector(itemStoreAction:) forControlEvents:UIControlEventTouchUpInside];
     [mainPetView addSubview:itemStoreButton];
+}
+
+- (void)loadUser:(User *)user andPets:(NSArray *)pets {
+    [self loadUser:user];
+    [self loadPets:pets];
+}
+
+- (void)setupUserLabels: (NSDictionary *)data inView:(UIScrollView *)view startingAtX:(int)x andY:(int)y {
+    int i = 0;
+    for(id key in data) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, y + i, 100, 15)];
+        [label setNuiClass:@"Label:TinyLabel"];
+        [label setText:[NSString stringWithFormat:@"%@: %@", key, [data objectForKey:key]]];
+        [view addSubview:label];
+        i += 15;
+    }
 }
 
 - (void)buttonAction: (id) selector {
@@ -104,7 +130,13 @@
     [self presentViewController:helpNavgationController animated:YES completion:nil];
 }
 
+- (void)loadPets: (NSArray *)pets {
+    NSLog(@"loading pets");
+}
 
-
+- (void)loadUser: (User *)user {
+    NSLog(@"loading user %@.png", user.character);
+    [self.character setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", user.character]]];
+}
 
 @end

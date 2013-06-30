@@ -131,6 +131,11 @@
 		4D4F5A231769B41500E81980 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A211769B41500E81980 /* ItemsViewController.m */; };
 		4D4F5A271769B43200E81980 /* ItemsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A261769B43200E81980 /* ItemsTableView.m */; };
 		4D4F5A2A1769B44E00E81980 /* ItemsNavigationScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */; };
+		4D5931B5178018DF000E75D3 /* reptiling.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5931B0178018DF000E75D3 /* reptiling.png */; };
+		4D5931B6178018DF000E75D3 /* sharpent.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5931B1178018DF000E75D3 /* sharpent.png */; };
+		4D5931B7178018DF000E75D3 /* serbeagle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5931B2178018DF000E75D3 /* serbeagle.png */; };
+		4D5931B8178018DF000E75D3 /* dratlantic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5931B3178018DF000E75D3 /* dratlantic.png */; };
+		4D5931B9178018DF000E75D3 /* hailwhal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5931B4178018DF000E75D3 /* hailwhal.png */; };
 		4D782A83177185A5004B1C46 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D782A811771859B004B1C46 /* GameKit.framework */; };
 		4D782A8A1772ADC3004B1C46 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A891772ADC3004B1C46 /* KeychainItemWrapper.m */; };
 		4D782A8D1772B3BA004B1C46 /* LoginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A8C1772B3BA004B1C46 /* LoginNavigationController.m */; };
@@ -389,6 +394,11 @@
 		4D4F5A261769B43200E81980 /* ItemsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsTableView.m; path = PetsAlliance/Items/ItemsTableView.m; sourceTree = SOURCE_ROOT; };
 		4D4F5A281769B44E00E81980 /* ItemsNavigationScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsNavigationScrollView.h; path = PetsAlliance/Items/ItemsNavigationScrollView.h; sourceTree = SOURCE_ROOT; };
 		4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsNavigationScrollView.m; path = PetsAlliance/Items/ItemsNavigationScrollView.m; sourceTree = SOURCE_ROOT; };
+		4D5931B0178018DF000E75D3 /* reptiling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reptiling.png; sourceTree = "<group>"; };
+		4D5931B1178018DF000E75D3 /* sharpent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharpent.png; sourceTree = "<group>"; };
+		4D5931B2178018DF000E75D3 /* serbeagle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = serbeagle.png; sourceTree = "<group>"; };
+		4D5931B3178018DF000E75D3 /* dratlantic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dratlantic.png; sourceTree = "<group>"; };
+		4D5931B4178018DF000E75D3 /* hailwhal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hailwhal.png; sourceTree = "<group>"; };
 		4D782A811771859B004B1C46 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4D782A881772ADC3004B1C46 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		4D782A891772ADC3004B1C46 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
@@ -599,6 +609,11 @@
 		4D16F5F0176D63DC00C7C4F7 /* Pets */ = {
 			isa = PBXGroup;
 			children = (
+				4D5931B0178018DF000E75D3 /* reptiling.png */,
+				4D5931B1178018DF000E75D3 /* sharpent.png */,
+				4D5931B2178018DF000E75D3 /* serbeagle.png */,
+				4D5931B3178018DF000E75D3 /* dratlantic.png */,
+				4D5931B4178018DF000E75D3 /* hailwhal.png */,
 				4D16F5F1176D63DC00C7C4F7 /* cat.png */,
 				4D914B21176EB646006B7BCD /* cat@2x.png */,
 				4D16F5F2176D63DC00C7C4F7 /* dragon.png */,
@@ -1209,6 +1224,11 @@
 				4D085C301776FF8800D67E0C /* female2@2x.png in Resources */,
 				4D085C311776FF8800D67E0C /* male2.png in Resources */,
 				4D085C321776FF8800D67E0C /* male2@2x.png in Resources */,
+				4D5931B5178018DF000E75D3 /* reptiling.png in Resources */,
+				4D5931B6178018DF000E75D3 /* sharpent.png in Resources */,
+				4D5931B7178018DF000E75D3 /* serbeagle.png in Resources */,
+				4D5931B8178018DF000E75D3 /* dratlantic.png in Resources */,
+				4D5931B9178018DF000E75D3 /* hailwhal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1473,10 +1493,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B13AD4A5B084F8897E72219 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos6.1]" = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
 				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
 				PRODUCT_NAME = "Pets Alliance";
+				PROVISIONING_PROFILE = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
+				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
 				"WARNING_CFLAGS[arch=*]" = "-Wno-arc-performSelector-leaks";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1486,10 +1510,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B13AD4A5B084F8897E72219 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos6.1]" = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
 				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
 				PRODUCT_NAME = "Pets Alliance";
+				PROVISIONING_PROFILE = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
+				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
 				"WARNING_CFLAGS[arch=*]" = "-Wno-arc-performSelector-leaks";
 				WRAPPER_EXTENSION = app;
 			};

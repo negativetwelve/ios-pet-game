@@ -43,7 +43,7 @@
     [self.window makeKeyAndVisible];
 
     // Login logic.
-    LoginViewController *loginController = [[LoginViewController alloc] init];
+    LoginViewController *loginController = [[LoginViewController alloc] init:myPetViewController];
     LoginNavigationController *loginNavigationController = [[LoginNavigationController alloc] initWithRootViewController:loginController];
 
     NSUUID *vendorIdObject = [[UIDevice currentDevice] identifierForVendor];
@@ -68,42 +68,21 @@
     // Initialize RestKit
     RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
     [RKObjectManager setSharedManager:objectManager];
-    
-    // Setup our object mappings
-    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[User class]];
-    [userMapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"userID",
-     @"username" : @"username",
-     @"email" : @"email",
-     @"money" : @"money",
-     @"bank" : @"bank",
-     @"money_rate" : @"moneyRate",
-     @"skill_level" : @"skillLevel",
-     }];
-    
-    RKObjectMapping *petMapping = [RKObjectMapping mappingForClass:[Pet class]];
-    [petMapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"statusID",
-     @"created_at" : @"createdAt",
-     @"text" : @"text",
-     @"url" : @"urlString",
-     @"in_reply_to_screen_name" : @"inReplyToScreenName",
-     @"favorited" : @"isFavorited",
-     }];
-    
-    RKRelationshipMapping *relationshipMapping = [RKRelationshipMapping relationshipMappingFromKeyPath:@"user"
-                                                                                             toKeyPath:@"user"
-                                                                                           withMapping:userMapping];
-    [petMapping addPropertyMapping:relationshipMapping];
-    
+
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window.rootViewController.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
     
-    [PAURLRequest requestWithURL:@"iphone" method:RKRequestMethodGET parameters:auth objectMapping:userMapping keyPath:@"user" delegate:self successBlock:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+    NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"iphone" parameters:auth];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.responseDescriptor, Pet.responseDescriptor ]];
+
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         NSLog(@"successfully logged in!");
+        NSArray *pets = [mappingResult.dictionary objectForKey:@"pets"];
+        User *user = [mappingResult.dictionary objectForKey:@"user"];
+        [myPetViewController loadUser:user andPets:pets];
         [hud hide:YES];
-    } failureBlock:^(RKObjectRequestOperation *operation, NSError *error){
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [hud hide:YES];
         double delayInSeconds = 0.1;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -111,6 +90,8 @@
             [self.window.rootViewController presentViewController:loginNavigationController animated:YES completion:nil];
         });
     }];
+    
+    [objectManager enqueueObjectRequestOperation:objectRequestOperation];
 
     return YES;
 }

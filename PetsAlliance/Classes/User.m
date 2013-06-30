@@ -10,4 +10,24 @@
 
 @implementation User
 
++ (RKObjectMapping *)mapping {
+    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[self class]];
+    [userMapping addAttributeMappingsFromDictionary:@{
+     @"username" : @"username",
+     @"character" : @"character",
+     @"money" : @"money",
+     @"money_rate" : @"moneyRate",
+     @"bank" : @"bank",
+     @"energy" : @"energy",
+     @"energy_rate" : @"energyRate",
+     @"skill_level" : @"skillLevel",
+     }];
+    return userMapping;
+}
+
++ (RKResponseDescriptor *)responseDescriptor {
+    RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:self.mapping pathPattern:nil keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    return descriptor;
+}
+
 @end

@@ -22,8 +22,9 @@
 #import "MBProgressHUD.h"
 
 #import "LoginNavigationController.h"
+#import "MyPetViewController.h"
 
-
+@class MyPetViewController;
 @interface SignUpViewController : UIViewController <UITextFieldDelegate> {
     CGPoint originalCenter;
     UILabel *verifiedText;
@@ -31,6 +32,8 @@
 
 @property (nonatomic, assign) CGPoint originalCenter;
 @property (nonatomic, assign) UILabel *verifiedText;
+@property (nonatomic, retain) MyPetViewController *myPetViewController;
 
+- (id)init:(MyPetViewController *)petView;
 
 @end

@@ -38,6 +38,8 @@
     CGPoint originalCenter;
     int numCharacters;
     NSMutableArray *characterViews;
+    
+    MyPetViewController *myPetViewController;
 }
 
 @property (nonatomic, assign) UIScrollView *mainScrollView;
@@ -55,6 +57,9 @@
 @property (nonatomic, assign) int numCharacters;
 @property (nonatomic, retain) NSMutableArray *characterViews;
 
+@property (nonatomic, retain) MyPetViewController *myPetViewController;
+
 - (UIButton *)makeGoBackButton: (NSString *)gender;
+- (id)init:(MyPetViewController *)petView;
 
 @end

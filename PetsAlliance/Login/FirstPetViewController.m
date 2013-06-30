@@ -24,6 +24,12 @@
     return self;
 }
 
+- (id)init:(MyPetViewController *)petView {
+    self = [self init];
+    self.myPetViewController = petView;
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -33,31 +39,30 @@
     [scrollView setPagingEnabled:YES];
     [self.view addSubview:scrollView];
     
-    SelectPetView *firstPet = [[SelectPetView alloc] initWithFrame:CGRectMake(0, 0, 320, 480) andIndex:0];
+    SelectPetView *firstPet = [[SelectPetView alloc] initWithFrame:CGRectMake(0, 0, 320, 480) andIndex:0 andName:@"dratlantic"];
     [scrollView addSubview:firstPet];
     
-    SelectPetView *secondPet = [[SelectPetView alloc] initWithFrame:CGRectMake(320, 0, 320, 480) andIndex:1];
+    SelectPetView *secondPet = [[SelectPetView alloc] initWithFrame:CGRectMake(320, 0, 320, 480) andIndex:1 andName:@"hailwhal"];
     [scrollView addSubview:secondPet];
     
-    SelectPetView *thirdPet = [[SelectPetView alloc] initWithFrame:CGRectMake(640, 0, 320, 480) andIndex:2];
+    SelectPetView *thirdPet = [[SelectPetView alloc] initWithFrame:CGRectMake(640, 0, 320, 480) andIndex:2 andName:@"reptiling"];
     [scrollView addSubview:thirdPet];
     
-    SelectPetView *fourthPet = [[SelectPetView alloc] initWithFrame:CGRectMake(960, 0, 320, 480) andIndex:3];
+    SelectPetView *fourthPet = [[SelectPetView alloc] initWithFrame:CGRectMake(960, 0, 320, 480) andIndex:3 andName:@"serbeagle"];
     [scrollView addSubview:fourthPet];
     
-    SelectPetView *fifthPet = [[SelectPetView alloc] initWithFrame:CGRectMake(1280, 0, 320, 480) andIndex:4];
+    SelectPetView *fifthPet = [[SelectPetView alloc] initWithFrame:CGRectMake(1280, 0, 320, 480) andIndex:4 andName:@"sharpent"];
     [scrollView addSubview:fifthPet];
 }
 
 - (void)selectPetAction: (id)selector {
     SelectPetView *selected = (SelectPetView *)((UIButton *)selector).superview;
     NSLog(@"selected pet %d!", selected.index);
-    NSString *petKind = [NSString stringWithFormat:@"pet%d", selected.index];
     
     NSMutableDictionary *params = ((LoginNavigationController *)self.navigationController).params;
-    [params setObject:petKind forKey:@"petKind"];
+    [params setObject:selected.name forKey:@"name"];
     
-    SignUpViewController *signUpViewController = [[SignUpViewController alloc] init];
+    SignUpViewController *signUpViewController = [[SignUpViewController alloc] init:self.myPetViewController];
     [self.navigationController pushViewController:signUpViewController animated:YES];
     
 }

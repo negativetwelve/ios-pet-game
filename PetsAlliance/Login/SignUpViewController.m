@@ -26,6 +26,12 @@
     return self;
 }
 
+- (id)init:(MyPetViewController *)petView {
+    self = [self init];
+    self.myPetViewController = petView;
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -92,12 +98,12 @@
     NSLog(@"PARAMS: %@", params);
     NSString *username = [params valueForKey:@"username"];
     NSString *character = [params valueForKey:@"character"];
-    NSString *petKind = [params valueForKey:@"petKind"];
+    NSString *name = [params valueForKey:@"name"];
     
     NSUUID *vendorIdObject = [[UIDevice currentDevice] identifierForVendor];
     NSString *uuid = [vendorIdObject UUIDString];
     NSDictionary *user = @{@"app_id":uuid, @"email":email, @"password":password, @"password_confirmation":passwordConfirmation, @"username":username, @"character":character};
-    NSDictionary *pet = @{@"pet_kind":petKind};
+    NSDictionary *pet = @{@"name":name};
     NSDictionary *auth = @{@"user":user, @"pet":pet};
     
     // Setup our object mappings
@@ -113,28 +119,28 @@
      }];
     
     
-    RKObjectManager *manager = [RKObjectManager sharedManager];
-    AFHTTPClient *client = [manager HTTPClient];
+//    RKObjectManager *manager = [RKObjectManager sharedManager];
+//    AFHTTPClient *client = [manager HTTPClient];
     
-    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:@"account/create" parameters:auth];
+//    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:@"account/create" parameters:auth];
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
     
-    AFJSONRequestOperation *createAccountOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        [hud hide:YES];
+    [PAURLRequest requestWithURL:@"account/create" method:RKRequestMethodPOST parameters:auth objectMapping:User.mapping keyPath:@"user" delegate:self successBlock:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
         [keychain setObject:email forKey:(__bridge id)(kSecAttrAccount)];
         [keychain setObject:password forKey:(__bridge id)(kSecValueData)];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSArray *pets = [mappingResult.dictionary objectForKey:@"pets"];
+        User *user = [mappingResult.dictionary objectForKey:@"user"];
+        [self.myPetViewController loadUser:user andPets:pets];
         [hud hide:YES];
-        NSDictionary *jsonResponse = (NSDictionary *)JSON;
-        [self authNotVerified:jsonResponse];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } failureBlock:^(RKObjectRequestOperation *operation, NSError *error){
+        [hud hide:YES];
+        NSLog(@"error!");
     }];
-    
-    [client enqueueHTTPRequestOperation:createAccountOperation];
 }
 
 - (void)authNotVerified: (NSDictionary *)jsonResponse {

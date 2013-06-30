@@ -13,6 +13,7 @@
 @end
 
 @implementation HaveAcccountViewController
+@synthesize myPetViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +22,12 @@
         self.title = @"Login";
         self.view.nuiClass = @"DefaultView";
     }
+    return self;
+}
+
+- (id)init:(MyPetViewController *)petView {
+    self = [self init];
+    self.myPetViewController = petView;
     return self;
 }
 
@@ -40,7 +47,7 @@
     
     UITextField *passwordTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 90, 280, 31)];
     [passwordTextField setPlaceholder:@"Password"];
-    [passwordTextField setReturnKeyType:UIReturnKeyNext];
+    [passwordTextField setReturnKeyType:UIReturnKeyDone];
     [passwordTextField setTag:2];
     [passwordTextField setDelegate:self];
     [passwordTextField setNuiClass:@"TextField"];
@@ -84,24 +91,23 @@
     NSDictionary *user = @{@"app_id":uuid, @"email":email, @"password":password};
     NSDictionary *auth = @{@"user":user};
 
-    // Setup our object mappings
-    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[User class]];
-    [userMapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"userID",
-     @"username" : @"username",
-     @"email" : @"email",
-     @"money" : @"money",
-     @"bank" : @"bank",
-     @"money_rate" : @"moneyRate",
-     @"skill_level" : @"skillLevel",
-     }];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Loading";
     
-    [PAURLRequest requestWithURL:@"account/login" method:RKRequestMethodPOST parameters:auth objectMapping:userMapping keyPath:@"user" delegate:self successBlock:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+    [PAURLRequest requestWithURL:@"account/login" method:RKRequestMethodPOST parameters:auth objectMapping:User.mapping keyPath:@"user" delegate:self successBlock:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
         [keychain setObject:email forKey:(__bridge id)(kSecAttrAccount)];
         [keychain setObject:password forKey:(__bridge id)(kSecValueData)];
+        NSArray *pets = [mappingResult.dictionary objectForKey:@"pets"];
+        User *user = [mappingResult.dictionary objectForKey:@"user"];
+        NSLog(@"%@", user);
+        NSLog(@"%@", self.myPetViewController);
+        [self.myPetViewController loadUser:user andPets:pets];
+        [hud hide:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
     } failureBlock:^(RKObjectRequestOperation *operation, NSError *error){
+        [hud hide:YES];
         NSLog(@"error!");
     }];
 }

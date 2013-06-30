@@ -12,7 +12,6 @@
 
 @interface Pet : NSObject
 
-@property (nonatomic, copy) NSNumber *petID;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *level;
 @property (nonatomic, copy) NSNumber *attack;
@@ -23,5 +22,8 @@
 @property (nonatomic, copy) NSNumber *experience;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) NSMutableArray *types;
+
++ (RKObjectMapping *)mapping;
++ (RKResponseDescriptor *)responseDescriptor;
 
 @end

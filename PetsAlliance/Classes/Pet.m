@@ -10,4 +10,24 @@
 
 @implementation Pet
 
++ (RKObjectMapping *)mapping {
+    RKObjectMapping *petMapping = [RKObjectMapping mappingForClass:[self class]];
+    [petMapping addAttributeMappingsFromDictionary:@{
+     @"name" : @"name",
+     @"level" : @"level",
+     @"experience" : @"experience",
+     @"attack" : @"attack",
+     @"special_attack" : @"specialAttack",
+     @"defense" : @"defense",
+     @"special_defense" : @"specialDefense",
+     @"speed" : @"speed",
+     }];
+    return petMapping;
+}
+
++ (RKResponseDescriptor *)responseDescriptor {
+    RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:self.mapping pathPattern:nil keyPath:@"pets" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    return descriptor;
+}
+
 @end

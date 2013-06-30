@@ -129,6 +129,11 @@ SmallLabel {
     font-size: 14;
     font-color: #8F8F91;
 }
+TinyLabel {
+    font-name: @primaryFontName;
+    font-size: 12;
+    font-color: @primaryFontColor;
+}
 StatusLevelLabel {
     text-align: center;
     font-size: 14;

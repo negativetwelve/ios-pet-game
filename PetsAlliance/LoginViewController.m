@@ -28,6 +28,8 @@
 @synthesize numCharacters = _numCharacters;
 @synthesize characterViews = _characterViews;
 
+@synthesize myPetViewController = _myPetViewController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,10 +42,16 @@
     return self;
 }
 
+- (id)init:(MyPetViewController *)petView {
+    self = [self init];
+    self.myPetViewController = petView;
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.originalCenter = CGPointMake(self.view.center.x, self.view.center.y - 44); // HACK, need to fix.
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -155,7 +163,9 @@
     UIButton *goBack = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [goBack setTitle:[NSString stringWithFormat:@"I'm actually a %@!", gender] forState:UIControlStateNormal];
     [goBack setNuiClass:@"Button:SmallButton"];
-    [goBack setFrame:CGRectMake(25, 380, 270, 50)];
+    [goBack setFrame:CGRectMake(25, 380, 270, 24)];
+    [goBack setHidden:YES];
+    [goBack setAlpha:0];
     [goBack addTarget:self action:@selector(resetView:) forControlEvents:UIControlEventTouchUpInside];
     return goBack;
 }
@@ -271,6 +281,9 @@
                              [self.nextButton setHidden:NO];
                              [self.nextButton setAlpha:1];
                              
+                             [self.resetButton setHidden:NO];
+                             [self.resetButton setAlpha:1];
+                             
                              [self.usernameField setHidden:NO];
                              [self.usernameField setAlpha:1];
                              
@@ -303,6 +316,9 @@
                              [self.nextButton setHidden:NO];
                              [self.nextButton setAlpha:1];
                              
+                             [self.resetButton setHidden:NO];
+                             [self.resetButton setAlpha:1];
+                             
                              [self.usernameField setHidden:NO];
                              [self.usernameField setAlpha:1];
                              
@@ -320,7 +336,7 @@
     [params setObject:character forKey:@"character"];
     [params setObject:username forKey:@"username"];
     
-    FirstPetViewController *firstPetViewController = [[FirstPetViewController alloc] init];
+    FirstPetViewController *firstPetViewController = [[FirstPetViewController alloc] init:self.myPetViewController];
     [self.navigationController pushViewController:firstPetViewController animated:YES];
 }
 
@@ -342,7 +358,7 @@
         NSLog(@"returned json: %@", jsonResponse);
         [self usernameVerified:jsonResponse];
         NSString *username = [[jsonResponse objectForKey:@"success"] objectForKey:@"username"];
-        [self selectCharacter:[NSString stringWithFormat:@"%@%d", gender, page] withName:username];
+        [self selectCharacter:[NSString stringWithFormat:@"%@%d", gender, page + 1] withName:username];
     } andFailBlock:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSDictionary *jsonResponse = (NSDictionary *)JSON;
         NSLog(@"error: %@", error);
@@ -408,7 +424,7 @@
 
 - (void)haveAccount: (id)selector {
     NSLog(@"have account");
-    HaveAcccountViewController *haveAccount = [[HaveAcccountViewController alloc] init];
+    HaveAcccountViewController *haveAccount = [[HaveAcccountViewController alloc] init:self.myPetViewController];
     [self.navigationController pushViewController:haveAccount animated:YES];
 }
 

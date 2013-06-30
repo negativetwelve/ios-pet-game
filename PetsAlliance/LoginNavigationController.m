@@ -14,6 +14,7 @@
 
 @implementation LoginNavigationController
 @synthesize params = _params;
+@synthesize myPetViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

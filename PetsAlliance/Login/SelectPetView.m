@@ -10,6 +10,7 @@
 
 @implementation SelectPetView
 @synthesize index;
+@synthesize name;
 @synthesize viewController = _viewController;
 
 - (id)initWithFrame:(CGRect)frame
@@ -38,13 +39,26 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (id) initWithFrame:(CGRect)frame andIndex:(int)inputIndex andName:(NSString *)inputName {
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.nuiClass = @"DefaultView";
+        
+        UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 300, 300)];
+        NSLog(@"%@.png", inputName);
+        [character setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", inputName]]];
+        [self addSubview:character];
+        
+        UIButton *selectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [selectButton setTitle:@"Select!" forState:UIControlStateNormal];
+        [selectButton setNuiClass:@"Button:LargeButton"];
+        [selectButton setFrame:CGRectMake(70, 340, 180, 50)];
+        [selectButton addTarget:self.viewController action:@selector(selectPetAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:selectButton];
+    }
+    self.index = inputIndex;
+    self.name = inputName;
+    return self;
 }
-*/
 
 @end

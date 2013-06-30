@@ -28,7 +28,7 @@
 
 - (void)loadSignIn {
     NSLog(@"did disappear");
-    LoginViewController *loginController = [[LoginViewController alloc] init];
+    LoginViewController *loginController = [[LoginViewController alloc] init:self.home];
     LoginNavigationController *loginNavigationController = [[LoginNavigationController alloc] initWithRootViewController:loginController];
     [self.home presentViewController:loginNavigationController animated:YES completion:nil];
 }

@@ -18,11 +18,14 @@
 @interface SelectPetView : UIView {
     FirstPetViewController *viewController;
     int index;
+    NSString *name;
 }
 
 @property (nonatomic, assign) FirstPetViewController *viewController;
 @property (nonatomic, assign) int index;
+@property (nonatomic, retain) NSString *name;
 
 - (id) initWithFrame:(CGRect)frame andIndex:(int)index;
+- (id) initWithFrame:(CGRect)frame andIndex:(int)index andName:(NSString *)inputName;
 
 @end

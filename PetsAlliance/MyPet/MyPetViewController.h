@@ -21,7 +21,19 @@
 
 #import "PetStatusView.h"
 
+#import "User.h"
 
-@interface MyPetViewController : UIViewController
+
+@interface MyPetViewController : UIViewController {
+    UIScrollView *uiScrollView;
+    PetStatusView *petStatusView;
+    UIImageView *character;
+}
+
+@property (nonatomic, retain) UIScrollView *uiScrollView;
+@property (nonatomic, retain) PetStatusView *petStatusView;
+@property (nonatomic, retain) UIImageView *character;
+
+- (void)loadUser:(User *)user andPets:(NSArray *)pets;
 
 @end

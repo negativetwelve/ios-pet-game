@@ -11,8 +11,12 @@
 #import "SelectPetView.h"
 #import "SignUpViewController.h"
 
+@class MyPetViewController;
 @interface FirstPetViewController : UIViewController
-@property (nonatomic, copy) NSString *gender;
 
+@property (nonatomic, copy) NSString *gender;
+@property (nonatomic, retain) MyPetViewController *myPetViewController;
+
+- (id)init:(MyPetViewController *)petView;
 
 @end
