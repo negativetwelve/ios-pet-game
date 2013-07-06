@@ -105,30 +105,15 @@
     NSDictionary *user = @{@"app_id":uuid, @"email":email, @"password":password, @"password_confirmation":passwordConfirmation, @"username":username, @"character":character};
     NSDictionary *pet = @{@"name":name};
     NSDictionary *auth = @{@"user":user, @"pet":pet};
-    
-    // Setup our object mappings
-    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[User class]];
-    [userMapping addAttributeMappingsFromDictionary:@{
-     @"id" : @"userID",
-     @"username" : @"username",
-     @"email" : @"email",
-     @"money" : @"money",
-     @"bank" : @"bank",
-     @"money_rate" : @"moneyRate",
-     @"skill_level" : @"skillLevel",
-     }];
-    
-    
-//    RKObjectManager *manager = [RKObjectManager sharedManager];
-//    AFHTTPClient *client = [manager HTTPClient];
-    
-//    NSMutableURLRequest *request = [client requestWithMethod:@"POST" path:@"account/create" parameters:auth];
-    
+
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
+
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodPOST path:@"account/create" parameters:auth];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.responseDescriptor, Pet.responseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
     
-    [PAURLRequest requestWithURL:@"account/create" method:RKRequestMethodPOST parameters:auth objectMapping:User.mapping keyPath:@"user" delegate:self successBlock:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
         [keychain setObject:email forKey:(__bridge id)(kSecAttrAccount)];
         [keychain setObject:password forKey:(__bridge id)(kSecValueData)];
@@ -137,15 +122,19 @@
         [self.myPetViewController loadUser:user andPets:pets];
         [hud hide:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
-    } failureBlock:^(RKObjectRequestOperation *operation, NSError *error){
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [hud hide:YES];
         NSLog(@"error!");
+        NSString *reason = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
+        NSLog(@"%@", reason);
+        [self authNotVerified:reason];
     }];
+    
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:objectRequestOperation];
 }
 
-- (void)authNotVerified: (NSDictionary *)jsonResponse {
+- (void)authNotVerified: (NSString *)reason {
     NSLog(@"not verified");
-    NSString *reason = [[jsonResponse objectForKey:@"error"] objectForKey:@"reason"];
     [NUILabelRenderer render:self.verifiedText withClass:@"DenyText"];
     [self.verifiedText setText:reason];
     [self.verifiedText setHidden:NO];

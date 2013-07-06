@@ -16,8 +16,11 @@
 #import "UITextField+NUI.h"
 
 #import "AESCrypt.h"
+
 #import "User.h"
 #import "Pet.h"
+#import "Error.h"
+#import "Success.h"
 
 #import "PAURLRequest.h"
 #import "MBProgressHUD.h"
@@ -27,9 +30,11 @@
 @class MyPetViewController;
 @interface HaveAcccountViewController : UIViewController <UITextFieldDelegate> {
     MyPetViewController *myPetViewController;
+    UILabel *verifiedText;
 }
 
 @property (nonatomic, retain) MyPetViewController *myPetViewController;
+@property (nonatomic, assign) UILabel *verifiedText;
 
 - (id)init:(MyPetViewController *)petView;
 

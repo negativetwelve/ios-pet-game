@@ -14,6 +14,7 @@
 
 @implementation HaveAcccountViewController
 @synthesize myPetViewController;
+@synthesize verifiedText = _verifiedText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,10 +55,17 @@
     [passwordTextField setSecureTextEntry:YES];
     [self.view addSubview:passwordTextField];
     
+    UILabel *verified = [[UILabel alloc] initWithFrame:CGRectMake(20, 130, 280, 20)];
+    [verified setText:@""];
+    [verified setNuiClass:@"DenyText"];
+    [verified setHidden:YES];
+    [self setVerifiedText:verified];
+    [self.view addSubview:verified];
+    
     UIButton *submitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [submitButton setTitle:@"Go!" forState:UIControlStateNormal];
     [submitButton setNuiClass:@"Button:TextFieldButton"];
-    [submitButton setFrame:CGRectMake(220, 130, 80, 31)];
+    [submitButton setFrame:CGRectMake(220, 155, 80, 31)];
     [submitButton addTarget:self action:@selector(submitAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:submitButton];
 }
@@ -94,8 +102,11 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Loading";
+
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodPOST path:@"account/login" parameters:auth];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.responseDescriptor, Pet.responseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
     
-    [PAURLRequest requestWithURL:@"account/login" method:RKRequestMethodPOST parameters:auth objectMapping:User.mapping keyPath:@"user" delegate:self successBlock:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
         [keychain setObject:email forKey:(__bridge id)(kSecAttrAccount)];
         [keychain setObject:password forKey:(__bridge id)(kSecValueData)];
@@ -106,10 +117,24 @@
         [self.myPetViewController loadUser:user andPets:pets];
         [hud hide:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
-    } failureBlock:^(RKObjectRequestOperation *operation, NSError *error){
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [hud hide:YES];
         NSLog(@"error!");
+        NSString *errorMessage = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
+        NSLog(@"%@", errorMessage);
+        [self authNotVerified:errorMessage];
     }];
+    
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:objectRequestOperation];
+}
+
+- (void)authNotVerified: (NSString *)reason {
+    NSLog(@"not verified");
+    [NUILabelRenderer render:self.verifiedText withClass:@"DenyText"];
+    [self.verifiedText setText:reason];
+    [self.verifiedText setHidden:NO];
+    [self.verifiedText setAlpha:1];
+    NSLog(@"%@", reason);
 }
 
 - (void)didReceiveMemoryWarning

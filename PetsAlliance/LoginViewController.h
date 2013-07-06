@@ -25,6 +25,7 @@
 @class SelectCharacterView;
 @interface LoginViewController : UIViewController <UITextFieldDelegate> {
     UIScrollView *mainScrollView;
+    UIPageControl *pager;
     UIImageView *male;
     UIImageView *female;
     UIImageView *nextButton;
@@ -43,6 +44,7 @@
 }
 
 @property (nonatomic, assign) UIScrollView *mainScrollView;
+@property (nonatomic, assign) UIPageControl *pager;
 @property (nonatomic, assign) UIImageView *male;
 @property (nonatomic, assign) UIImageView *female;
 @property (nonatomic, assign) UIImageView *nextButton;

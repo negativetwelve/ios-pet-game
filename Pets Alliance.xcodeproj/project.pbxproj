@@ -116,6 +116,13 @@
 		4D16F6DF176D6B5F00C7C4F7 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D16F6DD176D6B3000C7C4F7 /* CoreImage.framework */; };
 		4D16F6E6176E308800C7C4F7 /* PetSelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F6E5176E308700C7C4F7 /* PetSelectButton.m */; };
 		4D16F6E9176E37D700C7C4F7 /* BattleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F6E8176E37D600C7C4F7 /* BattleCell.m */; };
+		4D29956D1786A3D90076F296 /* ViewMoreNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D29956C1786A3D90076F296 /* ViewMoreNavigationController.m */; };
+		4D2995711786A4140076F296 /* ViewMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2995701786A4140076F296 /* ViewMoreViewController.m */; };
+		4D2995741786AD1D0076F296 /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2995731786AD1D0076F296 /* ItemCell.m */; };
+		4D2995771786B3CE0076F296 /* blue_armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2995751786B3CE0076F296 /* blue_armor.png */; };
+		4D2995781786B3CE0076F296 /* red_armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2995761786B3CE0076F296 /* red_armor.png */; };
+		4D29957B1786B3F70076F296 /* blue_armor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D2995791786B3F70076F296 /* blue_armor@2x.png */; };
+		4D29957C1786B3F70076F296 /* red_armor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D29957A1786B3F70076F296 /* red_armor@2x.png */; };
 		4D4F59DF176830E400E81980 /* SwitchPetsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */; };
 		4D4F59E4176830F900E81980 /* SwitchPetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E2176830F900E81980 /* SwitchPetsViewController.m */; };
 		4D4F59E91768348F00E81980 /* PetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F59E81768348F00E81980 /* PetStatusView.m */; };
@@ -136,6 +143,8 @@
 		4D5931B7178018DF000E75D3 /* serbeagle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5931B2178018DF000E75D3 /* serbeagle.png */; };
 		4D5931B8178018DF000E75D3 /* dratlantic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5931B3178018DF000E75D3 /* dratlantic.png */; };
 		4D5931B9178018DF000E75D3 /* hailwhal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5931B4178018DF000E75D3 /* hailwhal.png */; };
+		4D5931BC1780BD14000E75D3 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5931BB1780BD14000E75D3 /* Error.m */; };
+		4D5931BF1780BD43000E75D3 /* Success.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5931BE1780BD43000E75D3 /* Success.m */; };
 		4D782A83177185A5004B1C46 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D782A811771859B004B1C46 /* GameKit.framework */; };
 		4D782A8A1772ADC3004B1C46 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A891772ADC3004B1C46 /* KeychainItemWrapper.m */; };
 		4D782A8D1772B3BA004B1C46 /* LoginNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782A8C1772B3BA004B1C46 /* LoginNavigationController.m */; };
@@ -155,8 +164,6 @@
 		4D782AC41776B784004B1C46 /* HaveAcccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782AC31776B783004B1C46 /* HaveAcccountViewController.m */; };
 		4D782AC71776BE71004B1C46 /* PAURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782AC61776BE71004B1C46 /* PAURLRequest.m */; };
 		4D782ACB1776D4D9004B1C46 /* SelectCharacterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D782ACA1776D4D9004B1C46 /* SelectCharacterView.m */; };
-		4D914B47176EB646006B7BCD /* sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1D176EB646006B7BCD /* sword.png */; };
-		4D914B48176EB646006B7BCD /* sword@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B1E176EB646006B7BCD /* sword@2x.png */; };
 		4D914B4A176EB646006B7BCD /* cat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B21176EB646006B7BCD /* cat@2x.png */; };
 		4D914B4C176EB646006B7BCD /* dragon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D914B23176EB646006B7BCD /* dragon@2x.png */; };
 		4D914B51176EC48D006B7BCD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D914B50176EC48D006B7BCD /* LoginViewController.m */; };
@@ -364,6 +371,16 @@
 		4D16F6E5176E308700C7C4F7 /* PetSelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetSelectButton.m; sourceTree = "<group>"; };
 		4D16F6E7176E37D600C7C4F7 /* BattleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleCell.h; sourceTree = "<group>"; };
 		4D16F6E8176E37D600C7C4F7 /* BattleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleCell.m; sourceTree = "<group>"; };
+		4D29956B1786A3D90076F296 /* ViewMoreNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewMoreNavigationController.h; path = ViewMore/ViewMoreNavigationController.h; sourceTree = "<group>"; };
+		4D29956C1786A3D90076F296 /* ViewMoreNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewMoreNavigationController.m; path = ViewMore/ViewMoreNavigationController.m; sourceTree = "<group>"; };
+		4D29956F1786A4140076F296 /* ViewMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewMoreViewController.h; path = ViewMore/ViewMoreViewController.h; sourceTree = "<group>"; };
+		4D2995701786A4140076F296 /* ViewMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewMoreViewController.m; path = ViewMore/ViewMoreViewController.m; sourceTree = "<group>"; };
+		4D2995721786AD1D0076F296 /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemCell.h; path = PetsAlliance/Items/ItemCell.h; sourceTree = SOURCE_ROOT; };
+		4D2995731786AD1D0076F296 /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemCell.m; path = PetsAlliance/Items/ItemCell.m; sourceTree = SOURCE_ROOT; };
+		4D2995751786B3CE0076F296 /* blue_armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_armor.png; sourceTree = "<group>"; };
+		4D2995761786B3CE0076F296 /* red_armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_armor.png; sourceTree = "<group>"; };
+		4D2995791786B3F70076F296 /* blue_armor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue_armor@2x.png"; sourceTree = "<group>"; };
+		4D29957A1786B3F70076F296 /* red_armor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red_armor@2x.png"; sourceTree = "<group>"; };
 		4D4F59DC176830E400E81980 /* SwitchPetsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsNavigationController.h; sourceTree = "<group>"; };
 		4D4F59DD176830E400E81980 /* SwitchPetsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchPetsNavigationController.m; sourceTree = "<group>"; };
 		4D4F59E1176830F900E81980 /* SwitchPetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchPetsViewController.h; sourceTree = "<group>"; };
@@ -399,6 +416,10 @@
 		4D5931B2178018DF000E75D3 /* serbeagle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = serbeagle.png; sourceTree = "<group>"; };
 		4D5931B3178018DF000E75D3 /* dratlantic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dratlantic.png; sourceTree = "<group>"; };
 		4D5931B4178018DF000E75D3 /* hailwhal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hailwhal.png; sourceTree = "<group>"; };
+		4D5931BA1780BD14000E75D3 /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Error.h; path = Classes/Error.h; sourceTree = "<group>"; };
+		4D5931BB1780BD14000E75D3 /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Error.m; path = Classes/Error.m; sourceTree = "<group>"; };
+		4D5931BD1780BD43000E75D3 /* Success.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Success.h; path = Classes/Success.h; sourceTree = "<group>"; };
+		4D5931BE1780BD43000E75D3 /* Success.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Success.m; path = Classes/Success.m; sourceTree = "<group>"; };
 		4D782A811771859B004B1C46 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4D782A881772ADC3004B1C46 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		4D782A891772ADC3004B1C46 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
@@ -430,8 +451,6 @@
 		4D782AC61776BE71004B1C46 /* PAURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PAURLRequest.m; path = Classes/Network/PAURLRequest.m; sourceTree = "<group>"; };
 		4D782AC91776D4D9004B1C46 /* SelectCharacterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectCharacterView.h; path = Login/SelectCharacterView.h; sourceTree = "<group>"; };
 		4D782ACA1776D4D9004B1C46 /* SelectCharacterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectCharacterView.m; path = Login/SelectCharacterView.m; sourceTree = "<group>"; };
-		4D914B1D176EB646006B7BCD /* sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sword.png; sourceTree = "<group>"; };
-		4D914B1E176EB646006B7BCD /* sword@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sword@2x.png"; sourceTree = "<group>"; };
 		4D914B21176EB646006B7BCD /* cat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat@2x.png"; sourceTree = "<group>"; };
 		4D914B23176EB646006B7BCD /* dragon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dragon@2x.png"; sourceTree = "<group>"; };
 		4D914B4F176EC48D006B7BCD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = PetsAlliance/LoginViewController.h; sourceTree = SOURCE_ROOT; };
@@ -786,6 +805,17 @@
 			path = Resources/Stylesheets;
 			sourceTree = "<group>";
 		};
+		4D29956E1786A3DF0076F296 /* ViewMore */ = {
+			isa = PBXGroup;
+			children = (
+				4D29956F1786A4140076F296 /* ViewMoreViewController.h */,
+				4D2995701786A4140076F296 /* ViewMoreViewController.m */,
+				4D29956B1786A3D90076F296 /* ViewMoreNavigationController.h */,
+				4D29956C1786A3D90076F296 /* ViewMoreNavigationController.m */,
+			);
+			name = ViewMore;
+			sourceTree = "<group>";
+		};
 		4D4F59DB176830BE00E81980 /* Help */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +858,8 @@
 				4D4F5A211769B41500E81980 /* ItemsViewController.m */,
 				4D4F5A251769B43200E81980 /* ItemsTableView.h */,
 				4D4F5A261769B43200E81980 /* ItemsTableView.m */,
+				4D2995721786AD1D0076F296 /* ItemCell.h */,
+				4D2995731786AD1D0076F296 /* ItemCell.m */,
 				4D4F5A281769B44E00E81980 /* ItemsNavigationScrollView.h */,
 				4D4F5A291769B44E00E81980 /* ItemsNavigationScrollView.m */,
 				4D4F5A1A1769B2EE00E81980 /* ItemsNavigationController.h */,
@@ -897,8 +929,10 @@
 		4D914B1C176EB646006B7BCD /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				4D914B1D176EB646006B7BCD /* sword.png */,
-				4D914B1E176EB646006B7BCD /* sword@2x.png */,
+				4D2995751786B3CE0076F296 /* blue_armor.png */,
+				4D2995791786B3F70076F296 /* blue_armor@2x.png */,
+				4D2995761786B3CE0076F296 /* red_armor.png */,
+				4D29957A1786B3F70076F296 /* red_armor@2x.png */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -914,6 +948,10 @@
 				4D914B58176EF3CA006B7BCD /* Pet.m */,
 				4D914B5A176EF3DA006B7BCD /* Item.h */,
 				4D914B5B176EF3DA006B7BCD /* Item.m */,
+				4D5931BA1780BD14000E75D3 /* Error.h */,
+				4D5931BB1780BD14000E75D3 /* Error.m */,
+				4D5931BD1780BD43000E75D3 /* Success.h */,
+				4D5931BE1780BD43000E75D3 /* Success.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -966,6 +1004,7 @@
 				4D4F5A1F1769B2F400E81980 /* Items */,
 				4D9402511766E5C100898DCF /* Training */,
 				4D9402501766E5C100898DCF /* Battle */,
+				4D29956E1786A3DF0076F296 /* ViewMore */,
 				4D94024F1766E5C100898DCF /* TheMaster */,
 				4D94024E1766E5C100898DCF /* Navigator */,
 				4D9402141766E51D00898DCF /* AppDelegate.h */,
@@ -1206,8 +1245,6 @@
 				4D16F6C6176D6AC000C7C4F7 /* SkyBlue.NUI.nss in Resources */,
 				4D16F6C7176D6AC000C7C4F7 /* Switchboard.NUI.nss in Resources */,
 				4D16F6DC176D6B0A00C7C4F7 /* custom.nss in Resources */,
-				4D914B47176EB646006B7BCD /* sword.png in Resources */,
-				4D914B48176EB646006B7BCD /* sword@2x.png in Resources */,
 				4D914B4A176EB646006B7BCD /* cat@2x.png in Resources */,
 				4D914B4C176EB646006B7BCD /* dragon@2x.png in Resources */,
 				4D782AB1177674F1004B1C46 /* LICENSE in Resources */,
@@ -1229,6 +1266,10 @@
 				4D5931B7178018DF000E75D3 /* serbeagle.png in Resources */,
 				4D5931B8178018DF000E75D3 /* dratlantic.png in Resources */,
 				4D5931B9178018DF000E75D3 /* hailwhal.png in Resources */,
+				4D2995771786B3CE0076F296 /* blue_armor.png in Resources */,
+				4D2995781786B3CE0076F296 /* red_armor.png in Resources */,
+				4D29957B1786B3F70076F296 /* blue_armor@2x.png in Resources */,
+				4D29957C1786B3F70076F296 /* red_armor@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,6 +1425,11 @@
 				4D782AC41776B784004B1C46 /* HaveAcccountViewController.m in Sources */,
 				4D782AC71776BE71004B1C46 /* PAURLRequest.m in Sources */,
 				4D782ACB1776D4D9004B1C46 /* SelectCharacterView.m in Sources */,
+				4D5931BC1780BD14000E75D3 /* Error.m in Sources */,
+				4D5931BF1780BD43000E75D3 /* Success.m in Sources */,
+				4D29956D1786A3D90076F296 /* ViewMoreNavigationController.m in Sources */,
+				4D2995711786A4140076F296 /* ViewMoreViewController.m in Sources */,
+				4D2995741786AD1D0076F296 /* ItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1498,6 +1544,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
 				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Pets Alliance";
 				PROVISIONING_PROFILE = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
 				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
@@ -1515,6 +1562,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
 				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "Pets Alliance";
 				PROVISIONING_PROFILE = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
 				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";

@@ -13,6 +13,7 @@
 @end
 
 @implementation LoginViewController
+@synthesize pager = _pager;
 @synthesize mainScrollView = _mainScrollView;
 @synthesize male = _male;
 @synthesize female = _female;
@@ -121,6 +122,16 @@
     [self.view addSubview:verified];
     
     [firstChar setMaleAndFemale];
+    
+    UIPageControl *pageControl = [[UIPageControl alloc] init];
+    [pageControl setFrame:CGRectMake(110,5,100,10)];
+    [pageControl setPageIndicatorTintColor:[UIColor grayColor]];
+    [pageControl setCurrentPageIndicatorTintColor:[UIColor blackColor]];
+    [pageControl setNumberOfPages:self.numCharacters];
+    [pageControl setCurrentPage:0];
+    [pageControl setHidden:YES];
+    [self setPager:pageControl];
+    [self.view addSubview:pageControl];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -249,6 +260,7 @@
                          [self.verifiedText setHidden:YES];
                          
                          [self.mainScrollView setScrollEnabled:NO];
+                         [self.pager setHidden:YES];
                          
                          [self.resetButton removeFromSuperview];
                      } completion:^(BOOL finished) {
@@ -288,6 +300,7 @@
                              [self.usernameField setAlpha:1];
                              
                              [self.mainScrollView setScrollEnabled:YES];
+                             [self.pager setHidden:NO];
                              
                              [self.view addSubview:reset];
                          } completion:^(BOOL finished) {
@@ -323,6 +336,7 @@
                              [self.usernameField setAlpha:1];
                              
                              [self.mainScrollView setScrollEnabled:YES];
+                             [self.pager setHidden:NO];
                              
                              [self.view addSubview:reset];
                          } completion:^(BOOL finished) {

@@ -13,45 +13,91 @@
 @end
 
 @implementation ItemsViewController
+@synthesize petStatusView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"My Items";
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(closeMyItemsView:)];
-        // Custom initialization
     }
     return self;
 }
 
-- (void)closeMyItemsView: (id)selector {
-    NSLog(@"close my items view");
-    [self dismissViewControllerAnimated:YES completion:nil];   
+- (id)initWithPetStatusView:(PetStatusView *)petStatus {
+    self = [self init];
+    if (self) {
+        self.petStatusView = petStatus;
+    }
+    return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewWillAppear:(BOOL)animated {
+    [self.view addSubview:petStatusView];
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    int petStatusViewHeight = 100;
     int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
-    
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, petStatusViewHeight)];
-    [self.view addSubview:petStatusView];
-    
     int itemsNavigationHeight = 30;
-    ItemsNavigationScrollView *itemsNavigationScrollView = [[ItemsNavigationScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, itemsNavigationHeight)];
+
+    ItemsNavigationScrollView *itemsNavigationScrollView = [[ItemsNavigationScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, itemsNavigationHeight)];
     [self.view addSubview:itemsNavigationScrollView];
     
-    ItemsTableView *itemsTableView = [[ItemsTableView alloc] initWithFrame:CGRectMake(0, 100 + itemsNavigationHeight, self.view.frame.size.width, self.view.frame.size.height - navHeight - 100 - itemsNavigationHeight)];
+    ItemsTableView *itemsTableView = [[ItemsTableView alloc] initWithFrame:CGRectMake(0, 100 + itemsNavigationHeight, self.view.bounds.size.width, self.view.bounds.size.height - navHeight - 100 - itemsNavigationHeight)];
+    [itemsTableView setDataSource:self];
+    [itemsTableView setDelegate:self];
     [self.view addSubview:itemsTableView];
 }
 
-- (void)didReceiveMemoryWarning
-{
+#pragma mark UITableViewDataSource methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *identifier = @"identifier";
+    ItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (cell == nil) {
+        cell = [[ItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        UIButton *sellButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [sellButton setFrame:CGRectMake(230, 35, 80, 37)];
+        [sellButton addTarget:self action:@selector(sellButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [sellButton setTitle:@"Sell" forState:UIControlStateNormal];
+        [sellButton setNuiClass:@"SecondaryButton"];
+        [cell addSubview:sellButton];
+        
+        UILabel *itemName = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 120, 15)];
+        [itemName setText:@"Blue Armor"];
+        [itemName setNuiClass:@"Label:BattleBoldText"];
+        [cell addSubview:itemName];
+        
+        UIImageView *itemImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 30, 60, 60)];
+        [itemImage setImage:[UIImage imageNamed:@"blue_armor.png"]];
+        [cell addSubview:itemImage];
+    }
+    cell.tag = indexPath.row;
+    return cell;
+}
+
+- (void)updateTable: (UITableView *)tableView {
+    [tableView beginUpdates];
+    [tableView endUpdates];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+
+- (void)sellButtonPressed: (id)selector {
+    NSLog(@"sell button pressed");
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

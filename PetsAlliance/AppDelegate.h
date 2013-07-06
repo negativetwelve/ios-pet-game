@@ -14,20 +14,25 @@
 #import "KeychainItemWrapper.h"
 
 #import "MyPetViewController.h"
+#import "ItemsViewController.h"
 #import "TrainingViewController.h"
 #import "BattleViewController.h"
 #import "TheMasterViewController.h"
 #import "NavigatorViewController.h"
-#import "LoginNavigationController.h"
-
+#import "ViewMoreViewController.h"
 #import "LoginViewController.h"
 
 #import "MyPetNavigationController.h"
+#import "ItemsNavigationController.h"
 #import "TrainingNavigationController.h"
 #import "BattleNavigationController.h"
+#import "ViewMoreNavigationController.h"
+#import "LoginNavigationController.h"
 
 #import "User.h"
 #import "Pet.h"
+#import "Error.h"
+#import "Success.h"
 
 #import "AESCrypt.h"
 #import "MBProgressHUD.h"

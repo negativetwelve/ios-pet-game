@@ -29,23 +29,29 @@
     return self;
 }
 
+- (id)initWithPetStatusView:(PetStatusView *)petStatus {
+    self = [self init];
+    if (self) {
+        self.petStatusView = petStatus;
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.view addSubview:petStatusView];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    int petStatusViewHeight = 100;
+
     int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
-    
-    PetStatusView *petStatus = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, petStatusViewHeight)];
-    [self.view addSubview:petStatus];
-    
-    [self setPetStatusView:petStatus];
-    
+
     UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100 - navHeight)];
     scrollView.scrollEnabled = YES;
     scrollView.pagingEnabled = NO;
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.bounces = NO;
+//    scrollView.bounces = NO;
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
     [self.view addSubview:scrollView];
     
@@ -132,6 +138,7 @@
 
 - (void)loadPets: (NSArray *)pets {
     NSLog(@"loading pets");
+    [self.petStatusView loadPets:pets];
 }
 
 - (void)loadUser: (User *)user {

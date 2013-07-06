@@ -13,6 +13,7 @@
 @end
 
 @implementation TrainingViewController
+@synthesize petStatusView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,15 +23,23 @@
     return self;
 }
 
+- (id)initWithPetStatusView:(PetStatusView *)petStatus {
+    self = [self init];
+    if (self) {
+        self.title = @"Quests";
+        self.petStatusView = petStatus;
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.view addSubview:petStatusView];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    int petStatusViewHeight = 100;
     int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
-
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, petStatusViewHeight)];
-    [self.view addSubview:petStatusView];
-    
     UITableView *trainingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - navHeight - 100)];
     [self.view addSubview:trainingTableView];
 }

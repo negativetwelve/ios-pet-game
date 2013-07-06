@@ -13,6 +13,7 @@
 @end
 
 @implementation BattleViewController
+@synthesize petStatusView;
 @synthesize rowHeights = _rowHeights;
 @synthesize battleTableView = _battleTableView;
 
@@ -31,6 +32,18 @@
     return self;
 }
 
+- (id)initWithPetStatusView:(PetStatusView *)petStatus {
+    self = [self init];
+    if (self) {
+        self.petStatusView = petStatus;
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.view addSubview:petStatusView];
+}
+
 - (void)viewMyItems: (id)selector {
     NSLog(@"clicked on view my items");
     ItemsViewController *itemsViewController = [[ItemsViewController alloc] init];
@@ -45,24 +58,16 @@
     [self presentViewController:leaderboardNavigationController animated:YES completion:nil];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
-    int petStatusViewHeight = 100;
     int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
-    
-    PetStatusView *petStatusView = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, petStatusViewHeight)];
-    [self.view addSubview:petStatusView];
     
     battleTableView = [[BattleTableView alloc] initWithFrame:CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 100 - navHeight)];
     [self setBattleTableView:battleTableView];
     [battleTableView setDataSource:self];
     [battleTableView setDelegate:self];
     [self.view addSubview:battleTableView];
-
-    battleTableView.dataSource = self;
-    battleTableView.delegate = self;
 }
 
 #pragma mark UITableViewDataSource methods

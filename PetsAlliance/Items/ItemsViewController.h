@@ -12,6 +12,14 @@
 #import "ItemsNavigationScrollView.h"
 #import "ItemsTableView.h"
 
-@interface ItemsViewController : UIViewController
+#import "ItemCell.h"
+
+@interface ItemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    PetStatusView *petStatusView;
+}
+
+@property (nonatomic, retain) PetStatusView *petStatusView;
+
+- (id)initWithPetStatusView:(PetStatusView *)petStatus;
 
 @end

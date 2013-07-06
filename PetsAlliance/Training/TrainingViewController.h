@@ -11,6 +11,12 @@
 #import "PetStatusView.h"
 #import "TrainingTableView.h"
 
-@interface TrainingViewController : UIViewController
+@interface TrainingViewController : UIViewController {
+    PetStatusView *petStatusView;
+}
+
+@property (nonatomic, retain) PetStatusView *petStatusView;
+
+- (id)initWithPetStatusView:(PetStatusView *)petStatus;
 
 @end

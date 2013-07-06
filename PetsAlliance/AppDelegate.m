@@ -21,23 +21,23 @@
     [NUISettings initWithStylesheet:@"custom"];
     [NUIAppearance init];
     
-    MyPetViewController *myPetViewController = [[MyPetViewController alloc] init];
-    UIViewController *trainingViewController = [[TrainingViewController alloc] init];
-    UIViewController *battleViewController = [[BattleViewController alloc] init];
-    UIViewController *theMasterViewController = [[TheMasterViewController alloc] init];
-    UIViewController *navigatorViewController = [[NavigatorViewController alloc] init];
+    
+    PetStatusView *petStatus = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.window.bounds.size.width, 100)];
+    
+    MyPetViewController *myPetViewController = [[MyPetViewController alloc] initWithPetStatusView:petStatus];
+    ItemsViewController *itemsViewController = [[ItemsViewController alloc] initWithPetStatusView:petStatus];
+    TrainingViewController *trainingViewController = [[TrainingViewController alloc] initWithPetStatusView:petStatus];
+    BattleViewController *battleViewController = [[BattleViewController alloc] initWithPetStatusView:petStatus];
+    ViewMoreViewController *viewMoreViewController = [[ViewMoreViewController alloc] init];
     
     UINavigationController *myPetNavigationController = [[MyPetNavigationController alloc] initWithRootViewController:myPetViewController];
+    UINavigationController *itemsNavigationController = [[ItemsNavigationController alloc] initWithRootViewController:itemsViewController];
     UINavigationController *trainingNavigationController = [[TrainingNavigationController alloc] initWithRootViewController:trainingViewController];
     UINavigationController *battleNavigationController = [[BattleNavigationController alloc] initWithRootViewController:battleViewController];
-    UINavigationController *theMasterNavigationController = [[UINavigationController alloc] initWithRootViewController:theMasterViewController];
-    UINavigationController *navigatorNavigationController = [[UINavigationController alloc] initWithRootViewController:navigatorViewController];
-    
-    theMasterNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    navigatorNavigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    
+    UINavigationController *viewMoreNavigationController = [[ViewMoreNavigationController alloc] initWithRootViewController:viewMoreViewController];
+
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[myPetNavigationController, trainingNavigationController, battleNavigationController, theMasterNavigationController, navigatorNavigationController];
+    self.tabBarController.viewControllers = @[myPetNavigationController, itemsNavigationController, trainingNavigationController, battleNavigationController, viewMoreNavigationController];
 
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
@@ -74,7 +74,7 @@
     hud.labelText = @"Loading";
     
     NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"iphone" parameters:auth];
-    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.responseDescriptor, Pet.responseDescriptor ]];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.responseDescriptor, Pet.responseDescriptor, Error.responseDescriptor, Success.responseDescriptor ]];
 
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         NSLog(@"successfully logged in!");

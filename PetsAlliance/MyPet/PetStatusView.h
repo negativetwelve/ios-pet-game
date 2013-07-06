@@ -12,6 +12,14 @@
 #import "UILabel+NUI.h"
 #import "UITextField+NUI.h"
 
-@interface PetStatusView : UIView
+#import "Pet.h"
+
+@interface PetStatusView : UIView {
+    NSMutableDictionary *pets;
+}
+
+@property (nonatomic, retain) NSMutableDictionary *pets;
+
+-(void)loadPets:(NSArray *)pets;
 
 @end

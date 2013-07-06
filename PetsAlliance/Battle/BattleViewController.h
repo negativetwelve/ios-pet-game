@@ -21,12 +21,16 @@
 #import "BattleCell.h"
 
 @interface BattleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    PetStatusView *petStatusView;
     UITableView *battleTableView;
     int numberOfCells;
     NSMutableArray *rowHeights;
 }
 
+@property (nonatomic, retain) PetStatusView *petStatusView;
 @property (nonatomic, strong) NSMutableArray *rowHeights;
 @property (nonatomic, retain) UITableView *battleTableView;
+
+- (id)initWithPetStatusView:(PetStatusView *)petStatus;
 
 @end

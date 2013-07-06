@@ -35,5 +35,6 @@
 @property (nonatomic, retain) UIImageView *character;
 
 - (void)loadUser:(User *)user andPets:(NSArray *)pets;
+- (id)initWithPetStatusView:(PetStatusView *)petStatus;
 
 @end
