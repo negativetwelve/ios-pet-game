@@ -25,8 +25,13 @@
     return userMapping;
 }
 
-+ (RKResponseDescriptor *)responseDescriptor {
++ (RKResponseDescriptor *)userResponseDescriptor {
     RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:self.mapping pathPattern:nil keyPath:@"user" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    return descriptor;
+}
+
++ (RKResponseDescriptor *)usersResponseDescriptor {
+    RKResponseDescriptor *descriptor = [RKResponseDescriptor responseDescriptorWithMapping:self.mapping pathPattern:nil keyPath:@"users" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     return descriptor;
 }
 

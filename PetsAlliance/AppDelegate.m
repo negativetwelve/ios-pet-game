@@ -74,7 +74,7 @@
     hud.labelText = @"Loading";
     
     NSMutableURLRequest *request = [objectManager requestWithObject:nil method:RKRequestMethodPOST path:@"iphone" parameters:auth];
-    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.responseDescriptor, Pet.responseDescriptor, Error.responseDescriptor, Success.responseDescriptor ]];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.userResponseDescriptor, Pet.responseDescriptor, Error.responseDescriptor, Success.responseDescriptor ]];
 
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         NSLog(@"successfully logged in!");

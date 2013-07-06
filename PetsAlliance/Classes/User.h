@@ -21,6 +21,7 @@
 @property (nonatomic, copy) NSNumber *skillLevel;
 
 + (RKObjectMapping *)mapping;
-+ (RKResponseDescriptor *)responseDescriptor;
++ (RKResponseDescriptor *)usersResponseDescriptor;
++ (RKResponseDescriptor *)userResponseDescriptor;
 
 @end

@@ -16,12 +16,14 @@
 @synthesize petStatusView;
 @synthesize rowHeights = _rowHeights;
 @synthesize battleTableView = _battleTableView;
+@synthesize users;
+@synthesize refreshControl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Battle";
+        self.title = @"Battles";
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"My Items" style:UIBarButtonItemStyleBordered target:self action:@selector(viewMyItems:)];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Leaderboard" style:UIBarButtonItemStyleDone target:self action:@selector(viewLeaderboard:)];
         self.rowHeights = [[NSMutableArray alloc] init];
@@ -68,11 +70,57 @@
     [battleTableView setDataSource:self];
     [battleTableView setDelegate:self];
     [self.view addSubview:battleTableView];
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to refresh"];
+    [refresh addTarget:self
+                action:@selector(refreshTable:)
+      forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    [battleTableView addSubview:refresh];
+    
+    [self loadUsers];
+}
+
+- (void)refreshTable: (UIRefreshControl *)calledRefreshControl {
+    NSLog(@"refresh table");
+    calledRefreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating..."];
+
+    [self loadUsers];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    NSString *updated = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
+    calledRefreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:updated];
+    [calledRefreshControl endRefreshing];
+}
+
+- (void)loadUsers {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Loading";
+    
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodGET path:@"battles" parameters:nil];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.usersResponseDescriptor, Pet.responseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
+    
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        [self setUsers:[mappingResult.dictionary objectForKey:@"users"]];
+        [hud hide:YES];
+        NSLog(@"USERS %@", self.users);
+        [self.battleTableView reloadData];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [hud hide:YES];
+        NSLog(@"error!");
+        NSString *reason = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
+        NSLog(@"%@", reason);
+    }];
+    
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:objectRequestOperation];
 }
 
 #pragma mark UITableViewDataSource methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [self.users count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,6 +131,8 @@
         cell = [[BattleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        User *user = [users objectAtIndex:indexPath.row];
+        
         UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [battleButton setFrame:CGRectMake(230, 35, 80, 37)];
         [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -92,7 +142,7 @@
         [cell addSubview:battleButton];
         
         UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(5, 35, 40, 80)];
-        [character setImage:[UIImage imageNamed:@"male1.png"]];
+        [character setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", user.character]]];
         [cell addSubview:character];
 
         PetSelectButton *firstPetButton = [[PetSelectButton alloc] initWithFrame:CGRectMake(55, 45, 50, 50) andNuiClass:@"ImageButton" andImageName:@"dragon.png" andSelector:@selector(petSelected:) andCell:cell andIndex:1];
@@ -105,7 +155,7 @@
         [cell addSubview:thirdPetButton];
         
         UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(5, 2, 120, 15)];
-        [username setText:@"really really long username"];
+        [username setText:user.username];
         [username setNuiClass:@"Label:BattleBoldText"];
         [cell addSubview:username];
         
@@ -115,7 +165,7 @@
         [cell addSubview:skillLevel];
         
         UILabel *skillLevelValue = [[UILabel alloc] initWithFrame:CGRectMake(45, 18, 35, 15)];
-        [skillLevelValue setText:@"10053"];
+        [skillLevelValue setText:[NSString stringWithFormat:@"%@", user.skillLevel]];
         [skillLevelValue setNuiClass:@"Label:BattleValue"];
         [cell addSubview:skillLevelValue];
         
