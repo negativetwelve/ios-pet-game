@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
 
+#import "Pet.h"
+
 @interface User : NSObject
 
 @property (nonatomic, copy) NSString *username;
@@ -19,6 +21,7 @@
 @property (nonatomic, copy) NSNumber *energy;
 @property (nonatomic, copy) NSNumber *energyRate;
 @property (nonatomic, copy) NSNumber *skillLevel;
+@property (nonatomic, copy) NSArray *userPets;
 
 + (RKObjectMapping *)mapping;
 + (RKResponseDescriptor *)usersResponseDescriptor;

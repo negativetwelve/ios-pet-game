@@ -14,6 +14,7 @@
 
 #import "BattleCell.h"
 
+@class BattleCell;
 @interface PetSelectButton : UIButton {
     BattleCell *cell;
     int index;

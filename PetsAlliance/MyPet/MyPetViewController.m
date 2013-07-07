@@ -69,13 +69,6 @@
     
     UIView *mainPetView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
     [scrollView addSubview:mainPetView];
-    
-    UIButton *myItemsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [myItemsButton setFrame:CGRectMake(20, 180, 110, 31)];
-    [myItemsButton setTitle:@"My Items" forState:UIControlStateNormal];
-    [myItemsButton setNuiClass:@"Button:TextFieldButton"];
-    [myItemsButton addTarget:self action:@selector(myItemsAction:) forControlEvents:UIControlEventTouchUpInside];
-    [mainPetView addSubview:myItemsButton];
 
     UIButton *itemStoreButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [itemStoreButton setFrame:CGRectMake(20, 220, 110, 31)];
@@ -105,12 +98,6 @@
     NSLog(@"clicked on Pet button");
 }
 
-- (void)myItemsAction: (id) selector {
-    NSLog(@"clicked on my items button");
-    ItemsViewController *itemsViewController = [[ItemsViewController alloc] init];
-    ItemsNavigationController *itemsNavigationController = [[ItemsNavigationController alloc] initWithRootViewController:itemsViewController];
-    [self presentViewController:itemsNavigationController animated:YES completion:nil];
-}
 
 - (void)itemStoreAction: (id) selector {
     NSLog(@"clicked on item store button");

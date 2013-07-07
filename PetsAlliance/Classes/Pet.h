@@ -10,6 +10,7 @@
 
 #import "User.h"
 
+@class User;
 @interface Pet : NSObject
 
 @property (nonatomic, copy) NSString *name;

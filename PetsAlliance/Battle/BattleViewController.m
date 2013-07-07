@@ -24,7 +24,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Battles";
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"My Items" style:UIBarButtonItemStyleBordered target:self action:@selector(viewMyItems:)];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Leaderboard" style:UIBarButtonItemStyleDone target:self action:@selector(viewLeaderboard:)];
         self.rowHeights = [[NSMutableArray alloc] init];
         for (NSUInteger i = 0; i < 10; i++) {
@@ -46,13 +45,6 @@
     [self.view addSubview:petStatusView];
 }
 
-- (void)viewMyItems: (id)selector {
-    NSLog(@"clicked on view my items");
-    ItemsViewController *itemsViewController = [[ItemsViewController alloc] init];
-    ItemsNavigationController *itemsNavigationController = [[ItemsNavigationController alloc] initWithRootViewController:itemsViewController];
-    [self presentViewController:itemsNavigationController animated:YES completion:nil];
-}
-
 - (void)viewLeaderboard: (id)selector {
     NSLog(@"clicked on view leaderboard");
     LeaderboardViewController *leaderboardView = [[LeaderboardViewController alloc] init];
@@ -72,44 +64,40 @@
     [self.view addSubview:battleTableView];
     
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to refresh"];
     [refresh addTarget:self
                 action:@selector(refreshTable:)
       forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
     [battleTableView addSubview:refresh];
     
-    [self loadUsers];
+    [self refreshTable:self.refreshControl];
 }
 
 - (void)refreshTable: (UIRefreshControl *)calledRefreshControl {
     NSLog(@"refresh table");
-    calledRefreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Updating..."];
-
-    [self loadUsers];
+    [calledRefreshControl beginRefreshing];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM d, h:mm a"];
-    NSString *updated = [NSString stringWithFormat:@"Last update: %@", [formatter stringFromDate:[NSDate date]]];
-    calledRefreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:updated];
-    [calledRefreshControl endRefreshing];
+    [self loadUsers];
 }
 
 - (void)loadUsers {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeIndeterminate;
-    hud.labelText = @"Loading";
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    hud.mode = MBProgressHUDModeIndeterminate;
+//    hud.labelText = @"Loading";
     
     NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodGET path:@"battles" parameters:nil];
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.usersResponseDescriptor, Pet.responseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
     
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         [self setUsers:[mappingResult.dictionary objectForKey:@"users"]];
-        [hud hide:YES];
+//        [hud hide:YES];
+        [self.refreshControl endRefreshing];
         NSLog(@"USERS %@", self.users);
         [self.battleTableView reloadData];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        [hud hide:YES];
+//        [hud hide:YES];
+        [self.refreshControl endRefreshing];
+
         NSLog(@"error!");
         NSString *reason = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
         NSLog(@"%@", reason);
@@ -119,8 +107,18 @@
 }
 
 #pragma mark UITableViewDataSource methods
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.users count];
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (self.battleTableView.contentOffset.y < -50 && ![self.refreshControl isRefreshing]) {
+        [self refreshTable:self.refreshControl];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -129,66 +127,39 @@
 
     if (cell == nil) {
         cell = [[BattleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        User *user = [users objectAtIndex:indexPath.row];
-        
-        UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [battleButton setFrame:CGRectMake(230, 35, 80, 37)];
-        [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
-        [battleButton setNuiClass:@"SecondaryButton"];
-        
-        [cell addSubview:battleButton];
-        
-        UIImageView *character = [[UIImageView alloc] initWithFrame:CGRectMake(5, 35, 40, 80)];
-        [character setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", user.character]]];
-        [cell addSubview:character];
-
-        PetSelectButton *firstPetButton = [[PetSelectButton alloc] initWithFrame:CGRectMake(55, 45, 50, 50) andNuiClass:@"ImageButton" andImageName:@"dragon.png" andSelector:@selector(petSelected:) andCell:cell andIndex:1];
-        [cell addSubview:firstPetButton];
-        
-        PetSelectButton *secondPetButton = [[PetSelectButton alloc] initWithFrame:CGRectMake(110, 45, 50, 50) andNuiClass:@"ImageButton" andImageName:@"cat.png" andSelector:@selector(petSelected:) andCell:cell andIndex:2];
-        [cell addSubview:secondPetButton];
-        
-        PetSelectButton *thirdPetButton = [[PetSelectButton alloc] initWithFrame:CGRectMake(165, 45, 50, 50) andNuiClass:@"ImageButton" andImageName:@"cat.png" andSelector:@selector(petSelected:) andCell:cell andIndex:3];
-        [cell addSubview:thirdPetButton];
-        
-        UILabel *username = [[UILabel alloc] initWithFrame:CGRectMake(5, 2, 120, 15)];
-        [username setText:user.username];
-        [username setNuiClass:@"Label:BattleBoldText"];
-        [cell addSubview:username];
-        
-        UILabel *skillLevel = [[UILabel alloc] initWithFrame:CGRectMake(5, 18, 40, 15)];
-        [skillLevel setText:@"Skill Lvl"];
-        [skillLevel setNuiClass:@"Label:BattleStat"];
-        [cell addSubview:skillLevel];
-        
-        UILabel *skillLevelValue = [[UILabel alloc] initWithFrame:CGRectMake(45, 18, 35, 15)];
-        [skillLevelValue setText:[NSString stringWithFormat:@"%@", user.skillLevel]];
-        [skillLevelValue setNuiClass:@"Label:BattleValue"];
-        [cell addSubview:skillLevelValue];
-        
-        UILabel *wins = [[UILabel alloc] initWithFrame:CGRectMake(140, 2, 35, 15)];
-        [wins setText:@"Wins"];
-        [wins setNuiClass:@"Label:BattleStat"];
-        [cell addSubview:wins];
-        
-        UILabel *winsValue = [[UILabel alloc] initWithFrame:CGRectMake(180, 2, 45, 15)];
-        [winsValue setText:@"1234567"];
-        [winsValue setNuiClass:@"Label:BattleValue"];
-        [cell addSubview:winsValue];
-        
-        UILabel *losses = [[UILabel alloc] initWithFrame:CGRectMake(140, 18, 35, 15)];
-        [losses setText:@"Losses"];
-        [losses setNuiClass:@"Label:BattleStat"];
-        [cell addSubview:losses];
-        
-        UILabel *lossesValue = [[UILabel alloc] initWithFrame:CGRectMake(180, 18, 45, 15)];
-        [lossesValue setText:@"154000"];
-        [lossesValue setNuiClass:@"Label:BattleValue"];
-        [cell addSubview:lossesValue];
     }
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [battleButton setFrame:CGRectMake(230, 35, 80, 37)];
+    [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
+    [battleButton setNuiClass:@"SecondaryButton"];
+    [cell addSubview:battleButton];
+
+    User *user = [users objectAtIndex:indexPath.row];
+    
+    [cell.character setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", user.character]]];
+    
+    for (int i = 0; i < [cell.petButtons count]; i++) {
+        PetSelectButton *petSelectButton = [cell.petButtons objectAtIndex:i];
+        if (i < [user.userPets count]) {
+            Pet *pet = [user.userPets objectAtIndex:i];
+            [petSelectButton setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", pet.name]] forState:UIControlStateNormal];
+            [petSelectButton setUserInteractionEnabled:YES];
+        } else {
+            [petSelectButton setBackgroundImage:nil forState:UIControlStateNormal];
+            [petSelectButton setUserInteractionEnabled:NO];
+        }
+
+    }
+
+    [cell.username setText:user.username];
+    [cell.skillLevelValue setText:[NSString stringWithFormat:@"%@", user.skillLevel]];
+    [cell.winsValue setText:@"1234567"];
+    [cell.lossesValue setText:@"154000"];
+    
     cell.tag = indexPath.row;
     return cell;
 }

@@ -22,6 +22,7 @@
      @"energy_rate" : @"energyRate",
      @"skill_level" : @"skillLevel",
      }];
+    [userMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user_pets" toKeyPath:@"userPets" withMapping:Pet.mapping]];
     return userMapping;
 }
 
