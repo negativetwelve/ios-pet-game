@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MMViewController.h"
+
 #import "PetStatusView.h"
 #import "TrainingTableView.h"
 
-@interface TrainingViewController : UIViewController {
+@interface TrainingViewController : MMViewController {
     PetStatusView *petStatusView;
 }
 

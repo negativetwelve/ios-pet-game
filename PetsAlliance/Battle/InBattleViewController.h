@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MMViewController.h"
+
 #import "BattleAnimationView.h"
 #import "BattleOptionsView.h"
 #import "PetSelectionView.h"
 #import "AttackSelectionView.h"
 #import "RunSelectionView.h"
 
-@interface InBattleViewController : UIViewController
+@interface InBattleViewController : MMViewController
 
 @end

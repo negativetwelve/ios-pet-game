@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 
+#import "MMViewController.h"
+
 #import "LeaderboardViewController.h"
 #import "LeaderboardNavigationController.h"
 #import "PetStatusView.h"
@@ -24,7 +26,7 @@
 #import "Success.h"
 #import "Error.h"
 
-@interface BattleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface BattleViewController : MMViewController <UITableViewDelegate, UITableViewDataSource> {
     PetStatusView *petStatusView;
     UITableView *battleTableView;
     int numberOfCells;

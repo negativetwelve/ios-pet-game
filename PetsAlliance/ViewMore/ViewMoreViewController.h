@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "MMViewController.h"
+
 #import "PetStatusView.h"
 
-@interface ViewMoreViewController : UIViewController
+@interface ViewMoreViewController : MMViewController
 
 @end

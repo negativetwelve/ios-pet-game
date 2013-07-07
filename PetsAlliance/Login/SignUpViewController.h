@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 
+#import "MMViewController.h"
+
 #import "KeychainItemWrapper.h"
 #import "AESCrypt.h"
 
@@ -25,7 +27,7 @@
 #import "MyPetViewController.h"
 
 @class MyPetViewController;
-@interface SignUpViewController : UIViewController <UITextFieldDelegate> {
+@interface SignUpViewController : MMViewController <UITextFieldDelegate> {
     CGPoint originalCenter;
     UILabel *verifiedText;
 }

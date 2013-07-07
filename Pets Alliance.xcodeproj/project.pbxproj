@@ -189,6 +189,9 @@
 		4D94025B1766E63400898DCF /* MyPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9402591766E63400898DCF /* MyPetViewController.m */; };
 		4D9402661766E88B00898DCF /* TheMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9402641766E88B00898DCF /* TheMasterViewController.m */; };
 		4D94026B1766E89800898DCF /* NavigatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9402691766E89800898DCF /* NavigatorViewController.m */; };
+		4DB8BB3F178949D300422616 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB8BB3D178949D300422616 /* libGoogleAnalytics.a */; };
+		4DB8BB4317894ACD00422616 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4217894ACD00422616 /* MMViewController.m */; };
+		4DB8BB4717894CD500422616 /* MMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4617894CD500422616 /* MMTableViewController.m */; };
 		4DFD49391767142300EEAFA7 /* MyPetNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */; };
 		4DFD493E1767144000EEAFA7 /* HelpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */; };
 		4DFD49431767144F00EEAFA7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49411767144E00EEAFA7 /* HelpViewController.m */; };
@@ -488,6 +491,17 @@
 		4D9402641766E88B00898DCF /* TheMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMasterViewController.m; sourceTree = "<group>"; };
 		4D9402681766E89800898DCF /* NavigatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigatorViewController.h; sourceTree = "<group>"; };
 		4D9402691766E89800898DCF /* NavigatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigatorViewController.m; sourceTree = "<group>"; };
+		4DB8BB38178949D300422616 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		4DB8BB39178949D300422616 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		4DB8BB3A178949D300422616 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		4DB8BB3B178949D300422616 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
+		4DB8BB3C178949D300422616 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
+		4DB8BB3D178949D300422616 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		4DB8BB3E178949D300422616 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		4DB8BB4117894ACD00422616 /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMViewController.h; path = CustomClasses/MMViewController.h; sourceTree = "<group>"; };
+		4DB8BB4217894ACD00422616 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMViewController.m; path = CustomClasses/MMViewController.m; sourceTree = "<group>"; };
+		4DB8BB4517894CD500422616 /* MMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMTableViewController.h; path = CustomClasses/MMTableViewController.h; sourceTree = "<group>"; };
+		4DB8BB4617894CD500422616 /* MMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMTableViewController.m; path = CustomClasses/MMTableViewController.m; sourceTree = "<group>"; };
 		4DFD49361767142300EEAFA7 /* MyPetNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPetNavigationController.h; sourceTree = "<group>"; };
 		4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPetNavigationController.m; sourceTree = "<group>"; };
 		4DFD493B1767144000EEAFA7 /* HelpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpNavigationController.h; sourceTree = "<group>"; };
@@ -511,6 +525,7 @@
 				4D914B61176EF579006B7BCD /* SystemConfiguration.framework in Frameworks */,
 				4D914B62176EF579006B7BCD /* MobileCoreServices.framework in Frameworks */,
 				F713AD5B92C5487781B1D33C /* libPods.a in Frameworks */,
+				4DB8BB3F178949D300422616 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +659,7 @@
 		4D16F63A176D6AC000C7C4F7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4DB8BB37178949D300422616 /* GoogleAnalytics */,
 				4D782AA3177674F1004B1C46 /* AESCrypt */,
 				4D16F63B176D6AC000C7C4F7 /* NUI */,
 			);
@@ -998,6 +1014,7 @@
 		4D94020B1766E51D00898DCF /* PetsAlliance */ = {
 			isa = PBXGroup;
 			children = (
+				4DB8BB4417894AD300422616 /* MM */,
 				4D914B56176EF3B7006B7BCD /* Classes */,
 				4D782A8E1772B3BE004B1C46 /* Login */,
 				4D9402521766E5C100898DCF /* MyPet */,
@@ -1121,6 +1138,31 @@
 			);
 			name = Resources;
 			path = PetsAlliance;
+			sourceTree = "<group>";
+		};
+		4DB8BB37178949D300422616 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				4DB8BB38178949D300422616 /* GAI.h */,
+				4DB8BB39178949D300422616 /* GAITrackedViewController.h */,
+				4DB8BB3A178949D300422616 /* GAITracker.h */,
+				4DB8BB3B178949D300422616 /* GAITransaction.h */,
+				4DB8BB3C178949D300422616 /* GAITransactionItem.h */,
+				4DB8BB3D178949D300422616 /* libGoogleAnalytics.a */,
+				4DB8BB3E178949D300422616 /* libGoogleAnalytics_debug.a */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		4DB8BB4417894AD300422616 /* MM */ = {
+			isa = PBXGroup;
+			children = (
+				4DB8BB4117894ACD00422616 /* MMViewController.h */,
+				4DB8BB4217894ACD00422616 /* MMViewController.m */,
+				4DB8BB4517894CD500422616 /* MMTableViewController.h */,
+				4DB8BB4617894CD500422616 /* MMTableViewController.m */,
+			);
+			name = MM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1430,6 +1472,8 @@
 				4D29956D1786A3D90076F296 /* ViewMoreNavigationController.m in Sources */,
 				4D2995711786A4140076F296 /* ViewMoreViewController.m in Sources */,
 				4D2995741786AD1D0076F296 /* ItemCell.m in Sources */,
+				4DB8BB4317894ACD00422616 /* MMViewController.m in Sources */,
+				4DB8BB4717894CD500422616 /* MMTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1545,6 +1589,10 @@
 				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
 				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries/GoogleAnalytics\"",
+				);
 				PRODUCT_NAME = "Pets Alliance";
 				PROVISIONING_PROFILE = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
 				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
@@ -1563,6 +1611,10 @@
 				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
 				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries/GoogleAnalytics\"",
+				);
 				PRODUCT_NAME = "Pets Alliance";
 				PROVISIONING_PROFILE = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
 				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";

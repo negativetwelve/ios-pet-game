@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MMViewController.h"
+
 #import "HelpView.h"
 
-@interface HelpViewController : UIViewController
+@interface HelpViewController : MMViewController
 
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 
+#import "MMViewController.h"
+
 #import "KeychainItemWrapper.h"
 
 #import "UIButton+NUI.h"
@@ -28,7 +30,7 @@
 #import "MyPetViewController.h"
 
 @class MyPetViewController;
-@interface HaveAcccountViewController : UIViewController <UITextFieldDelegate> {
+@interface HaveAcccountViewController : MMViewController <UITextFieldDelegate> {
     MyPetViewController *myPetViewController;
     UILabel *verifiedText;
 }

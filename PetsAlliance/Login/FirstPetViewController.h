@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MMViewController.h"
+
 #import "SelectPetView.h"
 #import "SignUpViewController.h"
 
 @class MyPetViewController;
-@interface FirstPetViewController : UIViewController
+@interface FirstPetViewController : MMViewController
 
 @property (nonatomic, copy) NSString *gender;
 @property (nonatomic, retain) MyPetViewController *myPetViewController;

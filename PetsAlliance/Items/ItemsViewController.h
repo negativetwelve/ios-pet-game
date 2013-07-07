@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MMViewController.h"
+
 #import "PetStatusView.h"
 #import "ItemsNavigationScrollView.h"
 #import "ItemsTableView.h"
 
 #import "ItemCell.h"
 
-@interface ItemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface ItemsViewController : MMViewController <UITableViewDelegate, UITableViewDataSource> {
     PetStatusView *petStatusView;
 }
 

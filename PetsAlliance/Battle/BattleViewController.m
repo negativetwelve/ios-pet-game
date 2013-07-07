@@ -127,16 +127,15 @@
 
     if (cell == nil) {
         cell = [[BattleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [battleButton setFrame:CGRectMake(230, 35, 80, 37)];
-    [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
-    [battleButton setNuiClass:@"SecondaryButton"];
-    [cell addSubview:battleButton];
+        UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [battleButton setFrame:CGRectMake(230, 35, 80, 37)];
+        [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
+        [battleButton setNuiClass:@"SecondaryButton"];
+        [cell addSubview:battleButton];
+    }
 
     User *user = [users objectAtIndex:indexPath.row];
     
@@ -152,7 +151,6 @@
             [petSelectButton setBackgroundImage:nil forState:UIControlStateNormal];
             [petSelectButton setUserInteractionEnabled:NO];
         }
-
     }
 
     [cell.username setText:user.username];

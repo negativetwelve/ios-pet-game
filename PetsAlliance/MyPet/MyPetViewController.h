@@ -12,6 +12,8 @@
 #import "UILabel+NUI.h"
 #import "UITextField+NUI.h"
 
+#import "MMViewController.h"
+
 #import "HelpNavigationController.h"
 #import "HelpViewController.h"
 #import "SwitchPetsNavigationController.h"
@@ -24,7 +26,7 @@
 #import "User.h"
 
 
-@interface MyPetViewController : UIViewController {
+@interface MyPetViewController : MMViewController {
     UIScrollView *uiScrollView;
     PetStatusView *petStatusView;
     UIImageView *character;

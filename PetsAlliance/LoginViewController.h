@@ -10,6 +10,8 @@
 
 #import "MBProgressHUD.h"
 
+#import "MMViewController.h"
+
 #import "UIButton+NUI.h"
 #import "UILabel+NUI.h"
 #import "UITextField+NUI.h"
@@ -23,7 +25,7 @@
 #import "LoginNavigationController.h"
 
 @class SelectCharacterView;
-@interface LoginViewController : UIViewController <UITextFieldDelegate> {
+@interface LoginViewController : MMViewController <UITextFieldDelegate> {
     UIScrollView *mainScrollView;
     UIPageControl *pager;
     UIImageView *male;

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "GAI.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,10 +19,15 @@
     KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
     [keychain setObject:@"Pets Alliance" forKey: (__bridge id)kSecAttrService];
 
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 20;
+    [GAI sharedInstance].debug = YES;
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-42270065-1"];
+    [tracker setAppName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]];
+    
     // NUI for buttons and labels
     [NUISettings initWithStylesheet:@"custom"];
     [NUIAppearance init];
-    
     
     PetStatusView *petStatus = [[PetStatusView alloc] initWithFrame:CGRectMake(0, 0, self.window.bounds.size.width, 100)];
     
