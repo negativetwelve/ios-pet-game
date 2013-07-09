@@ -16,6 +16,11 @@
 #import "AttackSelectionView.h"
 #import "RunSelectionView.h"
 
-@interface InBattleViewController : MMViewController
+@interface InBattleViewController : MMViewController {
+    BattleAnimationView *animationView;
+}
+
+@property (nonatomic, retain) BattleAnimationView *animationView;
+
 
 @end
