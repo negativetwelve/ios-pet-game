@@ -16,11 +16,11 @@
 #import "ItemsNavigationController.h"
 #import "ItemsViewController.h"
 
-
+@class InBattleViewController;
 @interface BattleOptionsView : UIView {
-    UIViewController *inBattleController;
+    InBattleViewController *inBattleController;
 }
 
-@property (nonatomic, assign) UIViewController *inBattleController;
+@property (nonatomic, assign) InBattleViewController *inBattleController;
 
 @end

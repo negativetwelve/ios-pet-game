@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BattleOptionsView.h"
 
+@class InBattleViewController;
 @interface RunSelectionView : UIView {
-    UIViewController *inBattleController;
+    InBattleViewController *inBattleController;
 }
 
-@property (nonatomic, assign) UIViewController *inBattleController;
+@property (nonatomic, assign) InBattleViewController *inBattleController;
 
 @end

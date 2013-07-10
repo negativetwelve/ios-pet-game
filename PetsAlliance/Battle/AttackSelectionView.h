@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "BattleOptionsview.h"
+#import "InBattleViewController.h"
 
+@class InBattleViewController;
 @interface AttackSelectionView : UIView {
-    UIViewController *inBattleController;
+    InBattleViewController *inBattleController;
 }
 
-@property (nonatomic, assign) UIViewController *inBattleController;
+@property (nonatomic, assign) InBattleViewController *inBattleController;
 
 @end

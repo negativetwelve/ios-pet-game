@@ -192,6 +192,13 @@
 		4DB8BB3F178949D300422616 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB8BB3D178949D300422616 /* libGoogleAnalytics.a */; };
 		4DB8BB4317894ACD00422616 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4217894ACD00422616 /* MMViewController.m */; };
 		4DB8BB4717894CD500422616 /* MMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4617894CD500422616 /* MMTableViewController.m */; };
+		4DB8BB51178D43FE00422616 /* surf_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4A178D43FE00422616 /* surf_1.png */; };
+		4DB8BB52178D43FE00422616 /* surf_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4B178D43FE00422616 /* surf_2.png */; };
+		4DB8BB53178D43FE00422616 /* surf_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4C178D43FE00422616 /* surf_3.png */; };
+		4DB8BB54178D43FE00422616 /* surf_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4D178D43FE00422616 /* surf_4.png */; };
+		4DB8BB55178D43FE00422616 /* surf_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4E178D43FE00422616 /* surf_5.png */; };
+		4DB8BB56178D43FE00422616 /* surf_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4F178D43FE00422616 /* surf_6.png */; };
+		4DB8BB57178D43FE00422616 /* surf_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB50178D43FE00422616 /* surf_7.png */; };
 		4DFD49391767142300EEAFA7 /* MyPetNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */; };
 		4DFD493E1767144000EEAFA7 /* HelpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */; };
 		4DFD49431767144F00EEAFA7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49411767144E00EEAFA7 /* HelpViewController.m */; };
@@ -502,6 +509,13 @@
 		4DB8BB4217894ACD00422616 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMViewController.m; path = CustomClasses/MMViewController.m; sourceTree = "<group>"; };
 		4DB8BB4517894CD500422616 /* MMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMTableViewController.h; path = CustomClasses/MMTableViewController.h; sourceTree = "<group>"; };
 		4DB8BB4617894CD500422616 /* MMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMTableViewController.m; path = CustomClasses/MMTableViewController.m; sourceTree = "<group>"; };
+		4DB8BB4A178D43FE00422616 /* surf_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_1.png; sourceTree = "<group>"; };
+		4DB8BB4B178D43FE00422616 /* surf_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_2.png; sourceTree = "<group>"; };
+		4DB8BB4C178D43FE00422616 /* surf_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_3.png; sourceTree = "<group>"; };
+		4DB8BB4D178D43FE00422616 /* surf_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_4.png; sourceTree = "<group>"; };
+		4DB8BB4E178D43FE00422616 /* surf_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_5.png; sourceTree = "<group>"; };
+		4DB8BB4F178D43FE00422616 /* surf_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_6.png; sourceTree = "<group>"; };
+		4DB8BB50178D43FE00422616 /* surf_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_7.png; sourceTree = "<group>"; };
 		4DFD49361767142300EEAFA7 /* MyPetNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPetNavigationController.h; sourceTree = "<group>"; };
 		4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPetNavigationController.m; sourceTree = "<group>"; };
 		4DFD493B1767144000EEAFA7 /* HelpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpNavigationController.h; sourceTree = "<group>"; };
@@ -564,6 +578,7 @@
 		4D16F5EA176D63DC00C7C4F7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4DB8BB48178D43FE00422616 /* Attacks */,
 				4D914B1C176EB646006B7BCD /* Items */,
 				4D16F5EB176D63DC00C7C4F7 /* Backgrounds */,
 				4D16F5EC176D63DC00C7C4F7 /* Buttons */,
@@ -1165,6 +1180,28 @@
 			name = MM;
 			sourceTree = "<group>";
 		};
+		4DB8BB48178D43FE00422616 /* Attacks */ = {
+			isa = PBXGroup;
+			children = (
+				4DB8BB49178D43FE00422616 /* Surf */,
+			);
+			path = Attacks;
+			sourceTree = "<group>";
+		};
+		4DB8BB49178D43FE00422616 /* Surf */ = {
+			isa = PBXGroup;
+			children = (
+				4DB8BB4A178D43FE00422616 /* surf_1.png */,
+				4DB8BB4B178D43FE00422616 /* surf_2.png */,
+				4DB8BB4C178D43FE00422616 /* surf_3.png */,
+				4DB8BB4D178D43FE00422616 /* surf_4.png */,
+				4DB8BB4E178D43FE00422616 /* surf_5.png */,
+				4DB8BB4F178D43FE00422616 /* surf_6.png */,
+				4DB8BB50178D43FE00422616 /* surf_7.png */,
+			);
+			path = Surf;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1312,6 +1349,13 @@
 				4D2995781786B3CE0076F296 /* red_armor.png in Resources */,
 				4D29957B1786B3F70076F296 /* blue_armor@2x.png in Resources */,
 				4D29957C1786B3F70076F296 /* red_armor@2x.png in Resources */,
+				4DB8BB51178D43FE00422616 /* surf_1.png in Resources */,
+				4DB8BB52178D43FE00422616 /* surf_2.png in Resources */,
+				4DB8BB53178D43FE00422616 /* surf_3.png in Resources */,
+				4DB8BB54178D43FE00422616 /* surf_4.png in Resources */,
+				4DB8BB55178D43FE00422616 /* surf_5.png in Resources */,
+				4DB8BB56178D43FE00422616 /* surf_6.png in Resources */,
+				4DB8BB57178D43FE00422616 /* surf_7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
