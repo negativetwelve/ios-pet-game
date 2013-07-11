@@ -15,6 +15,7 @@
 @implementation InBattleViewController
 @synthesize animationView;
 @synthesize topPet;
+@synthesize bottomPet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -81,6 +82,7 @@
     UIImageView *bottomPetImage = [[UIImageView alloc] initWithFrame:CGRectMake(-200, 160, 120, 120)];
     [bottomPetImage setImage:[UIImage imageNamed:@"dratlantic.png"]];
     [self.animationView addSubview:bottomPetImage];
+    [self setBottomPet:bottomPetImage];
     
     [UIView transitionWithView:self.view duration:0.75 options:UIViewAnimationOptionCurveEaseIn animations:^{
         [topCharBar setFrame:CGRectMake(0, 20, 320, 110)];

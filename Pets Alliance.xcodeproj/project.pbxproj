@@ -199,6 +199,7 @@
 		4DB8BB55178D43FE00422616 /* surf_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4E178D43FE00422616 /* surf_5.png */; };
 		4DB8BB56178D43FE00422616 /* surf_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4F178D43FE00422616 /* surf_6.png */; };
 		4DB8BB57178D43FE00422616 /* surf_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB50178D43FE00422616 /* surf_7.png */; };
+		4DB8BB5A178E9D3700422616 /* AttackAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB59178E9D3600422616 /* AttackAnimationManager.m */; };
 		4DFD49391767142300EEAFA7 /* MyPetNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */; };
 		4DFD493E1767144000EEAFA7 /* HelpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */; };
 		4DFD49431767144F00EEAFA7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49411767144E00EEAFA7 /* HelpViewController.m */; };
@@ -516,6 +517,8 @@
 		4DB8BB4E178D43FE00422616 /* surf_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_5.png; sourceTree = "<group>"; };
 		4DB8BB4F178D43FE00422616 /* surf_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_6.png; sourceTree = "<group>"; };
 		4DB8BB50178D43FE00422616 /* surf_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_7.png; sourceTree = "<group>"; };
+		4DB8BB58178E9D3600422616 /* AttackAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttackAnimationManager.h; sourceTree = "<group>"; };
+		4DB8BB59178E9D3600422616 /* AttackAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttackAnimationManager.m; sourceTree = "<group>"; };
 		4DFD49361767142300EEAFA7 /* MyPetNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPetNavigationController.h; sourceTree = "<group>"; };
 		4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPetNavigationController.m; sourceTree = "<group>"; };
 		4DFD493B1767144000EEAFA7 /* HelpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpNavigationController.h; sourceTree = "<group>"; };
@@ -571,6 +574,8 @@
 				4D16F5D8176AFE5800C7C4F7 /* PetSelectionView.m */,
 				4D16F5DD176AFE7100C7C4F7 /* RunSelectionView.h */,
 				4D16F5DE176AFE7100C7C4F7 /* RunSelectionView.m */,
+				4DB8BB58178E9D3600422616 /* AttackAnimationManager.h */,
+				4DB8BB59178E9D3600422616 /* AttackAnimationManager.m */,
 			);
 			name = InBattle;
 			sourceTree = "<group>";
@@ -1518,6 +1523,7 @@
 				4D2995741786AD1D0076F296 /* ItemCell.m in Sources */,
 				4DB8BB4317894ACD00422616 /* MMViewController.m in Sources */,
 				4DB8BB4717894CD500422616 /* MMTableViewController.m in Sources */,
+				4DB8BB5A178E9D3700422616 /* AttackAnimationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

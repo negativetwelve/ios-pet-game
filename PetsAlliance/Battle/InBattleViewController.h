@@ -19,9 +19,11 @@
 @interface InBattleViewController : MMViewController {
     BattleAnimationView *animationView;
     UIImageView *topPet;
+    UIImageView *bottomPet;
 }
 
 @property (nonatomic, retain) BattleAnimationView *animationView;
 @property (nonatomic, retain) UIImageView *topPet;
+@property (nonatomic, retain) UIImageView *bottomPet;
 
 @end

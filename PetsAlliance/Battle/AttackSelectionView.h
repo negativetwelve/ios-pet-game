@@ -11,6 +11,8 @@
 #import "BattleOptionsview.h"
 #import "InBattleViewController.h"
 
+#import "AttackAnimationManager.h"
+
 @class InBattleViewController;
 @interface AttackSelectionView : UIView {
     InBattleViewController *inBattleController;

@@ -56,7 +56,7 @@
         [attack4Button addTarget:self action:@selector(attack4ButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         
         [attack1Button setTitle:@"Surf" forState:UIControlStateNormal];
-        [attack2Button setTitle:@"Attack2" forState:UIControlStateNormal];
+        [attack2Button setTitle:@"Tackle" forState:UIControlStateNormal];
         [attack3Button setTitle:@"Attack3" forState:UIControlStateNormal];
         [attack4Button setTitle:@"Attack4" forState:UIControlStateNormal];
         
@@ -86,29 +86,17 @@
 - (void)attack1ButtonPressed: (id)selector {
     NSLog(@"attack 1 button pressed");
     //UIView *attackSelectionView = ((UIButton *)selector).superview;
-    NSArray *animationArray = [NSArray arrayWithObjects:
-                              [UIImage imageNamed:@"surf_1.png"],
-                              [UIImage imageNamed:@"surf_2.png"],
-                              [UIImage imageNamed:@"surf_3.png"],
-                              [UIImage imageNamed:@"surf_4.png"],
-                              [UIImage imageNamed:@"surf_5.png"],
-                              [UIImage imageNamed:@"surf_6.png"],
-                              [UIImage imageNamed:@"surf_7.png"],
-                              nil];
-    UIImageView *animationView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 280)];
-    animationView.animationImages = animationArray;
-    animationView.animationDuration = 2.0;
-    animationView.animationRepeatCount = 1;
-    [animationView startAnimating];
-    [self.inBattleController.animationView addSubview:animationView];
-    
-    [self performSelector:@selector(flicker:) withObject:self.inBattleController.topPet
-               afterDelay:animationView.animationDuration + 0.3];
+
+    float delay = [AttackAnimationManager mainAttack:@"surf" forView:self.inBattleController.animationView withFrames:7];
+    [AttackAnimationManager performSelector:@selector(flicker:) withObject:self.inBattleController.topPet afterDelay:delay];
 }
 
 - (void)attack2ButtonPressed: (id)selector {
     NSLog(@"attack 2 button pressed");
     //UIView *attackSelectionView = ((UIButton *)selector).superview;
+
+    float delay = [AttackAnimationManager movementAttack:@"tackle" forView:self.inBattleController.bottomPet];
+    [AttackAnimationManager performSelector:@selector(flicker:) withObject:self.inBattleController.topPet afterDelay:delay];
 }
 
 - (void)attack3ButtonPressed: (id)selector {
@@ -119,27 +107,6 @@
 - (void)attack4ButtonPressed: (id)selector {
     NSLog(@"attack 4 button pressed");
     //UIView *attackSelectionView = ((UIButton *)selector).superview;
-}
-
-- (void)flicker:(UIImageView *)petImage {
-    NSLog(@"flickering");
-    [UIView animateWithDuration:0.1 animations:^{
-        petImage.alpha = 0;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.05 animations:^{
-            petImage.alpha = 1;
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.05 animations:^{
-                petImage.alpha = 0;
-            } completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.1 animations:^{
-                    petImage.alpha = 1;
-                } completion:^(BOOL finished) {
-                    
-                }];
-            }];
-        }];
-    }];
 }
 
 @end
