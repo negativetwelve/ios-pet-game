@@ -10,6 +10,33 @@
 
 @implementation AttackAnimationManager
 
+
++ (float)movementAttack:(NSString *)attack forPet:(UIImageView *)pet {
+    if ([attack isEqualToString:@"tackle"]) {
+        return [self tackleWithPet:pet];
+    }
+    
+    return 0;
+}
+
++ (float)mainAttack:(NSString *)attack forView:(UIView *)view withFrames:(int)num {
+    NSMutableArray *animationArray = [[NSMutableArray alloc] init];
+    for (int i = 0; i < num; i++) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_%d.png", attack, i + 1]];
+        if (image) {
+            [animationArray addObject:image];
+        }
+    }
+    UIImageView *animationView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 280)];
+    animationView.animationImages = animationArray;
+    animationView.animationDuration = 2.0;
+    animationView.animationRepeatCount = 1;
+    [animationView startAnimating];
+    [view addSubview:animationView];
+    
+    return animationView.animationDuration + 0.3;
+}
+
 + (void)flicker:(UIImageView *)petImage {
     NSLog(@"flickering");
     [UIView animateWithDuration:0.1 animations:^{
@@ -31,33 +58,7 @@
     }];
 }
 
-+ (float)mainAttack:(NSString *)attack forView:(UIView *)view withFrames:(int)num {
-    NSMutableArray *animationArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i < num; i++) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@_%d.png", attack, i + 1]];
-        if (image) {
-            [animationArray addObject:image];
-        }
-    }
-    UIImageView *animationView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 280)];
-    animationView.animationImages = animationArray;
-    animationView.animationDuration = 2.0;
-    animationView.animationRepeatCount = 1;
-    [animationView startAnimating];
-    [view addSubview:animationView];
-    
-    return animationView.animationDuration + 0.3;
-}
-
-+ (float)movementAttack:(NSString *)attack forView:(UIImageView *)view {
-    if ([attack isEqualToString:@"tackle"]) {
-        return [self tackleForPet:view];
-    }
-    
-    return 0;
-}
-
-+ (float)tackleForPet:(UIImageView *)petImage {
++ (float)tackleWithPet:(UIImageView *)petImage {
     float delay = 0.3;
     [UIView animateWithDuration:delay delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         petImage.transform = CGAffineTransformMakeTranslation(70, -70);

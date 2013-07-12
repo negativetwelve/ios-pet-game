@@ -87,6 +87,7 @@
         NSLog(@"successfully logged in!");
         NSArray *pets = [mappingResult.dictionary objectForKey:@"pets"];
         User *user = [mappingResult.dictionary objectForKey:@"user"];
+        [petStatus setUser:user];
         [myPetViewController loadUser:user andPets:pets];
         [hud hide:YES];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {

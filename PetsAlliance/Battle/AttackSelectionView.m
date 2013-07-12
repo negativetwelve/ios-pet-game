@@ -89,13 +89,15 @@
 
     float delay = [AttackAnimationManager mainAttack:@"surf" forView:self.inBattleController.animationView withFrames:7];
     [AttackAnimationManager performSelector:@selector(flicker:) withObject:self.inBattleController.topPet afterDelay:delay];
+
+    [self.inBattleController changeHPBy:50 forPet:@"top"];
 }
 
 - (void)attack2ButtonPressed: (id)selector {
     NSLog(@"attack 2 button pressed");
     //UIView *attackSelectionView = ((UIButton *)selector).superview;
 
-    float delay = [AttackAnimationManager movementAttack:@"tackle" forView:self.inBattleController.bottomPet];
+    float delay = [AttackAnimationManager movementAttack:@"tackle" forPet:self.inBattleController.bottomPet];
     [AttackAnimationManager performSelector:@selector(flicker:) withObject:self.inBattleController.topPet afterDelay:delay];
 }
 

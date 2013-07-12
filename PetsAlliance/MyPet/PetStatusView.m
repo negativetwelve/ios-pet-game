@@ -10,6 +10,7 @@
 
 @implementation PetStatusView
 @synthesize pets;
+@synthesize user;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

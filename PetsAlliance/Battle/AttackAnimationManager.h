@@ -12,6 +12,6 @@
 
 + (void)flicker:(UIImageView *)petImage;
 + (float)mainAttack:(NSString *)attack forView:(UIView *)view withFrames:(int)num;
-+ (float)movementAttack:(NSString *)attack forView:(UIView *)view;
++ (float)movementAttack:(NSString *)attack forPet:(UIImageView *)pet;
 
 @end

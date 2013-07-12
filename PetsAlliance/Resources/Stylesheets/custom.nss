@@ -165,6 +165,21 @@ BattleValue {
     text-align: right;
     font-size: 11;
 }
+StartBattleBar {
+    background-color: @secondaryButtonColor;
+    border-width: 2;
+    border-color: @primaryFontColor;
+}
+HPOutlineBar {
+    background-color: #DDDDDD;
+    border-width: 2;
+    border-color: @primaryFontColor;
+    border-radius: 5;
+}
+HPBarGreen {
+  background-color: @confirmButtonColor;
+  border-radius: 5;
+}
 NavigationBar {
     background-color: #00ADEF;
     font-name: @primaryFontNameBold;

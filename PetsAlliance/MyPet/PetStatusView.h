@@ -16,9 +16,11 @@
 
 @interface PetStatusView : UIView {
     NSMutableDictionary *pets;
+    User *user;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *pets;
+@property (nonatomic, retain) User *user;
 
 -(void)loadPets:(NSArray *)pets;
 

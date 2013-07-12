@@ -201,8 +201,12 @@
     CGPoint buttonPosition = [selector convertPoint:CGPointZero toView:battleTableView];
     NSIndexPath *indexPath = [battleTableView indexPathForRowAtPoint:buttonPosition];
     if (indexPath != nil) {
-        NSLog(@"battling against pet number %d", indexPath.row);
+        NSLog(@"battling against user index number %d", indexPath.row);
+        User *opponent = [self.users objectAtIndex:indexPath.row];
+        User *user = self.petStatusView.user;
         InBattleViewController *inBattleViewController = [[InBattleViewController alloc] init];
+        [inBattleViewController setOpponent:opponent];
+        [inBattleViewController setUser:user];
         [self presentViewController:inBattleViewController animated:YES completion:nil];
     }
 }
