@@ -13,6 +13,9 @@
 
 @interface User : NSObject
 
+@property (nonatomic, copy) NSNumber *encid;
+@property (nonatomic, assign) bool inBattle;
+
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *character;
 @property (nonatomic, copy) NSNumber *money;
@@ -21,6 +24,14 @@
 @property (nonatomic, copy) NSNumber *energy;
 @property (nonatomic, copy) NSNumber *energyRate;
 @property (nonatomic, copy) NSNumber *skillLevel;
+
+@property (nonatomic, copy) NSNumber *wins;
+@property (nonatomic, copy) NSNumber *losses;
+@property (nonatomic, copy) NSNumber *passiveWins;
+@property (nonatomic, copy) NSNumber *passiveLosses;
+@property (nonatomic, copy) NSNumber *runAways;
+@property (nonatomic, copy) NSNumber *passiveRunAways;
+
 @property (nonatomic, copy) NSArray *userPets;
 
 + (RKObjectMapping *)mapping;

@@ -85,7 +85,7 @@
 //    hud.mode = MBProgressHUDModeIndeterminate;
 //    hud.labelText = @"Loading";
     
-    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodGET path:@"battles" parameters:nil];
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodGET path:@"battles/index" parameters:nil];
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.usersResponseDescriptor, Pet.responseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
     
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
@@ -155,8 +155,8 @@
 
     [cell.username setText:user.username];
     [cell.skillLevelValue setText:[NSString stringWithFormat:@"%@", user.skillLevel]];
-    [cell.winsValue setText:@"1234567"];
-    [cell.lossesValue setText:@"154000"];
+    [cell.winsValue setText:[NSString stringWithFormat:@"%@", user.wins]];
+    [cell.lossesValue setText:[NSString stringWithFormat:@"%@", user.losses]];
     
     cell.tag = indexPath.row;
     return cell;
@@ -204,11 +204,46 @@
         NSLog(@"battling against user index number %d", indexPath.row);
         User *opponent = [self.users objectAtIndex:indexPath.row];
         User *user = self.petStatusView.user;
-        InBattleViewController *inBattleViewController = [[InBattleViewController alloc] init];
-        [inBattleViewController setOpponent:opponent];
-        [inBattleViewController setUser:user];
-        [self presentViewController:inBattleViewController animated:YES completion:nil];
+        
+        [self requestBattle:user AgainstOpponent:opponent];
     }
+}
+
+- (void)requestBattle:(User *)user AgainstOpponent:(User *)opponent {
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:user.encid forKey:@"user_id"];
+    [params setObject:opponent.encid forKey:@"opponent_id"];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Finding Battleground...";
+    
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodPOST path:@"battles/start" parameters:params];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.userResponseDescriptor, Opponent.responseDescriptor, Battle.responseDescriptor, Pet.responseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
+    
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        Battle *battle = [mappingResult.dictionary objectForKey:@"battle"];
+
+        InBattleViewController *inBattleViewController = [[InBattleViewController alloc] init];
+        [inBattleViewController setOpponent:battle.opponent];
+        [inBattleViewController setUser:user];
+        [inBattleViewController setBattle:battle];
+        
+        [hud hide:YES];
+        [self presentViewController:inBattleViewController animated:YES completion:nil];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [hud hide:YES];
+        NSLog(@"error!");
+        NSString *reason = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
+        NSLog(@"%@", reason);
+        [self couldNotStartBattle];
+    }];
+    
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:objectRequestOperation];
+}
+
+- (void)couldNotStartBattle {
+    NSLog(@"could not start battle");
 }
 
 - (void)didReceiveMemoryWarning

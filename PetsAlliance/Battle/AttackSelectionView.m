@@ -90,7 +90,7 @@
     float delay = [AttackAnimationManager mainAttack:@"surf" forView:self.inBattleController.animationView withFrames:7];
     [AttackAnimationManager performSelector:@selector(flicker:) withObject:self.inBattleController.topPet afterDelay:delay];
 
-    [self.inBattleController changeHPBy:50 forPet:@"top"];
+    [self.inBattleController changeHPBy:25 forPet:@"top"];
 }
 
 - (void)attack2ButtonPressed: (id)selector {

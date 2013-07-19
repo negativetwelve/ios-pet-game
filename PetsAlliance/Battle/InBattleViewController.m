@@ -18,6 +18,7 @@
 @synthesize bottomPet;
 @synthesize opponent;
 @synthesize user;
+@synthesize battle;
 
 @synthesize topHPBar;
 @synthesize bottomHPBar;
@@ -56,11 +57,15 @@
 
 - (void)startBattle {
     NSLog(@"start battle");
+    
+    NSString *userChar = [NSString stringWithFormat:@"%@.png", self.user.character];
+    NSString *opponentChar = [NSString stringWithFormat:@"%@.png", self.opponent.character];
+    
     UIView *topCharBar = [[UIView alloc] initWithFrame:CGRectMake(-320, 20, self.view.frame.size.width, 110)];
     [topCharBar setNuiClass:@"StartBattleBar"];
     
     UIImageView *topCharImage = [[UIImageView alloc] initWithFrame:CGRectMake(265, 15, 40, 80)];
-    [topCharImage setImage:[UIImage imageNamed:@"male2.png"]];
+    [topCharImage setImage:[UIImage imageNamed:opponentChar]];
     [topCharBar addSubview:topCharImage];
     
     [self.animationView addSubview:topCharBar];
@@ -69,17 +74,17 @@
     [bottomCharBar setNuiClass:@"StartBattleBar"];
     
     UIImageView *bottomCharImage = [[UIImageView alloc] initWithFrame:CGRectMake(15, 15, 40, 80)];
-    [bottomCharImage setImage:[UIImage imageNamed:@"male1.png"]];
+    [bottomCharImage setImage:[UIImage imageNamed:userChar]];
     [bottomCharBar addSubview:bottomCharImage];
     
     [self.animationView addSubview:bottomCharBar];
     
     UIImageView *topCharImageBig = [[UIImageView alloc] initWithFrame:CGRectMake(-100, 15, 80, 160)];
-    [topCharImageBig setImage:[UIImage imageNamed:@"male2.png"]];
+    [topCharImageBig setImage:[UIImage imageNamed:opponentChar]];
     [self.animationView addSubview:topCharImageBig];
 
     UIImageView *bottomCharImageBig = [[UIImageView alloc] initWithFrame:CGRectMake(340, 100, 80, 160)];
-    [bottomCharImageBig setImage:[UIImage imageNamed:@"male1.png"]];
+    [bottomCharImageBig setImage:[UIImage imageNamed:userChar]];
     [self.animationView addSubview:bottomCharImageBig];
     
     UIImageView *topPetImage = [[UIImageView alloc] initWithFrame:CGRectMake(340, 10, 120, 120)];
@@ -170,8 +175,8 @@
     if (amount >= currentHP) {
         
     } else {
-        [UIView transitionWithView:self.view duration:0.25 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            hpBar.transform = CGAffineTransformMakeScale(0.1, 1);
+        [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            hpBar.transform = CGAffineTransformMakeScale((currentHP - amount / currentHP) / currentHP, 1);
         } completion:^(BOOL finished){
         
         }];

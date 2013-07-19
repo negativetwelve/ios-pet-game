@@ -62,16 +62,28 @@
 - (void)yesButton: (id)selector {
     NSLog(@"yes button pressed");
     
-    [self.inBattleController dismissViewControllerAnimated:YES completion:nil];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:self.inBattleController.battle.encid forKey:@"battle_id"];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Attempting to run...";
+    
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodPOST path:@"battles/run" parameters:params];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ Success.responseDescriptor, Error.responseDescriptor ]];
+    
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        [hud hide:YES];
+        [self.inBattleController dismissViewControllerAnimated:YES completion:nil];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [hud hide:YES];
+        NSLog(@"error!");
+        NSString *reason = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
+        NSLog(@"%@", reason);
+        [self noButton:selector];
+    }];
+    
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:objectRequestOperation];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

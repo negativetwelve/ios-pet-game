@@ -200,6 +200,9 @@
 		4DB8BB56178D43FE00422616 /* surf_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB4F178D43FE00422616 /* surf_6.png */; };
 		4DB8BB57178D43FE00422616 /* surf_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB8BB50178D43FE00422616 /* surf_7.png */; };
 		4DB8BB5A178E9D3700422616 /* AttackAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB59178E9D3600422616 /* AttackAnimationManager.m */; };
+		4DB8BB5D17966CB300422616 /* Battle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB5C17966CB300422616 /* Battle.m */; };
+		4DB8BB601797C95600422616 /* Opponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB5F1797C95500422616 /* Opponent.m */; };
+		4DB8BB6317991E9A00422616 /* OpponentPet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB6217991E9A00422616 /* OpponentPet.m */; };
 		4DFD49391767142300EEAFA7 /* MyPetNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */; };
 		4DFD493E1767144000EEAFA7 /* HelpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */; };
 		4DFD49431767144F00EEAFA7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49411767144E00EEAFA7 /* HelpViewController.m */; };
@@ -519,6 +522,12 @@
 		4DB8BB50178D43FE00422616 /* surf_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surf_7.png; sourceTree = "<group>"; };
 		4DB8BB58178E9D3600422616 /* AttackAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttackAnimationManager.h; sourceTree = "<group>"; };
 		4DB8BB59178E9D3600422616 /* AttackAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttackAnimationManager.m; sourceTree = "<group>"; };
+		4DB8BB5B17966CB300422616 /* Battle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Battle.h; path = Classes/Battle.h; sourceTree = "<group>"; };
+		4DB8BB5C17966CB300422616 /* Battle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Battle.m; path = Classes/Battle.m; sourceTree = "<group>"; };
+		4DB8BB5E1797C95500422616 /* Opponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Opponent.h; path = Classes/Opponent.h; sourceTree = "<group>"; };
+		4DB8BB5F1797C95500422616 /* Opponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Opponent.m; path = Classes/Opponent.m; sourceTree = "<group>"; };
+		4DB8BB6117991E9900422616 /* OpponentPet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpponentPet.h; path = Classes/OpponentPet.h; sourceTree = "<group>"; };
+		4DB8BB6217991E9A00422616 /* OpponentPet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpponentPet.m; path = Classes/OpponentPet.m; sourceTree = "<group>"; };
 		4DFD49361767142300EEAFA7 /* MyPetNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPetNavigationController.h; sourceTree = "<group>"; };
 		4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPetNavigationController.m; sourceTree = "<group>"; };
 		4DFD493B1767144000EEAFA7 /* HelpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpNavigationController.h; sourceTree = "<group>"; };
@@ -982,6 +991,12 @@
 				4D914B54176EF3B3006B7BCD /* User.m */,
 				4D914B57176EF3CA006B7BCD /* Pet.h */,
 				4D914B58176EF3CA006B7BCD /* Pet.m */,
+				4DB8BB5E1797C95500422616 /* Opponent.h */,
+				4DB8BB5F1797C95500422616 /* Opponent.m */,
+				4DB8BB6117991E9900422616 /* OpponentPet.h */,
+				4DB8BB6217991E9A00422616 /* OpponentPet.m */,
+				4DB8BB5B17966CB300422616 /* Battle.h */,
+				4DB8BB5C17966CB300422616 /* Battle.m */,
 				4D914B5A176EF3DA006B7BCD /* Item.h */,
 				4D914B5B176EF3DA006B7BCD /* Item.m */,
 				4D5931BA1780BD14000E75D3 /* Error.h */,
@@ -1524,6 +1539,9 @@
 				4DB8BB4317894ACD00422616 /* MMViewController.m in Sources */,
 				4DB8BB4717894CD500422616 /* MMTableViewController.m in Sources */,
 				4DB8BB5A178E9D3700422616 /* AttackAnimationManager.m in Sources */,
+				4DB8BB5D17966CB300422616 /* Battle.m in Sources */,
+				4DB8BB601797C95600422616 /* Opponent.m in Sources */,
+				4DB8BB6317991E9A00422616 /* OpponentPet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1644,8 +1662,8 @@
 					"\"$(SRCROOT)/Libraries/GoogleAnalytics\"",
 				);
 				PRODUCT_NAME = "Pets Alliance";
-				PROVISIONING_PROFILE = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
-				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
+				PROVISIONING_PROFILE = "51D0A6FA-0311-463F-8896-CC15412A9E26";
+				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "C99C7F1F-EE76-4C98-94B8-1E860EDC9F6A";
 				"WARNING_CFLAGS[arch=*]" = "-Wno-arc-performSelector-leaks";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1666,8 +1684,8 @@
 					"\"$(SRCROOT)/Libraries/GoogleAnalytics\"",
 				);
 				PRODUCT_NAME = "Pets Alliance";
-				PROVISIONING_PROFILE = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
-				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "37ED2C42-2EE2-4C8A-9963-E0D040C9B838";
+				PROVISIONING_PROFILE = "51D0A6FA-0311-463F-8896-CC15412A9E26";
+				"PROVISIONING_PROFILE[sdk=iphoneos6.1]" = "C99C7F1F-EE76-4C98-94B8-1E860EDC9F6A";
 				"WARNING_CFLAGS[arch=*]" = "-Wno-arc-performSelector-leaks";
 				WRAPPER_EXTENSION = app;
 			};

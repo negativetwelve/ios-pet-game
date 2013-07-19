@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "MBProgressHUD.h"
 
 #import "MMViewController.h"
@@ -25,6 +26,7 @@
 
 #import "Success.h"
 #import "Error.h"
+#import "Battle.h"
 
 @interface BattleViewController : MMViewController <UITableViewDelegate, UITableViewDataSource> {
     PetStatusView *petStatusView;

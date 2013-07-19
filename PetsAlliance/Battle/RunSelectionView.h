@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BattleOptionsView.h"
 
+#import "MBProgressHUD.h"
+
+#import "Error.h"
+#import "Success.h"
+
 @class InBattleViewController;
 @interface RunSelectionView : UIView {
     InBattleViewController *inBattleController;

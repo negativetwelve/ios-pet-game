@@ -30,6 +30,7 @@
 #import "LoginNavigationController.h"
 
 #import "User.h"
+#import "Opponent.h"
 #import "Pet.h"
 #import "Error.h"
 #import "Success.h"
@@ -40,9 +41,16 @@
 #import "PAURLRequest.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
+    LoginNavigationController *loginNavigationController;
+    PetStatusView *petStatusView;
+    MyPetViewController *myPetViewController;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) LoginNavigationController *loginNavigationController;
+@property (strong, nonatomic) PetStatusView *petStatusView;
+@property (strong, nonatomic) MyPetViewController *myPetViewController;
 
 @end

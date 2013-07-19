@@ -21,6 +21,8 @@
      @"defense" : @"defense",
      @"special_defense" : @"specialDefense",
      @"speed" : @"speed",
+     @"curr_hp" : @"currHp",
+     @"max_hp" : @"maxHp",
      }];
     return petMapping;
 }

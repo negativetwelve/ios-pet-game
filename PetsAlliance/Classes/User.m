@@ -13,6 +13,8 @@
 + (RKObjectMapping *)mapping {
     RKObjectMapping *userMapping = [RKObjectMapping mappingForClass:[self class]];
     [userMapping addAttributeMappingsFromDictionary:@{
+     @"encid" : @"encid",
+     @"in_battle" : @"inBattle",
      @"username" : @"username",
      @"character" : @"character",
      @"money" : @"money",
@@ -20,6 +22,14 @@
      @"bank" : @"bank",
      @"energy" : @"energy",
      @"energy_rate" : @"energyRate",
+     
+     @"wins" : @"wins",
+     @"losses" : @"losses",
+     @"passive_wins" : @"passiveWins",
+     @"passive_losses" : @"passiveLosses",
+     @"run_aways" : @"runAways",
+     @"passive_run_aways" : @"passiveRunAways",
+     
      @"skill_level" : @"skillLevel",
      }];
     [userMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"user_pets" toKeyPath:@"userPets" withMapping:Pet.mapping]];

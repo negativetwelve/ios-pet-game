@@ -17,14 +17,17 @@
 #import "RunSelectionView.h"
 
 #import "User.h"
+#import "Opponent.h"
+#import "Battle.h"
 
 
 @interface InBattleViewController : MMViewController {
     BattleAnimationView *animationView;
     UIImageView *topPet;
     UIImageView *bottomPet;
-    User *opponent;
+    Opponent *opponent;
     User *user;
+    Battle *battle;
     
     UIView *topHPBar;
     UIView *bottomHPBar;
@@ -33,8 +36,9 @@
 @property (nonatomic, retain) BattleAnimationView *animationView;
 @property (nonatomic, retain) UIImageView *topPet;
 @property (nonatomic, retain) UIImageView *bottomPet;
-@property (nonatomic, retain) User *opponent;
+@property (nonatomic, retain) Opponent *opponent;
 @property (nonatomic, retain) User *user;
+@property (nonatomic, retain) Battle *battle;
 
 @property (nonatomic, retain) UIView *topHPBar;
 @property (nonatomic, retain) UIView *bottomHPBar;
