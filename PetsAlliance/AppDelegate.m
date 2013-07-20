@@ -98,31 +98,28 @@
     
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         NSLog(@"successfully logged in!");
-        NSArray *pets = [mappingResult.dictionary objectForKey:@"pets"];
         User *user = [mappingResult.dictionary objectForKey:@"user"];
         
         [self.petStatusView setUser:user];
 
         if (user.inBattle) {
             NSLog(@"in a battle");
-            [self.myPetViewController loadUser:user andPets:pets];
+            [self.myPetViewController loadUser:user andPets:user.userPets];
             
             if ([self.window.rootViewController.presentedViewController isMemberOfClass:NSClassFromString(@"InBattleViewController")]) {
                 NSLog(@"is inbattleviewcontroller");
                 InBattleViewController *inBattleViewController = (InBattleViewController *)self.window.rootViewController.presentedViewController;
-                Opponent *opponent = [mappingResult.dictionary objectForKey:@"opponent"];
                 Battle *battle = [mappingResult.dictionary objectForKey:@"battle"];
                 
-                [inBattleViewController setOpponent:opponent];
+                [inBattleViewController setOpponent:battle.opponent];
                 [inBattleViewController setUser:user];
                 [inBattleViewController setBattle:battle];
                 NSLog(@"%@", inBattleViewController.battle.encid);
             } else {
-                Opponent *opponent = [mappingResult.dictionary objectForKey:@"opponent"];
                 Battle *battle = [mappingResult.dictionary objectForKey:@"battle"];
                 
                 InBattleViewController *inBattleViewController = [[InBattleViewController alloc] init];
-                [inBattleViewController setOpponent:opponent];
+                [inBattleViewController setOpponent:battle.opponent];
                 [inBattleViewController setUser:user];
                 [inBattleViewController setBattle:battle];
 
@@ -130,7 +127,7 @@
             }
         } else {
             NSLog(@"not in a battle");
-            [self.myPetViewController loadUser:user andPets:pets];
+            [self.myPetViewController loadUser:user andPets:user.userPets];
         }
         [hud hide:YES];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
