@@ -1,20 +1,20 @@
 //
-//  BattleTableView.m
-//  PetsAlliance
+//  LeaderboardTableView.m
+//  Pets Alliance
 //
-//  Created by Mark Miyashita on 6/13/13.
+//  Created by Mark Miyashita on 7/19/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
-#import "BattleTableView.h"
+#import "LeaderboardTableView.h"
 
-@implementation BattleTableView
+@implementation LeaderboardTableView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-
+        
     }
     return self;
 }

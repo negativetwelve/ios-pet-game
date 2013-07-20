@@ -1,8 +1,8 @@
 //
 //  LeaderboardViewController.m
-//  PetsAlliance
+//  Pets Alliance
 //
-//  Created by Mark Miyashita on 6/13/13.
+//  Created by Mark Miyashita on 7/19/13.
 //  Copyright (c) 2013 Mark Miyashita. All rights reserved.
 //
 
@@ -13,22 +13,20 @@
 @end
 
 @implementation LeaderboardViewController
+@synthesize rowHeights;
+@synthesize users;
+@synthesize leaderboardTableView = _leaderboardTableView;
+@synthesize refreshControl;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Leaderboard";
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleBordered target:self action:@selector(closeLeaderboard:)];
+        self.rowHeights = [[NSMutableArray alloc] init];
+        for (NSUInteger i = 0; i < 10; i++) {
+            [self.rowHeights addObject:[NSNumber numberWithFloat:120]];
+        }
     }
     return self;
 }
@@ -38,100 +36,148 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    int navHeight = self.tabBarController.tabBar.frame.size.height + self.navigationController.navigationBar.frame.size.height;
+    
+    leaderboardTableView = [[LeaderboardTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - navHeight)];
+    [self setLeaderboardTableView:leaderboardTableView];
+    [leaderboardTableView setDataSource:self];
+    [leaderboardTableView setDelegate:self];
+    [self.view addSubview:leaderboardTableView];
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    [refresh addTarget:self
+                action:@selector(refreshTable:)
+      forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    [leaderboardTableView addSubview:refresh];
+    
+    [self refreshTable:self.refreshControl];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)refreshTable: (UIRefreshControl *)calledRefreshControl {
+    NSLog(@"refresh table");
+    [calledRefreshControl beginRefreshing];
+    
+    [self loadUsers];
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 0;
+- (void)loadUsers {
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodGET path:@"leaderboard/wins" parameters:nil];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.usersResponseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
+    
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        [self setUsers:[mappingResult.dictionary objectForKey:@"users"]];
+        [self.refreshControl endRefreshing];
+        NSLog(@"USERS %@", self.users);
+        [self.leaderboardTableView reloadData];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [self.refreshControl endRefreshing];
+        
+        NSLog(@"error!");
+        NSString *reason = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
+        NSLog(@"%@", reason);
+    }];
+    
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:objectRequestOperation];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return 0;
+#pragma mark UITableViewDataSource methods
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.users count];
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (self.leaderboardTableView.contentOffset.y < -50 && ![self.refreshControl isRefreshing]) {
+        [self refreshTable:self.refreshControl];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *identifier = @"identifier";
+    LeaderboardCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[LeaderboardCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        /*
+        UIButton *battleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [battleButton setFrame:CGRectMake(230, 35, 80, 37)];
+        [battleButton addTarget:self action:@selector(battleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [battleButton setTitle:@"Battle!" forState:UIControlStateNormal];
+        [battleButton setNuiClass:@"SecondaryButton"];
+        [cell addSubview:battleButton];
+         */
     }
     
-    // Configure the cell...
+    User *user = [users objectAtIndex:indexPath.row];    
+    [cell.character setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", user.character]]];
+
+    for (int i = 0; i < [cell.petButtons count]; i++) {
+        PetSelectButton *petSelectButton = [cell.petButtons objectAtIndex:i];
+        if (i < [user.userPets count]) {
+            Pet *pet = [user.userPets objectAtIndex:i];
+            [petSelectButton setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", pet.name]] forState:UIControlStateNormal];
+            [petSelectButton setUserInteractionEnabled:YES];
+        } else {
+            [petSelectButton setBackgroundImage:nil forState:UIControlStateNormal];
+            [petSelectButton setUserInteractionEnabled:NO];
+        }
+    }
     
+    [cell.username setText:user.username];
+    [cell.skillLevelValue setText:[NSString stringWithFormat:@"%@", user.skillLevel]];
+    [cell.winsValue setText:[NSString stringWithFormat:@"%@", user.wins]];
+    [cell.lossesValue setText:[NSString stringWithFormat:@"%@", user.losses]];
+    
+    cell.tag = indexPath.row;
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)updateTable: (UITableView *)tableView {
+    [tableView beginUpdates];
+    [tableView endUpdates];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[self.rowHeights objectAtIndex:indexPath.row] floatValue];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+- (void)petSelected: (id)selector {
+    PetSelectButton *selectedButton = (PetSelectButton *)selector;
+    BattleCell *selected = selectedButton.cell;
+    NSLog(@"pet selected at index: %d", selectedButton.index);
+    
+    int currentHeight = selected.bounds.size.height;
+    if (currentHeight == 120) {
+        for (NSUInteger i = 0; i < [self.rowHeights count]; i++) {
+            [self.rowHeights setObject:[NSNumber numberWithFloat:120] atIndexedSubscript:i];
+        }
+        [self.rowHeights setObject:[NSNumber numberWithFloat:180] atIndexedSubscript:selected.tag];
+        [selected setPetIndex:selectedButton.index];
+        // show current pet
+    } else if (selected.petIndex == selectedButton.index){
+        [self.rowHeights setObject:[NSNumber numberWithFloat:120] atIndexedSubscript:selected.tag];
+        [selected setPetIndex:0];
+    } else {
+        [selected setPetIndex:selectedButton.index];
+        // show new current pet
+    }
+    
+    [self.leaderboardTableView beginUpdates];
+    [self.leaderboardTableView endUpdates];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

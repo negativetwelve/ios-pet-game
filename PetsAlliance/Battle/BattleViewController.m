@@ -81,16 +81,11 @@
 }
 
 - (void)loadUsers {
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    hud.mode = MBProgressHUDModeIndeterminate;
-//    hud.labelText = @"Loading";
-    
     NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodGET path:@"battles/index" parameters:nil];
     RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ User.usersResponseDescriptor, Pet.responseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
     
     [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         [self setUsers:[mappingResult.dictionary objectForKey:@"users"]];
-//        [hud hide:YES];
         [self.refreshControl endRefreshing];
         NSLog(@"USERS %@", self.users);
         [self.battleTableView reloadData];
