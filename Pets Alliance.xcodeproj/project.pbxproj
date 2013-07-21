@@ -205,6 +205,7 @@
 		4DB8BB66179A5F9E00422616 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB65179A5F9E00422616 /* LeaderboardViewController.m */; };
 		4DB8BB69179A60B600422616 /* LeaderboardTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB68179A60B600422616 /* LeaderboardTableView.m */; };
 		4DB8BB6C179A62BD00422616 /* LeaderboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB6B179A62BD00422616 /* LeaderboardCell.m */; };
+		4DB8BB72179B902500422616 /* Attack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB8BB71179B902500422616 /* Attack.m */; };
 		4DFD49391767142300EEAFA7 /* MyPetNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */; };
 		4DFD493E1767144000EEAFA7 /* HelpNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD493C1767144000EEAFA7 /* HelpNavigationController.m */; };
 		4DFD49431767144F00EEAFA7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFD49411767144E00EEAFA7 /* HelpViewController.m */; };
@@ -534,6 +535,8 @@
 		4DB8BB68179A60B600422616 /* LeaderboardTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardTableView.m; sourceTree = "<group>"; };
 		4DB8BB6A179A62BD00422616 /* LeaderboardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardCell.h; sourceTree = "<group>"; };
 		4DB8BB6B179A62BD00422616 /* LeaderboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardCell.m; sourceTree = "<group>"; };
+		4DB8BB70179B902400422616 /* Attack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Attack.h; path = Classes/Attack.h; sourceTree = "<group>"; };
+		4DB8BB71179B902500422616 /* Attack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Attack.m; path = Classes/Attack.m; sourceTree = "<group>"; };
 		4DFD49361767142300EEAFA7 /* MyPetNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPetNavigationController.h; sourceTree = "<group>"; };
 		4DFD49371767142300EEAFA7 /* MyPetNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPetNavigationController.m; sourceTree = "<group>"; };
 		4DFD493B1767144000EEAFA7 /* HelpNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpNavigationController.h; sourceTree = "<group>"; };
@@ -1005,6 +1008,8 @@
 				4DB8BB5F1797C95500422616 /* Opponent.m */,
 				4DB8BB6117991E9900422616 /* OpponentPet.h */,
 				4DB8BB6217991E9A00422616 /* OpponentPet.m */,
+				4DB8BB70179B902400422616 /* Attack.h */,
+				4DB8BB71179B902500422616 /* Attack.m */,
 				4DB8BB5B17966CB300422616 /* Battle.h */,
 				4DB8BB5C17966CB300422616 /* Battle.m */,
 				4D914B5A176EF3DA006B7BCD /* Item.h */,
@@ -1554,6 +1559,7 @@
 				4DB8BB66179A5F9E00422616 /* LeaderboardViewController.m in Sources */,
 				4DB8BB69179A60B600422616 /* LeaderboardTableView.m in Sources */,
 				4DB8BB6C179A62BD00422616 /* LeaderboardCell.m in Sources */,
+				4DB8BB72179B902500422616 /* Attack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,7 +47,7 @@
     UINavigationController *viewMoreNavigationController = [[ViewMoreNavigationController alloc] initWithRootViewController:viewMoreViewController];
 
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[myPetNavigationController, itemsNavigationController, trainingNavigationController, battleNavigationController, viewMoreNavigationController];
+    self.tabBarController.viewControllers = @[myPetNavigationController, itemsNavigationController, battleNavigationController, trainingNavigationController, viewMoreNavigationController];
 
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];

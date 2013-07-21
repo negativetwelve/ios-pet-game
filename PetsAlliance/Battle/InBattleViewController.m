@@ -58,6 +58,9 @@
 - (void)startBattle {
     NSLog(@"start battle");
     
+    Pet *userCurrentPet = [self.user.userPets objectAtIndex:0];
+    Pet *opponentCurrentPet = [self.opponent.opponentPets objectAtIndex:0];
+    
     NSString *userChar = [NSString stringWithFormat:@"%@.png", self.user.character];
     NSString *opponentChar = [NSString stringWithFormat:@"%@.png", self.opponent.character];
     
@@ -88,12 +91,12 @@
     [self.animationView addSubview:bottomCharImageBig];
     
     UIImageView *topPetImage = [[UIImageView alloc] initWithFrame:CGRectMake(340, 10, 120, 120)];
-    [topPetImage setImage:[UIImage imageNamed:@"reptiling.png"]];
+    [topPetImage setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", opponentCurrentPet.name]]];
     [self.animationView addSubview:topPetImage];
     [self setTopPet:topPetImage];
     
     UIImageView *bottomPetImage = [[UIImageView alloc] initWithFrame:CGRectMake(-140, 160, 120, 120)];
-    [bottomPetImage setImage:[UIImage imageNamed:@"dratlantic.png"]];
+    [bottomPetImage setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", userCurrentPet.name]]];
     [self.animationView addSubview:bottomPetImage];
     [self setBottomPet:bottomPetImage];
     

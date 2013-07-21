@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "User.h"
+#import "Attack.h"
 
 @class User;
 @interface Pet : NSObject
@@ -25,6 +26,7 @@
 @property (nonatomic, copy) NSNumber *maxHp;
 
 @property (nonatomic, strong) User *user;
+@property (nonatomic, strong) NSMutableArray *attacks;
 @property (nonatomic, strong) NSMutableArray *types;
 
 + (RKObjectMapping *)mapping;

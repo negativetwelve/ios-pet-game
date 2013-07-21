@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "Opponent.h"
+#import "Attack.h"
 
 @class Opponent;
 @interface OpponentPet : NSObject
@@ -23,6 +25,7 @@
 @property (nonatomic, copy) NSNumber *maxHp;
 
 @property (nonatomic, strong) Opponent *opponent;
+@property (nonatomic, strong) NSMutableArray *attacks;
 @property (nonatomic, strong) NSMutableArray *types;
 
 + (RKObjectMapping *)mapping;

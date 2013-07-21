@@ -24,6 +24,7 @@
      @"curr_hp" : @"currHp",
      @"max_hp" : @"maxHp",
      }];
+    [petMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"attacks" toKeyPath:@"attacks" withMapping:Attack.mapping]];
     return petMapping;
 }
 
