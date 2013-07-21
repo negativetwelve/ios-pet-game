@@ -10,6 +10,7 @@
 
 @implementation AttackSelectionView
 @synthesize inBattleController = _inBattleController;
+@synthesize attackButtons;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -60,12 +61,26 @@
         [attack3Button setTitle:@"Attack3" forState:UIControlStateNormal];
         [attack4Button setTitle:@"Attack4" forState:UIControlStateNormal];
         
+        [self.attackButtons addObject:attack1Button];
+        [self.attackButtons addObject:attack2Button];
+        [self.attackButtons addObject:attack3Button];
+        [self.attackButtons addObject:attack4Button];
+        
+        for (int i = 0; i < [self.attackButtons count]; i++) {
+            UIButton *attackButton = [self.attackButtons objectAtIndex:i];
+            [attackButton setHidden:YES];
+        }
+        
         [self addSubview:attack1Button];
         [self addSubview:attack2Button];
         [self addSubview:attack3Button];
         [self addSubview:attack4Button];
     }
     return self;
+}
+
+- (void)viewDidLoad {
+    NSLog(@"attack selection loaded");
 }
 
 - (void)closeButton: (id)selector {

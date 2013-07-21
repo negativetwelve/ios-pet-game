@@ -20,6 +20,9 @@
 @synthesize user;
 @synthesize battle;
 
+@synthesize userPet;
+@synthesize opponentPet;
+
 @synthesize topHPBar;
 @synthesize bottomHPBar;
 
@@ -60,6 +63,8 @@
     
     Pet *userCurrentPet = [self.user.userPets objectAtIndex:0];
     Pet *opponentCurrentPet = [self.opponent.opponentPets objectAtIndex:0];
+    [self setUserPet:userCurrentPet];
+    [self setOpponentPet:opponentCurrentPet];
     
     NSString *userChar = [NSString stringWithFormat:@"%@.png", self.user.character];
     NSString *opponentChar = [NSString stringWithFormat:@"%@.png", self.opponent.character];

@@ -16,8 +16,10 @@
 @class InBattleViewController;
 @interface AttackSelectionView : UIView {
     InBattleViewController *inBattleController;
+    NSMutableArray *attackButtons;
 }
 
 @property (nonatomic, assign) InBattleViewController *inBattleController;
+@property (nonatomic, retain) NSMutableArray *attackButtons;
 
 @end

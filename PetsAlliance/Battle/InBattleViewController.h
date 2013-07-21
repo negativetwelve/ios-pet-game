@@ -28,6 +28,8 @@
     Opponent *opponent;
     User *user;
     Battle *battle;
+    Pet *userPet;
+    Pet *opponentPet;
     
     UIView *topHPBar;
     UIView *bottomHPBar;
@@ -39,6 +41,8 @@
 @property (nonatomic, retain) Opponent *opponent;
 @property (nonatomic, retain) User *user;
 @property (nonatomic, retain) Battle *battle;
+@property (nonatomic, retain) Pet *userPet;
+@property (nonatomic, retain) Pet *opponentPet;
 
 @property (nonatomic, retain) UIView *topHPBar;
 @property (nonatomic, retain) UIView *bottomHPBar;
