@@ -15,6 +15,11 @@
 		4D085C301776FF8800D67E0C /* female2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D085C281776FF8800D67E0C /* female2@2x.png */; };
 		4D085C311776FF8800D67E0C /* male2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D085C291776FF8800D67E0C /* male2.png */; };
 		4D085C321776FF8800D67E0C /* male2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D085C2A1776FF8800D67E0C /* male2@2x.png */; };
+		4D154D14179CC3E8008FDBF8 /* Turn.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D154D13179CC3E8008FDBF8 /* Turn.m */; };
+		4D154D17179CC3F4008FDBF8 /* BattleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D154D16179CC3F4008FDBF8 /* BattleAction.m */; };
+		4D154D1A179E5BAE008FDBF8 /* OpponentBattleStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D154D19179E5BAE008FDBF8 /* OpponentBattleStatusView.m */; };
+		4D154D1D179E5BBD008FDBF8 /* UserBattleStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D154D1C179E5BBD008FDBF8 /* UserBattleStatusView.m */; };
+		4D154D21179FADBD008FDBF8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D154D20179FADBD008FDBF8 /* Crashlytics.framework */; };
 		4D16F5CF176AFDE300C7C4F7 /* InBattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5CE176AFDE300C7C4F7 /* InBattleViewController.m */; };
 		4D16F5D3176AFE1D00C7C4F7 /* BattleAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5D2176AFE1D00C7C4F7 /* BattleAnimationView.m */; };
 		4D16F5D6176AFE3900C7C4F7 /* BattleOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D16F5D5176AFE3900C7C4F7 /* BattleOptionsView.m */; };
@@ -232,6 +237,15 @@
 		4D085C281776FF8800D67E0C /* female2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female2@2x.png"; sourceTree = "<group>"; };
 		4D085C291776FF8800D67E0C /* male2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male2.png; sourceTree = "<group>"; };
 		4D085C2A1776FF8800D67E0C /* male2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "male2@2x.png"; sourceTree = "<group>"; };
+		4D154D12179CC3E8008FDBF8 /* Turn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Turn.h; path = Classes/Turn.h; sourceTree = "<group>"; };
+		4D154D13179CC3E8008FDBF8 /* Turn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Turn.m; path = Classes/Turn.m; sourceTree = "<group>"; };
+		4D154D15179CC3F4008FDBF8 /* BattleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleAction.h; path = Classes/BattleAction.h; sourceTree = "<group>"; };
+		4D154D16179CC3F4008FDBF8 /* BattleAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BattleAction.m; path = Classes/BattleAction.m; sourceTree = "<group>"; };
+		4D154D18179E5BAE008FDBF8 /* OpponentBattleStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpponentBattleStatusView.h; sourceTree = "<group>"; };
+		4D154D19179E5BAE008FDBF8 /* OpponentBattleStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpponentBattleStatusView.m; sourceTree = "<group>"; };
+		4D154D1B179E5BBD008FDBF8 /* UserBattleStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserBattleStatusView.h; sourceTree = "<group>"; };
+		4D154D1C179E5BBD008FDBF8 /* UserBattleStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserBattleStatusView.m; sourceTree = "<group>"; };
+		4D154D20179FADBD008FDBF8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		4D16F5CD176AFDE300C7C4F7 /* InBattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InBattleViewController.h; sourceTree = "<group>"; };
 		4D16F5CE176AFDE300C7C4F7 /* InBattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InBattleViewController.m; sourceTree = "<group>"; };
 		4D16F5D1176AFE1D00C7C4F7 /* BattleAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleAnimationView.h; sourceTree = "<group>"; };
@@ -552,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D16F5E1176B00E100C7C4F7 /* QuartzCore.framework in Frameworks */,
+				4D154D21179FADBD008FDBF8 /* Crashlytics.framework in Frameworks */,
 				4D9402061766E51D00898DCF /* UIKit.framework in Frameworks */,
 				4D9402081766E51D00898DCF /* Foundation.framework in Frameworks */,
 				4D94020A1766E51D00898DCF /* CoreGraphics.framework in Frameworks */,
@@ -577,13 +592,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D154D1E179E5BC2008FDBF8 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				4D16F5D1176AFE1D00C7C4F7 /* BattleAnimationView.h */,
+				4D16F5D2176AFE1D00C7C4F7 /* BattleAnimationView.m */,
+				4D154D18179E5BAE008FDBF8 /* OpponentBattleStatusView.h */,
+				4D154D19179E5BAE008FDBF8 /* OpponentBattleStatusView.m */,
+				4D154D1B179E5BBD008FDBF8 /* UserBattleStatusView.h */,
+				4D154D1C179E5BBD008FDBF8 /* UserBattleStatusView.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		4D16F5D0176AFDEA00C7C4F7 /* InBattle */ = {
 			isa = PBXGroup;
 			children = (
 				4D16F5CD176AFDE300C7C4F7 /* InBattleViewController.h */,
 				4D16F5CE176AFDE300C7C4F7 /* InBattleViewController.m */,
-				4D16F5D1176AFE1D00C7C4F7 /* BattleAnimationView.h */,
-				4D16F5D2176AFE1D00C7C4F7 /* BattleAnimationView.m */,
+				4D154D1E179E5BC2008FDBF8 /* Animation */,
 				4D16F5D4176AFE3900C7C4F7 /* BattleOptionsView.h */,
 				4D16F5D5176AFE3900C7C4F7 /* BattleOptionsView.m */,
 				4D16F5DA176AFE6400C7C4F7 /* AttackSelectionView.h */,
@@ -1012,6 +1039,10 @@
 				4DB8BB71179B902500422616 /* Attack.m */,
 				4DB8BB5B17966CB300422616 /* Battle.h */,
 				4DB8BB5C17966CB300422616 /* Battle.m */,
+				4D154D12179CC3E8008FDBF8 /* Turn.h */,
+				4D154D13179CC3E8008FDBF8 /* Turn.m */,
+				4D154D15179CC3F4008FDBF8 /* BattleAction.h */,
+				4D154D16179CC3F4008FDBF8 /* BattleAction.m */,
 				4D914B5A176EF3DA006B7BCD /* Item.h */,
 				4D914B5B176EF3DA006B7BCD /* Item.m */,
 				4D5931BA1780BD14000E75D3 /* Error.h */,
@@ -1047,6 +1078,7 @@
 		4D9402041766E51D00898DCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D154D20179FADBD008FDBF8 /* Crashlytics.framework */,
 				4D782A811771859B004B1C46 /* GameKit.framework */,
 				4D914B5F176EF559006B7BCD /* SystemConfiguration.framework */,
 				4D914B5D176EF54C006B7BCD /* MobileCoreServices.framework */,
@@ -1249,6 +1281,7 @@
 				4D9401FF1766E51D00898DCF /* Frameworks */,
 				4D9402001766E51D00898DCF /* Resources */,
 				037D58E8324F4B8EB8248C9F /* Copy Pods Resources */,
+				4D154D1F179FAD6C008FDBF8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1419,6 +1452,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
+		4D154D1F179FAD6C008FDBF8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 6ed3a1424a5919b8251388b2f6dc9164768c68f0";
+		};
 		4D9402341766E51D00898DCF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1560,6 +1606,10 @@
 				4DB8BB69179A60B600422616 /* LeaderboardTableView.m in Sources */,
 				4DB8BB6C179A62BD00422616 /* LeaderboardCell.m in Sources */,
 				4DB8BB72179B902500422616 /* Attack.m in Sources */,
+				4D154D14179CC3E8008FDBF8 /* Turn.m in Sources */,
+				4D154D17179CC3F4008FDBF8 /* BattleAction.m in Sources */,
+				4D154D1A179E5BAE008FDBF8 /* OpponentBattleStatusView.m in Sources */,
+				4D154D1D179E5BBD008FDBF8 /* UserBattleStatusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1671,6 +1721,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos6.1]" = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
 				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";
@@ -1693,6 +1747,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos6.1]" = "iPhone Developer: Mark Miyashita (F76R2CW38Y)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PetsAlliance/Pets Alliance-Prefix.pch";
 				INFOPLIST_FILE = "PetsAlliance/Pets Alliance-Info.plist";

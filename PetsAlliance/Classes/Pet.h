@@ -14,6 +14,7 @@
 @class User;
 @interface Pet : NSObject
 
+@property (nonatomic, copy) NSNumber *encid;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *level;
 @property (nonatomic, copy) NSNumber *attack;

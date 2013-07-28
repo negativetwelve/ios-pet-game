@@ -221,7 +221,7 @@
 
         InBattleViewController *inBattleViewController = [[InBattleViewController alloc] init];
         [inBattleViewController setOpponent:battle.opponent];
-        [inBattleViewController setUser:user];
+        [inBattleViewController setUser:battle.user];
         [inBattleViewController setBattle:battle];
         
         [hud hide:YES];

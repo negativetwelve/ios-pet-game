@@ -12,6 +12,14 @@
 @primaryBorderColor: #DDDDDD;
 @primaryBorderWidth: 1;
 
+
+@hpBarGreenColor: #41AB07;
+@hpBarOrangeColor: #EBB728;
+@hpBarRedColor: #EB3B28;
+
+@battleStatusColor: #959B86;
+@battleBorderColor: #3D3D3C;
+
 @barBackgroundColorTop: #11ABE1;
 @barBackgroundColorBottom: #01A0DA;
 
@@ -253,4 +261,20 @@ DefaultView {
 }
 StatusView {
     background-color: @secondaryButtonColor;
+}
+BattleStatusView {
+    background-color: @battleStatusColor;
+    border-color: @battleBorderColor;
+    border-width: 3;
+    corner-radius: 7;
+}
+HPBarGreen {
+    progress-tint-color: @hpBarGreenColor;
+    track-tint-color: @secondaryButtonColor;
+}
+HPBarOrange {
+  
+}
+HPBarRed {
+  
 }

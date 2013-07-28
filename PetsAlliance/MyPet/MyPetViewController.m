@@ -76,11 +76,21 @@
     [itemStoreButton setNuiClass:@"Button:TextFieldButton"];
     [itemStoreButton addTarget:self action:@selector(itemStoreAction:) forControlEvents:UIControlEventTouchUpInside];
     [mainPetView addSubview:itemStoreButton];
+    
+    // Probably want to remove later.
+    UIButton *healButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [healButton setFrame:CGRectMake(20, 180, 110, 31)];
+    [healButton setTitle:@"Heal Pets" forState:UIControlStateNormal];
+    [healButton setNuiClass:@"Button:TextFieldButton"];
+    [healButton addTarget:self action:@selector(healPets:) forControlEvents:UIControlEventTouchUpInside];
+    [mainPetView addSubview:healButton];
 }
 
 - (void)loadUser:(User *)user andPets:(NSArray *)pets {
     [self loadUser:user];
     [self loadPets:pets];
+    // Set the persistent user object.
+    [self.petStatusView setUser:user];
 }
 
 - (void)setupUserLabels: (NSDictionary *)data inView:(UIScrollView *)view startingAtX:(int)x andY:(int)y {
@@ -101,6 +111,32 @@
 
 - (void)itemStoreAction: (id) selector {
     NSLog(@"clicked on item store button");
+}
+
+- (void)healPets:(id)selector {
+    NSLog(@"healing pets");
+
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:self.petStatusView.user.encid forKey:@"user_id"];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Healing...";
+    
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodPOST path:@"heal" parameters:params];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ Success.responseDescriptor, Error.responseDescriptor ]];
+    
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        [hud hide:YES];
+
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [hud hide:YES];
+        NSLog(@"error!");
+        NSString *reason = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
+        NSLog(@"%@", reason);
+    }];
+    
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:objectRequestOperation];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 #import "GAI.h"
 
 @implementation AppDelegate
@@ -19,11 +21,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
     [GAI sharedInstance].dispatchInterval = 20;
     [GAI sharedInstance].debug = NO;
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-42270065-1"];
     [tracker setAppName:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]];
+
+    [Crashlytics startWithAPIKey:@"6ed3a1424a5919b8251388b2f6dc9164768c68f0"];
     
     // NUI for buttons and labels
     [NUISettings initWithStylesheet:@"custom"];
@@ -112,7 +115,7 @@
                 Battle *battle = [mappingResult.dictionary objectForKey:@"battle"];
                 
                 [inBattleViewController setOpponent:battle.opponent];
-                [inBattleViewController setUser:user];
+                [inBattleViewController setUser:battle.user];
                 [inBattleViewController setBattle:battle];
                 NSLog(@"%@", inBattleViewController.battle.encid);
             } else {

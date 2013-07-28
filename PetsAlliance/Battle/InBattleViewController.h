@@ -16,6 +16,9 @@
 #import "AttackSelectionView.h"
 #import "RunSelectionView.h"
 
+#import "OpponentBattleStatusView.h"
+#import "UserBattleStatusView.h"
+
 #import "User.h"
 #import "Opponent.h"
 #import "Battle.h"
@@ -33,6 +36,8 @@
     
     UIView *topHPBar;
     UIView *bottomHPBar;
+    UIProgressView *topCharBar;
+    UIProgressView *bottomCharBar;
 }
 
 @property (nonatomic, retain) BattleAnimationView *animationView;
@@ -47,6 +52,10 @@
 @property (nonatomic, retain) UIView *topHPBar;
 @property (nonatomic, retain) UIView *bottomHPBar;
 
-- (void)changeHPBy:(int)amount forPet:(NSString *)pet;
+@property (nonatomic, retain) UIProgressView *topCharBar;
+@property (nonatomic, retain) UIProgressView *bottomCharBar;
+
+- (void)changeHPBy:(NSDictionary *)params;
+- (void)processBattleActions:(NSArray *)battleActions;
 
 @end

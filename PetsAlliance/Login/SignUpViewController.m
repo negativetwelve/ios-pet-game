@@ -117,8 +117,10 @@
         KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:@"keychainID" accessGroup:nil];
         [keychain setObject:email forKey:(__bridge id)(kSecAttrAccount)];
         [keychain setObject:password forKey:(__bridge id)(kSecValueData)];
+        
         User *user = [mappingResult.dictionary objectForKey:@"user"];
         [self.myPetViewController loadUser:user andPets:user.userPets];
+        
         [hud hide:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {

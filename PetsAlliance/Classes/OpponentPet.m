@@ -13,6 +13,7 @@
 + (RKObjectMapping *)mapping {
     RKObjectMapping *opponentPetMapping = [RKObjectMapping mappingForClass:[self class]];
     [opponentPetMapping addAttributeMappingsFromDictionary:@{
+     @"encid" : @"encid",
      @"name" : @"name",
      @"level" : @"level",
      @"attack" : @"attack",

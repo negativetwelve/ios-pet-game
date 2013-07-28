@@ -101,19 +101,43 @@
 - (void)attack1ButtonPressed: (id)selector {
     NSLog(@"attack 1 button pressed");
     //UIView *attackSelectionView = ((UIButton *)selector).superview;
-
-    float delay = [AttackAnimationManager mainAttack:@"surf" forView:self.inBattleController.animationView withFrames:7];
-    [AttackAnimationManager performSelector:@selector(flicker:) withObject:self.inBattleController.topPet afterDelay:delay];
-
-    [self.inBattleController changeHPBy:25 forPet:@"top"];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setObject:self.inBattleController.battle.encid forKey:@"battle_id"];
+    [params setObject:self.inBattleController.battle.user.encid forKey:@"user_id"];
+    [params setObject:self.inBattleController.battle.opponent.encid forKey:@"opponent_id"];
+    [params setObject:self.inBattleController.userPet.encid forKey:@"pet_id"];
+    [params setObject:self.inBattleController.opponentPet.encid forKey:@"opponent_pet_id"];
+    [params setObject:[NSNumber numberWithInt:1] forKey:@"attack_id"];
+    
+    // Request to make the attack
+    NSMutableURLRequest *request = [[RKObjectManager sharedManager] requestWithObject:nil method:RKRequestMethodPOST path:@"battles/attack" parameters:params];
+    RKObjectRequestOperation *objectRequestOperation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[ Turn.responseDescriptor, Success.responseDescriptor, Error.responseDescriptor ]];
+    
+    [objectRequestOperation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        Turn *turn = [mappingResult.dictionary objectForKey:@"turn"];
+        
+        NSLog(@"got response back from attack.");
+        NSLog(@"%@", turn);
+        NSLog(@"%@", turn.battleActions);
+        
+        [self.inBattleController processBattleActions:turn.battleActions];
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        NSLog(@"error!");
+        NSString *reason = ((Error *)[[error.userInfo objectForKey:RKObjectMapperErrorObjectsKey] firstObject]).reason;
+        NSLog(@"%@", reason);
+    }];
+    
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:objectRequestOperation];
 }
 
 - (void)attack2ButtonPressed: (id)selector {
     NSLog(@"attack 2 button pressed");
     //UIView *attackSelectionView = ((UIButton *)selector).superview;
 
-    float delay = [AttackAnimationManager movementAttack:@"tackle" forPet:self.inBattleController.bottomPet];
-    [AttackAnimationManager performSelector:@selector(flicker:) withObject:self.inBattleController.topPet afterDelay:delay];
+    [AttackAnimationManager movementAttack:@"tackle" forPet:self.inBattleController.bottomPet withDelay:0];
+    [AttackAnimationManager performSelector:@selector(flicker:) withObject:self.inBattleController.topPet afterDelay:0.3];
 }
 
 - (void)attack3ButtonPressed: (id)selector {

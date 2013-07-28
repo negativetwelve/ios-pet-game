@@ -13,6 +13,8 @@
 
 #import "AttackAnimationManager.h"
 
+#import "Turn.h"
+
 @class InBattleViewController;
 @interface AttackSelectionView : UIView {
     InBattleViewController *inBattleController;

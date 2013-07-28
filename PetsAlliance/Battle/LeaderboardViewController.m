@@ -33,6 +33,7 @@
 
 - (void)closeLeaderboard: (id)selector {
     NSLog(@"closing leaderboard");
+    [self setRefreshControl:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -10,8 +10,9 @@
 
 @interface AttackAnimationManager : NSObject
 
++ (void)faint:(UIImageView *)petImage;
 + (void)flicker:(UIImageView *)petImage;
-+ (float)mainAttack:(NSString *)attack forView:(UIView *)view withFrames:(int)num;
-+ (float)movementAttack:(NSString *)attack forPet:(UIImageView *)pet;
++ (void)mainAttack:(NSString *)attack forView:(UIView *)view withFrames:(int)num withDelay:(float)delay;
++ (float)movementAttack:(NSString *)attack forPet:(UIImageView *)pet withDelay:(float)delay;
 
 @end

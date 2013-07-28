@@ -13,6 +13,7 @@
 + (RKObjectMapping *)mapping {
     RKObjectMapping *petMapping = [RKObjectMapping mappingForClass:[self class]];
     [petMapping addAttributeMappingsFromDictionary:@{
+     @"encid" : @"encid",
      @"name" : @"name",
      @"level" : @"level",
      @"experience" : @"experience",
