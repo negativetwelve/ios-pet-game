@@ -1,2 +1,4 @@
 .DS_Store
 Pods/
+PetsAlliance.xcodeproj/xcuserdata/*
+PetsAlliance.xcodeproj/project.xcworkspace/xcursedata/*
